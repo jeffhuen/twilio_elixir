@@ -1,5 +1,5 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
-defmodule Twilio.Api.V2010.Sip.DomainService do
+defmodule Twilio.Api.V2010.SIP.DomainService do
   @moduledoc """
   Custom DNS hostnames that can accept SIP traffic
 
@@ -32,7 +32,7 @@ defmodule Twilio.Api.V2010.Sip.DomainService do
          %{
            page
            | items:
-               Deserializer.deserialize_list(page.items, Twilio.Resources.Api.V2010.Sip.Domain)
+               Deserializer.deserialize_list(page.items, Twilio.Resources.Api.V2010.SIP.Domain)
          }}
 
       error ->
@@ -91,7 +91,7 @@ defmodule Twilio.Api.V2010.Sip.DomainService do
   | `VoiceUrl` | string (uri) | The URL we should when the domain receives a call. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Sip.Domain.t()}
+          {:ok, Twilio.Resources.Api.V2010.SIP.Domain.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -106,7 +106,7 @@ defmodule Twilio.Api.V2010.Sip.DomainService do
              base_url: "https://api.twilio.com",
              content_type: :form
            ) do
-      {:ok, Deserializer.deserialize(data, Twilio.Resources.Api.V2010.Sip.Domain)}
+      {:ok, Deserializer.deserialize(data, Twilio.Resources.Api.V2010.SIP.Domain)}
     end
   end
 
@@ -116,7 +116,7 @@ defmodule Twilio.Api.V2010.Sip.DomainService do
   Operation: `FetchSipDomain` | Tags: Api20100401Domain
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Sip.Domain.t()}
+          {:ok, Twilio.Resources.Api.V2010.SIP.Domain.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -129,7 +129,7 @@ defmodule Twilio.Api.V2010.Sip.DomainService do
              opts: opts,
              base_url: "https://api.twilio.com"
            ) do
-      {:ok, Deserializer.deserialize(data, Twilio.Resources.Api.V2010.Sip.Domain)}
+      {:ok, Deserializer.deserialize(data, Twilio.Resources.Api.V2010.SIP.Domain)}
     end
   end
 
@@ -168,7 +168,7 @@ defmodule Twilio.Api.V2010.Sip.DomainService do
   | `VoiceUrl` | string (uri) | The URL we should call when the domain receives a call. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Sip.Domain.t()}
+          {:ok, Twilio.Resources.Api.V2010.SIP.Domain.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -183,7 +183,7 @@ defmodule Twilio.Api.V2010.Sip.DomainService do
              base_url: "https://api.twilio.com",
              content_type: :form
            ) do
-      {:ok, Deserializer.deserialize(data, Twilio.Resources.Api.V2010.Sip.Domain)}
+      {:ok, Deserializer.deserialize(data, Twilio.Resources.Api.V2010.SIP.Domain)}
     end
   end
 

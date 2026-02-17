@@ -1,5 +1,5 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
-defmodule Twilio.Accounts.V1.Credential.AwsService do
+defmodule Twilio.Accounts.V1.Credential.AWSService do
   @moduledoc """
   User provided AWS keys
 
@@ -31,7 +31,7 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
            | items:
                Deserializer.deserialize_list(
                  page.items,
-                 Twilio.Resources.Accounts.V1.Credential.Aws
+                 Twilio.Resources.Accounts.V1.Credential.AWS
                )
          }}
 
@@ -73,7 +73,7 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It can be up to 64 characters long. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Accounts.V1.Credential.Aws.t()}
+          {:ok, Twilio.Resources.Accounts.V1.Credential.AWS.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -85,7 +85,7 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
              base_url: "https://accounts.twilio.com",
              content_type: :form
            ) do
-      {:ok, Deserializer.deserialize(data, Twilio.Resources.Accounts.V1.Credential.Aws)}
+      {:ok, Deserializer.deserialize(data, Twilio.Resources.Accounts.V1.Credential.AWS)}
     end
   end
 
@@ -95,7 +95,7 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
   Operation: `FetchCredentialAws` | Tags: AccountsV1Aws
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Accounts.V1.Credential.Aws.t()}
+          {:ok, Twilio.Resources.Accounts.V1.Credential.AWS.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -105,7 +105,7 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
              opts: opts,
              base_url: "https://accounts.twilio.com"
            ) do
-      {:ok, Deserializer.deserialize(data, Twilio.Resources.Accounts.V1.Credential.Aws)}
+      {:ok, Deserializer.deserialize(data, Twilio.Resources.Accounts.V1.Credential.AWS)}
     end
   end
 
@@ -122,7 +122,7 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It can be up to 64 characters long. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Accounts.V1.Credential.Aws.t()}
+          {:ok, Twilio.Resources.Accounts.V1.Credential.AWS.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -134,7 +134,7 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
              base_url: "https://accounts.twilio.com",
              content_type: :form
            ) do
-      {:ok, Deserializer.deserialize(data, Twilio.Resources.Accounts.V1.Credential.Aws)}
+      {:ok, Deserializer.deserialize(data, Twilio.Resources.Accounts.V1.Credential.AWS)}
     end
   end
 

@@ -11,7 +11,7 @@ defmodule Twilio.Marketplace.V1.ListingService do
 
   @doc """
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  This endpoint returns the data of a given Listing. To find a Listing's SID, use the [Available Add-ons resource](/docs/marketplace/api/available-add-ons) or view its Listing details page in the Console by visiting the [Catalog](https://console.twilio.com/us1/develop/add-ons/catalog) or the [My Listings tab](https://console.twilio.com/us1/develop/add-ons/publish/my-listings) and selecting the Listing.
+  This endpoint returns the data of a given Listing. To find a Listing's SID, use the [Available Add-ons resource](https://www.twilio.com/docs/marketplace/api/available-add-ons) or view its Listing details page in the Console by visiting the [Catalog](https://console.twilio.com/us1/develop/add-ons/catalog) or the [My Listings tab](https://console.twilio.com/us1/develop/add-ons/publish/my-listings) and selecting the Listing.
 
   Operation: `FetchModuleDataManagement` | Tags: MarketplaceModuleDataManagement
   """

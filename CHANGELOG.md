@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 440+ service modules covering 37+ Twilio products (Messaging, Voice, Verify,
   Conversations, Flex, Insights, Video, and more)
 - 420+ typed resource structs with automatic JSON-to-struct deserialization
-- `Twilio.ObjectTypes` registry mapping schema names to Elixir modules
+- Object types registry mapping schema names to Elixir modules
 
 #### Client & HTTP
 - `Twilio.Client` with HTTP Basic auth (Account SID + Auth Token)

@@ -49,7 +49,7 @@ defmodule Twilio.Generator.ResourceGenerator do
       case resource[:description] do
         nil -> "#{resource.name} resource."
         "" -> "#{resource.name} resource."
-        d -> d
+        d -> resolve_doc_links(d)
       end
 
     ["  #{desc}"]
@@ -65,7 +65,7 @@ defmodule Twilio.Generator.ResourceGenerator do
     case resource[:schema_description] do
       nil -> lines
       ^desc -> lines
-      schema_desc -> lines ++ ["", "  #{sanitize_table_cell(schema_desc)}"]
+      schema_desc -> lines ++ ["", "  #{sanitize_table_cell(resolve_doc_links(schema_desc))}"]
     end
   end
 
@@ -145,8 +145,8 @@ defmodule Twilio.Generator.ResourceGenerator do
   defp prop_description(prop) do
     case {sanitize_table_cell(prop.description || ""), prop[:enum_description]} do
       {"", nil} -> ""
-      {"", enum_desc} -> sanitize_table_cell(enum_desc)
-      {d, _} -> d
+      {"", enum_desc} -> sanitize_table_cell(resolve_doc_links(enum_desc))
+      {d, _} -> resolve_doc_links(d)
     end
   end
 
@@ -185,6 +185,10 @@ defmodule Twilio.Generator.ResourceGenerator do
 
   defp maybe_append(list, nil, _fun), do: list
   defp maybe_append(list, value, fun), do: list ++ [fun.(value)]
+
+  defp resolve_doc_links(text) do
+    String.replace(text, "](/docs/", "](https://www.twilio.com/docs/")
+  end
 
   @max_line_length 120
   @max_struct_fields 31

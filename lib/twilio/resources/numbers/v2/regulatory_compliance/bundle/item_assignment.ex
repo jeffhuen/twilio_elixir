@@ -1,0 +1,40 @@
+# File generated from Twilio's OpenAPI spec — do not edit manually
+defmodule Twilio.Resources.Numbers.V2.RegulatoryCompliance.Bundle.ItemAssignment do
+  @moduledoc """
+  ItemAssignment resource.
+
+  SID prefix: `BV`
+
+  Parent: `/RegulatoryCompliance/Bundles/{Sid}`
+
+  ## Properties
+
+  | Field | Description |
+  |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Item Assignment resource. |
+  | `bundle_sid` | The unique string that we created to identify the Bundle resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  | `object_sid` | The SID of an object bag that holds information of the different items. |
+  | `sid` | The unique string that we created to identify the Item Assignment resource. |
+  | `url` | The absolute URL of the Identity resource.. Format: uri |
+  """
+
+  @type t :: %__MODULE__{
+          account_sid: String.t() | nil,
+          bundle_sid: String.t() | nil,
+          date_created: String.t() | nil,
+          object_sid: String.t() | nil,
+          sid: String.t() | nil,
+          url: String.t() | nil
+        }
+
+  defstruct [:account_sid, :bundle_sid, :date_created, :object_sid, :sid, :url]
+
+  @object_name "numbers.v2.regulatory_compliance.bundle.item_assignment"
+  def object_name, do: @object_name
+
+  @sid_prefix "BV"
+  def sid_prefix, do: @sid_prefix
+end

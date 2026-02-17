@@ -30,7 +30,7 @@ defmodule Twilio.Resources.Video.V1.Composition do
   | `format` | The container format of the composition's media files as specified in the POST request that created the Composition resource. See [POST Parameters](https://www.twilio.com/docs/video/api/compositions-resource#http-post-parameters) for more information.. Values: `mp4`, `webm` |
   | `links` | The URL of the media file associated with the composition.. Format: uri-map |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `media_external_location` | The URL of the media file associated with the composition when stored externally. See [External S3 Compositions](/docs/video/api/external-s3-compositions) for more details.. Format: uri |
+  | `media_external_location` | The URL of the media file associated with the composition when stored externally. See [External S3 Compositions](https://www.twilio.com/docs/video/api/external-s3-compositions) for more details.. Format: uri |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `resolution` | The dimensions of the video image in pixels expressed as columns (width) and rows (height). The string's format is `{width}x{height}`, such as `640x480`. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength

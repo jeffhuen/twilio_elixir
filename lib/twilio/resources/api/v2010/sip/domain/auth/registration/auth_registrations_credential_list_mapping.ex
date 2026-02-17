@@ -1,5 +1,5 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
-defmodule Twilio.Resources.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping do
+defmodule Twilio.Resources.Api.V2010.SIP.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping do
   @moduledoc """
   Credential lists for SIP registrations
 

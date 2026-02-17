@@ -24,7 +24,7 @@ defmodule Twilio.Resources.Chat.V1.Service.User.Channel do
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The status of the User on the Channel. Can be: `joined`, `invited`, or `not_participating`.. Values: `joined`, `invited`, `not_participating` |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `unread_messages_count` | The number of unread Messages in the Channel for the User. Note that retrieving messages on a client endpoint does not mean that messages are consumed or read. See [Consumption Horizon feature](/docs/api/chat/guides/consumption-horizon) to learn how to mark messages as consumed. |
+  | `unread_messages_count` | The number of unread Messages in the Channel for the User. Note that retrieving messages on a client endpoint does not mean that messages are consumed or read. See [Consumption Horizon feature](https://www.twilio.com/docs/api/chat/guides/consumption-horizon) to learn how to mark messages as consumed. |
   """
 
   @type t :: %__MODULE__{

@@ -53,7 +53,7 @@ defmodule Twilio.Generator.ServiceGenerator do
       case resource[:description] do
         nil -> "Service for #{resource.name} API operations."
         "" -> "Service for #{resource.name} API operations."
-        d -> d
+        d -> resolve_doc_links(d)
       end
 
     lines = ["  #{desc}"]
@@ -262,7 +262,11 @@ defmodule Twilio.Generator.ServiceGenerator do
   end
 
   defp generate_operation_doc(op, resource_name) do
-    desc = op.description || default_description(op.name, resource_name)
+    desc =
+      case op.description do
+        nil -> default_description(op.name, resource_name)
+        d -> resolve_doc_links(d)
+      end
 
     [desc]
     |> append_meta_line(op)
@@ -341,7 +345,7 @@ defmodule Twilio.Generator.ServiceGenerator do
     desc =
       case list_op.description do
         nil -> "Stream all resources with lazy auto-pagination."
-        d -> "Stream: #{d} (lazy auto-pagination)."
+        d -> "Stream: #{resolve_doc_links(d)} (lazy auto-pagination)."
       end
 
     "  @doc \"#{sanitize_doc_string(desc)}\""
@@ -447,6 +451,10 @@ defmodule Twilio.Generator.ServiceGenerator do
 
   defp maybe_append_meta(list, nil, _fun), do: list
   defp maybe_append_meta(list, value, fun), do: list ++ [fun.(value)]
+
+  defp resolve_doc_links(text) do
+    String.replace(text, "](/docs/", "](https://www.twilio.com/docs/")
+  end
 
   @max_line_length 120
 

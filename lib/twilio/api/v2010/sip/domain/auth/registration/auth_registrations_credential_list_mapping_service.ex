@@ -1,5 +1,5 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
-defmodule Twilio.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredentialListMappingService do
+defmodule Twilio.Api.V2010.SIP.Domain.Auth.Registration.AuthRegistrationsCredentialListMappingService do
   @moduledoc """
   Credential lists for SIP registrations
 
@@ -35,7 +35,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredent
            | items:
                Deserializer.deserialize_list(
                  page.items,
-                 Twilio.Resources.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping
+                 Twilio.Resources.Api.V2010.SIP.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping
                )
          }}
 
@@ -69,7 +69,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredent
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok,
-           Twilio.Resources.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping.t()}
+           Twilio.Resources.Api.V2010.SIP.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -88,7 +88,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredent
       {:ok,
        Deserializer.deserialize(
          data,
-         Twilio.Resources.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping
+         Twilio.Resources.Api.V2010.SIP.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping
        )}
     end
   end
@@ -100,7 +100,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredent
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok,
-           Twilio.Resources.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping.t()}
+           Twilio.Resources.Api.V2010.SIP.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -117,7 +117,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredent
       {:ok,
        Deserializer.deserialize(
          data,
-         Twilio.Resources.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping
+         Twilio.Resources.Api.V2010.SIP.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping
        )}
     end
   end

@@ -77,6 +77,7 @@ defmodule Twilio.MixProject do
       source_url: @source_url,
       extras: [
         "README.md",
+        "LICENSE",
         "guides/getting-started.md",
         "guides/webhooks.md",
         "guides/twiml.md",

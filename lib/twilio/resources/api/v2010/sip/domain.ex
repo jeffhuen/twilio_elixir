@@ -1,5 +1,5 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
-defmodule Twilio.Resources.Api.V2010.Sip.Domain do
+defmodule Twilio.Resources.Api.V2010.SIP.Domain do
   @moduledoc """
   Custom DNS hostnames that can accept SIP traffic
 

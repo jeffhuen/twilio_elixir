@@ -1,5 +1,5 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
-defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingService do
+defmodule Twilio.Api.V2010.SIP.Domain.Auth.Call.AuthCallsCredentialListMappingService do
   @moduledoc """
   Credential lists for SIP calls
 
@@ -35,7 +35,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingSe
            | items:
                Deserializer.deserialize_list(
                  page.items,
-                 Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping
+                 Twilio.Resources.Api.V2010.SIP.Domain.Auth.Call.AuthCallsCredentialListMapping
                )
          }}
 
@@ -69,7 +69,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingSe
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok,
-           Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping.t()}
+           Twilio.Resources.Api.V2010.SIP.Domain.Auth.Call.AuthCallsCredentialListMapping.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -88,7 +88,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingSe
       {:ok,
        Deserializer.deserialize(
          data,
-         Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping
+         Twilio.Resources.Api.V2010.SIP.Domain.Auth.Call.AuthCallsCredentialListMapping
        )}
     end
   end
@@ -100,7 +100,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingSe
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok,
-           Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping.t()}
+           Twilio.Resources.Api.V2010.SIP.Domain.Auth.Call.AuthCallsCredentialListMapping.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -117,7 +117,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingSe
       {:ok,
        Deserializer.deserialize(
          data,
-         Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping
+         Twilio.Resources.Api.V2010.SIP.Domain.Auth.Call.AuthCallsCredentialListMapping
        )}
     end
   end

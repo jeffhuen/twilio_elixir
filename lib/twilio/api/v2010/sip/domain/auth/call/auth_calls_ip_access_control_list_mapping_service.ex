@@ -1,5 +1,5 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
-defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMappingService do
+defmodule Twilio.Api.V2010.SIP.Domain.Auth.Call.AuthCallsIpAccessControlListMappingService do
   @moduledoc """
   IP address lists for SIP calls
 
@@ -35,7 +35,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMapp
            | items:
                Deserializer.deserialize_list(
                  page.items,
-                 Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMapping
+                 Twilio.Resources.Api.V2010.SIP.Domain.Auth.Call.AuthCallsIpAccessControlListMapping
                )
          }}
 
@@ -69,7 +69,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMapp
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok,
-           Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMapping.t()}
+           Twilio.Resources.Api.V2010.SIP.Domain.Auth.Call.AuthCallsIpAccessControlListMapping.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -88,7 +88,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMapp
       {:ok,
        Deserializer.deserialize(
          data,
-         Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMapping
+         Twilio.Resources.Api.V2010.SIP.Domain.Auth.Call.AuthCallsIpAccessControlListMapping
        )}
     end
   end
@@ -100,7 +100,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMapp
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok,
-           Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMapping.t()}
+           Twilio.Resources.Api.V2010.SIP.Domain.Auth.Call.AuthCallsIpAccessControlListMapping.t()}
           | {:ok, map(), map()}
           | :ok
           | {:error, Twilio.Error.t()}
@@ -117,7 +117,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMapp
       {:ok,
        Deserializer.deserialize(
          data,
-         Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMapping
+         Twilio.Resources.Api.V2010.SIP.Domain.Auth.Call.AuthCallsIpAccessControlListMapping
        )}
     end
   end

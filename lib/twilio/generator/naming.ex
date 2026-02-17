@@ -58,13 +58,20 @@ defmodule Twilio.Generator.Naming do
     |> Enum.map(fn [_, param] -> param end)
   end
 
-  @doc "Convert a snake_case string to CamelCase."
+  @doc "Convert a snake_case string to CamelCase. Already-camelized strings are uppercased at the first character only."
   @spec camelize(String.t()) :: String.t()
   def camelize(str) do
-    str
-    |> String.split(~r/[_\-]/)
-    |> Enum.map_join(&String.capitalize/1)
+    if String.contains?(str, ["_", "-"]) do
+      str
+      |> String.split(~r/[_\-]/)
+      |> Enum.map_join(&upcase_first/1)
+    else
+      upcase_first(str)
+    end
   end
+
+  defp upcase_first(<<first::utf8, rest::binary>>), do: String.upcase(<<first::utf8>>) <> rest
+  defp upcase_first(""), do: ""
 
   @doc "Naive singularize — handles common Twilio resource plurals."
   @spec singularize(String.t()) :: String.t()

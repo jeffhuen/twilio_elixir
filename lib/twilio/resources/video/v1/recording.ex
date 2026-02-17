@@ -24,7 +24,7 @@ defmodule Twilio.Resources.Video.V1.Recording do
   | `grouping_sids` | A list of SIDs related to the recording. Includes the `room_sid` and `participant_sid`. |
   | `links` | The URLs of related resources.. Format: uri-map |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `media_external_location` | The URL of the media file associated with the recording when stored externally. See [External S3 Recordings](/docs/video/api/external-s3-recordings) for more details.. Format: uri |
+  | `media_external_location` | The URL of the media file associated with the recording when stored externally. See [External S3 Recordings](https://www.twilio.com/docs/video/api/external-s3-recordings) for more details.. Format: uri |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `offset` | The time in milliseconds elapsed between an arbitrary point in time, common to all group rooms, and the moment when the source room of this track started. This information provides a synchronization mechanism for recordings belonging to the same room.. Format: int64 |
   | `sid` | The unique string that we created to identify the Recording resource. |

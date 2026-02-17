@@ -1,5 +1,5 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
-defmodule Twilio.Resources.Accounts.V1.Credential.Aws do
+defmodule Twilio.Resources.Accounts.V1.Credential.AWS do
   @moduledoc """
   User provided AWS keys
 
