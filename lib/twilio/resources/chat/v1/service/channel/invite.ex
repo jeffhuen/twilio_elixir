@@ -1,0 +1,57 @@
+# File generated from Twilio's OpenAPI spec — do not edit manually
+defmodule Twilio.Resources.Chat.V1.Service.Channel.Invite do
+  @moduledoc """
+  Pending invitations to users to become channel members
+
+  SID prefix: `IN`
+
+  Parent: `/Services/{ServiceSid}/Channels/{Sid}`
+
+  ## Properties
+
+  | Field | Description |
+  |-------|-------------|
+  | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Invite resource. |
+  | `channel_sid` | The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource belongs to. |
+  | `created_by` | The `identity` of the User that created the invite. |
+  | `date_created` | The date and time in GMT when the resource was created specified in [RFC 2822](http://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
+  | `date_updated` | The date and time in GMT when the resource was last updated specified in [RFC 2822](http://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
+  | `identity` | The application-defined string that uniquely identifies the resource's [User](https://www.twilio.com/docs/api/chat/rest/users) within the [Service](https://www.twilio.com/docs/api/chat/rest/services). See [access tokens](https://www.twilio.com/docs/api/chat/guides/create-tokens) for more info.. PII: standard |
+  | `role_sid` | The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) assigned to the resource. |
+  | `service_sid` | The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with. |
+  | `sid` | The unique string that we created to identify the Invite resource. |
+  | `url` | The absolute URL of the Invite resource.. Format: uri |
+  """
+
+  @type t :: %__MODULE__{
+          account_sid: String.t() | nil,
+          channel_sid: String.t() | nil,
+          created_by: String.t() | nil,
+          date_created: String.t() | nil,
+          date_updated: String.t() | nil,
+          identity: String.t() | nil,
+          role_sid: String.t() | nil,
+          service_sid: String.t() | nil,
+          sid: String.t() | nil,
+          url: String.t() | nil
+        }
+
+  defstruct [
+    :account_sid,
+    :channel_sid,
+    :created_by,
+    :date_created,
+    :date_updated,
+    :identity,
+    :role_sid,
+    :service_sid,
+    :sid,
+    :url
+  ]
+
+  @object_name "chat.v1.service.channel.invite"
+  def object_name, do: @object_name
+
+  @sid_prefix "IN"
+  def sid_prefix, do: @sid_prefix
+end

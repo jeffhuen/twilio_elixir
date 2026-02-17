@@ -1,0 +1,63 @@
+# File generated from Twilio's OpenAPI spec — do not edit manually
+defmodule Twilio.Resources.Studio.V2.Flow.FlowRevision do
+  @moduledoc """
+  Studio flows revisions
+
+  SID prefix: `FW`
+
+  Parent: `/Flows/{Sid}`
+
+  ## Properties
+
+  | Field | Description |
+  |-------|-------------|
+  | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flow resource. |
+  | `commit_message` | Description of change made in the revision. |
+  | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  | `definition` | JSON representation of flow definition. |
+  | `errors` | List of error in the flow definition. |
+  | `friendly_name` | The string that you assigned to describe the Flow. |
+  | `revision` | The latest revision number of the Flow's definition. |
+  | `sid` | The unique string that we created to identify the Flow resource. |
+  | `status` | The status of the Flow. Can be: `draft` or `published`.. Values: `draft`, `published` |
+  | `url` | The absolute URL of the resource.. Format: uri |
+  | `valid` | Boolean if the flow definition is valid. |
+  """
+
+  @type t :: %__MODULE__{
+          account_sid: String.t() | nil,
+          commit_message: String.t() | nil,
+          date_created: String.t() | nil,
+          date_updated: String.t() | nil,
+          definition: String.t() | nil,
+          errors: list() | nil,
+          friendly_name: String.t() | nil,
+          revision: integer(),
+          sid: String.t() | nil,
+          status: String.t(),
+          url: String.t() | nil,
+          valid: boolean() | nil
+        }
+
+  defstruct [
+    :account_sid,
+    :commit_message,
+    :date_created,
+    :date_updated,
+    :definition,
+    :errors,
+    :friendly_name,
+    :revision,
+    :sid,
+    :status,
+    :url,
+    :valid
+  ]
+
+  @object_name "studio.v2.flow.flow_revision"
+  def object_name, do: @object_name
+
+  @sid_prefix "FW"
+  def sid_prefix, do: @sid_prefix
+end

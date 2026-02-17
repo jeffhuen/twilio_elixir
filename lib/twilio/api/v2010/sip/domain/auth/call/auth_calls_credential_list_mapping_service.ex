@@ -1,0 +1,133 @@
+# File generated from Twilio's OpenAPI spec — do not edit manually
+defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingService do
+  @moduledoc """
+  Credential lists for SIP calls
+
+  Operations: `list`, `create`, `fetch`, `delete`
+  """
+
+  alias Twilio.Client
+  alias Twilio.Deserializer
+
+  @doc """
+  Retrieve a list of credential list mappings belonging to the domain used in the request
+
+  Operation: `ListSipAuthCallsCredentialListMapping` | Tags: Api20100401AuthCallsCredentialListMapping
+  """
+  @spec list(Client.t(), String.t(), map(), keyword()) ::
+          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+  def list(client, domain_sid, params \\ %{}, opts \\ []) do
+    case Client.request(
+           client,
+           :get,
+           "/2010-04-01/Accounts/#{client.account_sid}/SIP/Domains/#{domain_sid}/Auth/Calls/CredentialListMappings.json",
+           params: params,
+           opts: opts,
+           base_url: "https://api.twilio.com"
+         ) do
+      {:ok, data} ->
+        page = Twilio.Page.from_response(data, "contents")
+
+        {:ok,
+         %{
+           page
+           | items:
+               Deserializer.deserialize_list(
+                 page.items,
+                 Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping
+               )
+         }}
+
+      error ->
+        error
+    end
+  end
+
+  @doc "Stream: Retrieve a list of credential list mappings belonging to the domain used in the request (lazy auto-pagination)."
+  @spec stream(Client.t(), String.t(), map(), keyword()) :: Enumerable.t()
+  def stream(client, domain_sid, params \\ %{}, opts \\ []) do
+    Twilio.Page.stream(
+      fn page_opts ->
+        list(client, domain_sid, Map.merge(params, page_opts), opts)
+      end,
+      "contents"
+    )
+  end
+
+  @doc """
+  Create a new credential list mapping resource
+
+  Operation: `CreateSipAuthCallsCredentialListMapping` | Tags: Api20100401AuthCallsCredentialListMapping
+
+  ## Required Parameters
+
+  | Parameter | Type | Description |
+  |-----------|------|-------------|
+  | `CredentialListSid` | string | The SID of the CredentialList resource to map to the SIP domain. |
+  """
+  @spec create(Client.t(), String.t(), map(), keyword()) ::
+          {:ok,
+           Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping.t()}
+          | {:error, Twilio.Error.t()}
+  def create(client, domain_sid, params \\ %{}, opts \\ []) do
+    with {:ok, data} <-
+           Client.request(
+             client,
+             :post,
+             "/2010-04-01/Accounts/#{client.account_sid}/SIP/Domains/#{domain_sid}/Auth/Calls/CredentialListMappings.json",
+             params: params,
+             opts: opts,
+             base_url: "https://api.twilio.com",
+             content_type: :form
+           ) do
+      {:ok,
+       Deserializer.deserialize(
+         data,
+         Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping
+       )}
+    end
+  end
+
+  @doc """
+  Fetch a specific instance of a credential list mapping
+
+  Operation: `FetchSipAuthCallsCredentialListMapping` | Tags: Api20100401AuthCallsCredentialListMapping
+  """
+  @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
+          {:ok,
+           Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping.t()}
+          | {:error, Twilio.Error.t()}
+  def fetch(client, domain_sid, sid, opts \\ []) do
+    with {:ok, data} <-
+           Client.request(
+             client,
+             :get,
+             "/2010-04-01/Accounts/#{client.account_sid}/SIP/Domains/#{domain_sid}/Auth/Calls/CredentialListMappings/#{sid}.json",
+             opts: opts,
+             base_url: "https://api.twilio.com"
+           ) do
+      {:ok,
+       Deserializer.deserialize(
+         data,
+         Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping
+       )}
+    end
+  end
+
+  @doc """
+  Delete a credential list mapping from the requested domain
+
+  Operation: `DeleteSipAuthCallsCredentialListMapping` | Tags: Api20100401AuthCallsCredentialListMapping
+  """
+  @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
+          :ok | {:error, Twilio.Error.t()}
+  def delete(client, domain_sid, sid, opts \\ []) do
+    Client.request(
+      client,
+      :delete,
+      "/2010-04-01/Accounts/#{client.account_sid}/SIP/Domains/#{domain_sid}/Auth/Calls/CredentialListMappings/#{sid}.json",
+      opts: opts,
+      base_url: "https://api.twilio.com"
+    )
+  end
+end
