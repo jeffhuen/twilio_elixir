@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.Recording.AddonresultService do
   Operation: `ListRecordingAddOnResult` | Tags: Api20100401AddOnResult
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, reference_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -60,7 +60,10 @@ defmodule Twilio.Api.V2010.Recording.AddonresultService do
   Operation: `FetchRecordingAddOnResult` | Tags: Api20100401AddOnResult
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Recording.Addonresult.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Recording.Addonresult.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, reference_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -80,7 +83,7 @@ defmodule Twilio.Api.V2010.Recording.AddonresultService do
   Operation: `DeleteRecordingAddOnResult` | Tags: Api20100401AddOnResult
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, reference_sid, sid, opts \\ []) do
     Client.request(
       client,

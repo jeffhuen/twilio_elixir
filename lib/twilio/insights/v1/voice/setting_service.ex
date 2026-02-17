@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Insights.V1.Voice.SettingService do
   @moduledoc """
-
+  Service for Setting API operations.
 
   Operations: `fetch`, `update`
   """
@@ -21,7 +21,10 @@ defmodule Twilio.Insights.V1.Voice.SettingService do
   | `SubaccountSid` | string | The unique SID identifier of the Subaccount. |
   """
   @spec fetch(Client.t(), keyword()) ::
-          {:ok, Twilio.Resources.Insights.V1.Voice.Setting.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Insights.V1.Voice.Setting.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Voice/Settings",
@@ -46,7 +49,10 @@ defmodule Twilio.Insights.V1.Voice.SettingService do
   | `VoiceTrace` | boolean | A boolean flag to enable Voice Trace. |
   """
   @spec update(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Insights.V1.Voice.Setting.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Insights.V1.Voice.Setting.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Voice/Settings",

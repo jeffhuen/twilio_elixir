@@ -4,7 +4,7 @@ defmodule Mix.Tasks.Twilio.Generate do
 
   use Mix.Task
 
-  alias Twilio.Generator.{Naming, OpenAPI, ServiceGenerator, ResourceGenerator, RegistryGenerator}
+  alias Twilio.Generator.{Naming, OpenAPI, RegistryGenerator, ResourceGenerator, ServiceGenerator}
 
   @spec_dir "priv/openapi"
 
@@ -34,7 +34,12 @@ defmodule Mix.Tasks.Twilio.Generate do
       # Format all generated files
       Mix.shell().info("Running mix format on generated files...")
       generated_globs = generated_dirs() |> Enum.map(&(&1 <> "/**/*.ex"))
-      Mix.Task.rerun("format", ["lib/twilio/object_types.ex" | generated_globs])
+      all_generated = ["lib/twilio/object_types.ex" | generated_globs]
+      Mix.Task.rerun("format", all_generated)
+
+      # Post-format: add credo disables for unavoidably long lines, then re-format
+      fix_long_lines(all_generated)
+      Mix.Task.rerun("format", all_generated)
     end
 
     if stats do
@@ -53,39 +58,39 @@ defmodule Mix.Tasks.Twilio.Generate do
   defp generate_all(parsed_specs, dry_run) do
     Enum.reduce(parsed_specs, {0, 0}, fn spec, {svc_count, res_count} ->
       Enum.reduce(spec.resources, {svc_count, res_count}, fn resource, {sc, rc} ->
-        nesting = resource[:nesting] || []
-
-        # Generate service
-        svc_path = Naming.service_file_path(spec.product, spec.version, resource.name, nesting)
-
-        if not dry_run do
-          source = ServiceGenerator.generate(resource, spec.product, spec.version, spec.base_url)
-          write_file(svc_path, source)
-        else
-          Mix.shell().info("  [dry-run] #{svc_path}")
-        end
-
-        # Generate resource (only if it has properties)
-        rc =
-          if length(resource.properties) > 0 do
-            res_path =
-              Naming.resource_file_path(spec.product, spec.version, resource.name, nesting)
-
-            if not dry_run do
-              source = ResourceGenerator.generate(resource, spec.product, spec.version)
-              write_file(res_path, source)
-            else
-              Mix.shell().info("  [dry-run] #{res_path}")
-            end
-
-            rc + 1
-          else
-            rc
-          end
-
+        generate_service_file(resource, spec, dry_run)
+        rc = rc + generate_resource_file(resource, spec, dry_run)
         {sc + 1, rc}
       end)
     end)
+  end
+
+  defp generate_service_file(resource, spec, dry_run) do
+    nesting = resource[:nesting] || []
+    path = Naming.service_file_path(spec.product, spec.version, resource.name, nesting)
+
+    if dry_run do
+      Mix.shell().info("  [dry-run] #{path}")
+    else
+      source = ServiceGenerator.generate(resource, spec.product, spec.version, spec.base_url)
+      write_file(path, source)
+    end
+  end
+
+  defp generate_resource_file(%{properties: []}, _spec, _dry_run), do: 0
+
+  defp generate_resource_file(resource, spec, dry_run) do
+    nesting = resource[:nesting] || []
+    path = Naming.resource_file_path(spec.product, spec.version, resource.name, nesting)
+
+    if dry_run do
+      Mix.shell().info("  [dry-run] #{path}")
+    else
+      source = ResourceGenerator.generate(resource, spec.product, spec.version)
+      write_file(path, source)
+    end
+
+    1
   end
 
   defp write_file(path, content) do
@@ -97,11 +102,13 @@ defmodule Mix.Tasks.Twilio.Generate do
   defp clean_generated_files do
     Mix.shell().info("Cleaning generated files...")
 
-    for dir <- generated_dirs(), File.dir?(dir) do
-      File.rm_rf!(dir)
-    end
+    generated_dirs()
+    |> Enum.filter(&File.dir?/1)
+    |> Enum.each(&File.rm_rf!/1)
 
-    File.rm("lib/twilio/object_types.ex")
+    _ = File.rm("lib/twilio/object_types.ex")
+
+    :ok
   end
 
   @infra_dirs ~w(generator resources twiml)
@@ -122,4 +129,44 @@ defmodule Mix.Tasks.Twilio.Generate do
 
     ["lib/twilio/resources" | product_dirs]
   end
+
+  @max_line_length 120
+  @credo_disable "# credo:disable-for-next-line Credo.Check.Readability.MaxLineLength"
+
+  defp fix_long_lines(globs) do
+    globs
+    |> Enum.flat_map(&Path.wildcard/1)
+    |> Enum.each(fn path ->
+      original = File.read!(path)
+      fixed = insert_credo_disables(original)
+
+      if fixed != original do
+        File.write!(path, fixed)
+      end
+    end)
+  end
+
+  defp insert_credo_disables(source) do
+    source
+    |> String.split("\n")
+    |> Enum.reduce([], fn line, acc ->
+      if String.length(line) > @max_line_length and
+           not String.contains?(line, "credo:disable") and
+           not preceded_by_disable?(acc) do
+        indent = String.length(line) - String.length(String.trim_leading(line))
+        disable = String.duplicate(" ", indent) <> @credo_disable
+        [line, disable | acc]
+      else
+        [line | acc]
+      end
+    end)
+    |> Enum.reverse()
+    |> Enum.join("\n")
+  end
+
+  defp preceded_by_disable?([prev | _]) do
+    String.contains?(prev, "credo:disable")
+  end
+
+  defp preceded_by_disable?([]), do: false
 end

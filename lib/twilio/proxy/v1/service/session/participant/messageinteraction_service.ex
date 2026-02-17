@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Proxy.V1.Service.Session.Participant.MessageinteractionService do
   @moduledoc """
-
+  Service for Messageinteraction API operations.
 
   Operations: `list`, `create`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Proxy.V1.Service.Session.Participant.MessageinteractionService 
   Operation: `ListMessageInteraction` | Tags: ProxyV1MessageInteraction
   """
   @spec list(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, session_sid, participant_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -62,6 +62,7 @@ defmodule Twilio.Proxy.V1.Service.Session.Participant.MessageinteractionService 
   end
 
   @doc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Create a new message Interaction to send directly from your system to one [Participant](https://www.twilio.com/docs/proxy/api/participant).  The `inbound` properties for the Interaction will always be empty.
 
   Operation: `CreateMessageInteraction` | Tags: ProxyV1MessageInteraction
@@ -75,6 +76,8 @@ defmodule Twilio.Proxy.V1.Service.Session.Participant.MessageinteractionService 
   """
   @spec create(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Proxy.V1.Service.Session.Participant.Messageinteraction.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, service_sid, session_sid, participant_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -102,12 +105,15 @@ defmodule Twilio.Proxy.V1.Service.Session.Participant.MessageinteractionService 
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Proxy.V1.Service.Session.Participant.Messageinteraction.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, session_sid, participant_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
              client,
              :get,
+             # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
              "/v1/Services/#{service_sid}/Sessions/#{session_sid}/Participants/#{participant_sid}/MessageInteractions/#{sid}",
              opts: opts,
              base_url: "https://proxy.twilio.com"

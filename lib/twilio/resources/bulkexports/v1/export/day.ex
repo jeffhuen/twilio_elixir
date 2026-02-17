@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Bulkexports.V1.Export.Day do
   @moduledoc """
-
+  Day resource.
 
   Parent: `/Exports/{ResourceType}`
 

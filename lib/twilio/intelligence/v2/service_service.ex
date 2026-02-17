@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Intelligence.V2.ServiceService do
   @moduledoc """
-
+  Service for Service API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Intelligence.V2.ServiceService do
   Operation: `ListService` | Tags: IntelligenceV2Service
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services",
            params: params,
@@ -57,23 +57,33 @@ defmodule Twilio.Intelligence.V2.ServiceService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | Provides a unique and addressable name to be assigned to this Service, assigned by the developer, to be optionally used in addition to SID. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AutoRedaction` | boolean | Instructs the Speech Recognition service to automatically redact PII from all transcripts made on this service. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AutoTranscribe` | boolean | Instructs the Speech Recognition service to automatically transcribe all recordings made on the account. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DataLogging` | boolean | Data logging allows Twilio to improve the quality of the speech recognition & language understanding services through using customer data to refine, fine tune and evaluate machine learning models. Note: Data logging cannot be activated via API, only via www.twilio.com, as it requires additional consent. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `EncryptionCredentialSid` | string | The unique SID identifier of the Public Key resource used to encrypt the sentences and operator results. |
   | `FriendlyName` | string | A human readable description of this resource, up to 64 characters. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `LanguageCode` | string | The language code set during Service creation determines the Transcription language for all call recordings processed by that Service. The default is en-US if no language code is set. A Service can only support one language code, and it cannot be updated once it's set. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `MediaRedaction` | boolean | Instructs the Speech Recognition service to automatically redact PII from all transcripts media made on this service. The auto_redaction flag must be enabled, results in error otherwise. |
   | `WebhookHttpMethod` | string |  Values: `GET`, `POST`, `NULL` |
   | `WebhookUrl` | string | The URL Twilio will request when executing the Webhook. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Intelligence.V2.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Intelligence.V2.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services",
@@ -92,7 +102,10 @@ defmodule Twilio.Intelligence.V2.ServiceService do
   Operation: `FetchService` | Tags: IntelligenceV2Service
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Intelligence.V2.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Intelligence.V2.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Services/#{sid}",
@@ -112,18 +125,27 @@ defmodule Twilio.Intelligence.V2.ServiceService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AutoRedaction` | boolean | Instructs the Speech Recognition service to automatically redact PII from all transcripts made on this service. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AutoTranscribe` | boolean | Instructs the Speech Recognition service to automatically transcribe all recordings made on the account. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DataLogging` | boolean | Data logging allows Twilio to improve the quality of the speech recognition & language understanding services through using customer data to refine, fine tune and evaluate machine learning models. Note: Data logging cannot be activated via API, only via www.twilio.com, as it requires additional consent. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `EncryptionCredentialSid` | string | The unique SID identifier of the Public Key resource used to encrypt the sentences and operator results. |
   | `FriendlyName` | string | A human readable description of this resource, up to 64 characters. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `MediaRedaction` | boolean | Instructs the Speech Recognition service to automatically redact PII from all transcripts media made on this service. The auto_redaction flag must be enabled, results in error otherwise. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | Provides a unique and addressable name to be assigned to this Service, assigned by the developer, to be optionally used in addition to SID. |
   | `WebhookHttpMethod` | string |  Values: `GET`, `POST`, `NULL` |
   | `WebhookUrl` | string | The URL Twilio will request when executing the Webhook. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Intelligence.V2.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Intelligence.V2.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{sid}",
@@ -142,7 +164,7 @@ defmodule Twilio.Intelligence.V2.ServiceService do
   Operation: `DeleteService` | Tags: IntelligenceV2Service
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Services/#{sid}",
       opts: opts,

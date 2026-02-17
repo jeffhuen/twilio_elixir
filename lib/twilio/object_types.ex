@@ -1,4 +1,5 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
+# credo:disable-for-this-file Credo.Check.Readability.MaxLineLength
 defmodule Twilio.ObjectTypes do
   @moduledoc false
 
@@ -63,6 +64,7 @@ defmodule Twilio.ObjectTypes do
       "api.v2010.account.incoming_phone_number" => Twilio.Resources.Api.V2010.Incomingphonenumber,
       "api.v2010.account.incoming_phone_number.incoming_phone_number_assigned_add_on" =>
         Twilio.Resources.Api.V2010.Incomingphonenumber.Assignedaddon,
+      # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
       "api.v2010.account.incoming_phone_number.incoming_phone_number_assigned_add_on.incoming_phone_number_assigned_add_on_extension" =>
         Twilio.Resources.Api.V2010.Incomingphonenumber.Assignedaddon.AssignedAddOnExtension,
       "api.v2010.account.incoming_phone_number.incoming_phone_number_local" =>
@@ -97,6 +99,7 @@ defmodule Twilio.ObjectTypes do
         Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping,
       "api.v2010.account.sip.sip_domain.sip_auth.sip_auth_calls.sip_auth_calls_ip_access_control_list_mapping" =>
         Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsIpAccessControlListMapping,
+      # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
       "api.v2010.account.sip.sip_domain.sip_auth.sip_auth_registrations.sip_auth_registrations_credential_list_mapping" =>
         Twilio.Resources.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrationsCredentialListMapping,
       "api.v2010.account.sip.sip_domain.sip_credential_list_mapping" =>
@@ -205,6 +208,7 @@ defmodule Twilio.ObjectTypes do
         Twilio.Resources.Conversations.V1.Service.Conversation,
       "conversations.v1.service.service_conversation.service_conversation_message" =>
         Twilio.Resources.Conversations.V1.Service.Conversation.Message,
+      # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
       "conversations.v1.service.service_conversation.service_conversation_message.service_conversation_message_receipt" =>
         Twilio.Resources.Conversations.V1.Service.Conversation.Message.Receipt,
       "conversations.v1.service.service_conversation.service_conversation_participant" =>
@@ -593,6 +597,7 @@ defmodule Twilio.ObjectTypes do
       "trunking.v1.trunk.recording" => Twilio.Resources.Trunking.V1.Trunk.Recording,
       "trusthub.v1.compliance_inquiry" =>
         Twilio.Resources.Trusthub.V1.Complianceinquiry.Customer.ComplianceInquiries,
+      # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
       "trusthub.v1.compliance_registration" =>
         Twilio.Resources.Trusthub.V1.Complianceinquiry.Registration.Regulatorycompliance.Gb.ComplianceRegistrationInquiries,
       "trusthub.v1.compliance_tollfree_inquiry" =>

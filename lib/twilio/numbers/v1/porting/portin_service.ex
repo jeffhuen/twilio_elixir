@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V1.Porting.PortinService do
   @moduledoc """
-
+  Service for Portin API operations.
 
   Operations: `create`, `fetch`, `delete`
   """
@@ -15,7 +15,10 @@ defmodule Twilio.Numbers.V1.Porting.PortinService do
   Operation: `CreatePortingPortIn` | Tags: NumbersV1PortingPortIn
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Numbers.V1.Porting.Portin.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Numbers.V1.Porting.Portin.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Porting/PortIn",
@@ -34,7 +37,10 @@ defmodule Twilio.Numbers.V1.Porting.PortinService do
   Operation: `FetchPortingPortIn` | Tags: NumbersV1PortingPortIn
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Numbers.V1.Porting.Portin.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Numbers.V1.Porting.Portin.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Porting/PortIn/#{sid}",
@@ -51,7 +57,7 @@ defmodule Twilio.Numbers.V1.Porting.PortinService do
   Operation: `DeletePortingPortIn` | Tags: NumbersV1PortingPortIn
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Porting/PortIn/#{sid}",
       opts: opts,

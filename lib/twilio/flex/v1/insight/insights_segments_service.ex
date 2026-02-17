@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Insight.InsightsSegmentsService do
   @moduledoc """
-
+  Service for InsightsSegments API operations.
 
   Operations: `list`
   """
@@ -22,7 +22,7 @@ defmodule Twilio.Flex.V1.Insight.InsightsSegmentsService do
   | `ReservationId` | array | The list of reservation Ids |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Insights/Segments",
            params: params,

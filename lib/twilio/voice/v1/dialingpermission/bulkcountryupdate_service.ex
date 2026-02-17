@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Voice.V1.Dialingpermission.BulkcountryupdateService do
   @moduledoc """
-
+  Service for Bulkcountryupdate API operations.
 
   Operations: `create`
   """
@@ -10,6 +10,7 @@ defmodule Twilio.Voice.V1.Dialingpermission.BulkcountryupdateService do
   alias Twilio.Deserializer
 
   @doc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Create a bulk update request to change voice dialing country permissions of one or more countries identified by the corresponding [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
 
   Operation: `CreateDialingPermissionsCountryBulkUpdate` | Tags: VoiceV1BulkCountryUpdate
@@ -18,10 +19,13 @@ defmodule Twilio.Voice.V1.Dialingpermission.BulkcountryupdateService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UpdateRequest` | string | URL encoded JSON array of update objects. example : `[ { "iso_code": "GB", "low_risk_numbers_enabled": "true", "high_risk_special_numbers_enabled":"true", "high_risk_tollfraud_numbers_enabled": "false" } ]` |
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Voice.V1.Dialingpermission.Bulkcountryupdate.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Preview.Marketplace.AvailableaddonService do
   @moduledoc """
-
+  Service for Availableaddon API operations.
 
   Operations: `list`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Preview.Marketplace.AvailableaddonService do
   Operation: `ListMarketplaceAvailableAddOn` | Tags: PreviewMarketplaceAvailableAddOn
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/marketplace/AvailableAddOns",
            params: params,
@@ -58,6 +58,8 @@ defmodule Twilio.Preview.Marketplace.AvailableaddonService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Preview.Marketplace.Availableaddon.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-

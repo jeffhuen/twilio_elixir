@@ -15,7 +15,7 @@ defmodule Twilio.Serverless.V1.Service.AssetService do
   Operation: `ListAsset` | Tags: ServerlessV1Asset
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/#{service_sid}/Assets",
            params: params,
@@ -60,10 +60,14 @@ defmodule Twilio.Serverless.V1.Service.AssetService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the Asset resource. It can be a maximum of 255 characters. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Serverless.V1.Service.Asset.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Serverless.V1.Service.Asset.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services/#{service_sid}/Assets",
@@ -82,7 +86,10 @@ defmodule Twilio.Serverless.V1.Service.AssetService do
   Operation: `FetchAsset` | Tags: ServerlessV1Asset
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Serverless.V1.Service.Asset.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Serverless.V1.Service.Asset.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Services/#{service_sid}/Assets/#{sid}",
@@ -102,10 +109,14 @@ defmodule Twilio.Serverless.V1.Service.AssetService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the Asset resource. It can be a maximum of 255 characters. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Serverless.V1.Service.Asset.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Serverless.V1.Service.Asset.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services/#{service_sid}/Assets/#{sid}",
@@ -124,7 +135,7 @@ defmodule Twilio.Serverless.V1.Service.AssetService do
   Operation: `DeleteAsset` | Tags: ServerlessV1Asset
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{service_sid}/Assets/#{sid}",
       opts: opts,

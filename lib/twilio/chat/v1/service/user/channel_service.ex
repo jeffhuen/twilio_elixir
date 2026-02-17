@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Chat.V1.Service.User.ChannelService do
   @moduledoc """
-
+  Service for Channel API operations.
 
   Operations: `list`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Chat.V1.Service.User.ChannelService do
   Operation: `ListUserChannel` | Tags: ChatV1UserChannel
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, user_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/#{service_sid}/Users/#{user_sid}/Channels",
            params: params,

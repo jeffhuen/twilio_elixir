@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V2.Regulatorycompliance.BundleService do
   @moduledoc """
-
+  Service for Bundle API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -18,20 +18,28 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.BundleService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Status` | string | The verification status of the Bundle resource. Please refer to [Bundle Statuses](https://www.twilio.com/docs/phone-numbers/regulatory/api/bundles#bundle-statuses) for more details. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | The string that you assigned to describe the resource. The column can contain 255 variable characters. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RegulationSid` | string | The unique string of a [Regulation resource](https://www.twilio.com/docs/phone-numbers/regulatory/api/regulations) that is associated to the Bundle resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IsoCountry` | string | The 2-digit [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the Bundle's phone number country ownership request. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `NumberType` | string | The type of phone number of the Bundle's ownership request. Can be `local`, `mobile`, `national`, or `toll-free`. |
   | `HasValidUntilDate` | boolean | Indicates that the Bundle is a valid Bundle until a specified expiration date. |
   | `SortBy` | string | Can be `valid-until` or `date-updated`. Defaults to `date-created`. |
   | `SortDirection` | string | Default is `DESC`. Can be `ASC` or `DESC`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ValidUntilDate` | string (date-time) | Date to filter Bundles having their `valid_until_date` before or after the specified date. Can be `ValidUntilDate>=` or `ValidUntilDate<=`. Both can be used in conjunction as well. [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) is the acceptable date format. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ValidUntilDate<` | string (date-time) | Date to filter Bundles having their `valid_until_date` before or after the specified date. Can be `ValidUntilDate>=` or `ValidUntilDate<=`. Both can be used in conjunction as well. [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) is the acceptable date format. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ValidUntilDate>` | string (date-time) | Date to filter Bundles having their `valid_until_date` before or after the specified date. Can be `ValidUntilDate>=` or `ValidUntilDate<=`. Both can be used in conjunction as well. [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) is the acceptable date format. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/RegulatoryCompliance/Bundles",
            params: params,
@@ -84,13 +92,17 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.BundleService do
   |-----------|------|-------------|
   | `EndUserType` | string |  Values: `individual`, `business` |
   | `IsTest` | boolean | Indicates that Bundle is a Test Bundle and will be Auto-Rejected |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IsoCountry` | string | The [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the Bundle's phone number country ownership request. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `NumberType` | string | The type of phone number of the Bundle's ownership request. Can be `local`, `mobile`, `national`, or `toll-free`. |
   | `RegulationSid` | string | The unique string of a regulation that is associated to the Bundle resource. |
   | `StatusCallback` | string (uri) | The URL we call to inform your application of status changes. |
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Bundle.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -112,6 +124,8 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.BundleService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Bundle.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
@@ -135,11 +149,14 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.BundleService do
   |-----------|------|-------------|
   | `Email` | string | The email address that will receive updates when the Bundle resource changes status. |
   | `FriendlyName` | string | The string that you assigned to describe the resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Status` | string |  Values: `draft`, `pending-review`, `in-review`, `twilio-rejected`, `twilio-approved`, `provisionally-approved` |
   | `StatusCallback` | string (uri) | The URL we call to inform your application of status changes. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Bundle.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -160,7 +177,7 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.BundleService do
   Operation: `DeleteBundle` | Tags: NumbersV2Bundle
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/RegulatoryCompliance/Bundles/#{sid}",
       opts: opts,

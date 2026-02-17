@@ -2,8 +2,8 @@ defmodule Twilio.TwiMLTest do
   use ExUnit.Case, async: true
 
   alias Twilio.TwiML
-  alias Twilio.TwiML.VoiceResponse
   alias Twilio.TwiML.MessagingResponse
+  alias Twilio.TwiML.VoiceResponse
 
   describe "VoiceResponse" do
     test "empty response" do

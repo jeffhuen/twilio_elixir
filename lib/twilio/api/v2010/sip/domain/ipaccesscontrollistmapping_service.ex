@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.IpaccesscontrollistmappingService do
   Operation: `ListSipIpAccessControlListMapping` | Tags: Api20100401IpAccessControlListMapping
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, domain_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -67,6 +67,8 @@ defmodule Twilio.Api.V2010.Sip.Domain.IpaccesscontrollistmappingService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Sip.Domain.Ipaccesscontrollistmapping.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, domain_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -94,12 +96,15 @@ defmodule Twilio.Api.V2010.Sip.Domain.IpaccesscontrollistmappingService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Sip.Domain.Ipaccesscontrollistmapping.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, domain_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
              client,
              :get,
+             # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
              "/2010-04-01/Accounts/#{client.account_sid}/SIP/Domains/#{domain_sid}/IpAccessControlListMappings/#{sid}.json",
              opts: opts,
              base_url: "https://api.twilio.com"
@@ -118,7 +123,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.IpaccesscontrollistmappingService do
   Operation: `DeleteSipIpAccessControlListMapping` | Tags: Api20100401IpAccessControlListMapping
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, domain_sid, sid, opts \\ []) do
     Client.request(
       client,

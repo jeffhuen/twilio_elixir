@@ -9,8 +9,11 @@ defmodule Twilio.Resources.Assistants.V1.Assistant.Tool do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Tool resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the Tool was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the Tool was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `description` | The description of the tool. |
   | `enabled` | True if the tool is enabled. |

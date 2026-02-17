@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Taskrouter.V1.Workspace.Activity do
   @moduledoc """
-
+  Activity resource.
 
   SID prefix: `WA`
 
@@ -11,9 +11,13 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.Activity do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Activity resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `available` | Whether the Worker is eligible to receive a Task when it occupies the Activity. A value of `true`, `1`, or `yes` indicates the Activity is available. All other values indicate that it is not. The value cannot be changed after the Activity is created. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `friendly_name` | The string that you assigned to describe the Activity resource. |
   | `links` | Format: uri-map |

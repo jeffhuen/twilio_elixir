@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Taskrouter.V1.Workspace.Taskqueue do
   @moduledoc """
-
+  Taskqueue resource.
 
   SID prefix: `WQ`
 
@@ -16,18 +16,24 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.Taskqueue do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskQueue resource. |
   | `assignment_activity_name` | The name of the Activity to assign Workers when a task is assigned for them. |
   | `assignment_activity_sid` | The SID of the Activity to assign Workers when a task is assigned for them. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
   | `friendly_name` | The string that you assigned to describe the resource.. PII: standard |
   | `links` | The URLs of related resources.. Format: uri-map |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `max_reserved_workers` | The maximum number of Workers to reserve for the assignment of a task in the queue. Can be an integer between 1 and 50, inclusive and defaults to 1. |
   | `reservation_activity_name` | The name of the Activity to assign Workers once a task is reserved for them. |
   | `reservation_activity_sid` | The SID of the Activity to assign Workers once a task is reserved for them. |
   | `sid` | The unique string that we created to identify the TaskQueue resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `target_workers` | A string describing the Worker selection criteria for any Tasks that enter the TaskQueue. For example `'"language" == "spanish"'` If no TargetWorkers parameter is provided, Tasks will wait in the TaskQueue until they are either deleted or moved to another TaskQueue. Additional examples on how to describing Worker selection criteria below. Defaults to 1==1. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `task_order` | How Tasks will be assigned to Workers. Set this parameter to `LIFO` to assign most recently created Task first or `FIFO` to assign the oldest Task. Default is FIFO. [Click here](https://www.twilio.com/docs/taskrouter/queue-ordering-last-first-out-lifo) to learn more.. Values: `FIFO`, `LIFO` |
   | `url` | The absolute URL of the TaskQueue resource.. Format: uri |
   | `workspace_sid` | The SID of the Workspace that contains the TaskQueue. |

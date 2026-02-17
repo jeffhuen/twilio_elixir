@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Intelligence.V2.Service.OperatorService do
   @moduledoc """
-
+  Service for Operator API operations.
 
   Operations: `update`, `delete`
   """
@@ -14,7 +14,7 @@ defmodule Twilio.Intelligence.V2.Service.OperatorService do
   Operation: `CreateOperatorAttachment` | Tags: IntelligenceV2OperatorAttachment
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, map()} | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def update(client, service_sid, sid, params \\ %{}, opts \\ []) do
     Client.request(client, :post, "/v2/Services/#{service_sid}/Operators/#{sid}",
       params: params,
@@ -30,7 +30,7 @@ defmodule Twilio.Intelligence.V2.Service.OperatorService do
   Operation: `DeleteOperatorAttachment` | Tags: IntelligenceV2OperatorAttachment
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Services/#{service_sid}/Operators/#{sid}",
       opts: opts,

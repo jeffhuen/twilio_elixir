@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Verify.V2.Service.Entity.Challenge.NotificationService do
   @moduledoc """
-
+  Service for Notification API operations.
 
   Operations: `create`
   """
@@ -18,10 +18,13 @@ defmodule Twilio.Verify.V2.Service.Entity.Challenge.NotificationService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Ttl` | integer | How long, in seconds, the notification is valid. Can be an integer between 0 and 300. Default is 300. Delivery is attempted until the TTL elapses, even if the device is offline. 0 means that the notification delivery is attempted immediately, only once, and is not stored for future delivery. |
   """
   @spec create(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Verify.V2.Service.Entity.Challenge.Notification.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, service_sid, identity, challenge_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

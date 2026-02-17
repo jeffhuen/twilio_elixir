@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Pluginservice.Plugin.ArchiveService do
   @moduledoc """
-
+  Service for Archive API operations.
 
   Operations: `update`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Flex.V1.Pluginservice.Plugin.ArchiveService do
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Pluginservice.Plugin.Archive.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

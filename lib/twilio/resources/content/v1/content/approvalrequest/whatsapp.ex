@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Content.V1.Content.Approvalrequest.Whatsapp do
   @moduledoc """
-
+  Whatsapp resource.
 
   Parent: `/Content/{Sid}`
   """

@@ -11,16 +11,26 @@ defmodule Twilio.Resources.Chat.V2.Service.Channel.Message do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Message resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `attributes` | The JSON string that stores application-specific data. If attributes have not been set, `{}` is returned.. PII: sensitive |
   | `body` | The content of the message.. PII: sensitive |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `channel_sid` | The SID of the [Channel](https://www.twilio.com/docs/chat/channels) the Message resource belongs to. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `from` | The [Identity](https://www.twilio.com/docs/chat/identity) of the message's author. The default value is `system`.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `index` | The index of the message within the [Channel](https://www.twilio.com/docs/chat/channels). Indices may skip numbers, but will always be in order of when the message was received. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `last_updated_by` | The [Identity](https://www.twilio.com/docs/chat/identity) of the User who last updated the Message, if applicable.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `media` | An object that describes the Message's media, if the message contains media. The object contains these fields: `content_type` with the MIME type of the media, `filename` with the name of the media, `sid` with the SID of the Media resource, and `size` with the media object's file size in bytes. If the Message has no media, this value is `null`.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `service_sid` | The SID of the [Service](https://www.twilio.com/docs/chat/rest/service-resource) the Message resource is associated with. |
   | `sid` | The unique string that we created to identify the Message resource. |
   | `to` | The SID of the [Channel](https://www.twilio.com/docs/chat/channels) that the message was sent to. |

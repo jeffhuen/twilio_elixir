@@ -18,6 +18,7 @@ defmodule Twilio.Resources.Events.V1.Subscription do
   | `description` | A human readable description for the Subscription |
   | `links` | Contains a dictionary of URL links to nested resources of this Subscription.. Format: uri-map |
   | `sid` | A 34 character string that uniquely identifies this Subscription. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sink_sid` | The SID of the sink that events selected by this subscription should be sent to. Sink must be active for the subscription to be created. |
   | `url` | The URL of this resource.. Format: uri |
   """

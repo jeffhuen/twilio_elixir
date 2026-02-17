@@ -15,7 +15,7 @@ defmodule Twilio.Trunking.V1.Trunk.PhonenumberService do
   Operation: `ListPhoneNumber` | Tags: TrunkingV1PhoneNumber
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, trunk_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Trunks/#{trunk_sid}/PhoneNumbers",
            params: params,
@@ -60,10 +60,14 @@ defmodule Twilio.Trunking.V1.Trunk.PhonenumberService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `PhoneNumberSid` | string | The SID of the [Incoming Phone Number](https://www.twilio.com/docs/phone-numbers/api/incomingphonenumber-resource) that you want to associate with the trunk. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Trunking.V1.Trunk.Phonenumber.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trunking.V1.Trunk.Phonenumber.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, trunk_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Trunks/#{trunk_sid}/PhoneNumbers",
@@ -82,7 +86,10 @@ defmodule Twilio.Trunking.V1.Trunk.PhonenumberService do
   Operation: `FetchPhoneNumber` | Tags: TrunkingV1PhoneNumber
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Trunking.V1.Trunk.Phonenumber.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trunking.V1.Trunk.Phonenumber.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, trunk_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Trunks/#{trunk_sid}/PhoneNumbers/#{sid}",
@@ -99,7 +106,7 @@ defmodule Twilio.Trunking.V1.Trunk.PhonenumberService do
   Operation: `DeletePhoneNumber` | Tags: TrunkingV1PhoneNumber
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, trunk_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Trunks/#{trunk_sid}/PhoneNumbers/#{sid}",
       opts: opts,

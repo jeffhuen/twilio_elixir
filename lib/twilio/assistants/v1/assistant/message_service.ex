@@ -15,7 +15,10 @@ defmodule Twilio.Assistants.V1.Assistant.MessageService do
   Operation: `CreateMessage`
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Assistants.V1.Assistant.Message.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Assistants.V1.Assistant.Message.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, id, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Assistants/#{id}/Messages",

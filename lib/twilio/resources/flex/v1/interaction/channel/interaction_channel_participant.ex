@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Flex.V1.Interaction.Channel.InteractionChannelParticipant do
   @moduledoc """
-
+  InteractionChannelParticipant resource.
 
   SID prefix: `UT`
 
@@ -15,6 +15,7 @@ defmodule Twilio.Resources.Flex.V1.Interaction.Channel.InteractionChannelPartici
   | `interaction_sid` | The Interaction Sid for this channel. |
   | `routing_properties` | The Participant's routing properties. |
   | `sid` | The unique string created by Twilio to identify an Interaction Channel Participant resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `type` | Participant type. Can be: `agent`, `customer`, `supervisor`, `external`, `unknown`. Values: `supervisor`, `customer`, `external`, `agent`, `unknown` |
   | `url` | Format: uri |
   """

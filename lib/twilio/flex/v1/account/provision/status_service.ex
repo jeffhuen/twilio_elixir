@@ -16,6 +16,8 @@ defmodule Twilio.Flex.V1.Account.Provision.StatusService do
   """
   @spec fetch(Client.t(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Account.Provision.Status.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, opts \\ []) do
     with {:ok, data} <-

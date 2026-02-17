@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Video.V1.Room.Participant.SubscribeRulesService do
   @moduledoc """
-
+  Service for SubscribeRules API operations.
 
   Operations: `list`, `create`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Video.V1.Room.Participant.SubscribeRulesService do
   Operation: `FetchRoomParticipantSubscribeRule` | Tags: VideoV1SubscribeRules
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, room_sid, participant_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -63,10 +63,13 @@ defmodule Twilio.Video.V1.Room.Participant.SubscribeRulesService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Rules` | string | A JSON-encoded array of subscribe rules. See the [Specifying Subscribe Rules](https://www.twilio.com/docs/video/api/track-subscriptions#specifying-sr) section for further information. |
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Video.V1.Room.Participant.SubscribeRules.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, room_sid, participant_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

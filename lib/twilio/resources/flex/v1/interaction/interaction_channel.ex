@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Flex.V1.Interaction.InteractionChannel do
   @moduledoc """
-
+  InteractionChannel resource.
 
   SID prefix: `UO`
 
@@ -21,7 +21,9 @@ defmodule Twilio.Resources.Flex.V1.Interaction.InteractionChannel do
   | `interaction_sid` | The unique string created by Twilio to identify an Interaction resource, prefixed with KD. |
   | `links` | Format: uri-map |
   | `sid` | The unique string created by Twilio to identify an Interaction Channel resource, prefixed with UO. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The status of this channel.. Values: `setup`, `active`, `failed`, `closed`, `inactive`, `pause`, `transfer` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `type` | The Interaction Channel's type. Can be: `sms`, `email`, `chat`, `whatsapp`, `web`, `messenger`, or `gbm`.   **Note:** These can be different from the task channel type specified in the Routing attributes. Task channel type corresponds to channel capacity while this channel type is the actual media type. Values: `voice`, `sms`, `email`, `web`, `whatsapp`, `chat`, `messenger`, `gbm` |
   | `url` | Format: uri |
   """

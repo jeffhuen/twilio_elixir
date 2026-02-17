@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Bulkexports.V1.Export.ConfigurationService do
   @moduledoc """
-
+  Service for Configuration API operations.
 
   Operations: `fetch`, `update`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Bulkexports.V1.Export.ConfigurationService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Bulkexports.V1.Export.Configuration.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, resource_type, opts \\ []) do
     with {:ok, data} <-
@@ -37,11 +39,14 @@ defmodule Twilio.Bulkexports.V1.Export.ConfigurationService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Enabled` | boolean | If true, Twilio will automatically generate every day's file when the day is over. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `WebhookMethod` | string | Sets whether Twilio should call a webhook URL when the automatic generation is complete, using GET or POST. The actual destination is set in the webhook_url |
   | `WebhookUrl` | string (uri) | Stores the URL destination for the method specified in webhook_method. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Bulkexports.V1.Export.Configuration.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, resource_type, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Trusthub.V1.Trustproduct.TrustProductsEntityAssignmentsService do
   @moduledoc """
-
+  Service for TrustProductsEntityAssignments API operations.
 
   Operations: `list`, `create`, `fetch`, `delete`
   """
@@ -18,10 +18,11 @@ defmodule Twilio.Trusthub.V1.Trustproduct.TrustProductsEntityAssignmentsService 
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ObjectType` | string | A string to filter the results by (EndUserType or SupportingDocumentType) machine-name. This is useful when you want to retrieve the entity-assignment of a specific end-user or supporting document. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, trust_product_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/TrustProducts/#{trust_product_sid}/EntityAssignments",
            params: params,
@@ -70,6 +71,8 @@ defmodule Twilio.Trusthub.V1.Trustproduct.TrustProductsEntityAssignmentsService 
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Trusthub.V1.Trustproduct.TrustProductsEntityAssignments.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, trust_product_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -97,6 +100,8 @@ defmodule Twilio.Trusthub.V1.Trustproduct.TrustProductsEntityAssignmentsService 
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Trusthub.V1.Trustproduct.TrustProductsEntityAssignments.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, trust_product_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -121,7 +126,7 @@ defmodule Twilio.Trusthub.V1.Trustproduct.TrustProductsEntityAssignmentsService 
   Operation: `DeleteTrustProductEntityAssignment` | Tags: TrusthubV1TrustProductsEntityAssignments
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, trust_product_sid, sid, opts \\ []) do
     Client.request(
       client,

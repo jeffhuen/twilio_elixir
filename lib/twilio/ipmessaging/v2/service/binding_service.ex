@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.IpMessaging.V2.Service.BindingService do
   @moduledoc """
-
+  Service for Binding API operations.
 
   Operations: `list`, `fetch`, `delete`
   """
@@ -22,7 +22,7 @@ defmodule Twilio.IpMessaging.V2.Service.BindingService do
   | `Identity` | array |  |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services/#{service_sid}/Bindings",
            params: params,
@@ -64,7 +64,10 @@ defmodule Twilio.IpMessaging.V2.Service.BindingService do
   Operation: `FetchBinding` | Tags: IpMessagingV2Binding
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Service.Binding.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Service.Binding.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Services/#{service_sid}/Bindings/#{sid}",
@@ -81,7 +84,7 @@ defmodule Twilio.IpMessaging.V2.Service.BindingService do
   Operation: `DeleteBinding` | Tags: IpMessagingV2Binding
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Services/#{service_sid}/Bindings/#{sid}",
       opts: opts,

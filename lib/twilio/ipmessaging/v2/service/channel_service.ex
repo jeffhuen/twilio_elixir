@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.IpMessaging.V2.Service.ChannelService do
   @moduledoc """
-
+  Service for Channel API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -21,7 +21,7 @@ defmodule Twilio.IpMessaging.V2.Service.ChannelService do
   | `Type` | array |  |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services/#{service_sid}/Channels",
            params: params,
@@ -75,7 +75,10 @@ defmodule Twilio.IpMessaging.V2.Service.ChannelService do
   | `UniqueName` | string |  |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Service.Channel.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Service.Channel.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{service_sid}/Channels",
@@ -94,7 +97,10 @@ defmodule Twilio.IpMessaging.V2.Service.ChannelService do
   Operation: `FetchChannel` | Tags: IpMessagingV2Channel
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Service.Channel.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Service.Channel.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Services/#{service_sid}/Channels/#{sid}",
@@ -122,7 +128,10 @@ defmodule Twilio.IpMessaging.V2.Service.ChannelService do
   | `UniqueName` | string |  |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Service.Channel.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Service.Channel.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{service_sid}/Channels/#{sid}",
@@ -141,7 +150,7 @@ defmodule Twilio.IpMessaging.V2.Service.ChannelService do
   Operation: `DeleteChannel` | Tags: IpMessagingV2Channel
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Services/#{service_sid}/Channels/#{sid}",
       opts: opts,

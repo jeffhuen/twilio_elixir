@@ -15,7 +15,10 @@ defmodule Twilio.Events.V1.Sink.TestService do
   Operation: `CreateSinkTest` | Tags: EventsV1SinkTest
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Events.V1.Sink.Test.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Events.V1.Sink.Test.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Sinks/#{sid}/Test",

@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Api.V2010.Message.Media do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   The Media subresource of a Message resource represents a piece of media, such as an image, that is associated with the Message.
 
   SID prefix: `ME`
@@ -11,9 +12,13 @@ defmodule Twilio.Resources.Api.V2010.Message.Media do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) associated with this Media resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `content_type` | The default [MIME type](https://en.wikipedia.org/wiki/Internet_media_type) of the media, for example `image/jpeg`, `image/png`, or `image/gif`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when this Media resource was created, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when this Media resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
   | `parent_sid` | The SID of the Message resource that is associated with this Media resource. |
   | `sid` | The unique string that identifies this Media resource. |

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Numbers.V2.Regulatorycompliance.Supportingdocumenttype do
   @moduledoc """
-
+  Supportingdocumenttype resource.
 
   SID prefix: `OY`
 
@@ -11,6 +11,7 @@ defmodule Twilio.Resources.Numbers.V2.Regulatorycompliance.Supportingdocumenttyp
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `fields` | The required information for creating a Supporting Document. The required fields will change as regulatory needs change and will differ for businesses and individuals. |
   | `friendly_name` | A human-readable description of the Supporting Document Type resource. |
   | `machine_name` | The machine-readable description of the Supporting Document Type resource. |

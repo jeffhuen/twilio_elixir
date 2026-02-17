@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Conversations.V1.Service.Conversation.WebhookService do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   A Conversation-scoped Webhook resource manages a set of callback URLs and their configuration for receiving events specific to one conversation.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
@@ -15,7 +16,7 @@ defmodule Twilio.Conversations.V1.Service.Conversation.WebhookService do
   Operation: `ListServiceConversationScopedWebhook` | Tags: ConversationsV1Webhook
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, chat_service_sid, conversation_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -71,12 +72,15 @@ defmodule Twilio.Conversations.V1.Service.Conversation.WebhookService do
   | `Configuration.Filters` | array | The list of events, firing webhook event for this Conversation. |
   | `Configuration.FlowSid` | string | The studio flow SID, where the webhook should be sent to. |
   | `Configuration.Method` | string |  Values: `get`, `post` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Configuration.ReplayAfter` | integer | The message index for which and it's successors the webhook will be replayed. Not set by default |
   | `Configuration.Triggers` | array | The list of keywords, firing webhook event for this Conversation. |
   | `Configuration.Url` | string | The absolute url the webhook request should be sent to. |
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Service.Conversation.Webhook.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, chat_service_sid, conversation_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -104,6 +108,8 @@ defmodule Twilio.Conversations.V1.Service.Conversation.WebhookService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Service.Conversation.Webhook.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, chat_service_sid, conversation_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -139,6 +145,8 @@ defmodule Twilio.Conversations.V1.Service.Conversation.WebhookService do
   """
   @spec update(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Service.Conversation.Webhook.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, chat_service_sid, conversation_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -165,7 +173,7 @@ defmodule Twilio.Conversations.V1.Service.Conversation.WebhookService do
   Operation: `DeleteServiceConversationScopedWebhook` | Tags: ConversationsV1Webhook
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, chat_service_sid, conversation_sid, sid, opts \\ []) do
     Client.request(
       client,

@@ -15,7 +15,7 @@ defmodule Twilio.Serverless.V1.Service.Function.VersionService do
   Operation: `ListFunctionVersion` | Tags: ServerlessV1FunctionVersion
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, function_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -61,6 +61,8 @@ defmodule Twilio.Serverless.V1.Service.Function.VersionService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Serverless.V1.Service.Function.Version.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, function_sid, sid, opts \\ []) do
     with {:ok, data} <-

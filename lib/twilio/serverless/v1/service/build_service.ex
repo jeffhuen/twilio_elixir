@@ -15,7 +15,7 @@ defmodule Twilio.Serverless.V1.Service.BuildService do
   Operation: `ListBuild` | Tags: ServerlessV1Build
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/#{service_sid}/Builds",
            params: params,
@@ -61,12 +61,16 @@ defmodule Twilio.Serverless.V1.Service.BuildService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `AssetVersions` | array | The list of Asset Version resource SIDs to include in the Build. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Dependencies` | string | A list of objects that describe the Dependencies included in the Build. Each object contains the `name` and `version` of the dependency. |
   | `FunctionVersions` | array | The list of the Function Version resource SIDs to include in the Build. |
   | `Runtime` | string | The Runtime version that will be used to run the Build resource when it is deployed. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Serverless.V1.Service.Build.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Serverless.V1.Service.Build.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services/#{service_sid}/Builds",
@@ -85,7 +89,10 @@ defmodule Twilio.Serverless.V1.Service.BuildService do
   Operation: `FetchBuild` | Tags: ServerlessV1Build
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Serverless.V1.Service.Build.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Serverless.V1.Service.Build.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Services/#{service_sid}/Builds/#{sid}",
@@ -102,7 +109,7 @@ defmodule Twilio.Serverless.V1.Service.BuildService do
   Operation: `DeleteBuild` | Tags: ServerlessV1Build
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{service_sid}/Builds/#{sid}",
       opts: opts,

@@ -11,13 +11,18 @@ defmodule Twilio.Resources.Api.V2010.Connectapp do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ConnectApp resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `authorize_redirect_url` | The URL we redirect the user to after we authenticate the user and obtain authorization to access the Connect App.. Format: uri. PII: standard |
   | `company_name` | The company name set for the Connect App.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `deauthorize_callback_method` | The HTTP method we use to call `deauthorize_callback_url`.. Values: `GET`, `POST`. Format: http-method |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `deauthorize_callback_url` | The URL we call using the `deauthorize_callback_method` to de-authorize the Connect App.. Format: uri. PII: standard |
   | `description` | The description of the Connect App.. PII: standard |
   | `friendly_name` | The string that you assigned to describe the resource.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `homepage_url` | The public URL where users can obtain more information about this Connect App.. Format: uri. PII: standard |
   | `permissions` | The set of permissions that your ConnectApp requests. |
   | `sid` | The unique string that that we created to identify the ConnectApp resource. |

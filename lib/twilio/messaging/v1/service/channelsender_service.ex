@@ -15,7 +15,7 @@ defmodule Twilio.Messaging.V1.Service.ChannelsenderService do
   Operation: `ListChannelSender` | Tags: MessagingV1ChannelSender
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, messaging_service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/#{messaging_service_sid}/ChannelSenders",
            params: params,
@@ -64,6 +64,8 @@ defmodule Twilio.Messaging.V1.Service.ChannelsenderService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.Service.Channelsender.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, messaging_service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -84,6 +86,8 @@ defmodule Twilio.Messaging.V1.Service.ChannelsenderService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.Service.Channelsender.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, messaging_service_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -104,7 +108,7 @@ defmodule Twilio.Messaging.V1.Service.ChannelsenderService do
   Operation: `DeleteChannelSender` | Tags: MessagingV1ChannelSender
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, messaging_service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{messaging_service_sid}/ChannelSenders/#{sid}",
       opts: opts,

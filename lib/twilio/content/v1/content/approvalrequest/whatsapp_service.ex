@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Content.V1.Content.Approvalrequest.WhatsappService do
   @moduledoc """
-
+  Service for Whatsapp API operations.
 
   Operations: `create`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Content.V1.Content.Approvalrequest.WhatsappService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Content.V1.Content.Approvalrequest.Whatsapp.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, content_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

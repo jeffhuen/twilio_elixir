@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Bulkexports.V1.Export do
   @moduledoc """
-
+  Export resource.
 
   ## Sub-resources
   - `days` — `/v1/Exports/{resource_type}/Days`

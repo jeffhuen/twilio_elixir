@@ -9,6 +9,7 @@ defmodule Twilio.Resources.Api.V2010.Queue.Member do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `call_sid` | The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the Member resource is associated with. |
   | `date_enqueued` | The date that the member was enqueued, given in RFC 2822 format.. Format: date-time-rfc-2822 |
   | `position` | This member's current position in the queue. |

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Insights.V1.Conference.Participant do
   @moduledoc """
-
+  Participant resource.
 
   Parent: `/Conferences/{ConferenceSid}`
 
@@ -12,17 +12,23 @@ defmodule Twilio.Resources.Insights.V1.Conference.Participant do
   | `account_sid` | The unique SID identifier of the Account. |
   | `call_direction` | Call direction of the participant; inbound or outbound.. Values: `inbound`, `outbound` |
   | `call_sid` | Unique SID identifier of the call that generated the Participant resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `call_status` | Call status of the call that generated the participant.. Values: `answered`, `completed`, `busy`, `fail`, `noanswer`, `ringing`, `canceled` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `call_type` | The Call Type of this Conference Participant. One of `carrier`, `client` or `sip`.. Values: `carrier`, `client`, `sip` |
   | `coached_participants` | Call SIDs coached by this participant. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `conference_region` | The Conference Region of this Conference Participant. One of `us1`, `us2`, `au1`, `br1`, `ie1`, `jp1`, `sg1` or `de1`.. Values: `us1`, `us2`, `au1`, `br1`, `ie1`, `jp1`, `sg1`, `de1`, `in1` |
   | `conference_sid` | The unique SID identifier of the Conference. |
   | `country_code` | ISO alpha-2 country code of the participant based on caller ID or called number. |
   | `duration_seconds` | Participant durations in seconds. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `events` | Object containing information of actions taken by participants. Contains a dictionary of URL links to nested resources of this Conference Participant. |
   | `from` | Caller ID of the calling party.. PII: standard |
   | `is_coach` | Boolean. Indicated whether participant was a coach. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `is_moderator` | Boolean. Indicates whether participant had startConferenceOnEnter=true or endConferenceOnExit=true. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `jitter_buffer_size` | The Jitter Buffer Size of this Conference Participant. One of `large`, `small`, `medium` or `off`.. Values: `large`, `small`, `medium`, `off` |
   | `join_time` | ISO 8601 timestamp of participant join event.. Format: date-time |
   | `label` | The user-specified label of this participant.. PII: standard |
@@ -30,8 +36,10 @@ defmodule Twilio.Resources.Insights.V1.Conference.Participant do
   | `metrics` | Object. Contains participant call quality metrics. |
   | `outbound_queue_length` | Add Participant API only. Estimated time in queue at call creation. |
   | `outbound_time_in_queue` | Add Participant API only. Actual time in queue in seconds. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `participant_region` | Twilio region where the participant media originates.. Values: `us1`, `us2`, `au1`, `br1`, `ie1`, `jp1`, `sg1`, `de1`, `in1` |
   | `participant_sid` | SID for this participant. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `processing_state` | Processing state of the Participant Summary. Will be `in_progress` while data is being aggregated, `timeout` if Twilio couldn't process the summary in 24hrs, and `complete` once aggregations and analysis has ended.. Values: `complete`, `in_progress`, `timeout` |
   | `properties` | Participant properties and metadata. |
   | `to` | Called party.. PII: standard |

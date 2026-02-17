@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Messaging.V1.Service.Compliance.Usa2p.UsecaseService do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Messaging Service Use Case resource. Fetch possible use cases for service. The Use Cases API returns an empty list if there is an issue with the customer's A2P brand registration. This Brand cannot register any campaign use cases. Customers are requested to contact support with their A2P brand information.
 
   Operations: `list`
@@ -21,7 +22,7 @@ defmodule Twilio.Messaging.V1.Service.Compliance.Usa2p.UsecaseService do
   | `BrandRegistrationSid` | string | The unique string to identify the A2P brand. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, messaging_service_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,

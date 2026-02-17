@@ -21,7 +21,7 @@ defmodule Twilio.Events.V1.SubscriptionService do
   | `SinkSid` | string | The SID of the sink that the list of Subscriptions should be filtered by. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Subscriptions",
            params: params,
@@ -43,6 +43,7 @@ defmodule Twilio.Events.V1.SubscriptionService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieve a paginated list of Subscriptions belonging to the account used to make the request. (lazy auto-pagination)."
   @spec stream(Client.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, params \\ %{}, opts \\ []) do
@@ -64,11 +65,15 @@ defmodule Twilio.Events.V1.SubscriptionService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Description` | string | A human readable description for the Subscription **This value should not contain PII.** |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SinkSid` | string | The SID of the sink that events selected by this subscription should be sent to. Sink must be active for the subscription to be created. |
   | `Types` | array | An array of objects containing the subscribed Event Types |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Events.V1.Subscription.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Events.V1.Subscription.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Subscriptions",
@@ -87,7 +92,10 @@ defmodule Twilio.Events.V1.SubscriptionService do
   Operation: `FetchSubscription` | Tags: EventsV1Subscription
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Events.V1.Subscription.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Events.V1.Subscription.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Subscriptions/#{sid}",
@@ -110,7 +118,10 @@ defmodule Twilio.Events.V1.SubscriptionService do
   | `Description` | string | A human readable description for the Subscription. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Events.V1.Subscription.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Events.V1.Subscription.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Subscriptions/#{sid}",
@@ -129,7 +140,7 @@ defmodule Twilio.Events.V1.SubscriptionService do
   Operation: `DeleteSubscription` | Tags: EventsV1Subscription
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Subscriptions/#{sid}",
       opts: opts,

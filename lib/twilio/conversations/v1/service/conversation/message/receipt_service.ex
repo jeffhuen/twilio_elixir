@@ -15,7 +15,7 @@ defmodule Twilio.Conversations.V1.Service.Conversation.Message.ReceiptService do
   Operation: `ListServiceConversationMessageReceipt` | Tags: ConversationsV1DeliveryReceipt
   """
   @spec list(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, chat_service_sid, conversation_sid, message_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -68,12 +68,15 @@ defmodule Twilio.Conversations.V1.Service.Conversation.Message.ReceiptService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Service.Conversation.Message.Receipt.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, chat_service_sid, conversation_sid, message_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
              client,
              :get,
+             # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
              "/v1/Services/#{chat_service_sid}/Conversations/#{conversation_sid}/Messages/#{message_sid}/Receipts/#{sid}",
              opts: opts,
              base_url: "https://conversations.twilio.com"

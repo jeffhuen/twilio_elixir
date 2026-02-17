@@ -15,7 +15,7 @@ defmodule Twilio.Messaging.V1.Service.UsecaseService do
   Operation: `FetchUsecase` | Tags: MessagingV1Usecase
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/Usecases",
            params: params,

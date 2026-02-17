@@ -11,21 +11,32 @@ defmodule Twilio.Resources.Api.V2010.Call.Recording do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Recording resource. |
   | `api_version` | The API version used to make the recording. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `call_sid` | The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the Recording resource is associated with. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `channels` | The number of channels in the final recording file.  Can be: `1`, or `2`. Separating a two leg call into two separate channels of the recording file is supported in [Dial](https://www.twilio.com/docs/voice/twiml/dial#attributes-record) and [Outbound Rest API](https://www.twilio.com/docs/voice/make-calls) record options. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `conference_sid` | The Conference SID that identifies the conference associated with the recording, if a conference recording. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT that the resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
   | `duration` | The length of the recording in seconds. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `encryption_details` | How to decrypt the recording if it was encrypted using [Call Recording Encryption](https://www.twilio.com/docs/voice/tutorials/voice-recording-encryption) feature. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `error_code` | The error code that describes why the recording is `absent`. The error code is described in our [Error Dictionary](https://www.twilio.com/docs/api/errors). This value is null if the recording `status` is not `absent`. |
   | `price` | The one-time cost of creating the recording in the `price_unit` currency. |
   | `price_unit` | The currency used in the `price` property. Example: `USD`.. Format: currency |
   | `sid` | The unique string that that we created to identify the Recording resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `source` | How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.. Values: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, `StartConferenceRecordingAPI` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `start_time` | The start time of the recording in GMT and in [RFC 2822](https://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The status of the recording. Can be: `processing`, `completed` and `absent`. For more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).. Values: `in-progress`, `paused`, `stopped`, `processing`, `completed`, `absent` |
   | `track` | The recorded track. Can be: `inbound`, `outbound`, or `both`. |
   | `uri` | The URI of the resource, relative to `https://api.twilio.com`. |

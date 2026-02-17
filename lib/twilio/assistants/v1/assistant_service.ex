@@ -14,7 +14,7 @@ defmodule Twilio.Assistants.V1.AssistantService do
   Operation: `ListAssistants`
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Assistants",
            params: params,
@@ -43,7 +43,7 @@ defmodule Twilio.Assistants.V1.AssistantService do
   Operation: `CreateAssistant`
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, map()} | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     Client.request(client, :post, "/v1/Assistants",
       params: params,
@@ -59,7 +59,7 @@ defmodule Twilio.Assistants.V1.AssistantService do
   Operation: `FetchAssistant`
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, map()} | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     Client.request(client, :get, "/v1/Assistants/#{sid}",
       opts: opts,
@@ -73,7 +73,7 @@ defmodule Twilio.Assistants.V1.AssistantService do
   Operation: `DeleteAssistant`
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Assistants/#{sid}",
       opts: opts,

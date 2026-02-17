@@ -15,7 +15,10 @@ defmodule Twilio.Frontline.V1.UserService do
   Operation: `FetchUser` | Tags: FrontlineV1User
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Frontline.V1.User.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Frontline.V1.User.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Users/#{sid}",
@@ -37,11 +40,15 @@ defmodule Twilio.Frontline.V1.UserService do
   |-----------|------|-------------|
   | `Avatar` | string | The avatar URL which will be shown in Frontline application. |
   | `FriendlyName` | string | The string that you assigned to describe the User. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IsAvailable` | boolean | Whether the User is available for new conversations. Set to `false` to prevent User from receiving new inbound conversations if you are using [Pool Routing](https://www.twilio.com/docs/frontline/handle-incoming-conversations#3-pool-routing). |
   | `State` | string |  Values: `active`, `deactivated` |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Frontline.V1.User.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Frontline.V1.User.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Users/#{sid}",

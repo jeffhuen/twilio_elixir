@@ -15,11 +15,12 @@ defmodule Twilio.Api.V2010.Sip.Ipaccesscontrollist.IpaddressService do
   Operation: `ListSipIpAddress` | Tags: Api20100401SipIpAddress
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, ip_access_control_list_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
            :get,
+           # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
            "/2010-04-01/Accounts/#{client.account_sid}/SIP/IpAccessControlLists/#{ip_access_control_list_sid}/IpAddresses.json",
            params: params,
            opts: opts,
@@ -64,21 +65,26 @@ defmodule Twilio.Api.V2010.Sip.Ipaccesscontrollist.IpaddressService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `FriendlyName` | string | A human readable descriptive text for this resource, up to 255 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IpAddress` | string | An IP address in dotted decimal notation from which you want to accept traffic. Any SIP requests from this IP address will be allowed by Twilio. IPv4 only supported today. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CidrPrefixLength` | integer | An integer representing the length of the CIDR prefix to use with this IP address when accepting traffic. By default the entire IP address is used. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Sip.Ipaccesscontrollist.Ipaddress.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, ip_access_control_list_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
              client,
              :post,
+             # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
              "/2010-04-01/Accounts/#{client.account_sid}/SIP/IpAccessControlLists/#{ip_access_control_list_sid}/IpAddresses.json",
              params: params,
              opts: opts,
@@ -100,12 +106,15 @@ defmodule Twilio.Api.V2010.Sip.Ipaccesscontrollist.IpaddressService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Sip.Ipaccesscontrollist.Ipaddress.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, ip_access_control_list_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
              client,
              :get,
+             # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
              "/2010-04-01/Accounts/#{client.account_sid}/SIP/IpAccessControlLists/#{ip_access_control_list_sid}/IpAddresses/#{sid}.json",
              opts: opts,
              base_url: "https://api.twilio.com"
@@ -127,18 +136,23 @@ defmodule Twilio.Api.V2010.Sip.Ipaccesscontrollist.IpaddressService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CidrPrefixLength` | integer | An integer representing the length of the CIDR prefix to use with this IP address when accepting traffic. By default the entire IP address is used. |
   | `FriendlyName` | string | A human readable descriptive text for this resource, up to 255 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IpAddress` | string | An IP address in dotted decimal notation from which you want to accept traffic. Any SIP requests from this IP address will be allowed by Twilio. IPv4 only supported today. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Sip.Ipaccesscontrollist.Ipaddress.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, ip_access_control_list_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
              client,
              :post,
+             # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
              "/2010-04-01/Accounts/#{client.account_sid}/SIP/IpAccessControlLists/#{ip_access_control_list_sid}/IpAddresses/#{sid}.json",
              params: params,
              opts: opts,
@@ -159,11 +173,12 @@ defmodule Twilio.Api.V2010.Sip.Ipaccesscontrollist.IpaddressService do
   Operation: `DeleteSipIpAddress` | Tags: Api20100401SipIpAddress
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, ip_access_control_list_sid, sid, opts \\ []) do
     Client.request(
       client,
       :delete,
+      # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
       "/2010-04-01/Accounts/#{client.account_sid}/SIP/IpAccessControlLists/#{ip_access_control_list_sid}/IpAddresses/#{sid}.json",
       opts: opts,
       base_url: "https://api.twilio.com"

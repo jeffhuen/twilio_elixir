@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Trusthub.V1.Trustproduct.Channelendpointassignment do
   @moduledoc """
-
+  Channelendpointassignment resource.
 
   SID prefix: `RA`
 
@@ -11,9 +11,11 @@ defmodule Twilio.Resources.Trusthub.V1.Trustproduct.Channelendpointassignment do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Item Assignment resource. |
   | `channel_endpoint_sid` | The SID of an channel endpoint |
   | `channel_endpoint_type` | The type of channel endpoint. eg: phone-number |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `sid` | The unique string that we created to identify the Item Assignment resource. |
   | `trust_product_sid` | The unique string that we created to identify the CustomerProfile resource. |

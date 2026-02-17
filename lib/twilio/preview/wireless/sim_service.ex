@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Preview.Wireless.SimService do
   @moduledoc """
-
+  Service for Sim API operations.
 
   Operations: `list`, `fetch`, `update`
   """
@@ -25,7 +25,7 @@ defmodule Twilio.Preview.Wireless.SimService do
   | `SimRegistrationCode` | string |  |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/wireless/Sims",
            params: params,
@@ -64,7 +64,10 @@ defmodule Twilio.Preview.Wireless.SimService do
   Operation: `FetchWirelessSim` | Tags: PreviewWirelessSim
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Preview.Wireless.Sim.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Preview.Wireless.Sim.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/wireless/Sims/#{sid}",
@@ -102,7 +105,10 @@ defmodule Twilio.Preview.Wireless.SimService do
   | `VoiceUrl` | string (uri) |  |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Preview.Wireless.Sim.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Preview.Wireless.Sim.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/wireless/Sims/#{sid}",

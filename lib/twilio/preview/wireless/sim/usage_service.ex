@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Preview.Wireless.Sim.UsageService do
   @moduledoc """
-
+  Service for Usage API operations.
 
   Operations: `fetch`
   """
@@ -22,7 +22,10 @@ defmodule Twilio.Preview.Wireless.Sim.UsageService do
   | `Start` | string |  |
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Preview.Wireless.Sim.Usage.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Preview.Wireless.Sim.Usage.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sim_sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/wireless/Sims/#{sim_sid}/Usage",

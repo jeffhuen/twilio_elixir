@@ -15,7 +15,7 @@ defmodule Twilio.Studio.V2.FlowService do
   Operation: `ListFlow` | Tags: StudioV2Flow
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Flows",
            params: params,
@@ -66,7 +66,10 @@ defmodule Twilio.Studio.V2.FlowService do
   | `CommitMessage` | string | Description of change made in the revision. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V2.Flow.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V2.Flow.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Flows",
@@ -85,7 +88,10 @@ defmodule Twilio.Studio.V2.FlowService do
   Operation: `FetchFlow` | Tags: StudioV2Flow
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V2.Flow.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V2.Flow.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Flows/#{sid}",
@@ -115,7 +121,10 @@ defmodule Twilio.Studio.V2.FlowService do
   | `FriendlyName` | string | The string that you assigned to describe the Flow. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V2.Flow.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V2.Flow.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Flows/#{sid}",
@@ -134,7 +143,7 @@ defmodule Twilio.Studio.V2.FlowService do
   Operation: `DeleteFlow` | Tags: StudioV2Flow
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Flows/#{sid}",
       opts: opts,

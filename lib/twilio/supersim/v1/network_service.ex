@@ -18,12 +18,15 @@ defmodule Twilio.Supersim.V1.NetworkService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IsoCountry` | string | The [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the Network resources to read. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Mcc` | string | The 'mobile country code' of a country. Network resources with this `mcc` in their `identifiers` will be read. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Mnc` | string | The 'mobile network code' of a mobile operator network. Network resources with this `mnc` in their `identifiers` will be read. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Networks",
            params: params,
@@ -62,7 +65,10 @@ defmodule Twilio.Supersim.V1.NetworkService do
   Operation: `FetchNetwork` | Tags: SupersimV1Network
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Supersim.V1.Network.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Supersim.V1.Network.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Networks/#{sid}",

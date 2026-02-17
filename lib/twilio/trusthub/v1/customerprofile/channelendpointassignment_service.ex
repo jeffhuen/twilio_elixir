@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Trusthub.V1.Customerprofile.ChannelendpointassignmentService do
   @moduledoc """
-
+  Service for Channelendpointassignment API operations.
 
   Operations: `list`, `create`, `fetch`, `delete`
   """
@@ -22,7 +22,7 @@ defmodule Twilio.Trusthub.V1.Customerprofile.ChannelendpointassignmentService do
   | `ChannelEndpointSids` | string | comma separated list of channel endpoint sids |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, customer_profile_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -64,6 +64,7 @@ defmodule Twilio.Trusthub.V1.Customerprofile.ChannelendpointassignmentService do
   @doc """
   Create a new Assigned Item.
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Operation: `CreateCustomerProfileChannelEndpointAssignment` | Tags: TrusthubV1CustomerProfilesChannelEndpointAssignment
 
   ## Required Parameters
@@ -75,6 +76,8 @@ defmodule Twilio.Trusthub.V1.Customerprofile.ChannelendpointassignmentService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Trusthub.V1.Customerprofile.Channelendpointassignment.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, customer_profile_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -102,6 +105,8 @@ defmodule Twilio.Trusthub.V1.Customerprofile.ChannelendpointassignmentService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Trusthub.V1.Customerprofile.Channelendpointassignment.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, customer_profile_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -123,10 +128,11 @@ defmodule Twilio.Trusthub.V1.Customerprofile.ChannelendpointassignmentService do
   @doc """
   Remove an Assignment Item Instance.
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Operation: `DeleteCustomerProfileChannelEndpointAssignment` | Tags: TrusthubV1CustomerProfilesChannelEndpointAssignment
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, customer_profile_sid, sid, opts \\ []) do
     Client.request(
       client,

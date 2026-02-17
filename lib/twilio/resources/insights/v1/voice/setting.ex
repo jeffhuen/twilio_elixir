@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Insights.V1.Voice.Setting do
   @moduledoc """
-
+  Setting resource.
 
   ## Properties
 

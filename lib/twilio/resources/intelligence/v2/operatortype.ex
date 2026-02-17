@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Intelligence.V2.Operatortype do
   @moduledoc """
-
+  Operatortype resource.
 
   SID prefix: `EY`
 
@@ -9,7 +9,9 @@ defmodule Twilio.Resources.Intelligence.V2.Operatortype do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `availability` | Operator Type availability status. Possible values: internal, beta, general-availability, retired, deprecated.. Values: `internal`, `beta`, `general-availability`, `retired`, `deprecated` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `config_schema` | JSON Schema for configuring an Operator with this Operator Type. Following https://json-schema.org/ |
   | `configurable` | Operators can be created from configurable Operator Types. |
   | `date_created` | The date that this Operator Type was created, given in ISO 8601 format.. Format: date-time |
@@ -18,7 +20,9 @@ defmodule Twilio.Resources.Intelligence.V2.Operatortype do
   | `docs_link` | Additional documentation for the Operator Type.. Format: uri |
   | `friendly_name` | A human-readable name of this resource, up to 64 characters. |
   | `name` | A unique name that references an Operator's Operator Type. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `output_type` | Operator Results for this Operator Type will follow this format. Possible values: text-classification, text-extraction, text-extraction-normalized, text-generation.. Values: `text-classification`, `text-extraction`, `text-extraction-normalized`, `text-generation`, `json` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `provider` | Operators with this Operator Type are executed using this provider. Possible values: twilio, amazon, openai.. Values: `twilio`, `amazon`, `openai` |
   | `sid` | A 34 character string that uniquely identifies this Operator Type. |
   | `supported_languages` | List of languages this Operator Type supports. |

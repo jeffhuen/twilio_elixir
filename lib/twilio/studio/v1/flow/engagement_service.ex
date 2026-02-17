@@ -15,7 +15,7 @@ defmodule Twilio.Studio.V1.Flow.EngagementService do
   Operation: `ListEngagement` | Tags: StudioV1Engagement
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, flow_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Flows/#{flow_sid}/Engagements",
            params: params,
@@ -60,16 +60,22 @@ defmodule Twilio.Studio.V1.Flow.EngagementService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `From` | string (phone-number) | The Twilio phone number to send messages or initiate calls from during the Flow Engagement. Available as variable `{{flow.channel.address}}` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `To` | string (phone-number) | The Contact phone number to start a Studio Flow Engagement, available as variable `{{contact.channel.address}}`. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Parameters` | string | A JSON string we will add to your flow's context and that you can access as variables inside your flow. For example, if you pass in `Parameters={'name':'Zeke'}` then inside a widget you can reference the variable `{{flow.data.name}}` which will return the string 'Zeke'. Note: the JSON value must explicitly be passed as a string, not as a hash object. Depending on your particular HTTP library, you may need to add quotes or URL encode your JSON string. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V1.Flow.Engagement.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V1.Flow.Engagement.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, flow_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Flows/#{flow_sid}/Engagements",
@@ -88,7 +94,10 @@ defmodule Twilio.Studio.V1.Flow.EngagementService do
   Operation: `FetchEngagement` | Tags: StudioV1Engagement
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V1.Flow.Engagement.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V1.Flow.Engagement.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, flow_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Flows/#{flow_sid}/Engagements/#{sid}",
@@ -105,7 +114,7 @@ defmodule Twilio.Studio.V1.Flow.EngagementService do
   Operation: `DeleteEngagement` | Tags: StudioV1Engagement
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, flow_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Flows/#{flow_sid}/Engagements/#{sid}",
       opts: opts,

@@ -8,18 +8,22 @@ defmodule Twilio.Resources.Api.V2010.Recording.Addonresult.Payload do
   Parent: `/Accounts/{AccountSid}/Recordings/{ReferenceSid}/AddOnResults/{Sid}.json`
 
   ## Sub-resources
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   - `data` — `/2010-04-01/Accounts/{account_sid}/Recordings/{reference_sid}/AddOnResults/{add_on_result_sid}/Payloads/{payload_sid}/Data.json`
 
   ## Properties
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Recording AddOnResult Payload resource. |
   | `add_on_configuration_sid` | The SID of the Add-on configuration. |
   | `add_on_result_sid` | The SID of the AddOnResult to which the payload belongs. |
   | `add_on_sid` | The SID of the Add-on to which the result belongs. |
   | `content_type` | The MIME type of the payload. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
   | `label` | The string provided by the vendor that describes the payload. |
   | `reference_sid` | The SID of the recording to which the AddOnResult resource that contains the payload belongs. |

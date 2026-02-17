@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.Recording.TranscriptionService do
   Operation: `ListRecordingTranscription` | Tags: Api20100401RecordingTranscription
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, recording_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -61,6 +61,8 @@ defmodule Twilio.Api.V2010.Recording.TranscriptionService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Recording.Transcription.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, recording_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -81,7 +83,7 @@ defmodule Twilio.Api.V2010.Recording.TranscriptionService do
   Operation: `DeleteRecordingTranscription` | Tags: Api20100401RecordingTranscription
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, recording_sid, sid, opts \\ []) do
     Client.request(
       client,

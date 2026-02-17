@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V1.Porting.Portin.PhonenumberService do
   @moduledoc """
-
+  Service for Phonenumber API operations.
 
   Operations: `fetch`, `delete`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Numbers.V1.Porting.Portin.PhonenumberService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V1.Porting.Portin.Phonenumber.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, port_in_request_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -37,7 +39,7 @@ defmodule Twilio.Numbers.V1.Porting.Portin.PhonenumberService do
   Operation: `DeletePortingPortInPhoneNumber` | Tags: NumbersV1PortingPortInPhoneNumber
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, port_in_request_sid, sid, opts \\ []) do
     Client.request(
       client,

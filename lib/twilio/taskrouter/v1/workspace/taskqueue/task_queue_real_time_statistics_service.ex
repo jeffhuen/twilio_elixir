@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Taskrouter.V1.Workspace.Taskqueue.TaskQueueRealTimeStatisticsService do
   @moduledoc """
-
+  Service for TaskQueueRealTimeStatistics API operations.
 
   Operations: `fetch`
   """
@@ -18,11 +18,14 @@ defmodule Twilio.Taskrouter.V1.Workspace.Taskqueue.TaskQueueRealTimeStatisticsSe
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TaskChannel` | string | The TaskChannel for which to fetch statistics. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`. |
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok,
            Twilio.Resources.Taskrouter.V1.Workspace.Taskqueue.TaskQueueRealTimeStatistics.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, workspace_sid, task_queue_sid, opts \\ []) do
     with {:ok, data} <-

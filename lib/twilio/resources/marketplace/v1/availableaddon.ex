@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Marketplace.V1.Availableaddon do
   @moduledoc """
-
+  Availableaddon resource.
 
   SID prefix: `XB`
 
@@ -12,6 +12,7 @@ defmodule Twilio.Resources.Marketplace.V1.Availableaddon do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `configuration_schema` | The JSON object with the configuration that must be provided when installing a given Add-on. |
   | `description` | A short description of the Add-on's functionality. |
   | `friendly_name` | The string that you assigned to describe the resource. |

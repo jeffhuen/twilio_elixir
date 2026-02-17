@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Api.V2010.Message.FeedbackService do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   The MessageFeedback subresource of a Message resource. MessageFeedback contains the reported outcome of whether the Message recipient performed a tracked user action.
 
   Operations: `create`
@@ -21,7 +22,10 @@ defmodule Twilio.Api.V2010.Message.FeedbackService do
   | `Outcome` | string |  Values: `confirmed`, `unconfirmed` |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Message.Feedback.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Message.Feedback.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, message_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(

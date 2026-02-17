@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Pluginservice.ConfigurationService do
   @moduledoc """
-
+  Service for Configuration API operations.
 
   Operations: `list`, `create`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Flex.V1.Pluginservice.ConfigurationService do
   Operation: `ListPluginConfiguration` | Tags: FlexV1PluginConfiguration
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/PluginService/Configurations",
            params: params,
@@ -66,10 +66,13 @@ defmodule Twilio.Flex.V1.Pluginservice.ConfigurationService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Description` | string | The Flex Plugin Configuration's description. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Plugins` | array | A list of objects that describe the plugin versions included in the configuration. Each object contains the sid of the plugin version. |
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Pluginservice.Configuration.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -90,6 +93,8 @@ defmodule Twilio.Flex.V1.Pluginservice.ConfigurationService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Pluginservice.Configuration.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-

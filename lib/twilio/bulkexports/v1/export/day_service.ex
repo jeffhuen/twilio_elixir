@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Bulkexports.V1.Export.DayService do
   @moduledoc """
-
+  Service for Day API operations.
 
   Operations: `list`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Bulkexports.V1.Export.DayService do
   Operation: `ListDay` | Tags: BulkexportsV1Day
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, resource_type, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Exports/#{resource_type}/Days",
            params: params,
@@ -57,7 +57,10 @@ defmodule Twilio.Bulkexports.V1.Export.DayService do
   Operation: `FetchDay` | Tags: BulkexportsV1Day
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Bulkexports.V1.Export.Day.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Bulkexports.V1.Export.Day.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, resource_type, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Exports/#{resource_type}/Days/#{sid}",

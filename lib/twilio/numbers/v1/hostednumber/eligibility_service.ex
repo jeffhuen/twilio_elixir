@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V1.Hostednumber.EligibilityService do
   @moduledoc """
-
+  Service for Eligibility API operations.
 
   Operations: `create`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Numbers.V1.Hostednumber.EligibilityService do
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V1.Hostednumber.Eligibility.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

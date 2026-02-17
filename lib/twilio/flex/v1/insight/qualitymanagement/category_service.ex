@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Insight.Qualitymanagement.CategoryService do
   @moduledoc """
-
+  Service for Category API operations.
 
   Operations: `list`, `create`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.CategoryService do
   Operation: `ListInsightsQuestionnairesCategory` | Tags: FlexV1InsightsQuestionnairesCategory
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Insights/QualityManagement/Categories",
            params: params,
@@ -64,6 +64,8 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.CategoryService do
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Insight.Qualitymanagement.Category.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -91,6 +93,8 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.CategoryService do
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Insight.Qualitymanagement.Category.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -111,7 +115,7 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.CategoryService do
   Operation: `DeleteInsightsQuestionnairesCategory` | Tags: FlexV1InsightsQuestionnairesCategory
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Insights/QualityManagement/Categories/#{sid}",
       opts: opts,

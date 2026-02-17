@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Verify.V2.Service.WebhookService do
   @moduledoc """
-
+  Service for Webhook API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Verify.V2.Service.WebhookService do
   Operation: `ListWebhook` | Tags: VerifyV2Webhook
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services/#{service_sid}/Webhooks",
            params: params,
@@ -60,7 +60,9 @@ defmodule Twilio.Verify.V2.Service.WebhookService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `EventTypes` | array | The array of events that this Webhook is subscribed to. Possible event types: `*, factor.deleted, factor.created, factor.verified, challenge.approved, challenge.denied` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | The string that you assigned to describe the webhook. **This value should not contain PII.** |
   | `WebhookUrl` | string | The URL associated with this Webhook. |
   ## Optional Parameters
@@ -71,7 +73,10 @@ defmodule Twilio.Verify.V2.Service.WebhookService do
   | `Version` | string |  Values: `v1`, `v2` |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Verify.V2.Service.Webhook.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Verify.V2.Service.Webhook.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{service_sid}/Webhooks",
@@ -90,7 +95,10 @@ defmodule Twilio.Verify.V2.Service.WebhookService do
   Operation: `FetchWebhook` | Tags: VerifyV2Webhook
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Verify.V2.Service.Webhook.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Verify.V2.Service.Webhook.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Services/#{service_sid}/Webhooks/#{sid}",
@@ -110,14 +118,19 @@ defmodule Twilio.Verify.V2.Service.WebhookService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `EventTypes` | array | The array of events that this Webhook is subscribed to. Possible event types: `*, factor.deleted, factor.created, factor.verified, challenge.approved, challenge.denied` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | The string that you assigned to describe the webhook. **This value should not contain PII.** |
   | `Status` | string |  Values: `enabled`, `disabled` |
   | `Version` | string |  Values: `v1`, `v2` |
   | `WebhookUrl` | string | The URL associated with this Webhook. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Verify.V2.Service.Webhook.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Verify.V2.Service.Webhook.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{service_sid}/Webhooks/#{sid}",
@@ -136,7 +149,7 @@ defmodule Twilio.Verify.V2.Service.WebhookService do
   Operation: `DeleteWebhook` | Tags: VerifyV2Webhook
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Services/#{service_sid}/Webhooks/#{sid}",
       opts: opts,

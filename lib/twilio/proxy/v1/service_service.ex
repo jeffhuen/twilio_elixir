@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Proxy.V1.ServiceService do
   @moduledoc """
-
+  Service for Service API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Proxy.V1.ServiceService do
   Operation: `ListService` | Tags: ProxyV1Service
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services",
            params: params,
@@ -36,6 +36,7 @@ defmodule Twilio.Proxy.V1.ServiceService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieve a list of all Services for Twilio Proxy. A maximum of 100 records will be returned per page. (lazy auto-pagination)."
   @spec stream(Client.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, params \\ %{}, opts \\ []) do
@@ -56,21 +57,29 @@ defmodule Twilio.Proxy.V1.ServiceService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the resource. This value must be 191 characters or fewer in length and be unique. **This value should not have PII.** |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `CallbackUrl` | string (uri) | The URL we should call when the interaction status changes. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ChatInstanceSid` | string | The SID of the Chat Service Instance managed by Proxy Service. The Chat Service enables Proxy to forward SMS and channel messages to this chat instance. This is a one-to-one relationship. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DefaultTtl` | integer | The default `ttl` value to set for Sessions created in the Service. The TTL (time to live) is measured in seconds after the Session's last create or last Interaction. The default value of `0` indicates an unlimited Session length. You can override a Session's default TTL value by setting its `ttl` value. |
   | `GeoMatchLevel` | string |  Values: `area-code`, `overlay`, `radius`, `country` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `InterceptCallbackUrl` | string (uri) | The URL we call on each interaction. If we receive a 403 status, we block the interaction; otherwise the interaction continues. |
   | `NumberSelectionBehavior` | string |  Values: `avoid-sticky`, `prefer-sticky` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `OutOfSessionCallbackUrl` | string (uri) | The URL we should call when an inbound call or SMS action occurs on a closed or non-existent Session. If your server (or a Twilio [function](https://www.twilio.com/en-us/serverless/functions)) responds with valid [TwiML](https://www.twilio.com/docs/voice/twiml), we will process it. This means it is possible, for example, to play a message for a call, send an automated text message response, or redirect a call to another Phone Number. See [Out-of-Session Callback Response Guide](https://www.twilio.com/docs/proxy/out-session-callback-response-guide) for more information. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Proxy.V1.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Proxy.V1.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services",
@@ -89,7 +98,10 @@ defmodule Twilio.Proxy.V1.ServiceService do
   Operation: `FetchService` | Tags: ProxyV1Service
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Proxy.V1.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Proxy.V1.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Services/#{sid}",
@@ -110,16 +122,24 @@ defmodule Twilio.Proxy.V1.ServiceService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `CallbackUrl` | string (uri) | The URL we should call when the interaction status changes. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ChatInstanceSid` | string | The SID of the Chat Service Instance managed by Proxy Service. The Chat Service enables Proxy to forward SMS and channel messages to this chat instance. This is a one-to-one relationship. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DefaultTtl` | integer | The default `ttl` value to set for Sessions created in the Service. The TTL (time to live) is measured in seconds after the Session's last create or last Interaction. The default value of `0` indicates an unlimited Session length. You can override a Session's default TTL value by setting its `ttl` value. |
   | `GeoMatchLevel` | string |  Values: `area-code`, `overlay`, `radius`, `country` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `InterceptCallbackUrl` | string (uri) | The URL we call on each interaction. If we receive a 403 status, we block the interaction; otherwise the interaction continues. |
   | `NumberSelectionBehavior` | string |  Values: `avoid-sticky`, `prefer-sticky` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `OutOfSessionCallbackUrl` | string (uri) | The URL we should call when an inbound call or SMS action occurs on a closed or non-existent Session. If your server (or a Twilio [function](https://www.twilio.com/en-us/serverless/functions)) responds with valid [TwiML](https://www.twilio.com/docs/voice/twiml), we will process it. This means it is possible, for example, to play a message for a call, send an automated text message response, or redirect a call to another Phone Number. See [Out-of-Session Callback Response Guide](https://www.twilio.com/docs/proxy/out-session-callback-response-guide) for more information. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the resource. This value must be 191 characters or fewer in length and be unique. **This value should not have PII.** |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Proxy.V1.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Proxy.V1.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services/#{sid}",
@@ -138,7 +158,7 @@ defmodule Twilio.Proxy.V1.ServiceService do
   Operation: `DeleteService` | Tags: ProxyV1Service
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{sid}",
       opts: opts,

@@ -15,7 +15,7 @@ defmodule Twilio.Chat.V2.Service.User.ChannelService do
   Operation: `ListUserChannel` | Tags: ChatV2UserChannel
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, user_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services/#{service_sid}/Users/#{user_sid}/Channels",
            params: params,
@@ -57,7 +57,10 @@ defmodule Twilio.Chat.V2.Service.User.ChannelService do
   Operation: `FetchUserChannel` | Tags: ChatV2UserChannel
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.User.Channel.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.User.Channel.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, user_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -80,12 +83,17 @@ defmodule Twilio.Chat.V2.Service.User.ChannelService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `LastConsumedMessageIndex` | integer | The index of the last [Message](https://www.twilio.com/docs/chat/rest/message-resource) in the [Channel](https://www.twilio.com/docs/chat/channels) that the Member has read. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `LastConsumptionTimestamp` | string (date-time) | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) timestamp of the last [Message](https://www.twilio.com/docs/chat/rest/message-resource) read event for the Member within the [Channel](https://www.twilio.com/docs/chat/channels). |
   | `NotificationLevel` | string |  Values: `default`, `muted` |
   """
   @spec update(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.User.Channel.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.User.Channel.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, user_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -107,7 +115,7 @@ defmodule Twilio.Chat.V2.Service.User.ChannelService do
   Operation: `DeleteUserChannel` | Tags: ChatV2UserChannel
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, user_sid, sid, opts \\ []) do
     Client.request(
       client,

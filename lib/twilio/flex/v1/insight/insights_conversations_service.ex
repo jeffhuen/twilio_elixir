@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Insight.InsightsConversationsService do
   @moduledoc """
-
+  Service for InsightsConversations API operations.
 
   Operations: `list`
   """
@@ -21,7 +21,7 @@ defmodule Twilio.Flex.V1.Insight.InsightsConversationsService do
   | `SegmentId` | string | Unique Id of the segment for which conversation details needs to be fetched |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Insights/Conversations",
            params: params,

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Voice.V1.Settings do
   @moduledoc """
-
+  Settings resource.
 
   Parent: `/DialingPermissions`
 
@@ -9,6 +9,7 @@ defmodule Twilio.Resources.Voice.V1.Settings do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `dialing_permissions_inheritance` | `true` if the sub-account will inherit voice dialing permissions from the Master Project; otherwise `false`. |
   | `url` | The absolute URL of this resource.. Format: uri |
   """

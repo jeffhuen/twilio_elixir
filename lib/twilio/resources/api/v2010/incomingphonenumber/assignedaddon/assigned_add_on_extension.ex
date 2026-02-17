@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Api.V2010.Incomingphonenumber.Assignedaddon.AssignedAddOnExtension do
   @moduledoc """
-
+  AssignedAddOnExtension resource.
 
   SID prefix: `XF`
 
@@ -18,6 +18,7 @@ defmodule Twilio.Resources.Api.V2010.Incomingphonenumber.Assignedaddon.AssignedA
   | `product_name` | A string that you assigned to describe the Product this Extension is used within. |
   | `resource_sid` | The SID of the Phone Number to which the Add-on is assigned. |
   | `sid` | The unique string that that we created to identify the resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `unique_name` | An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource. |
   | `uri` | The URI of the resource, relative to `https://api.twilio.com`. |
   """
@@ -46,6 +47,7 @@ defmodule Twilio.Resources.Api.V2010.Incomingphonenumber.Assignedaddon.AssignedA
     :uri
   ]
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @object_name "api.v2010.account.incoming_phone_number.incoming_phone_number_assigned_add_on.incoming_phone_number_assigned_add_on_extension"
   def object_name, do: @object_name
 

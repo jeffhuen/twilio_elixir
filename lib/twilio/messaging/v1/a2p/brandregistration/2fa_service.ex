@@ -1,6 +1,4 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule :"Elixir.Twilio.Messaging.V1.A2p.Brandregistration.2faService" do
-  @moduledoc """
-  Submit brand for 2fa verification
-  """
+  @moduledoc false
 end

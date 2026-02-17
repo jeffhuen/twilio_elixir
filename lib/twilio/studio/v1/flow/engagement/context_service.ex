@@ -16,6 +16,8 @@ defmodule Twilio.Studio.V1.Flow.Engagement.ContextService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Studio.V1.Flow.Engagement.Context.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, flow_sid, engagement_sid, opts \\ []) do
     with {:ok, data} <-

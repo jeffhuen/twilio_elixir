@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Video.V1.Room.RecordingRulesService do
   @moduledoc """
-
+  Service for RecordingRules API operations.
 
   Operations: `list`, `create`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Video.V1.Room.RecordingRulesService do
   Operation: `FetchRoomRecordingRule` | Tags: VideoV1RecordingRules
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, room_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Rooms/#{room_sid}/RecordingRules",
            params: params,
@@ -63,7 +63,10 @@ defmodule Twilio.Video.V1.Room.RecordingRulesService do
   | `Rules` | string | A JSON-encoded array of recording rules. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Video.V1.Room.RecordingRules.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Video.V1.Room.RecordingRules.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, room_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Rooms/#{room_sid}/RecordingRules",

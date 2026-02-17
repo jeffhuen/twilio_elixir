@@ -18,10 +18,12 @@ defmodule Twilio.Resources.Conversations.V1.Service do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The unique ID of the [Account](https://www.twilio.com/docs/iam/api/account) responsible for this service. |
   | `date_created` | The date that this resource was created.. Format: date-time |
   | `date_updated` | The date that this resource was last updated.. Format: date-time |
   | `friendly_name` | The human-readable name of this service, limited to 256 characters. Optional.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `links` | Contains absolute API resource URLs to access conversations, users, roles, bindings and configuration of this service.. Format: uri-map |
   | `sid` | A 34 character string that uniquely identifies this resource. |
   | `url` | An absolute API resource URL for this service.. Format: uri |

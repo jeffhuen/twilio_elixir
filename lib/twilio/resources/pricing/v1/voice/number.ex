@@ -10,10 +10,13 @@ defmodule Twilio.Resources.Pricing.V1.Voice.Number do
   | Field | Description |
   |-------|-------------|
   | `country` | The name of the country. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `inbound_call_price` | The [InboundCallPrice](https://www.twilio.com/docs/voice/pricing#inbound-call-price) record. If `null`, the Phone Number is not a Twilio number owned by this account.. Format: inbound-call-price |
   | `iso_country` | The [ISO country code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).. Format: iso-country-code |
   | `number` | The phone number.. Format: phone-number |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `outbound_call_price` | The OutboundCallPrice record, which includes a list of `origination_prefixes` and the `base_price` and `current_price` for those prefixes.. Format: outbound-call-price |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `price_unit` | The currency in which prices are measured, specified in [ISO 4127](http://www.iso.org/iso/home/standards/currency_codes.htm) format (e.g. `usd`, `eur`, `jpy`).. Format: currency |
   | `url` | The absolute URL of the resource.. Format: uri |
   """

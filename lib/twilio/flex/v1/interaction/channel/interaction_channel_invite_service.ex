@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Interaction.Channel.InteractionChannelInviteService do
   @moduledoc """
-
+  Service for InteractionChannelInvite API operations.
 
   Operations: `list`, `create`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Flex.V1.Interaction.Channel.InteractionChannelInviteService do
   Operation: `ListInteractionChannelInvite` | Tags: FlexV1InteractionChannelInvite
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, interaction_sid, channel_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -67,6 +67,8 @@ defmodule Twilio.Flex.V1.Interaction.Channel.InteractionChannelInviteService do
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Interaction.Channel.InteractionChannelInvite.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, interaction_sid, channel_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

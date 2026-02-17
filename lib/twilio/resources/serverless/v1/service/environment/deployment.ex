@@ -11,9 +11,12 @@ defmodule Twilio.Resources.Serverless.V1.Service.Environment.Deployment do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Deployment resource. |
   | `build_sid` | The SID of the Build for the deployment. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the Deployment resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the Deployment resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `environment_sid` | The SID of the Environment for the Deployment. |
   | `service_sid` | The SID of the Service that the Deployment resource is associated with. |

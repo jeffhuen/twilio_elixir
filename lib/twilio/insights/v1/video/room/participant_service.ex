@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Insights.V1.Video.Room.ParticipantService do
   @moduledoc """
-
+  Service for Participant API operations.
 
   Operations: `list`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Insights.V1.Video.Room.ParticipantService do
   Operation: `ListVideoParticipantSummary` | Tags: InsightsV1Participant
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, room_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Video/Rooms/#{room_sid}/Participants",
            params: params,
@@ -58,6 +58,8 @@ defmodule Twilio.Insights.V1.Video.Room.ParticipantService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Insights.V1.Video.Room.Participant.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, room_sid, sid, opts \\ []) do
     with {:ok, data} <-

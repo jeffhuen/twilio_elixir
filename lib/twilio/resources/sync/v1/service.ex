@@ -15,19 +15,28 @@ defmodule Twilio.Resources.Sync.V1.Service do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `acl_enabled` | Whether token identities in the Service must be granted access to Sync objects by using the [Permissions](https://www.twilio.com/docs/sync/api/sync-permissions) resource. It is disabled (false) by default. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `friendly_name` | The string that you assigned to describe the resource.. PII: standard |
   | `links` | The URLs of related resources.. Format: uri-map |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `reachability_debouncing_enabled` | Whether every `endpoint_disconnected` event should occur after a configurable delay. The default is `false`, where the `endpoint_disconnected` event occurs immediately after disconnection. When `true`, intervening reconnections can prevent the `endpoint_disconnected` event. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `reachability_debouncing_window` | The reachability event delay in milliseconds if `reachability_debouncing_enabled` = `true`.  Must be between 1,000 and 30,000 and defaults to 5,000. This is the number of milliseconds after the last running client disconnects, and a Sync identity is declared offline, before `webhook_url` is called, if all endpoints remain offline. A reconnection from the same identity by any endpoint during this interval prevents the reachability event from occurring. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `reachability_webhooks_enabled` | Whether the service instance calls `webhook_url` when client endpoints connect to Sync. The default is `false`. |
   | `sid` | The unique string that we created to identify the Service resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `unique_name` | An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource. It is a read-only property, it cannot be assigned using REST API. |
   | `url` | The absolute URL of the Service resource.. Format: uri |
   | `webhook_url` | The URL we call when Sync objects are manipulated.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `webhooks_from_rest_enabled` | Whether the Service instance should call `webhook_url` when the REST API is used to update Sync objects. The default is `false`. |
   """
 

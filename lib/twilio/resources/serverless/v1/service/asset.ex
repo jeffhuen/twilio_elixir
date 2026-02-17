@@ -14,9 +14,13 @@ defmodule Twilio.Resources.Serverless.V1.Service.Asset do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Asset resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the Asset resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the Asset resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `friendly_name` | The string that you assigned to describe the Asset resource. It can be a maximum of 255 characters.. PII: standard |
   | `links` | The URLs of the Asset resource's nested resources.. Format: uri-map |
   | `service_sid` | The SID of the Service that the Asset resource is associated with. |

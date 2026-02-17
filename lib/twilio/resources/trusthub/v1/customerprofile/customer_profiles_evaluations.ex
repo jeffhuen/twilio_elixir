@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Trusthub.V1.Customerprofile.CustomerProfilesEvaluations do
   @moduledoc """
-
+  CustomerProfilesEvaluations resource.
 
   SID prefix: `EL`
 
@@ -11,6 +11,7 @@ defmodule Twilio.Resources.Trusthub.V1.Customerprofile.CustomerProfilesEvaluatio
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the customer_profile resource. |
   | `customer_profile_sid` | The unique string that we created to identify the customer_profile resource. |
   | `date_created` | Format: date-time |

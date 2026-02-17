@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Voice.V1.Archive.CallService do
   @moduledoc """
-
+  Service for Call API operations.
 
   Operations: `delete`
   """
@@ -14,7 +14,7 @@ defmodule Twilio.Voice.V1.Archive.CallService do
   Operation: `DeleteArchivedCall` | Tags: VoiceV1ArchivedCall
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, date, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Archives/#{date}/Calls/#{sid}",
       opts: opts,

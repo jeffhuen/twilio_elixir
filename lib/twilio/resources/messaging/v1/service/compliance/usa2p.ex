@@ -11,33 +11,49 @@ defmodule Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the Campaign belongs to. |
   | `age_gated` | A boolean that specifies whether campaign is age gated or not. |
   | `brand_registration_sid` | The unique string to identify the A2P brand. |
   | `campaign_id` | The Campaign Registry (TCR) Campaign ID. |
   | `campaign_status` | Campaign status. Examples: IN_PROGRESS, VERIFIED, FAILED. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `description` | A short description of what this SMS campaign does. Min length: 40 characters. Max length: 4096 characters. |
   | `direct_lending` | A boolean that specifies whether campaign allows direct lending or not. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `errors` | Details indicating why a campaign registration failed. These errors can indicate one or more fields that were incorrect or did not meet review requirements. |
   | `has_embedded_links` | Indicate that this SMS campaign will send messages that contain links. |
   | `has_embedded_phone` | Indicates that this SMS campaign will send messages that contain phone numbers. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `help_keywords` | End users should be able to text in a keyword to receive help. Those keywords must be provided as part of the campaign registration request. This field is required if managing help keywords yourself (i.e. not using Twilio's Default or Advanced Opt Out features). Values must be alphanumeric. 255 character maximum. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `help_message` | When customers receive the help keywords from their end users, Twilio customers are expected to send back an auto-generated response; this may include the brand name and additional support contact information. This field is required if managing help keywords yourself (i.e. not using Twilio's Default or Advanced Opt Out features). 20 character minimum. 320 character maximum. |
   | `is_externally_registered` | Indicates whether the campaign was registered externally or not. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `message_flow` | Details around how a consumer opts-in to their campaign, therefore giving consent to receive their messages. If multiple opt-in methods can be used for the same campaign, they must all be listed. 40 character minimum. 2048 character maximum. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `message_samples` | An array of sample message strings, min two and max five. Min length for each sample: 20 chars. Max length for each sample: 1024 chars. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `messaging_service_sid` | The SID of the [Messaging Service](https://www.twilio.com/docs/messaging/api/service-resource) that the resource is associated with. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `mock` | A boolean that specifies whether campaign is a mock or not. Mock campaigns will be automatically created if using a mock brand. Mock campaigns should only be used for testing purposes. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `opt_in_keywords` | If end users can text in a keyword to start receiving messages from this campaign, those keywords must be provided. This field is required if end users can text in a keyword to start receiving messages from this campaign. Values must be alphanumeric. 255 character maximum. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `opt_in_message` | If end users can text in a keyword to start receiving messages from this campaign, the auto-reply messages sent to the end users must be provided. The opt-in response should include the Brand name, confirmation of opt-in enrollment to a recurring message campaign, how to get help, and clear description of how to opt-out. This field is required if end users can text in a keyword to start receiving messages from this campaign. 20 character minimum. 320 character maximum. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `opt_out_keywords` | End users should be able to text in a keyword to stop receiving messages from this campaign. Those keywords must be provided. This field is required if managing opt out keywords yourself (i.e. not using Twilio's Default or Advanced Opt Out features). Values must be alphanumeric. 255 character maximum. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `opt_out_message` | Upon receiving the opt-out keywords from the end users, Twilio customers are expected to send back an auto-generated response, which must provide acknowledgment of the opt-out request and confirmation that no further messages will be sent. It is also recommended that these opt-out messages include the brand name. This field is required if managing opt out keywords yourself (i.e. not using Twilio's Default or Advanced Opt Out features). 20 character minimum. 320 character maximum. |
   | `rate_limits` | Rate limit and/or classification set by each carrier, Ex. AT&T or T-Mobile. |
   | `sid` | The unique string that identifies a US A2P Compliance resource `QE2c6890da8086d771620e9b13fadeba0b`. |
   | `subscriber_opt_in` | A boolean that specifies whether campaign has Subscriber Optin or not. |
   | `url` | The absolute URL of the US App to Person resource.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `us_app_to_person_usecase` | A2P Campaign Use Case. Examples: [ 2FA, EMERGENCY, MARKETING, SOLE_PROPRIETOR...]. SOLE_PROPRIETOR campaign use cases can only be created by SOLE_PROPRIETOR Brands, and there can only be one SOLE_PROPRIETOR campaign created per SOLE_PROPRIETOR Brand. |
   """
 

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Taskrouter.V1.Workspace.WorkspaceCumulativeStatistics do
   @moduledoc """
-
+  WorkspaceCumulativeStatistics resource.
 
   Parent: `/Workspaces/{Sid}`
 
@@ -9,8 +9,10 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.WorkspaceCumulativeStatistics
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Workspace resource. |
   | `avg_task_acceptance_time` | The average time in seconds between Task creation and acceptance. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `end_time` | The end of the interval during which these statistics were calculated, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `reservations_accepted` | The total number of Reservations accepted by Workers. |
   | `reservations_canceled` | The total number of Reservations that were canceled. |
@@ -18,7 +20,9 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.WorkspaceCumulativeStatistics
   | `reservations_rejected` | The total number of Reservations that were rejected. |
   | `reservations_rescinded` | The total number of Reservations that were rescinded. |
   | `reservations_timed_out` | The total number of Reservations that were timed out. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `split_by_wait_time` | A list of objects that describe the number of Tasks canceled and reservations accepted above and below the thresholds specified in seconds. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `start_time` | The beginning of the interval during which these statistics were calculated, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `tasks_canceled` | The total number of Tasks that were canceled. |
   | `tasks_completed` | The total number of Tasks that were completed. |
@@ -27,7 +31,9 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.WorkspaceCumulativeStatistics
   | `tasks_moved` | The total number of Tasks that were moved from one queue to another. |
   | `tasks_timed_out_in_workflow` | The total number of Tasks that were timed out of their Workflows (and deleted). |
   | `url` | The absolute URL of the Workspace statistics resource.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `wait_duration_until_accepted` | The wait duration statistics (`avg`, `min`, `max`, `total`) for Tasks that were accepted. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `wait_duration_until_canceled` | The wait duration statistics (`avg`, `min`, `max`, `total`) for Tasks that were canceled. |
   | `workspace_sid` | The SID of the Workspace. |
   """

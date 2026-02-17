@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.TranscriptionService do
   Operation: `ListTranscription` | Tags: Api20100401Transcription
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -40,6 +40,7 @@ defmodule Twilio.Api.V2010.TranscriptionService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieve a list of transcriptions belonging to the account used to make the request (lazy auto-pagination)."
   @spec stream(Client.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, params \\ %{}, opts \\ []) do
@@ -57,7 +58,10 @@ defmodule Twilio.Api.V2010.TranscriptionService do
   Operation: `FetchTranscription` | Tags: Api20100401Transcription
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Transcription.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Transcription.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -77,7 +81,7 @@ defmodule Twilio.Api.V2010.TranscriptionService do
   Operation: `DeleteTranscription` | Tags: Api20100401Transcription
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(
       client,

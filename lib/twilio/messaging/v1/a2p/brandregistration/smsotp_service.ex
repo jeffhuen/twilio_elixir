@@ -16,6 +16,8 @@ defmodule Twilio.Messaging.V1.A2p.Brandregistration.SmsotpService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.A2p.Brandregistration.Smsotp.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, brand_registration_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

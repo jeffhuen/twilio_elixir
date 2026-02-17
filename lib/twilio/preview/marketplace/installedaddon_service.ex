@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Preview.Marketplace.InstalledaddonService do
   @moduledoc """
-
+  Service for Installedaddon API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Preview.Marketplace.InstalledaddonService do
   Operation: `ListMarketplaceInstalledAddOn` | Tags: PreviewMarketplaceInstalledAddOn
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/marketplace/InstalledAddOns",
            params: params,
@@ -67,10 +67,13 @@ defmodule Twilio.Preview.Marketplace.InstalledaddonService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Configuration` | string | The JSON object that represents the configuration of the new Add-on being installed. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the resource. This value must be unique within the Account. |
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Preview.Marketplace.Installedaddon.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -91,6 +94,8 @@ defmodule Twilio.Preview.Marketplace.InstalledaddonService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Preview.Marketplace.Installedaddon.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
@@ -111,11 +116,15 @@ defmodule Twilio.Preview.Marketplace.InstalledaddonService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Configuration` | string | Valid JSON object that conform to the configuration schema exposed by the associated AvailableAddOn resource. This is only required by Add-ons that need to be configured |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the resource. This value must be unique within the Account. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Preview.Marketplace.Installedaddon.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -135,7 +144,7 @@ defmodule Twilio.Preview.Marketplace.InstalledaddonService do
   Operation: `DeleteMarketplaceInstalledAddOn` | Tags: PreviewMarketplaceInstalledAddOn
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/marketplace/InstalledAddOns/#{sid}",
       opts: opts,

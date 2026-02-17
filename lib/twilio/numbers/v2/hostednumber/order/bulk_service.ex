@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V2.Hostednumber.Order.BulkService do
   @moduledoc """
-
+  Service for Bulk API operations.
 
   Operations: `create`, `fetch`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Numbers.V2.Hostednumber.Order.BulkService do
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Hostednumber.Order.Bulk.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -38,10 +40,13 @@ defmodule Twilio.Numbers.V2.Hostednumber.Order.BulkService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `OrderStatus` | string | Order status can be used for filtering on Hosted Number Order status values. To see a complete list of order statuses, please check 'https://www.twilio.com/docs/phone-numbers/hosted-numbers/hosted-numbers-api/hosted-number-order-resource#status-values'. |
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Hostednumber.Order.Bulk.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-

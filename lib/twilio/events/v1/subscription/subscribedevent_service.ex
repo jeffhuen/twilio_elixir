@@ -15,7 +15,7 @@ defmodule Twilio.Events.V1.Subscription.SubscribedeventService do
   Operation: `ListSubscribedEvent` | Tags: EventsV1SubscribedEvent
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, subscription_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Subscriptions/#{subscription_sid}/SubscribedEvents",
            params: params,
@@ -69,6 +69,8 @@ defmodule Twilio.Events.V1.Subscription.SubscribedeventService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Events.V1.Subscription.Subscribedevent.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, subscription_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -90,6 +92,8 @@ defmodule Twilio.Events.V1.Subscription.SubscribedeventService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Events.V1.Subscription.Subscribedevent.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, subscription_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -118,6 +122,8 @@ defmodule Twilio.Events.V1.Subscription.SubscribedeventService do
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Events.V1.Subscription.Subscribedevent.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, subscription_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -141,7 +147,7 @@ defmodule Twilio.Events.V1.Subscription.SubscribedeventService do
   Operation: `DeleteSubscribedEvent` | Tags: EventsV1SubscribedEvent
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, subscription_sid, sid, opts \\ []) do
     Client.request(
       client,

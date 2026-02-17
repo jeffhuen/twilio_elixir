@@ -8,7 +8,9 @@ defmodule Twilio.Resources.Flex.V1.Configuration do
   | Field | Description |
   |-------|-------------|
   | `taskrouter_offline_activity_sid` | The TaskRouter SID of the offline activity. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Configuration resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the Configuration resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `taskrouter_worker_attributes` | The TaskRouter Worker attributes. |
   | `taskrouter_target_taskqueue_sid` | The SID of the TaskRouter Target TaskQueue. |
@@ -28,16 +30,19 @@ defmodule Twilio.Resources.Flex.V1.Configuration do
   | `ui_attributes` | The object that describes Flex UI characteristics and settings. |
   | `chat_service_instance_sid` | The SID of the chat service this user belongs to. |
   | `service_version` | The Flex Service version. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `integrations` | A list of objects that contain the configurations for the Integrations supported in this configuration. |
   | `taskrouter_skills` | The Skill description for TaskRouter workers. |
   | `crm_enabled` | Whether CRM is present for Flex. |
   | `runtime_domain` | The URL where the Flex instance is hosted. |
   | `channel_configs` | Settings for different limits for Flex Conversations channels attachments. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the Configuration resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `taskrouter_worker_channels` | The TaskRouter default channel capacities and availability for workers. |
   | `taskrouter_workspace_sid` | The SID of the TaskRouter Workspace. |
   | `queue_stats_configuration` | Configurable parameters for Queues Statistics. |
   | `flex_instance_sid` | The SID of the Flex instance. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The status of the Flex onboarding. Can be: `ok`, `inprogress`,`notstarted`.. Values: `ok`, `inprogress`, `notstarted` |
   | `crm_callback_url` | The CRM Callback URL. |
   | `debugger_integration` | Configurable parameters for Debugger Integration. |
@@ -110,6 +115,7 @@ defmodule Twilio.Resources.Flex.V1.Configuration do
           taskrouter_target_workflow_sid: String.t() | nil
         }
 
+  # credo:disable-for-next-line Credo.Check.Warning.StructFieldAmount
   defstruct [
     :taskrouter_offline_activity_sid,
     :account_sid,

@@ -15,7 +15,7 @@ defmodule Twilio.Serverless.V1.ServiceService do
   Operation: `ListService` | Tags: ServerlessV1Service
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services",
            params: params,
@@ -57,17 +57,24 @@ defmodule Twilio.Serverless.V1.ServiceService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the Service resource. It can be a maximum of 255 characters. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | A user-defined string that uniquely identifies the Service resource. It can be used as an alternative to the `sid` in the URL path to address the Service resource. This value must be 50 characters or less in length and be unique. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IncludeCredentials` | boolean | Whether to inject Account credentials into a function invocation context. The default value is `true`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UiEditable` | boolean | Whether the Service's properties and subresources can be edited via the UI. The default value is `false`. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Serverless.V1.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Serverless.V1.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services",
@@ -86,7 +93,10 @@ defmodule Twilio.Serverless.V1.ServiceService do
   Operation: `FetchService` | Tags: ServerlessV1Service
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Serverless.V1.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Serverless.V1.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Services/#{sid}",
@@ -106,12 +116,17 @@ defmodule Twilio.Serverless.V1.ServiceService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the Service resource. It can be a maximum of 255 characters. |
   | `IncludeCredentials` | boolean | Whether to inject Account credentials into a function invocation context. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UiEditable` | boolean | Whether the Service resource's properties and subresources can be edited via the UI. The default value is `false`. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Serverless.V1.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Serverless.V1.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services/#{sid}",
@@ -130,7 +145,7 @@ defmodule Twilio.Serverless.V1.ServiceService do
   Operation: `DeleteService` | Tags: ServerlessV1Service
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{sid}",
       opts: opts,

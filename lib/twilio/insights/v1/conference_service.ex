@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Insights.V1.ConferenceService do
   @moduledoc """
-
+  Service for Conference API operations.
 
   Operations: `list`, `fetch`
   """
@@ -26,11 +26,12 @@ defmodule Twilio.Insights.V1.ConferenceService do
   | `MixerRegion` | string | Twilio region where the conference media was mixed. |
   | `Tags` | string | Tags applied by Twilio for common potential configuration, quality, or performance issues. |
   | `Subaccount` | string | Account SID for the subaccount whose resources you wish to retrieve. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DetectedIssues` | string | Potential configuration, behavior, or performance issues detected during the conference. |
   | `EndReason` | string | Conference end reason; e.g. last participant left, modified by API, etc. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Conferences",
            params: params,
@@ -69,7 +70,10 @@ defmodule Twilio.Insights.V1.ConferenceService do
   Operation: `FetchConference` | Tags: InsightsV1Conference
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Insights.V1.Conference.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Insights.V1.Conference.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Conferences/#{sid}",

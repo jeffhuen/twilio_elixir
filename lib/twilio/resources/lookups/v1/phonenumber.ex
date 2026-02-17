@@ -7,11 +7,15 @@ defmodule Twilio.Resources.Lookups.V1.Phonenumber do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `add_ons` | A JSON string with the results of the Add-ons you specified in the `add_ons` parameters. For the format of the object, see [Using Add-ons](https://www.twilio.com/docs/add-ons).. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `caller_name` | The name of the phone number's owner. If `null`, that information was not available.. PII: standard |
   | `carrier` | The telecom company that provides the phone number. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `country_code` | The [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for the phone number.. PII: standard |
   | `national_format` | The phone number, in national format.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `phone_number` | The phone number in [E.164](https://www.twilio.com/docs/glossary/what-e164) format, which consists of a + followed by the country code and subscriber number.. Format: phone-number. PII: standard |
   | `url` | The absolute URL of the resource.. Format: uri |
   """

@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Conversations.V1.Configuration.WebhookService do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   A Webhook resource manages a service-level set of callback URLs and their configuration for receiving all conversation events.
 
   Operations: `fetch`, `update`
@@ -16,6 +17,8 @@ defmodule Twilio.Conversations.V1.Configuration.WebhookService do
   """
   @spec fetch(Client.t(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Configuration.Webhook.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, opts \\ []) do
     with {:ok, data} <-
@@ -37,6 +40,7 @@ defmodule Twilio.Conversations.V1.Configuration.WebhookService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Filters` | array | The list of webhook event triggers that are enabled for this Service: `onMessageAdded`, `onMessageUpdated`, `onMessageRemoved`, `onMessageAdd`, `onMessageUpdate`, `onMessageRemove`, `onConversationUpdated`, `onConversationRemoved`, `onConversationAdd`, `onConversationAdded`, `onConversationRemove`, `onConversationUpdate`, `onConversationStateUpdated`, `onParticipantAdded`, `onParticipantUpdated`, `onParticipantRemoved`, `onParticipantAdd`, `onParticipantRemove`, `onParticipantUpdate`, `onDeliveryUpdated`, `onUserAdded`, `onUserUpdate`, `onUserUpdated` |
   | `Method` | string | The HTTP method to be used when sending a webhook request. |
   | `PostWebhookUrl` | string | The absolute url the post-event webhook request should be sent to. |
@@ -45,6 +49,8 @@ defmodule Twilio.Conversations.V1.Configuration.WebhookService do
   """
   @spec update(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Configuration.Webhook.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

@@ -21,7 +21,7 @@ defmodule Twilio.Messaging.V2.Channel.SenderService do
   | `Channel` | string |  |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Channels/Senders",
            params: params,
@@ -63,7 +63,10 @@ defmodule Twilio.Messaging.V2.Channel.SenderService do
   Operation: `CreateChannelsSender` | Tags: MessagingV2ChannelsSender
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Messaging.V2.Channel.Sender.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Messaging.V2.Channel.Sender.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Channels/Senders",
@@ -82,7 +85,10 @@ defmodule Twilio.Messaging.V2.Channel.SenderService do
   Operation: `FetchChannelsSender` | Tags: MessagingV2ChannelsSender
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Messaging.V2.Channel.Sender.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Messaging.V2.Channel.Sender.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Channels/Senders/#{sid}",
@@ -94,12 +100,16 @@ defmodule Twilio.Messaging.V2.Channel.SenderService do
   end
 
   @doc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   (WhatsApp only) Update a Sender. You can update a sender's information, including `profile`, `webhook`, and `configuration`. To verify a phone number, set `configuration.verification_code` to the One-time Password (OTP) that you received.
 
   Operation: `UpdateChannelsSender` | Tags: MessagingV2ChannelsSender
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Messaging.V2.Channel.Sender.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Messaging.V2.Channel.Sender.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Channels/Senders/#{sid}",
@@ -118,7 +128,7 @@ defmodule Twilio.Messaging.V2.Channel.SenderService do
   Operation: `DeleteChannelsSender` | Tags: MessagingV2ChannelsSender
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Channels/Senders/#{sid}",
       opts: opts,

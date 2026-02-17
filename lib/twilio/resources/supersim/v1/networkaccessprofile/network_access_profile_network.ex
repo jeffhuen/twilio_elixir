@@ -12,8 +12,10 @@ defmodule Twilio.Resources.Supersim.V1.Networkaccessprofile.NetworkAccessProfile
   | Field | Description |
   |-------|-------------|
   | `friendly_name` | A human readable identifier of the Network this resource refers to. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `identifiers` | Array of objects identifying the [MCC-MNCs](https://en.wikipedia.org/wiki/Mobile_country_code) that are included in the Network resource. |
   | `iso_country` | The [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the Network resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `network_access_profile_sid` | The unique string that identifies the Network resource's Network Access Profile resource. |
   | `sid` | The unique string that identifies the Network resource. |
   | `url` | The absolute URL of the Network resource.. Format: uri |

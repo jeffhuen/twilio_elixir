@@ -9,15 +9,23 @@ defmodule Twilio.Resources.Wireless.V1.Command do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Command resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `command` | The message being sent to or from the SIM. For text mode messages, this can be up to 160 characters. For binary mode messages, this is a series of up to 140 bytes of data encoded using base64.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `command_mode` | The mode used to send the SMS message. Can be: `text` or `binary`. The default SMS mode is `text`.. Values: `text`, `binary` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.. Format: date-time |
   | `delivery_receipt_requested` | Whether to request a delivery receipt. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `direction` | The direction of the Command. Can be `to_sim` or `from_sim`. The value of `to_sim` is synonymous with the term `mobile terminated`, and `from_sim` is synonymous with the term `mobile originated`.. Values: `from_sim`, `to_sim` |
   | `sid` | The unique string that we created to identify the Command resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sim_sid` | The SID of the [Sim resource](https://www.twilio.com/docs/iot/wireless/api/sim-resource) that the Command was sent to or from. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The status of the Command. Can be: `queued`, `sent`, `delivered`, `received`, or `failed`. See [Status Values](https://www.twilio.com/docs/iot/wireless/api/command-resource#status-values) for a description of each state.. Values: `queued`, `sent`, `delivered`, `received`, `failed` |
   | `transport` | The type of transport used. Can be: `sms` or `ip`.. Values: `sms`, `ip` |
   | `url` | The absolute URL of the resource.. Format: uri |

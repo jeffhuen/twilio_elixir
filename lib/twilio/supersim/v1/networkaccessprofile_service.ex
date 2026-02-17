@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Supersim.V1.NetworkaccessprofileService do
   @moduledoc """
-
+  Service for Networkaccessprofile API operations.
 
   Operations: `list`, `create`, `fetch`, `update`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Supersim.V1.NetworkaccessprofileService do
   Operation: `ListNetworkAccessProfile` | Tags: SupersimV1NetworkAccessProfile
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/NetworkAccessProfiles",
            params: params,
@@ -61,10 +61,13 @@ defmodule Twilio.Supersim.V1.NetworkaccessprofileService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Networks` | array | List of Network SIDs that this Network Access Profile will allow connections to. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource. |
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Supersim.V1.Networkaccessprofile.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -85,6 +88,8 @@ defmodule Twilio.Supersim.V1.NetworkaccessprofileService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Supersim.V1.Networkaccessprofile.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
@@ -109,6 +114,8 @@ defmodule Twilio.Supersim.V1.NetworkaccessprofileService do
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Supersim.V1.Networkaccessprofile.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

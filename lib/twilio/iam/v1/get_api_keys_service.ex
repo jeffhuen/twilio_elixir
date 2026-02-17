@@ -18,10 +18,11 @@ defmodule Twilio.Iam.V1.GetApiKeysService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AccountSid` | string | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Payments resource. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Keys",
            params: params,
@@ -62,17 +63,24 @@ defmodule Twilio.Iam.V1.GetApiKeysService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AccountSid` | string | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Payments resource. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It can be up to 64 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `KeyType` | string | The \`KeyType\` form parameter is used to specify the type of key you want to create.  **Default Behavior**: If \`KeyType\` is not specified, the API will generate a standard key.  **Restricted Key**: If \`KeyType\` is set to \`restricted\`, the API will create a new restricted key. In this case, a policy object is required to define the permissions. Values: `restricted` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Policy` | string | The \`Policy\` object is a collection that specifies the allowed Twilio permissions for the restricted key. For more information on the permissions available with restricted API keys, refer to the [Twilio documentation](https://www.twilio.com/docs/iam/api-keys/restricted-api-keys#permissions-available-with-restricted-api-keys). |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Iam.V1.GetApiKeys.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Iam.V1.GetApiKeys.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Keys",
@@ -91,7 +99,10 @@ defmodule Twilio.Iam.V1.GetApiKeysService do
   Operation: `FetchKey` | Tags: IamV1ApiKey
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Iam.V1.GetApiKeys.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Iam.V1.GetApiKeys.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Keys/#{sid}",
@@ -111,11 +122,16 @@ defmodule Twilio.Iam.V1.GetApiKeysService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It can be up to 64 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Policy` | string | The \`Policy\` object is a collection that specifies the allowed Twilio permissions for the restricted key. For more information on the permissions available with restricted API keys, refer to the [Twilio documentation](https://www.twilio.com/docs/iam/api-keys/restricted-api-keys#permissions-available-with-restricted-api-keys). |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Iam.V1.GetApiKeys.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Iam.V1.GetApiKeys.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Keys/#{sid}",
@@ -134,7 +150,7 @@ defmodule Twilio.Iam.V1.GetApiKeysService do
   Operation: `DeleteKey` | Tags: IamV1ApiKey
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Keys/#{sid}",
       opts: opts,

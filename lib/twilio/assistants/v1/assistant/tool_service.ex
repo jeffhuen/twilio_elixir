@@ -15,7 +15,7 @@ defmodule Twilio.Assistants.V1.Assistant.ToolService do
   Operation: `ListToolsByAssistant`
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, assistant_id, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Assistants/#{assistant_id}/Tools",
            params: params,
@@ -57,7 +57,10 @@ defmodule Twilio.Assistants.V1.Assistant.ToolService do
   Operation: `CreateAssistantToolAttachment`
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Assistants.V1.Assistant.Tool.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Assistants.V1.Assistant.Tool.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, assistant_id, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Assistants/#{assistant_id}/Tools/#{sid}",
@@ -76,7 +79,7 @@ defmodule Twilio.Assistants.V1.Assistant.ToolService do
   Operation: `DeleteAssistantToolAttachment`
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, assistant_id, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Assistants/#{assistant_id}/Tools/#{sid}",
       opts: opts,

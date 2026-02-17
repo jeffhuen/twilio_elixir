@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Intelligence.V2.OperatortypeService do
   @moduledoc """
-
+  Service for Operatortype API operations.
 
   Operations: `list`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Intelligence.V2.OperatortypeService do
   Operation: `ListOperatorType` | Tags: IntelligenceV2OperatorType
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/OperatorTypes",
            params: params,
@@ -57,7 +57,10 @@ defmodule Twilio.Intelligence.V2.OperatortypeService do
   Operation: `FetchOperatorType` | Tags: IntelligenceV2OperatorType
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Intelligence.V2.Operatortype.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Intelligence.V2.Operatortype.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/OperatorTypes/#{sid}",

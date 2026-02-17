@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.IpMessaging.V2.Service.Role do
   @moduledoc """
-
+  Role resource.
 
   SID prefix: `RL`
 

@@ -18,15 +18,19 @@ defmodule Twilio.Video.V1.RecordingService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Status` | string | Read only the recordings that have this status. Can be: `processing`, `completed`, or `deleted`. |
   | `SourceSid` | string | Read only the recordings that have this `source_sid`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `GroupingSid` | array | Read only recordings with this `grouping_sid`, which may include a `participant_sid` and/or a `room_sid`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreatedAfter` | string (date-time) | Read only recordings that started on or after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time with time zone. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreatedBefore` | string (date-time) | Read only recordings that started before this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time with time zone, given as `YYYY-MM-DDThh:mm:ss+\|-hh:mm` or `YYYY-MM-DDThh:mm:ssZ`. |
   | `MediaType` | string | Read only recordings that have this media type. Can be either `audio` or `video`. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Recordings",
            params: params,
@@ -64,7 +68,10 @@ defmodule Twilio.Video.V1.RecordingService do
   Operation: `FetchRecording` | Tags: VideoV1Recording
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Video.V1.Recording.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Video.V1.Recording.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Recordings/#{sid}",
@@ -81,7 +88,7 @@ defmodule Twilio.Video.V1.RecordingService do
   Operation: `DeleteRecording` | Tags: VideoV1Recording
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Recordings/#{sid}",
       opts: opts,

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Trusthub.V1.Trustproduct.TrustProductsEvaluations do
   @moduledoc """
-
+  TrustProductsEvaluations resource.
 
   SID prefix: `EL`
 
@@ -11,6 +11,7 @@ defmodule Twilio.Resources.Trusthub.V1.Trustproduct.TrustProductsEvaluations do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the trust_product resource. |
   | `date_created` | Format: date-time |
   | `policy_sid` | The unique string of a policy that is associated to the trust_product resource. |

@@ -12,7 +12,7 @@ defmodule Twilio.Generator.ServiceGenerator do
 
     # Resource module for deserialization (only when properties exist)
     resource_mod =
-      if length(resource.properties) > 0,
+      if resource.properties != [],
         do: Naming.resource_module(product, version, resource.name, nesting),
         else: nil
 
@@ -27,14 +27,21 @@ defmodule Twilio.Generator.ServiceGenerator do
         ""
       end
 
-    moduledoc = generate_moduledoc(resource)
+    moduledoc_attr =
+      if has_operations do
+        moduledoc = generate_moduledoc(resource)
+        "  @moduledoc \"\"\"\n#{moduledoc}\n  \"\"\""
+      else
+        "  @moduledoc false"
+      end
+
+    defmodule_line = "defmodule #{inspect(module_name)} do"
+    credo_disable = credo_line_length_disable(defmodule_line)
 
     """
     # File generated from Twilio's OpenAPI spec — do not edit manually
-    defmodule #{inspect(module_name)} do
-      @moduledoc \"\"\"
-    #{moduledoc}
-      \"\"\"
+    #{credo_disable}#{defmodule_line}
+    #{moduledoc_attr}
     #{aliases}
     #{operations}
     end
@@ -42,7 +49,13 @@ defmodule Twilio.Generator.ServiceGenerator do
   end
 
   defp generate_moduledoc(resource) do
-    desc = resource[:description] || "Service for #{resource.name} API operations."
+    desc =
+      case resource[:description] do
+        nil -> "Service for #{resource.name} API operations."
+        "" -> "Service for #{resource.name} API operations."
+        d -> d
+      end
+
     lines = ["  #{desc}"]
 
     # List available operations
@@ -61,9 +74,9 @@ defmodule Twilio.Generator.ServiceGenerator do
   defp generate_operations(resource, base_url, resource_mod) do
     sid_param = Map.get(resource, :sid_param)
 
-    resource.operations
-    |> Enum.map(fn op -> generate_operation(op, resource, base_url, sid_param, resource_mod) end)
-    |> Enum.join("\n")
+    Enum.map_join(resource.operations, "\n", fn op ->
+      generate_operation(op, resource, base_url, sid_param, resource_mod)
+    end)
   end
 
   defp generate_operation(%{name: :create} = op, resource, base_url, sid_param, resource_mod) do
@@ -87,7 +100,7 @@ defmodule Twilio.Generator.ServiceGenerator do
     """
     #{doc}
       @spec create(Client.t(), #{parent_spec(resource.path_params)}map(), keyword()) ::
-              {:ok, #{return_type}} | {:error, Twilio.Error.t()}
+              {:ok, #{return_type}} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
       def create(client#{parent_params}, params \\\\ %{}, opts \\\\ []) do
         #{body}
       end
@@ -129,7 +142,7 @@ defmodule Twilio.Generator.ServiceGenerator do
     """
     #{doc}
       @spec list(Client.t(), #{parent_spec(resource.path_params)}map(), keyword()) ::
-              {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+              {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
       def list(client#{parent_params}, params \\\\ %{}, opts \\\\ []) do
         case Client.request(client, :get, #{path_expr},
                params: params,
@@ -162,7 +175,7 @@ defmodule Twilio.Generator.ServiceGenerator do
       """
       #{doc}
         @spec fetch(Client.t(), #{parent_spec(resource.path_params)}String.t(), keyword()) ::
-                {:ok, #{return_type}} | {:error, Twilio.Error.t()}
+                {:ok, #{return_type}} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
         def fetch(client#{parent_params}, sid, opts \\\\ []) do
           #{body}
         end
@@ -171,7 +184,7 @@ defmodule Twilio.Generator.ServiceGenerator do
       """
       #{doc}
         @spec fetch(Client.t(), #{parent_spec(resource.path_params)}keyword()) ::
-                {:ok, #{return_type}} | {:error, Twilio.Error.t()}
+                {:ok, #{return_type}} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
         def fetch(client#{parent_params}, opts \\\\ []) do
           #{body}
         end
@@ -199,7 +212,7 @@ defmodule Twilio.Generator.ServiceGenerator do
       """
       #{doc}
         @spec update(Client.t(), #{parent_spec(resource.path_params)}String.t(), map(), keyword()) ::
-                {:ok, #{return_type}} | {:error, Twilio.Error.t()}
+                {:ok, #{return_type}} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
         def update(client#{parent_params}, sid, params \\\\ %{}, opts \\\\ []) do
           #{body}
         end
@@ -208,7 +221,7 @@ defmodule Twilio.Generator.ServiceGenerator do
       """
       #{doc}
         @spec update(Client.t(), #{parent_spec(resource.path_params)}map(), keyword()) ::
-                {:ok, #{return_type}} | {:error, Twilio.Error.t()}
+                {:ok, #{return_type}} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
         def update(client#{parent_params}, params \\\\ %{}, opts \\\\ []) do
           #{body}
         end
@@ -225,7 +238,7 @@ defmodule Twilio.Generator.ServiceGenerator do
       """
       #{doc}
         @spec delete(Client.t(), #{parent_spec(resource.path_params)}String.t(), keyword()) ::
-                :ok | {:error, Twilio.Error.t()}
+                {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
         def delete(client#{parent_params}, sid, opts \\\\ []) do
           Client.request(client, :delete, #{path_expr},
             opts: opts,
@@ -237,7 +250,7 @@ defmodule Twilio.Generator.ServiceGenerator do
       """
       #{doc}
         @spec delete(Client.t(), #{parent_spec(resource.path_params)}keyword()) ::
-                :ok | {:error, Twilio.Error.t()}
+                {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
         def delete(client#{parent_params}, opts \\\\ []) do
           Client.request(client, :delete, #{path_expr},
             opts: opts,
@@ -248,13 +261,18 @@ defmodule Twilio.Generator.ServiceGenerator do
     end
   end
 
-  # Generate @doc for an operation, including description and param tables
   defp generate_operation_doc(op, resource_name) do
     desc = op.description || default_description(op.name, resource_name)
 
-    sections = [desc]
+    [desc]
+    |> append_meta_line(op)
+    |> append_request_params_doc(op.request_params)
+    |> append_query_params_doc(op.query_params)
+    |> Enum.join("\n")
+    |> then(fn doc_text -> "  @doc \"\"\"\n  #{doc_text}\n  \"\"\"" end)
+  end
 
-    # Operation metadata line (operationId + tags)
+  defp append_meta_line(sections, op) do
     meta_parts =
       []
       |> maybe_append_meta(op[:operation_id], fn id -> "Operation: `#{id}`" end)
@@ -264,87 +282,59 @@ defmodule Twilio.Generator.ServiceGenerator do
       end)
       |> Enum.reject(&is_nil/1)
 
-    sections =
-      if meta_parts != [] do
-        sections ++ ["", Enum.join(meta_parts, " | ")]
-      else
-        sections
-      end
+    if meta_parts != [] do
+      sections ++ ["", Enum.join(meta_parts, " | ")]
+    else
+      sections
+    end
+  end
 
-    # Request body parameters
-    sections =
-      case op.request_params do
-        [] ->
-          sections
+  defp append_request_params_doc(sections, []), do: sections
 
-        params ->
-          required = Enum.filter(params, & &1.required)
-          optional = Enum.reject(params, & &1.required)
+  defp append_request_params_doc(sections, params) do
+    required = Enum.filter(params, & &1.required)
+    optional = Enum.reject(params, & &1.required)
 
-          parts = []
+    parts =
+      param_section("Required Parameters", required) ++
+        param_section("Optional Parameters", optional)
 
-          parts =
-            if required != [] do
-              rows = Enum.map(required, &param_table_row/1)
+    sections ++ ["" | parts]
+  end
 
-              parts ++
-                [
-                  "## Required Parameters\n",
-                  "| Parameter | Type | Description |",
-                  "|-----------|------|-------------|"
-                  | rows
-                ]
-            else
-              parts
-            end
+  defp param_section(_title, []), do: []
 
-          parts =
-            if optional != [] do
-              rows = Enum.map(optional, &param_table_row/1)
+  defp param_section(title, params) do
+    rows = Enum.map(params, &param_table_row/1)
 
-              parts ++
-                [
-                  "## Optional Parameters\n",
-                  "| Parameter | Type | Description |",
-                  "|-----------|------|-------------|"
-                  | rows
-                ]
-            else
-              parts
-            end
+    [
+      "## #{title}\n",
+      "| Parameter | Type | Description |",
+      "|-----------|------|-------------|"
+      | rows
+    ]
+  end
 
-          sections ++ ["" | parts]
-      end
+  defp append_query_params_doc(sections, []), do: sections
 
-    # Query parameters (for list operations)
-    sections =
-      case op.query_params do
-        [] ->
-          sections
+  defp append_query_params_doc(sections, params) do
+    filter_params =
+      Enum.reject(params, fn p -> p.name in ["PageSize", "Page", "PageToken"] end)
 
-        params ->
-          # Exclude pagination params from docs (they're handled by the SDK)
-          filter_params =
-            Enum.reject(params, fn p -> p.name in ["PageSize", "Page", "PageToken"] end)
+    if filter_params == [] do
+      sections
+    else
+      rows = Enum.map(filter_params, &query_param_table_row/1)
 
-          if filter_params != [] do
-            rows = Enum.map(filter_params, &query_param_table_row/1)
-
-            sections ++
-              [
-                "",
-                "## Query Parameters\n",
-                "| Parameter | Type | Description |",
-                "|-----------|------|-------------|"
-                | rows
-              ]
-          else
-            sections
-          end
-      end
-
-    doc_text = Enum.join(sections, "\n")
-    "  @doc \"\"\"\n  #{doc_text}\n  \"\"\""
+      sections ++
+        [
+          "",
+          "## Query Parameters\n",
+          "| Parameter | Type | Description |",
+          "|-----------|------|-------------|"
+          | rows
+        ]
+    end
   end
 
   defp generate_stream_doc(list_op) do
@@ -377,22 +367,21 @@ defmodule Twilio.Generator.ServiceGenerator do
   end
 
   defp format_param_type(param) do
-    base =
-      case param.type do
-        :string -> "string"
-        :integer -> "integer"
-        :float -> "number"
-        :boolean -> "boolean"
-        :list -> "array"
-        :map -> "object"
-        _ -> "string"
-      end
+    base = type_label(param.type)
 
     case param[:format] do
       nil -> base
       fmt -> "#{base} (#{fmt})"
     end
   end
+
+  defp type_label(:string), do: "string"
+  defp type_label(:integer), do: "integer"
+  defp type_label(:float), do: "number"
+  defp type_label(:boolean), do: "boolean"
+  defp type_label(:list), do: "array"
+  defp type_label(:map), do: "object"
+  defp type_label(_), do: "string"
 
   defp default_description(:create, name), do: "Create a new #{name}."
   defp default_description(:list, name), do: "List #{name} resources."
@@ -429,25 +418,19 @@ defmodule Twilio.Generator.ServiceGenerator do
   defp build_parent_params([]), do: ""
 
   defp build_parent_params(params) do
-    params
-    |> Enum.map(fn p -> ", #{Macro.underscore(p)}" end)
-    |> Enum.join()
+    Enum.map_join(params, fn p -> ", #{Macro.underscore(p)}" end)
   end
 
   defp build_parent_args([]), do: ""
 
   defp build_parent_args(params) do
-    params
-    |> Enum.map(fn p -> ", #{Macro.underscore(p)}" end)
-    |> Enum.join()
+    Enum.map_join(params, fn p -> ", #{Macro.underscore(p)}" end)
   end
 
   defp parent_spec([]), do: ""
 
   defp parent_spec(params) do
-    params
-    |> Enum.map(fn _ -> "String.t(), " end)
-    |> Enum.join()
+    Enum.map_join(params, fn _ -> "String.t(), " end)
   end
 
   defp sanitize_table_cell(text) do
@@ -464,4 +447,14 @@ defmodule Twilio.Generator.ServiceGenerator do
 
   defp maybe_append_meta(list, nil, _fun), do: list
   defp maybe_append_meta(list, value, fun), do: list ++ [fun.(value)]
+
+  @max_line_length 120
+
+  defp credo_line_length_disable(line) do
+    if String.length(line) > @max_line_length do
+      "# credo:disable-for-next-line Credo.Check.Readability.MaxLineLength\n"
+    else
+      ""
+    end
+  end
 end

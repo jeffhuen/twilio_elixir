@@ -18,11 +18,13 @@ defmodule Twilio.Studio.V1.Flow.ExecutionService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreatedFrom` | string (date-time) | Only show Execution resources starting on or after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time, given as `YYYY-MM-DDThh:mm:ss-hh:mm`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreatedTo` | string (date-time) | Only show Execution resources starting before this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time, given as `YYYY-MM-DDThh:mm:ss-hh:mm`. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, flow_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Flows/#{flow_sid}/Executions",
            params: params,
@@ -67,16 +69,22 @@ defmodule Twilio.Studio.V1.Flow.ExecutionService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `From` | string (phone-number) | The Twilio phone number to send messages or initiate calls from during the Flow's Execution. Available as variable `{{flow.channel.address}}`. For SMS, this can also be a Messaging Service SID. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `To` | string (phone-number) | The Contact phone number to start a Studio Flow Execution, available as variable `{{contact.channel.address}}`. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Parameters` | string | JSON data that will be added to the Flow's context and that can be accessed as variables inside your Flow. For example, if you pass in `Parameters={"name":"Zeke"}`, a widget in your Flow can reference the variable `{{flow.data.name}}`, which returns "Zeke". Note: the JSON value must explicitly be passed as a string, not as a hash object. Depending on your particular HTTP library, you may need to add quotes or URL encode the JSON string. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V1.Flow.Execution.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V1.Flow.Execution.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, flow_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Flows/#{flow_sid}/Executions",
@@ -95,7 +103,10 @@ defmodule Twilio.Studio.V1.Flow.ExecutionService do
   Operation: `FetchExecution` | Tags: StudioV1Execution
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V1.Flow.Execution.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V1.Flow.Execution.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, flow_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Flows/#{flow_sid}/Executions/#{sid}",
@@ -118,7 +129,10 @@ defmodule Twilio.Studio.V1.Flow.ExecutionService do
   | `Status` | string |  Values: `active`, `ended` |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V1.Flow.Execution.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V1.Flow.Execution.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, flow_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Flows/#{flow_sid}/Executions/#{sid}",
@@ -137,7 +151,7 @@ defmodule Twilio.Studio.V1.Flow.ExecutionService do
   Operation: `DeleteExecution` | Tags: StudioV1Execution
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, flow_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Flows/#{flow_sid}/Executions/#{sid}",
       opts: opts,

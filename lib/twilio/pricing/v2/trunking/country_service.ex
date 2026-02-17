@@ -15,7 +15,7 @@ defmodule Twilio.Pricing.V2.Trunking.CountryService do
   Operation: `ListTrunkingCountry` | Tags: PricingV2Country
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Trunking/Countries",
            params: params,
@@ -57,7 +57,10 @@ defmodule Twilio.Pricing.V2.Trunking.CountryService do
   Operation: `FetchTrunkingCountry` | Tags: PricingV2Country
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Pricing.V2.Trunking.Country.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Pricing.V2.Trunking.Country.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Trunking/Countries/#{sid}",

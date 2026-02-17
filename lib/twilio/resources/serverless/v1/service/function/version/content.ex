@@ -11,6 +11,7 @@ defmodule Twilio.Resources.Serverless.V1.Service.Function.Version.Content do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Function Version resource. |
   | `content` | The content of the Function Version resource. |
   | `function_sid` | The SID of the Function that is the parent of the Function Version. |

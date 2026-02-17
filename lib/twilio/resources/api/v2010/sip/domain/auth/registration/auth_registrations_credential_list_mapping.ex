@@ -11,8 +11,11 @@ defmodule Twilio.Resources.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrati
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the CredentialListMapping resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
   | `friendly_name` | The string that you assigned to describe the resource.. PII: standard |
   | `sid` | The unique string that that we created to identify the CredentialListMapping resource. |
@@ -28,6 +31,7 @@ defmodule Twilio.Resources.Api.V2010.Sip.Domain.Auth.Registration.AuthRegistrati
 
   defstruct [:account_sid, :date_created, :date_updated, :friendly_name, :sid]
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @object_name "api.v2010.account.sip.sip_domain.sip_auth.sip_auth_registrations.sip_auth_registrations_credential_list_mapping"
   def object_name, do: @object_name
 

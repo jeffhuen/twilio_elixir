@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Conversations.V1.Configuration.Webhook do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   A Webhook resource manages a service-level set of callback URLs and their configuration for receiving all conversation events.
 
   Parent: `/Configuration`
@@ -9,11 +10,14 @@ defmodule Twilio.Resources.Conversations.V1.Configuration.Webhook do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The unique ID of the [Account](https://www.twilio.com/docs/iam/api/account) responsible for this conversation. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `filters` | The list of webhook event triggers that are enabled for this Service: `onMessageAdded`, `onMessageUpdated`, `onMessageRemoved`, `onMessageAdd`, `onMessageUpdate`, `onMessageRemove`, `onConversationUpdated`, `onConversationRemoved`, `onConversationAdd`, `onConversationAdded`, `onConversationRemove`, `onConversationUpdate`, `onConversationStateUpdated`, `onParticipantAdded`, `onParticipantUpdated`, `onParticipantRemoved`, `onParticipantAdd`, `onParticipantRemove`, `onParticipantUpdate`, `onDeliveryUpdated`, `onUserAdded`, `onUserUpdate`, `onUserUpdated` |
   | `method` | The HTTP method to be used when sending a webhook request.. Values: `GET`, `POST` |
   | `post_webhook_url` | The absolute url the post-event webhook request should be sent to. |
   | `pre_webhook_url` | The absolute url the pre-event webhook request should be sent to. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `target` | The routing target of the webhook. Can be ordinary or route internally to Flex. Values: `webhook`, `flex` |
   | `url` | An absolute API resource API resource URL for this webhook.. Format: uri |
   """

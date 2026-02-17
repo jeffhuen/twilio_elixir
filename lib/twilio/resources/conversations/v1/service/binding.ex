@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Conversations.V1.Service.Binding do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   A Binding resource represents a push notification binding and its configuration, for delivering conversation events to mobile or web endpoints.
 
   SID prefix: `BS`
@@ -11,14 +12,21 @@ defmodule Twilio.Resources.Conversations.V1.Service.Binding do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The unique ID of the [Account](https://www.twilio.com/docs/iam/api/account) responsible for this binding. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `binding_type` | The push technology to use for the Binding. Can be: `apn`, `gcm`, `fcm`, or `twilsock`.  See [push notification configuration](https://www.twilio.com/docs/chat/push-notification-configuration) for more info.. Values: `apn`, `gcm`, `fcm`, `twilsock` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `chat_service_sid` | The SID of the [Conversation Service](https://www.twilio.com/docs/conversations/api/service-resource) the Binding resource is associated with. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `credential_sid` | The SID of the [Credential](https://www.twilio.com/docs/conversations/api/credential-resource) for the binding. See [push notification configuration](https://www.twilio.com/docs/chat/push-notification-configuration) for more info. |
   | `date_created` | The date that this resource was created.. Format: date-time |
   | `date_updated` | The date that this resource was last updated.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `endpoint` | The unique endpoint identifier for the Binding. The format of this value depends on the `binding_type`.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `identity` | The application-defined string that uniquely identifies the [Conversation User](https://www.twilio.com/docs/conversations/api/user-resource) within the [Conversation Service](https://www.twilio.com/docs/conversations/api/service-resource). See [access tokens](https://www.twilio.com/docs/conversations/create-tokens) for more info.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `message_types` | The [Conversation message types](https://www.twilio.com/docs/chat/push-notification-configuration#push-types) the binding is subscribed to. |
   | `sid` | A 34 character string that uniquely identifies this resource. |
   | `url` | An absolute API resource URL for this binding.. Format: uri |

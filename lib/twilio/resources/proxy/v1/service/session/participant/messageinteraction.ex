@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Proxy.V1.Service.Session.Participant.Messageinteraction do
   @moduledoc """
-
+  Messageinteraction resource.
 
   SID prefix: `KI`
 
@@ -11,17 +11,25 @@ defmodule Twilio.Resources.Proxy.V1.Service.Session.Participant.Messageinteracti
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the MessageInteraction resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `data` | A JSON string that includes the message body sent to the participant. (e.g. `{"body": "hello"}`). PII: sensitive |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time in GMT when the resource was created.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time in GMT when the resource was last updated.. Format: date-time |
   | `inbound_participant_sid` | Always empty for created Message Interactions. |
   | `inbound_resource_sid` | Always empty for created Message Interactions. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `inbound_resource_status` | Always empty for created Message Interactions.. Values: `accepted`, `answered`, `busy`, `canceled`, `completed`, `deleted`, `delivered`, `delivery-unknown`, `failed`, `in-progress`, `initiated`, `no-answer`, `queued`, `received`, `receiving`, `ringing`, `scheduled`, `sending`, `sent`, `undelivered`, `unknown` |
   | `inbound_resource_type` | Always empty for created Message Interactions. |
   | `inbound_resource_url` | Always empty for created Message Interactions.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `outbound_participant_sid` | The SID of the outbound [Participant](https://www.twilio.com/docs/proxy/api/participant) resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `outbound_resource_sid` | The SID of the outbound [Message](https://www.twilio.com/docs/sms/api/message-resource) resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `outbound_resource_status` | Always empty for created Message Interactions.. Values: `accepted`, `answered`, `busy`, `canceled`, `completed`, `deleted`, `delivered`, `delivery-unknown`, `failed`, `in-progress`, `initiated`, `no-answer`, `queued`, `received`, `receiving`, `ringing`, `scheduled`, `sending`, `sent`, `undelivered`, `unknown` |
   | `outbound_resource_type` | The outbound resource type. This value is always `Message`. |
   | `outbound_resource_url` | The URL of the Twilio message resource.. Format: uri |

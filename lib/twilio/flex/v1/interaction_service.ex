@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.InteractionService do
   @moduledoc """
-
+  Service for Interaction API operations.
 
   Operations: `create`, `fetch`, `update`
   """
@@ -28,7 +28,10 @@ defmodule Twilio.Flex.V1.InteractionService do
   | `WebhookTtid` | string | The unique identifier for Interaction level webhook |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Interaction.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Interaction.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Interactions",
@@ -47,7 +50,10 @@ defmodule Twilio.Flex.V1.InteractionService do
   Operation: `FetchInteraction` | Tags: FlexV1Interaction
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Interaction.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Interaction.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Interactions/#{sid}",
@@ -70,7 +76,10 @@ defmodule Twilio.Flex.V1.InteractionService do
   | `WebhookTtid` | string | The unique identifier for Interaction level webhook |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Interaction.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Interaction.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Interactions/#{sid}",

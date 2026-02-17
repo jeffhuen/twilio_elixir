@@ -18,16 +18,21 @@ defmodule Twilio.Api.V2010.Call.UserdefinedmessagesubscriptionService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Callback` | string (uri) | The URL we should call using the `method` to send user defined events to your application. URLs must contain a valid hostname (underscores are not permitted). |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IdempotencyKey` | string | A unique string value to identify API call. This should be a unique string value per API call and can be a randomly generated. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Method` | string (http-method) | The HTTP method Twilio will use when requesting the above `Url`. Either `GET` or `POST`. Default is `POST`. Values: `GET`, `POST` |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Call.Userdefinedmessagesubscription.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, call_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -54,7 +59,7 @@ defmodule Twilio.Api.V2010.Call.UserdefinedmessagesubscriptionService do
   Operation: `DeleteUserDefinedMessageSubscription` | Tags: Api20100401UserDefinedMessageSubscription
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, call_sid, sid, opts \\ []) do
     Client.request(
       client,

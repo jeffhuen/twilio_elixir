@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.EvaluationService do
   @moduledoc """
-
+  Service for Evaluation API operations.
 
   Operations: `list`, `create`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.EvaluationService do
   Operation: `ListEvaluation` | Tags: NumbersV2Evaluation
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, bundle_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -61,6 +61,8 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.EvaluationService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Bundle.Evaluation.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, bundle_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -88,6 +90,8 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.EvaluationService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Bundle.Evaluation.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, bundle_sid, sid, opts \\ []) do
     with {:ok, data} <-

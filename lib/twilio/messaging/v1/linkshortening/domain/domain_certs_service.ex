@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Messaging.V1.Linkshortening.Domain.DomainCertsService do
   @moduledoc """
-
+  Service for DomainCerts API operations.
 
   Operations: `fetch`, `update`, `delete`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Messaging.V1.Linkshortening.Domain.DomainCertsService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.Linkshortening.Domain.DomainCerts.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, domain_sid, opts \\ []) do
     with {:ok, data} <-
@@ -40,10 +42,13 @@ defmodule Twilio.Messaging.V1.Linkshortening.Domain.DomainCertsService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TlsCert` | string | Contains the full TLS certificate and private for this domain in PEM format: https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail. Twilio uses this information to process HTTPS traffic sent to your domain. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.Linkshortening.Domain.DomainCerts.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, domain_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -67,7 +72,7 @@ defmodule Twilio.Messaging.V1.Linkshortening.Domain.DomainCertsService do
   Operation: `DeleteDomainCertV4` | Tags: MessagingV1DomainCerts
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, domain_sid, opts \\ []) do
     Client.request(client, :delete, "/v1/LinkShortening/Domains/#{domain_sid}/Certificate",
       opts: opts,

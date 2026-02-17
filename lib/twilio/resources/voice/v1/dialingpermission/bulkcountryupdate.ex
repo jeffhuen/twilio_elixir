@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Voice.V1.Dialingpermission.Bulkcountryupdate do
   @moduledoc """
-
+  Bulkcountryupdate resource.
 
   Parent: `/DialingPermissions`
 
@@ -10,6 +10,7 @@ defmodule Twilio.Resources.Voice.V1.Dialingpermission.Bulkcountryupdate do
   | Field | Description |
   |-------|-------------|
   | `update_count` | The number of countries updated |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `update_request` | A bulk update request to change voice dialing country permissions stored as a URL-encoded, JSON array of update objects. For example : `[ { "iso_code": "GB", "low_risk_numbers_enabled": "true", "high_risk_special_numbers_enabled":"true", "high_risk_tollfraud_numbers_enabled": "false" } ]` |
   """
 

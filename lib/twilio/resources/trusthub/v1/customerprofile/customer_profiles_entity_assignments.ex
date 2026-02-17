@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Trusthub.V1.Customerprofile.CustomerProfilesEntityAssignments do
   @moduledoc """
-
+  CustomerProfilesEntityAssignments resource.
 
   SID prefix: `BV`
 
@@ -11,8 +11,10 @@ defmodule Twilio.Resources.Trusthub.V1.Customerprofile.CustomerProfilesEntityAss
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Item Assignment resource. |
   | `customer_profile_sid` | The unique string that we created to identify the CustomerProfile resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `object_sid` | The SID of an object bag that holds information of the different items. |
   | `sid` | The unique string that we created to identify the Item Assignment resource. |

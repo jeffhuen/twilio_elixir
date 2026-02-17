@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Verify.V2.ServiceService do
   @moduledoc """
-
+  Service for Service API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Verify.V2.ServiceService do
   Operation: `ListService` | Tags: VerifyV2Service
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services",
            params: params,
@@ -56,39 +56,67 @@ defmodule Twilio.Verify.V2.ServiceService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the verification service. It can be up to 32 characters long. **This value should not contain PII.** |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CodeLength` | integer | The length of the verification code to generate. Must be an integer value between 4 and 10, inclusive. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CustomCodeEnabled` | boolean | Whether to allow sending verifications with a custom code instead of a randomly generated one. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DefaultTemplateSid` | string | The default message [template](https://www.twilio.com/docs/verify/api/templates). Will be used for all SMS verifications unless explicitly overriden. SMS channel only. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DoNotShareWarningEnabled` | boolean | Whether to add a security warning at the end of an SMS verification body. Disabled by default and applies only to SMS. Example SMS body: `Your AppName verification code is: 1234. Don’t share this code with anyone; our employees will never ask for the code` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DtmfInputRequired` | boolean | Whether to ask the user to press a number before delivering the verify code in a phone call. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `LookupEnabled` | boolean | Whether to perform a lookup with each verification started and return info about the phone number. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.AuthenticatorAttachment` | string | The Authenticator Attachment for Passkeys. This is the type of authenticator that will be used to create Passkeys. It can be empty or it can have the values `platform`, `cross-platform` or `any`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.DiscoverableCredentials` | string | Indicates whether credentials must be discoverable by the authenticator. It can be empty or it can have the values `required`, `preferred` or `discouraged`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.RelyingParty.Id` | string | The Relying Party ID for Passkeys. This is the domain of your application, e.g. `example.com`. It is used to identify your application when creating Passkeys. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.RelyingParty.Name` | string | The Relying Party Name for Passkeys. This is the name of your application, e.g. `Example App`. It is used to identify your application when creating Passkeys. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.RelyingParty.Origins` | string | The Relying Party Origins for Passkeys. This is the origin of your application, e.g. `login.example.com,www.example.com`. It is used to identify your application when creating Passkeys, it can have multiple origins split by `,`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.UserVerification` | string | The User Verification for Passkeys. This is the type of user verification that will be used to create Passkeys. It can be empty or it can have the values `required`, `preferred` or `discouraged`. |
   | `Psd2Enabled` | boolean | Whether to pass PSD2 transaction parameters when starting a verification. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Push.ApnCredentialSid` | string | Optional configuration for the Push factors. Set the APN Credential for this service. This will allow to send push notifications to iOS devices. See [Credential Resource](https://www.twilio.com/docs/notify/api/credential-resource) |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Push.FcmCredentialSid` | string | Optional configuration for the Push factors. Set the FCM Credential for this service. This will allow to send push notifications to Android devices. See [Credential Resource](https://www.twilio.com/docs/notify/api/credential-resource) |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Push.IncludeDate` | boolean | Optional configuration for the Push factors. If true, include the date in the Challenge's response. Otherwise, the date is omitted from the response. See [Challenge](https://www.twilio.com/docs/verify/api/challenge) resource’s details parameter for more info. Default: false. **Deprecated** do not use this parameter. This timestamp value is the same one as the one found in `date_created`, please use that one instead. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SkipSmsToLandlines` | boolean | Whether to skip sending SMS verifications to landlines. Requires `lookup_enabled`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Totp.CodeLength` | integer | Optional configuration for the TOTP factors. Number of digits for generated TOTP codes. Must be between 3 and 8, inclusive. Defaults to 6 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Totp.Issuer` | string | Optional configuration for the TOTP factors. Set TOTP Issuer for this service. This will allow to configure the issuer of the TOTP URI. Defaults to the service friendly name if not provided. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Totp.Skew` | integer | Optional configuration for the TOTP factors. The number of time-steps, past and future, that are valid for validation of TOTP codes. Must be between 0 and 2, inclusive. Defaults to 1 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Totp.TimeStep` | integer | Optional configuration for the TOTP factors. Defines how often, in seconds, are TOTP codes generated. i.e, a new TOTP code is generated every time_step seconds. Must be between 20 and 60 seconds, inclusive. Defaults to 30 seconds |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TtsName` | string | The name of an alternative text-to-speech service to use in phone calls. Applies only to TTS languages. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `VerifyEventSubscriptionEnabled` | boolean | Whether to allow verifications from the service to reach the stream-events sinks if configured |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Whatsapp.From` | string | The number to use as the WhatsApp Sender that Verify will use to send WhatsApp messages to your users.This WhatsApp Sender must be associated with a Messaging Service SID. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Whatsapp.MsgServiceSid` | string | The SID of the Messaging Service containing WhatsApp Sender(s) that Verify will use to send WhatsApp messages to your users. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Verify.V2.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Verify.V2.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services",
@@ -107,7 +135,10 @@ defmodule Twilio.Verify.V2.ServiceService do
   Operation: `FetchService` | Tags: VerifyV2Service
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Verify.V2.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Verify.V2.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Services/#{sid}",
@@ -127,35 +158,63 @@ defmodule Twilio.Verify.V2.ServiceService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CodeLength` | integer | The length of the verification code to generate. Must be an integer value between 4 and 10, inclusive. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CustomCodeEnabled` | boolean | Whether to allow sending verifications with a custom code instead of a randomly generated one. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DefaultTemplateSid` | string | The default message [template](https://www.twilio.com/docs/verify/api/templates). Will be used for all SMS verifications unless explicitly overriden. SMS channel only. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DoNotShareWarningEnabled` | boolean | Whether to add a privacy warning at the end of an SMS. **Disabled by default and applies only for SMS.** |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DtmfInputRequired` | boolean | Whether to ask the user to press a number before delivering the verify code in a phone call. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the verification service. It can be up to 32 characters long. **This value should not contain PII.** |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `LookupEnabled` | boolean | Whether to perform a lookup with each verification started and return info about the phone number. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.AuthenticatorAttachment` | string | The Authenticator Attachment for Passkeys. This is the type of authenticator that will be used to create Passkeys. It can be empty or it can have the values `platform`, `cross-platform` or `any`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.DiscoverableCredentials` | string | Indicates whether credentials must be discoverable by the authenticator. It can be empty or it can have the values `required`, `preferred` or `discouraged`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.RelyingParty.Id` | string | The Relying Party ID for Passkeys. This is the domain of your application, e.g. `example.com`. It is used to identify your application when creating Passkeys. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.RelyingParty.Name` | string | The Relying Party Name for Passkeys. This is the name of your application, e.g. `Example App`. It is used to identify your application when creating Passkeys. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.RelyingParty.Origins` | string | The Relying Party Origins for Passkeys. This is the origin of your application, e.g. `login.example.com,www.example.com`. It is used to identify your application when creating Passkeys, it can have multiple origins split by `,`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Passkeys.UserVerification` | string | The User Verification for Passkeys. This is the type of user verification that will be used to create Passkeys. It can be empty or it can have the values `required`, `preferred` or `discouraged`. |
   | `Psd2Enabled` | boolean | Whether to pass PSD2 transaction parameters when starting a verification. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Push.ApnCredentialSid` | string | Optional configuration for the Push factors. Set the APN Credential for this service. This will allow to send push notifications to iOS devices. See [Credential Resource](https://www.twilio.com/docs/notify/api/credential-resource) |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Push.FcmCredentialSid` | string | Optional configuration for the Push factors. Set the FCM Credential for this service. This will allow to send push notifications to Android devices. See [Credential Resource](https://www.twilio.com/docs/notify/api/credential-resource) |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Push.IncludeDate` | boolean | Optional configuration for the Push factors. If true, include the date in the Challenge's response. Otherwise, the date is omitted from the response. See [Challenge](https://www.twilio.com/docs/verify/api/challenge) resource’s details parameter for more info. Default: false. **Deprecated** do not use this parameter. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SkipSmsToLandlines` | boolean | Whether to skip sending SMS verifications to landlines. Requires `lookup_enabled`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Totp.CodeLength` | integer | Optional configuration for the TOTP factors. Number of digits for generated TOTP codes. Must be between 3 and 8, inclusive. Defaults to 6 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Totp.Issuer` | string | Optional configuration for the TOTP factors. Set TOTP Issuer for this service. This will allow to configure the issuer of the TOTP URI. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Totp.Skew` | integer | Optional configuration for the TOTP factors. The number of time-steps, past and future, that are valid for validation of TOTP codes. Must be between 0 and 2, inclusive. Defaults to 1 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Totp.TimeStep` | integer | Optional configuration for the TOTP factors. Defines how often, in seconds, are TOTP codes generated. i.e, a new TOTP code is generated every time_step seconds. Must be between 20 and 60 seconds, inclusive. Defaults to 30 seconds |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TtsName` | string | The name of an alternative text-to-speech service to use in phone calls. Applies only to TTS languages. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `VerifyEventSubscriptionEnabled` | boolean | Whether to allow verifications from the service to reach the stream-events sinks if configured |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Whatsapp.From` | string | The WhatsApp number to use as the sender of the verification messages. This number must be associated with the WhatsApp Message Service. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Whatsapp.MsgServiceSid` | string | The SID of the [Messaging Service](https://www.twilio.com/docs/messaging/services) to associate with the Verification Service. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Verify.V2.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Verify.V2.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{sid}",
@@ -174,7 +233,7 @@ defmodule Twilio.Verify.V2.ServiceService do
   Operation: `DeleteService` | Tags: VerifyV2Service
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Services/#{sid}",
       opts: opts,

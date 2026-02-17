@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Insights.V1.Voice.Metric do
   @moduledoc """
-
+  Metric resource.
 
   Parent: `/Voice/{Sid}`
 
@@ -13,10 +13,13 @@ defmodule Twilio.Resources.Insights.V1.Voice.Metric do
   | `call_sid` | The unique SID identifier of the Call. |
   | `carrier_edge` | Contains metrics and properties for the Twilio media gateway of a PSTN call. |
   | `client_edge` | Contains metrics and properties for the Twilio media gateway of a Client call. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `direction` | The Direction of the media stream from the perspective of the Twilio media edge. One of `unknown`, `inbound`, `outbound` or `both`.. Values: `unknown`, `inbound`, `outbound`, `both` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `edge` | The Twilio media edge this Metric was captured on. One of `unknown_edge`, `carrier_edge`, `sip_edge`, `sdk_edge` or `client_edge`.. Values: `unknown_edge`, `carrier_edge`, `sip_edge`, `sdk_edge`, `client_edge` |
   | `sdk_edge` | Contains metrics and properties for the SDK sensor library for Client calls. |
   | `sip_edge` | Contains metrics and properties for the Twilio media gateway of a SIP Interface or Trunking call. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `timestamp` | Timestamp of metric sample. Samples are taken every 10 seconds and contain the metrics for the previous 10 seconds. |
   """
 

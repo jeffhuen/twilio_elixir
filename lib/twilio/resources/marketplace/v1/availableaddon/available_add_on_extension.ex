@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Marketplace.V1.Availableaddon.AvailableAddOnExtension do
   @moduledoc """
-
+  AvailableAddOnExtension resource.
 
   SID prefix: `XF`
 

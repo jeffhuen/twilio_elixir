@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V1.Porting.Portin.PortinrequestService do
   @moduledoc """
-
+  Service for Portinrequest API operations.
 
   Operations: `list`
   """
@@ -26,7 +26,7 @@ defmodule Twilio.Numbers.V1.Porting.Portin.PortinrequestService do
   | `CreatedAfter` | string | Find all created after a certain date |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Porting/PortIn/PortInRequests",
            params: params,

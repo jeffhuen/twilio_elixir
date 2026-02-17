@@ -26,7 +26,7 @@ defmodule Twilio.ParityTest do
           end
 
         services = Path.wildcard(Path.join(dir, "**/*_service.ex"))
-        length(services) > 0
+        services != []
       end)
 
     coverage_pct = length(covered) / length(specs) * 100
@@ -34,7 +34,7 @@ defmodule Twilio.ParityTest do
     assert coverage_pct >= 90,
            "Spec coverage is #{Float.round(coverage_pct, 1)}% " <>
              "(#{length(covered)}/#{length(specs)}). " <>
-             "Uncovered: #{Enum.map(uncovered, &Path.basename/1) |> Enum.join(", ")}"
+             "Uncovered: #{Enum.map_join(uncovered, ", ", &Path.basename/1)}"
   end
 
   test "service modules compile and export expected functions" do

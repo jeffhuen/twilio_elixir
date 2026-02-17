@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V2.Regulatorycompliance.EndusertypeService do
   @moduledoc """
-
+  Service for Endusertype API operations.
 
   Operations: `list`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.EndusertypeService do
   Operation: `ListEndUserType` | Tags: NumbersV2EndUserType
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/RegulatoryCompliance/EndUserTypes",
            params: params,
@@ -58,6 +58,8 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.EndusertypeService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Endusertype.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-

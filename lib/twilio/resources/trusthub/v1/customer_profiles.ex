@@ -1,11 +1,12 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Trusthub.V1.CustomerProfiles do
   @moduledoc """
-
+  CustomerProfiles resource.
 
   SID prefix: `BU`
 
   ## Sub-resources
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   - `customer_profiles_channel_endpoint_assignment` — `/v1/CustomerProfiles/{customer_profile_sid}/ChannelEndpointAssignments`
   - `customer_profiles_entity_assignments` — `/v1/CustomerProfiles/{customer_profile_sid}/EntityAssignments`
   - `customer_profiles_evaluations` — `/v1/CustomerProfiles/{customer_profile_sid}/Evaluations`
@@ -14,8 +15,11 @@ defmodule Twilio.Resources.Trusthub.V1.CustomerProfiles do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Customer-Profile resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `email` | The email address that will receive updates when the Customer-Profile resource changes status. |
   | `errors` | The error codes associated with the rejection of the Customer-Profile. |
@@ -23,9 +27,11 @@ defmodule Twilio.Resources.Trusthub.V1.CustomerProfiles do
   | `links` | The URLs of the Assigned Items of the Customer-Profile resource.. Format: uri-map |
   | `policy_sid` | The unique string of a policy that is associated to the Customer-Profile resource. |
   | `sid` | The unique string that we created to identify the Customer-Profile resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The verification status of the Customer-Profile resource.. Values: `draft`, `pending-review`, `in-review`, `twilio-rejected`, `twilio-approved` |
   | `status_callback` | The URL we call to inform your application of status changes.. Format: uri |
   | `url` | The absolute URL of the Customer-Profile resource.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `valid_until` | The date and time in GMT in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format when the resource will be valid until.. Format: date-time |
   """
 

@@ -16,6 +16,7 @@ defmodule Twilio.MixProject do
       elixirc_paths: elixirc_paths(Mix.env()),
       dialyzer: [
         plt_file: {:no_warn, "priv/plts/dialyzer.plt"},
+        plt_add_apps: [:mix],
         flags: [:unmatched_returns, :error_handling, :extra_return, :missing_return]
       ],
       usage_rules: usage_rules()
@@ -56,18 +57,17 @@ defmodule Twilio.MixProject do
     [
       name: "twilio_elixir",
       description:
-        "Complete Twilio SDK for Elixir with 1:1 parity to the official " <>
-          "Ruby SDK. Full API coverage across 37 products (494 services, 467 resources). " <>
-          "Auto-generated from official OpenAPI specs with full-fidelity mapping. " <>
-          "Modern stack: Finch HTTP/2, automatic retries, webhooks, TwiML builder, " <>
-          "telemetry, per-client config, streaming pagination.",
+        "Complete Twilio SDK for Elixir — 37 products, 494 services, 467 resources. " <>
+          "Auto-generated from official OpenAPI specs. " <>
+          "Finch HTTP/2, retries with jitter, webhooks, TwiML, telemetry, streaming pagination.",
       maintainers: ["Jeff Huen"],
       licenses: ["MIT"],
       links: %{
         "GitHub" => @source_url,
         "Changelog" => "#{@source_url}/blob/main/CHANGELOG.md"
       },
-      files: ~w(lib guides .formatter.exs mix.exs README.md LICENSE CHANGELOG.md OPENAPI_VERSION)
+      files: ~w(lib guides .formatter.exs mix.exs README.md LICENSE CHANGELOG.md OPENAPI_VERSION),
+      exclude_patterns: ~w(lib/mix lib/twilio/generator)
     ]
   end
 

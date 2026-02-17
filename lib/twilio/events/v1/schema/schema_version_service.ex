@@ -15,7 +15,7 @@ defmodule Twilio.Events.V1.Schema.SchemaVersionService do
   Operation: `ListSchemaVersion` | Tags: EventsV1SchemaVersion
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, id, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Schemas/#{id}/Versions",
            params: params,
@@ -57,7 +57,10 @@ defmodule Twilio.Events.V1.Schema.SchemaVersionService do
   Operation: `FetchSchemaVersion` | Tags: EventsV1SchemaVersion
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Events.V1.Schema.SchemaVersion.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Events.V1.Schema.SchemaVersion.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, id, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Schemas/#{id}/Versions/#{sid}",

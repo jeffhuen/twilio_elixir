@@ -1,18 +1,21 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Messaging.V1.Linkshortening.Messagingservice.Domainconfig do
   @moduledoc """
-
+  Domainconfig resource.
 
   ## Properties
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `callback_url` | URL to receive click events to your webhook whenever the recipients click on the shortened links.. Format: uri |
   | `config_sid` | The unique string that we created to identify the Domain config (prefix ZK). |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `continue_on_failure` | Boolean field to set customer delivery preference when there is a failure in linkShortening service |
   | `date_created` | Date this Domain Config was created.. Format: date-time |
   | `date_updated` | Date that this Domain Config was last updated.. Format: date-time |
   | `domain_sid` | The unique string that we created to identify the Domain resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `fallback_url` | Any requests we receive to this domain that do not match an existing shortened message will be redirected to the fallback url. These will likely be either expired messages, random misdirected traffic, or intentional scraping.. Format: uri |
   | `messaging_service_sid` | The unique string that identifies the messaging service |
   | `url` | Format: uri |

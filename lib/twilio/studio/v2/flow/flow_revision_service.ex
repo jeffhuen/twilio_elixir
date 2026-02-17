@@ -15,7 +15,7 @@ defmodule Twilio.Studio.V2.Flow.FlowRevisionService do
   Operation: `ListFlowRevision` | Tags: StudioV2FlowRevision
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Flows/#{sid}/Revisions",
            params: params,
@@ -57,7 +57,10 @@ defmodule Twilio.Studio.V2.Flow.FlowRevisionService do
   Operation: `FetchFlowRevision` | Tags: StudioV2FlowRevision
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V2.Flow.FlowRevision.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V2.Flow.FlowRevision.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Flows/#{sid}/Revisions/#{sid}",

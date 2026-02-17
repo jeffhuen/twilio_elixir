@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Voice.V1.IprecordService do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   IP Records hold information about the IP addresses and ranges ([CIDR](https://tools.ietf.org/html/rfc4632) blocks) that your traffic will be associated with.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
@@ -15,7 +16,7 @@ defmodule Twilio.Voice.V1.IprecordService do
   Operation: `ListIpRecord` | Tags: VoiceV1IpRecord
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/IpRecords",
            params: params,
@@ -61,11 +62,16 @@ defmodule Twilio.Voice.V1.IprecordService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CidrPrefixLength` | integer | An integer representing the length of the [CIDR](https://tools.ietf.org/html/rfc4632) prefix to use with this IP address. By default the entire IP address is used, which for IPv4 is value 32. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It is not unique and can be up to 255 characters long. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Voice.V1.Iprecord.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Voice.V1.Iprecord.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/IpRecords",
@@ -84,7 +90,10 @@ defmodule Twilio.Voice.V1.IprecordService do
   Operation: `FetchIpRecord` | Tags: VoiceV1IpRecord
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Voice.V1.Iprecord.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Voice.V1.Iprecord.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/IpRecords/#{sid}",
@@ -104,10 +113,14 @@ defmodule Twilio.Voice.V1.IprecordService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It is not unique and can be up to 255 characters long. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Voice.V1.Iprecord.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Voice.V1.Iprecord.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/IpRecords/#{sid}",
@@ -126,7 +139,7 @@ defmodule Twilio.Voice.V1.IprecordService do
   Operation: `DeleteIpRecord` | Tags: VoiceV1IpRecord
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/IpRecords/#{sid}",
       opts: opts,

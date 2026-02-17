@@ -15,7 +15,7 @@ defmodule Twilio.Supersim.V1.Networkaccessprofile.NetworkAccessProfileNetworkSer
   Operation: `ListNetworkAccessProfileNetwork` | Tags: SupersimV1NetworkAccessProfileNetwork
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, network_access_profile_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -67,6 +67,8 @@ defmodule Twilio.Supersim.V1.Networkaccessprofile.NetworkAccessProfileNetworkSer
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Supersim.V1.Networkaccessprofile.NetworkAccessProfileNetwork.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, network_access_profile_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -94,6 +96,8 @@ defmodule Twilio.Supersim.V1.Networkaccessprofile.NetworkAccessProfileNetworkSer
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Supersim.V1.Networkaccessprofile.NetworkAccessProfileNetwork.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, network_access_profile_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -118,7 +122,7 @@ defmodule Twilio.Supersim.V1.Networkaccessprofile.NetworkAccessProfileNetworkSer
   Operation: `DeleteNetworkAccessProfileNetwork` | Tags: SupersimV1NetworkAccessProfileNetwork
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, network_access_profile_sid, sid, opts \\ []) do
     Client.request(
       client,

@@ -10,6 +10,7 @@ defmodule Twilio.Resources.Api.V2010.Balance do
   | Field | Description |
   |-------|-------------|
   | `account_sid` | The unique SID identifier of the Account. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `balance` | The balance of the Account, in units specified by the unit parameter. Balance changes may not be reflected immediately. Child accounts do not contain balance information |
   | `currency` | The units of currency for the account balance |
   """

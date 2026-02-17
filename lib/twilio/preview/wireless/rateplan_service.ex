@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Preview.Wireless.RateplanService do
   @moduledoc """
-
+  Service for Rateplan API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Preview.Wireless.RateplanService do
   Operation: `ListWirelessRatePlan` | Tags: PreviewWirelessRatePlan
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/wireless/RatePlans",
            params: params,
@@ -72,7 +72,10 @@ defmodule Twilio.Preview.Wireless.RateplanService do
   | `VoiceEnabled` | boolean |  |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Preview.Wireless.Rateplan.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Preview.Wireless.Rateplan.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/wireless/RatePlans",
@@ -91,7 +94,10 @@ defmodule Twilio.Preview.Wireless.RateplanService do
   Operation: `FetchWirelessRatePlan` | Tags: PreviewWirelessRatePlan
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Preview.Wireless.Rateplan.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Preview.Wireless.Rateplan.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/wireless/RatePlans/#{sid}",
@@ -115,7 +121,10 @@ defmodule Twilio.Preview.Wireless.RateplanService do
   | `UniqueName` | string |  |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Preview.Wireless.Rateplan.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Preview.Wireless.Rateplan.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/wireless/RatePlans/#{sid}",
@@ -134,7 +143,7 @@ defmodule Twilio.Preview.Wireless.RateplanService do
   Operation: `DeleteWirelessRatePlan` | Tags: PreviewWirelessRatePlan
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/wireless/RatePlans/#{sid}",
       opts: opts,

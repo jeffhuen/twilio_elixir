@@ -15,7 +15,10 @@ defmodule Twilio.Accounts.V1.Authtoken.SecondaryService do
   Operation: `CreateSecondaryAuthToken` | Tags: AccountsV1SecondaryAuthToken
   """
   @spec update(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Accounts.V1.Authtoken.Secondary.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Accounts.V1.Authtoken.Secondary.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/AuthTokens/Secondary",
@@ -34,7 +37,7 @@ defmodule Twilio.Accounts.V1.Authtoken.SecondaryService do
   Operation: `DeleteSecondaryAuthToken` | Tags: AccountsV1SecondaryAuthToken
   """
   @spec delete(Client.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, opts \\ []) do
     Client.request(client, :delete, "/v1/AuthTokens/Secondary",
       opts: opts,

@@ -19,11 +19,12 @@ defmodule Twilio.Supersim.V1.EsimprofileService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Eid` | string | List the eSIM Profiles that have been associated with an EId. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SimSid` | string | Find the eSIM Profile resource related to a [Sim](https://www.twilio.com/docs/iot/supersim/api/sim-resource) resource by providing the SIM SID. Will always return an array with either 1 or 0 records. |
   | `Status` | string | List the eSIM Profiles that are in a given status. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/ESimProfiles",
            params: params,
@@ -65,13 +66,19 @@ defmodule Twilio.Supersim.V1.EsimprofileService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CallbackMethod` | string (http-method) | The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is POST. Values: `GET`, `POST` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CallbackUrl` | string | The URL we should call using the `callback_method` when the status of the eSIM Profile changes. At this stage of the eSIM Profile pilot, the a request to the URL will only be called when the ESimProfile resource changes from `reserving` to `available`. |
   | `Eid` | string | Identifier of the eUICC that will claim the eSIM Profile. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `GenerateMatchingId` | boolean | When set to `true`, a value for `Eid` does not need to be provided. Instead, when the eSIM profile is reserved, a matching ID will be generated and returned via the `matching_id` property. This identifies the specific eSIM profile that can be used by any capable device to claim and download the profile. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Supersim.V1.Esimprofile.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Supersim.V1.Esimprofile.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/ESimProfiles",
@@ -90,7 +97,10 @@ defmodule Twilio.Supersim.V1.EsimprofileService do
   Operation: `FetchEsimProfile` | Tags: SupersimV1EsimProfile
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Supersim.V1.Esimprofile.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Supersim.V1.Esimprofile.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/ESimProfiles/#{sid}",

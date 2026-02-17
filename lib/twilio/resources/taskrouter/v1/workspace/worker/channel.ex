@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Taskrouter.V1.Workspace.Worker.Channel do
   @moduledoc """
-
+  Channel resource.
 
   SID prefix: `WC`
 
@@ -11,12 +11,17 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.Worker.Channel do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Worker resource. |
   | `assigned_tasks` | The total number of Tasks assigned to Worker for the TaskChannel type. |
   | `available` | Whether the Worker should receive Tasks of the TaskChannel type. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `available_capacity_percentage` | The current percentage of capacity the TaskChannel has available. Can be a number between `0` and `100`. A value of `0` indicates that TaskChannel has no capacity available and a value of `100` means the  Worker is available to receive any Tasks of this TaskChannel type. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `configured_capacity` | The current configured capacity for the WorkerChannel. TaskRouter will not create any reservations after the assigned Tasks for the Worker reaches the value. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
   | `sid` | The unique string that we created to identify the WorkerChannel resource. |
   | `task_channel_sid` | The SID of the TaskChannel. |

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Messaging.V1.Linkshortening.Domain.RequestmanagedcertService do
   @moduledoc """
-
+  Service for Requestmanagedcert API operations.
 
   Operations: `update`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Messaging.V1.Linkshortening.Domain.RequestmanagedcertService do
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.Linkshortening.Domain.Requestmanagedcert.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, domain_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

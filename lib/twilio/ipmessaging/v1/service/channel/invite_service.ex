@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.IpMessaging.V1.Service.Channel.InviteService do
   @moduledoc """
-
+  Service for Invite API operations.
 
   Operations: `list`, `create`, `fetch`, `delete`
   """
@@ -21,7 +21,7 @@ defmodule Twilio.IpMessaging.V1.Service.Channel.InviteService do
   | `Identity` | array |  |
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, channel_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -78,6 +78,8 @@ defmodule Twilio.IpMessaging.V1.Service.Channel.InviteService do
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.IpMessaging.V1.Service.Channel.Invite.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, service_sid, channel_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -102,6 +104,8 @@ defmodule Twilio.IpMessaging.V1.Service.Channel.InviteService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.IpMessaging.V1.Service.Channel.Invite.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, channel_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -123,7 +127,7 @@ defmodule Twilio.IpMessaging.V1.Service.Channel.InviteService do
   Operation: `DeleteInvite` | Tags: IpMessagingV1Invite
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, channel_sid, sid, opts \\ []) do
     Client.request(
       client,

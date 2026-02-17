@@ -7,9 +7,12 @@ defmodule Twilio.Resources.Video.V1.Compositionsetting.CompositionSettings do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the CompositionSettings resource. |
   | `aws_credentials_sid` | The SID of the stored Credential resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `aws_s3_url` | The URL of the AWS S3 bucket where the compositions are stored. We only support DNS-compliant URLs like `https://documentation-example-twilio-bucket/compositions`, where `compositions` is the path in which you want the compositions to be stored. This URL accepts only URI-valid characters, as described in the [RFC 3986](https://tools.ietf.org/html/rfc3986#section-2).. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `aws_storage_enabled` | Whether all compositions are written to the `aws_s3_url`. When `false`, all compositions are stored in our cloud. |
   | `encryption_enabled` | Whether all compositions are stored in an encrypted form. The default is `false`. |
   | `encryption_key_sid` | The SID of the Public Key resource used for encryption. |

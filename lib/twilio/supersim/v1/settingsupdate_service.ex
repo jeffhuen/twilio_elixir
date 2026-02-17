@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Supersim.V1.SettingsupdateService do
   @moduledoc """
-
+  Service for Settingsupdate API operations.
 
   Operations: `list`
   """
@@ -19,10 +19,11 @@ defmodule Twilio.Supersim.V1.SettingsupdateService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Sim` | string | Filter the Settings Updates by a Super SIM's SID or UniqueName. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Status` | string | Filter the Settings Updates by status. Can be `scheduled`, `in-progress`, `successful`, or `failed`. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/SettingsUpdates",
            params: params,

@@ -23,10 +23,13 @@ defmodule Twilio.Api.V2010.Call.UserdefinedmessageService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IdempotencyKey` | string | A unique string value to identify API call. This should be a unique string value per API call and can be a randomly generated. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Call.Userdefinedmessage.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, call_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

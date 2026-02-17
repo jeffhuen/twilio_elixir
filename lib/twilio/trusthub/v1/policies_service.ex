@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Trusthub.V1.PoliciesService do
   @moduledoc """
-
+  Service for Policies API operations.
 
   Operations: `list`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Trusthub.V1.PoliciesService do
   Operation: `ListPolicies` | Tags: TrusthubV1Policies
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Policies",
            params: params,
@@ -54,7 +54,10 @@ defmodule Twilio.Trusthub.V1.PoliciesService do
   Operation: `FetchPolicies` | Tags: TrusthubV1Policies
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Trusthub.V1.Policies.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trusthub.V1.Policies.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Policies/#{sid}",

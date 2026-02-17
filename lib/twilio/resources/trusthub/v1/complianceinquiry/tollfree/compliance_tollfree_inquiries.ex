@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Trusthub.V1.Complianceinquiry.Tollfree.ComplianceTollfreeInquiries do
   @moduledoc """
-
+  ComplianceTollfreeInquiries resource.
 
   ## Properties
 

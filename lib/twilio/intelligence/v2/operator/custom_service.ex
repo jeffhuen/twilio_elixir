@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Intelligence.V2.Operator.CustomService do
   @moduledoc """
-
+  Service for Custom API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -18,11 +18,12 @@ defmodule Twilio.Intelligence.V2.Operator.CustomService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Availability` | string | Returns Custom Operators with the provided availability type. Possible values: internal, beta, public, retired. |
   | `LanguageCode` | string | Returns Custom Operators that support the provided language code. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Operators/Custom",
            params: params,
@@ -72,7 +73,10 @@ defmodule Twilio.Intelligence.V2.Operator.CustomService do
   | `OperatorType` | string | Operator Type for this Operator. References an existing Operator Type resource. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Intelligence.V2.Operator.Custom.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Intelligence.V2.Operator.Custom.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Operators/Custom",
@@ -91,7 +95,10 @@ defmodule Twilio.Intelligence.V2.Operator.CustomService do
   Operation: `FetchCustomOperator` | Tags: IntelligenceV2CustomOperator
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Intelligence.V2.Operator.Custom.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Intelligence.V2.Operator.Custom.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Operators/Custom/#{sid}",
@@ -115,7 +122,10 @@ defmodule Twilio.Intelligence.V2.Operator.CustomService do
   | `FriendlyName` | string | A human-readable name of this resource, up to 64 characters. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Intelligence.V2.Operator.Custom.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Intelligence.V2.Operator.Custom.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Operators/Custom/#{sid}",
@@ -134,7 +144,7 @@ defmodule Twilio.Intelligence.V2.Operator.CustomService do
   Operation: `DeleteCustomOperator` | Tags: IntelligenceV2CustomOperator
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Operators/Custom/#{sid}",
       opts: opts,

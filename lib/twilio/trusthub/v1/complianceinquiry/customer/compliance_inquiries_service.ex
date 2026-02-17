@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Trusthub.V1.Complianceinquiry.Customer.ComplianceInquiriesService do
   @moduledoc """
-
+  Service for ComplianceInquiries API operations.
 
   Operations: `update`
   """
@@ -18,6 +18,7 @@ defmodule Twilio.Trusthub.V1.Complianceinquiry.Customer.ComplianceInquiriesServi
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `PrimaryProfileSid` | string | The unique SID identifier of the Primary Customer Profile that should be used as a parent. Only necessary when creating a secondary Customer Profile. |
   ## Optional Parameters
 
@@ -27,6 +28,8 @@ defmodule Twilio.Trusthub.V1.Complianceinquiry.Customer.ComplianceInquiriesServi
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Trusthub.V1.Complianceinquiry.Customer.ComplianceInquiries.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, customer_id, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

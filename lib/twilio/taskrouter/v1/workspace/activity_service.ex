@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Taskrouter.V1.Workspace.ActivityService do
   @moduledoc """
-
+  Service for Activity API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -19,10 +19,11 @@ defmodule Twilio.Taskrouter.V1.Workspace.ActivityService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `FriendlyName` | string | The `friendly_name` of the Activity resources to read. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Available` | string | Whether return only Activity resources that are available or unavailable. A value of `true` returns only available activities. Values of '1' or `yes` also indicate `true`. All other values represent `false` and return activities that are unavailable. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, workspace_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Workspaces/#{workspace_sid}/Activities",
            params: params,
@@ -67,15 +68,19 @@ defmodule Twilio.Taskrouter.V1.Workspace.ActivityService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the Activity resource. It can be up to 64 characters long. These names are used to calculate and expose statistics about Workers, and provide visibility into the state of each Worker. Examples of friendly names include: `on-call`, `break`, and `email`. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Available` | boolean | Whether the Worker should be eligible to receive a Task when it occupies the Activity. A value of `true`, `1`, or `yes` specifies the Activity is available. All other values specify that it is not. The value cannot be changed after the Activity is created. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Activity.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, workspace_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -96,6 +101,8 @@ defmodule Twilio.Taskrouter.V1.Workspace.ActivityService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Activity.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, workspace_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -116,10 +123,13 @@ defmodule Twilio.Taskrouter.V1.Workspace.ActivityService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the Activity resource. It can be up to 64 characters long. These names are used to calculate and expose statistics about Workers, and provide visibility into the state of each Worker. Examples of friendly names include: `on-call`, `break`, and `email`. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Activity.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, workspace_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -139,7 +149,7 @@ defmodule Twilio.Taskrouter.V1.Workspace.ActivityService do
   Operation: `DeleteActivity` | Tags: TaskrouterV1Activity
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, workspace_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Workspaces/#{workspace_sid}/Activities/#{sid}",
       opts: opts,

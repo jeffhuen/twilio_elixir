@@ -36,12 +36,17 @@ defmodule Twilio.Resources.Api.V2010.Account do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `auth_token` | The authorization token for this account. This token should be kept a secret, so no sharing.. PII: sensitive |
   | `date_created` | The date that this account was created, in GMT in RFC 2822 format. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date that this account was last updated, in GMT in RFC 2822 format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `friendly_name` | A human readable description of this account, up to 64 characters long. By default the FriendlyName is your email address.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `owner_account_sid` | The unique 34 character id that represents the parent of this account. The OwnerAccountSid of a parent account is it's own sid. |
   | `sid` | A 34 character string that uniquely identifies this resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The status of this account. Usually `active`, but can be `suspended` or `closed`.. Values: `active`, `suspended`, `closed` |
   | `subresource_uris` | A Map of various subresources available for the given Account Instance. Format: uri-map |
   | `type` | The type of this account. Either `Trial` or `Full` if it's been upgraded. Values: `Trial`, `Full` |

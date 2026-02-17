@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Intelligence.V2.Service.OperatorAttachmentsService do
   @moduledoc """
-
+  Service for OperatorAttachments API operations.
 
   Operations: `fetch`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Intelligence.V2.Service.OperatorAttachmentsService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Intelligence.V2.Service.OperatorAttachments.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, opts \\ []) do
     with {:ok, data} <-

@@ -15,7 +15,7 @@ defmodule Twilio.Taskrouter.V1.Workspace.TaskchannelService do
   Operation: `ListTaskChannel` | Tags: TaskrouterV1TaskChannel
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, workspace_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Workspaces/#{workspace_sid}/TaskChannels",
            params: params,
@@ -60,16 +60,21 @@ defmodule Twilio.Taskrouter.V1.Workspace.TaskchannelService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the Task Channel. It can be up to 64 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the Task Channel, such as `voice` or `sms`. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ChannelOptimizedRouting` | boolean | Whether the Task Channel should prioritize Workers that have been idle. If `true`, Workers that have been idle the longest are prioritized. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Taskchannel.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, workspace_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -90,6 +95,8 @@ defmodule Twilio.Taskrouter.V1.Workspace.TaskchannelService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Taskchannel.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, workspace_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -110,11 +117,15 @@ defmodule Twilio.Taskrouter.V1.Workspace.TaskchannelService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ChannelOptimizedRouting` | boolean | Whether the TaskChannel should prioritize Workers that have been idle. If `true`, Workers that have been idle the longest are prioritized. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the Task Channel. It can be up to 64 characters long. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Taskchannel.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, workspace_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -134,7 +145,7 @@ defmodule Twilio.Taskrouter.V1.Workspace.TaskchannelService do
   Operation: `DeleteTaskChannel` | Tags: TaskrouterV1TaskChannel
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, workspace_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Workspaces/#{workspace_sid}/TaskChannels/#{sid}",
       opts: opts,

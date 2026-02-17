@@ -26,10 +26,11 @@ defmodule Twilio.Content.V2.ContentAndApprovalsService do
   | `Content` | string | Filter by Regex Pattern in template content |
   | `Language` | array | Filter by array of valid language(s) |
   | `ContentType` | array | Filter by array of contentType(s) |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ChannelEligibility` | array | Filter by array of ChannelEligibility(s), where ChannelEligibility=<channel>:<status> |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/ContentAndApprovals",
            params: params,
@@ -54,6 +55,7 @@ defmodule Twilio.Content.V2.ContentAndApprovalsService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieve a list of Contents with approval statuses belonging to the account used to make the request (lazy auto-pagination)."
   @spec stream(Client.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, params \\ %{}, opts \\ []) do

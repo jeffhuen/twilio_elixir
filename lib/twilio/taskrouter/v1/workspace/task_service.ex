@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Taskrouter.V1.Workspace.TaskService do
   @moduledoc """
-
+  Service for Task API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -18,19 +18,28 @@ defmodule Twilio.Taskrouter.V1.Workspace.TaskService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Priority` | integer | The priority value of the Tasks to read. Returns the list of all Tasks in the Workspace with the specified priority. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AssignmentStatus` | array | The `assignment_status` of the Tasks you want to read. Can be: `pending`, `reserved`, `assigned`, `canceled`, `wrapping`, or `completed`. Returns all Tasks in the Workspace with the specified `assignment_status`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `WorkflowSid` | string | The SID of the Workflow with the Tasks to read. Returns the Tasks controlled by the Workflow identified by this SID. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `WorkflowName` | string | The friendly name of the Workflow with the Tasks to read. Returns the Tasks controlled by the Workflow identified by this friendly name. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TaskQueueSid` | string | The SID of the TaskQueue with the Tasks to read. Returns the Tasks waiting in the TaskQueue identified by this SID. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TaskQueueName` | string | The `friendly_name` of the TaskQueue with the Tasks to read. Returns the Tasks waiting in the TaskQueue identified by this friendly name. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `EvaluateTaskAttributes` | string | The attributes of the Tasks to read. Returns the Tasks that match the attributes specified in this parameter. |
   | `RoutingTarget` | string | A SID of a Worker, Queue, or Workflow to route a Task to |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Ordering` | string | How to order the returned Task resources. By default, Tasks are sorted by ascending DateCreated. This value is specified as: `Attribute:Order`, where `Attribute` can be either `DateCreated`, `Priority`, or `VirtualStartTime` and `Order` can be either `asc` or `desc`. For example, `Priority:desc` returns Tasks ordered in descending order of their Priority. Pairings of sort orders can be specified in a comma-separated list such as `Priority:desc,DateCreated:asc`, which returns the Tasks in descending Priority order and ascending DateCreated Order. The only ordering pairing not allowed is DateCreated and VirtualStartTime. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `HasAddons` | boolean | Whether to read Tasks with Add-ons. If `true`, returns only Tasks with Add-ons. If `false`, returns only Tasks without Add-ons. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, workspace_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Workspaces/#{workspace_sid}/Tasks",
            params: params,
@@ -75,18 +84,28 @@ defmodule Twilio.Taskrouter.V1.Workspace.TaskService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Attributes` | string | A JSON string with the attributes of the new task. This value is passed to the Workflow's `assignment_callback_url` when the Task is assigned to a Worker. For example: `{ "task_type": "call", "twilio_call_sid": "CAxxx", "customer_ticket_number": "12345" }`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IgnoreCapacity` | string | A boolean that indicates if the Task should respect a Worker's capacity and availability during assignment. This field can only be used when the `RoutingTarget` field is set to a Worker SID. By setting `IgnoreCapacity` to a value of `true`, `1`, or `yes`, the Task will be routed to the Worker without respecting their capacity and availability. Any other value will enforce the Worker's capacity and availability. The default value of `IgnoreCapacity` is `true` when the `RoutingTarget` is set to a Worker SID.  |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Priority` | integer | The priority to assign the new task and override the default. When supplied, the new Task will have this priority unless it matches a Workflow Target with a Priority set. When not supplied, the new Task will have the priority of the matching Workflow Target. Value can be 0 to 2^31^ (2,147,483,647). |
   | `RoutingTarget` | string | A SID of a Worker, Queue, or Workflow to route a Task to |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TaskChannel` | string | When MultiTasking is enabled, specify the TaskChannel by passing either its `unique_name` or `sid`. Default value is `default`. |
   | `TaskQueueSid` | string | The SID of the TaskQueue in which the Task belongs |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Timeout` | integer | The amount of time in seconds the new task can live before being assigned. Can be up to a maximum of 2 weeks (1,209,600 seconds). The default value is 24 hours (86,400 seconds). On timeout, the `task.canceled` event will fire with description `Task TTL Exceeded`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `VirtualStartTime` | string (date-time) | The virtual start time to assign the new task and override the default. When supplied, the new task will have this virtual start time. When not supplied, the new task will have the virtual start time equal to `date_created`. Value can't be in the future or before the year of 1900. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `WorkflowSid` | string | The SID of the Workflow that you would like to handle routing for the new Task. If there is only one Workflow defined for the Workspace that you are posting the new task to, this parameter is optional. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Task.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Task.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, workspace_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Workspaces/#{workspace_sid}/Tasks",
@@ -105,7 +124,10 @@ defmodule Twilio.Taskrouter.V1.Workspace.TaskService do
   Operation: `FetchTask` | Tags: TaskrouterV1Task
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Task.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Task.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, workspace_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Workspaces/#{workspace_sid}/Tasks/#{sid}",
@@ -127,13 +149,20 @@ defmodule Twilio.Taskrouter.V1.Workspace.TaskService do
   |-----------|------|-------------|
   | `AssignmentStatus` | string |  Values: `pending`, `reserved`, `assigned`, `canceled`, `completed`, `wrapping` |
   | `Attributes` | string | The JSON string that describes the custom attributes of the task. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Priority` | integer | The Task's new priority value. When supplied, the Task takes on the specified priority unless it matches a Workflow Target with a Priority set. Value can be 0 to 2^31^ (2,147,483,647). |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Reason` | string | The reason that the Task was canceled or completed. This parameter is required only if the Task is canceled or completed. Setting this value queues the task for deletion and logs the reason. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TaskChannel` | string | When MultiTasking is enabled, specify the TaskChannel with the task to update. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `VirtualStartTime` | string (date-time) | The task's new virtual start time value. When supplied, the Task takes on the specified virtual start time. Value can't be in the future or before the year of 1900. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Task.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Taskrouter.V1.Workspace.Task.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, workspace_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Workspaces/#{workspace_sid}/Tasks/#{sid}",
@@ -152,7 +181,7 @@ defmodule Twilio.Taskrouter.V1.Workspace.TaskService do
   Operation: `DeleteTask` | Tags: TaskrouterV1Task
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, workspace_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Workspaces/#{workspace_sid}/Tasks/#{sid}",
       opts: opts,

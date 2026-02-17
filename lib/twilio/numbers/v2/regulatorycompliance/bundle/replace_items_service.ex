@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.ReplaceItemsService do
   @moduledoc """
-
+  Service for ReplaceItems API operations.
 
   Operations: `create`
   """
@@ -10,6 +10,7 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.ReplaceItemsService do
   alias Twilio.Deserializer
 
   @doc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Replaces all bundle items in the target bundle (specified in the path) with all the bundle items of the source bundle (specified by the from_bundle_sid body param)
 
   Operation: `CreateReplaceItems` | Tags: NumbersV2ReplaceItems
@@ -22,6 +23,8 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.ReplaceItemsService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Bundle.ReplaceItems.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, bundle_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

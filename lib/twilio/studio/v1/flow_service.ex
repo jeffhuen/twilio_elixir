@@ -15,7 +15,7 @@ defmodule Twilio.Studio.V1.FlowService do
   Operation: `ListFlow` | Tags: StudioV1Flow
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Flows",
            params: params,
@@ -53,7 +53,10 @@ defmodule Twilio.Studio.V1.FlowService do
   Operation: `FetchFlow` | Tags: StudioV1Flow
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V1.Flow.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V1.Flow.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Flows/#{sid}",
@@ -70,7 +73,7 @@ defmodule Twilio.Studio.V1.FlowService do
   Operation: `DeleteFlow` | Tags: StudioV1Flow
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Flows/#{sid}",
       opts: opts,

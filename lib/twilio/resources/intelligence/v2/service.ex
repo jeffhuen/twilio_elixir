@@ -1,24 +1,31 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Intelligence.V2.Service do
   @moduledoc """
-
+  Service resource.
 
   ## Properties
 
   | Field | Description |
   |-------|-------------|
   | `account_sid` | The unique SID identifier of the Account the Service belongs to. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `auto_redaction` | Instructs the Speech Recognition service to automatically redact PII from all transcripts made on this service. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `auto_transcribe` | Instructs the Speech Recognition service to automatically transcribe all recordings made on the account. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `data_logging` | Data logging allows Twilio to improve the quality of the speech recognition & language understanding services through using customer data to refine, fine tune and evaluate machine learning models. Note: Data logging cannot be activated via API, only via www.twilio.com, as it requires additional consent. |
   | `date_created` | The date that this Service was created, given in ISO 8601 format.. Format: date-time |
   | `date_updated` | The date that this Service was updated, given in ISO 8601 format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `encryption_credential_sid` | The unique SID identifier of the Public Key resource used to encrypt the sentences and operator results. |
   | `friendly_name` | A human readable description of this resource, up to 64 characters. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `language_code` | The language code set during Service creation determines the Transcription language for all call recordings processed by that Service. The default is en-US if no language code is set. A Service can only support one language code, and it cannot be updated once it's set. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `media_redaction` | Instructs the Speech Recognition service to automatically redact PII from all transcripts media made on this service. The auto_redaction flag must be enabled, results in error otherwise. |
   | `read_only_attached_operator_sids` | Operator sids attached to this service, read only |
   | `sid` | A 34 character string that uniquely identifies this Service. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `unique_name` | Provides a unique and addressable name to be assigned to this Service, assigned by the developer, to be optionally used in addition to SID. |
   | `url` | The URL of this resource.. Format: uri |
   | `version` | The version number of this Service. |

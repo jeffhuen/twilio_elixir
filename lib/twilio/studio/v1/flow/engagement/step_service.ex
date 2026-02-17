@@ -15,7 +15,7 @@ defmodule Twilio.Studio.V1.Flow.Engagement.StepService do
   Operation: `ListStep` | Tags: StudioV1Step
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, flow_sid, engagement_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Flows/#{flow_sid}/Engagements/#{engagement_sid}/Steps",
            params: params,
@@ -57,7 +57,10 @@ defmodule Twilio.Studio.V1.Flow.Engagement.StepService do
   Operation: `FetchStep` | Tags: StudioV1Step
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V1.Flow.Engagement.Step.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V1.Flow.Engagement.Step.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, flow_sid, engagement_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(

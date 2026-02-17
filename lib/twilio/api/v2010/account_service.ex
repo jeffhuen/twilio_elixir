@@ -22,7 +22,7 @@ defmodule Twilio.Api.V2010.AccountService do
   | `Status` | string | Only return Account resources with the given status. Can be `closed`, `suspended` or `active`. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/2010-04-01/Accounts.json",
            params: params,
@@ -43,6 +43,7 @@ defmodule Twilio.Api.V2010.AccountService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieves a collection of Accounts belonging to the account used to make the request (lazy auto-pagination)."
   @spec stream(Client.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, params \\ %{}, opts \\ []) do
@@ -63,10 +64,14 @@ defmodule Twilio.Api.V2010.AccountService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A human readable description of the account to create, defaults to `SubAccount Created at {YYYY-MM-DD HH:MM meridian}` |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Account.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Account.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/2010-04-01/Accounts.json",
@@ -85,7 +90,10 @@ defmodule Twilio.Api.V2010.AccountService do
   Operation: `FetchAccount` | Tags: Api20100401Account
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Account.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Account.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/2010-04-01/Accounts/#{sid}.json",
@@ -109,7 +117,10 @@ defmodule Twilio.Api.V2010.AccountService do
   | `Status` | string |  Values: `active`, `suspended`, `closed` |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Account.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Account.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/2010-04-01/Accounts/#{sid}.json",

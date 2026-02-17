@@ -10,12 +10,13 @@ defmodule Twilio.Api.V2010.BalanceService do
   alias Twilio.Deserializer
 
   @doc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Fetch the balance for an Account based on Account Sid. Balance changes may not be reflected immediately. Child accounts do not contain balance information
 
   Operation: `FetchBalance` | Tags: Api20100401Balance
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/2010-04-01/Accounts/#{client.account_sid}/Balance.json",
            params: params,
@@ -36,6 +37,7 @@ defmodule Twilio.Api.V2010.BalanceService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Fetch the balance for an Account based on Account Sid. Balance changes may not be reflected immediately. Child accounts do not contain balance information (lazy auto-pagination)."
   @spec stream(Client.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, params \\ %{}, opts \\ []) do

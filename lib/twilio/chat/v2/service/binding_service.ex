@@ -18,11 +18,13 @@ defmodule Twilio.Chat.V2.Service.BindingService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `BindingType` | array | The push technology used by the Binding resources to read.  Can be: `apn`, `gcm`, or `fcm`.  See [push notification configuration](https://www.twilio.com/docs/chat/push-notification-configuration) for more info. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Identity` | array | The [User](https://www.twilio.com/docs/chat/rest/user-resource)'s `identity` value of the resources to read. See [access tokens](https://www.twilio.com/docs/chat/create-tokens) for more details. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services/#{service_sid}/Bindings",
            params: params,
@@ -61,7 +63,10 @@ defmodule Twilio.Chat.V2.Service.BindingService do
   Operation: `FetchBinding` | Tags: ChatV2Binding
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.Binding.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.Binding.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Services/#{service_sid}/Bindings/#{sid}",
@@ -78,7 +83,7 @@ defmodule Twilio.Chat.V2.Service.BindingService do
   Operation: `DeleteBinding` | Tags: ChatV2Binding
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Services/#{service_sid}/Bindings/#{sid}",
       opts: opts,

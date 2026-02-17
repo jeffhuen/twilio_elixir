@@ -9,23 +9,34 @@ defmodule Twilio.Resources.Conversations.V1.User.Conversation do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The unique ID of the [Account](https://www.twilio.com/docs/iam/api/account) responsible for this conversation. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `attributes` | An optional string metadata field you can use to store any data you wish. The string value must contain structurally valid JSON if specified.  **Note** that if the attributes are not set "{}" will be returned.. PII: sensitive |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `chat_service_sid` | The unique ID of the [Conversation Service](https://www.twilio.com/docs/conversations/api/service-resource) this conversation belongs to. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `conversation_sid` | The unique ID of the [Conversation](https://www.twilio.com/docs/conversations/api/conversation-resource) for this User Conversation. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `conversation_state` | The current state of this User Conversation. One of `inactive`, `active` or `closed`.. Values: `inactive`, `active`, `closed` |
   | `created_by` | Identity of the creator of this Conversation. |
   | `date_created` | The date that this conversation was created, given in ISO 8601 format.. Format: date-time |
   | `date_updated` | The date that this conversation was last updated, given in ISO 8601 format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `friendly_name` | The human-readable name of this conversation, limited to 256 characters. Optional.. PII: standard |
   | `last_read_message_index` | The index of the last Message in the Conversation that the Participant has read. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `links` | Contains absolute URLs to access the [participant](https://www.twilio.com/docs/conversations/api/conversation-participant-resource) and [conversation](https://www.twilio.com/docs/conversations/api/conversation-resource) of this conversation.. Format: uri-map |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `notification_level` | The Notification Level of this User Conversation. One of `default` or `muted`.. Values: `default`, `muted` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `participant_sid` | The unique ID of the [participant](https://www.twilio.com/docs/conversations/api/conversation-participant-resource) the user conversation belongs to. |
   | `timers` | Timer date values representing state update for this conversation. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `unique_name` | An application-defined string that uniquely identifies the Conversation resource. It can be used to address the resource in place of the resource's `conversation_sid` in the URL.. PII: standard |
   | `unread_messages_count` | The number of unread Messages in the Conversation for the Participant. |
   | `url` | Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `user_sid` | The unique string that identifies the [User resource](https://www.twilio.com/docs/conversations/api/user-resource). |
   """
 

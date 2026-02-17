@@ -10,6 +10,7 @@ defmodule Twilio.Resources.Studio.V1.Flow.Engagement.Context do
   | Field | Description |
   |-------|-------------|
   | `account_sid` | The SID of the Account. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `context` | As your flow executes, we save the state in what's called the Flow Context. Any data in the flow context can be accessed by your widgets as variables, either in configuration fields or in text areas as variable substitution. |
   | `engagement_sid` | The SID of the Engagement. |
   | `flow_sid` | The SID of the Flow. |

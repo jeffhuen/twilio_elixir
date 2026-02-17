@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Intelligence.V2.TranscriptService do
   @moduledoc """
-
+  Service for Transcript API operations.
 
   Operations: `list`, `create`, `fetch`, `delete`
   """
@@ -28,7 +28,7 @@ defmodule Twilio.Intelligence.V2.TranscriptService do
   | `SourceSid` | string | Filter by SourceSid. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Transcripts",
            params: params,
@@ -80,10 +80,14 @@ defmodule Twilio.Intelligence.V2.TranscriptService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `CustomerKey` | string | Used to store client provided metadata. Maximum of 64 double-byte UTF8 characters. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `MediaStartTime` | string (date-time) | The date that this Transcript's media was started, given in ISO 8601 format. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Intelligence.V2.Transcript.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Intelligence.V2.Transcript.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Transcripts",
@@ -102,7 +106,10 @@ defmodule Twilio.Intelligence.V2.TranscriptService do
   Operation: `FetchTranscript` | Tags: IntelligenceV2Transcript
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Intelligence.V2.Transcript.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Intelligence.V2.Transcript.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Transcripts/#{sid}",
@@ -119,7 +126,7 @@ defmodule Twilio.Intelligence.V2.TranscriptService do
   Operation: `DeleteTranscript` | Tags: IntelligenceV2Transcript
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Transcripts/#{sid}",
       opts: opts,

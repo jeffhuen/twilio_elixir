@@ -11,9 +11,11 @@ defmodule Twilio.Resources.Frontline.V1.User do
   |-------|-------------|
   | `avatar` | The avatar URL which will be shown in Frontline application. |
   | `friendly_name` | The string that you assigned to describe the User.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `identity` | The application-defined string that uniquely identifies the resource's User. This value is often a username or an email address, and is case-sensitive.. PII: standard |
   | `is_available` | Whether the User is available for new conversations. Defaults to `false` for new users. |
   | `sid` | The unique string that we created to identify the User resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `state` | Current state of this user. Can be either `active` or `deactivated` and defaults to `active`. Values: `active`, `deactivated` |
   | `url` | An absolute API resource URL for this user.. Format: uri |
   """

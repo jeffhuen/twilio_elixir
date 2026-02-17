@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Trusthub.V1.Customerprofile.CustomerProfilesEvaluationsService do
   @moduledoc """
-
+  Service for CustomerProfilesEvaluations API operations.
 
   Operations: `list`, `create`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Trusthub.V1.Customerprofile.CustomerProfilesEvaluationsService 
   Operation: `ListCustomerProfileEvaluation` | Tags: TrusthubV1CustomerProfilesEvaluations
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, customer_profile_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/CustomerProfiles/#{customer_profile_sid}/Evaluations",
            params: params,
@@ -64,6 +64,8 @@ defmodule Twilio.Trusthub.V1.Customerprofile.CustomerProfilesEvaluationsService 
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Trusthub.V1.Customerprofile.CustomerProfilesEvaluations.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, customer_profile_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -91,6 +93,8 @@ defmodule Twilio.Trusthub.V1.Customerprofile.CustomerProfilesEvaluationsService 
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Trusthub.V1.Customerprofile.CustomerProfilesEvaluations.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, customer_profile_sid, sid, opts \\ []) do
     with {:ok, data} <-

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Flex.V1.Instance do
   @moduledoc """
-
+  Instance resource.
 
   ## Properties
 
@@ -9,6 +9,7 @@ defmodule Twilio.Resources.Flex.V1.Instance do
   |-------|-------------|
   | `date_created` | Format: date-time |
   | `date_updated` | Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | Values: `unknown`, `creation-in-progress`, `ready`, `creation-failed`, `deletion-in-progress`, `deleted`, `deletion-failed` |
   """
 

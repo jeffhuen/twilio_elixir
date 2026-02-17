@@ -7,6 +7,7 @@ defmodule Twilio.Resources.Api.V2010.AvailablePhoneNumberCountry do
 
   ## Sub-resources
   - `local` — `/2010-04-01/Accounts/{account_sid}/AvailablePhoneNumbers/{country_code}/Local.json`
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   - `machine_to_machine` — `/2010-04-01/Accounts/{account_sid}/AvailablePhoneNumbers/{country_code}/MachineToMachine.json`
   - `mobile` — `/2010-04-01/Accounts/{account_sid}/AvailablePhoneNumbers/{country_code}/Mobile.json`
   - `national` — `/2010-04-01/Accounts/{account_sid}/AvailablePhoneNumbers/{country_code}/National.json`
@@ -18,9 +19,12 @@ defmodule Twilio.Resources.Api.V2010.AvailablePhoneNumberCountry do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `beta` | Whether all phone numbers available in the country are new to the Twilio platform. `true` if they are and `false` if all numbers are not in the Twilio Phone Number Beta program. |
   | `country` | The name of the country. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `country_code` | The [ISO-3166-1](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code of the country.. Format: iso-country-code |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `subresource_uris` | A list of related AvailablePhoneNumber resources identified by their URIs relative to `https://api.twilio.com`.. Format: uri-map |
   | `uri` | The URI of the Country resource, relative to `https://api.twilio.com`.. Format: uri |
   """

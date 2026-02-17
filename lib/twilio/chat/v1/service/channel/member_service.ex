@@ -18,10 +18,11 @@ defmodule Twilio.Chat.V1.Service.Channel.MemberService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Identity` | array | The [User](https://www.twilio.com/docs/api/chat/rest/v1/user)'s `identity` value of the resources to read. See [access tokens](https://www.twilio.com/docs/api/chat/guides/create-tokens) for more details. |
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, channel_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -69,15 +70,20 @@ defmodule Twilio.Chat.V1.Service.Channel.MemberService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Identity` | string | The `identity` value that uniquely identifies the new resource's [User](https://www.twilio.com/docs/api/chat/rest/v1/user) within the [Service](https://www.twilio.com/docs/api/chat/rest/services). See [access tokens](https://www.twilio.com/docs/api/chat/guides/create-tokens) for more details. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RoleSid` | string | The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) to assign to the member. The default roles are those specified on the [Service](https://www.twilio.com/docs/chat/api/services). |
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Member.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Member.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, channel_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -99,7 +105,10 @@ defmodule Twilio.Chat.V1.Service.Channel.MemberService do
   Operation: `FetchMember` | Tags: ChatV1Member
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Member.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Member.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, channel_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -122,11 +131,16 @@ defmodule Twilio.Chat.V1.Service.Channel.MemberService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `LastConsumedMessageIndex` | integer | The index of the last [Message](https://www.twilio.com/docs/api/chat/rest/messages) that the Member has read within the [Channel](https://www.twilio.com/docs/api/chat/rest/channels). |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RoleSid` | string | The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) to assign to the member. The default roles are those specified on the [Service](https://www.twilio.com/docs/chat/api/services). |
   """
   @spec update(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Member.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Member.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, channel_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -148,7 +162,7 @@ defmodule Twilio.Chat.V1.Service.Channel.MemberService do
   Operation: `DeleteMember` | Tags: ChatV1Member
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, channel_sid, sid, opts \\ []) do
     Client.request(
       client,

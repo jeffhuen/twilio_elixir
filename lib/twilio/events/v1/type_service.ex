@@ -18,10 +18,11 @@ defmodule Twilio.Events.V1.TypeService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SchemaId` | string | A string parameter filtering the results to return only the Event Types using a given schema. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Types",
            params: params,
@@ -59,7 +60,10 @@ defmodule Twilio.Events.V1.TypeService do
   Operation: `FetchEventType` | Tags: EventsV1EventType
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Events.V1.Type.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Events.V1.Type.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Types/#{sid}",

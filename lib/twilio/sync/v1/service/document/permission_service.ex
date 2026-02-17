@@ -15,7 +15,7 @@ defmodule Twilio.Sync.V1.Service.Document.PermissionService do
   Operation: `ListDocumentPermission` | Tags: SyncV1DocumentPermission
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, document_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -61,6 +61,8 @@ defmodule Twilio.Sync.V1.Service.Document.PermissionService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Sync.V1.Service.Document.Permission.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, document_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -90,6 +92,8 @@ defmodule Twilio.Sync.V1.Service.Document.PermissionService do
   """
   @spec update(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Sync.V1.Service.Document.Permission.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, service_sid, document_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -112,7 +116,7 @@ defmodule Twilio.Sync.V1.Service.Document.PermissionService do
   Operation: `DeleteDocumentPermission` | Tags: SyncV1DocumentPermission
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, document_sid, sid, opts \\ []) do
     Client.request(
       client,

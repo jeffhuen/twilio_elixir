@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Oauth.V1.TokenService do
   @moduledoc """
-
+  Service for Token API operations.
 
   Operations: `create`
   """
@@ -19,6 +19,7 @@ defmodule Twilio.Oauth.V1.TokenService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `ClientId` | string | A 34 character string that uniquely identifies this OAuth App. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `GrantType` | string | Grant type is a credential representing resource owner's authorization which can be used by client to obtain access token. |
   ## Optional Parameters
 
@@ -32,7 +33,10 @@ defmodule Twilio.Oauth.V1.TokenService do
   | `Scope` | string | The scope of token |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Oauth.V1.Token.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Oauth.V1.Token.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/token",

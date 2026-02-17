@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Flex.V1.Pluginservice.Configuration.ConfiguredPlugin do
   @moduledoc """
-
+  ConfiguredPlugin resource.
 
   Parent: `/PluginService/Configurations/{Sid}`
 
@@ -9,10 +9,13 @@ defmodule Twilio.Resources.Flex.V1.Pluginservice.Configuration.ConfiguredPlugin 
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the Flex Plugin resource is installed for. |
   | `changelog` | A changelog that describes the changes this Flex Plugin Version brings. |
   | `configuration_sid` | The SID of the Flex Plugin Configuration that this Flex Plugin belongs to. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the Flex Plugin was installed specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `description` | A descriptive string that you create to describe the plugin resource. It can be up to 500 characters long |
   | `friendly_name` | The friendly name of this Flex Plugin resource. |
   | `phase` | The phase this Flex Plugin would initialize at runtime. |

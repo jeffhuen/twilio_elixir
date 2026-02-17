@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Conversations.V1.Service.Conversation.Webhook do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   A Conversation-scoped Webhook resource manages a set of callback URLs and their configuration for receiving events specific to one conversation.
 
   SID prefix: `WH`
@@ -11,9 +12,12 @@ defmodule Twilio.Resources.Conversations.V1.Service.Conversation.Webhook do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The unique ID of the [Account](https://www.twilio.com/docs/iam/api/account) responsible for this conversation. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `chat_service_sid` | The SID of the [Conversation Service](https://www.twilio.com/docs/conversations/api/service-resource) the Participant resource is associated with. |
   | `configuration` | The configuration of this webhook. Is defined based on target. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `conversation_sid` | The unique ID of the [Conversation](https://www.twilio.com/docs/conversations/api/conversation-resource) for this webhook. |
   | `date_created` | The date that this resource was created.. Format: date-time |
   | `date_updated` | The date that this resource was last updated.. Format: date-time |

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V1.Signingrequest.ConfigurationService do
   @moduledoc """
-
+  Service for Configuration API operations.
 
   Operations: `list`, `create`
   """
@@ -19,10 +19,11 @@ defmodule Twilio.Numbers.V1.Signingrequest.ConfigurationService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Country` | string | The country ISO code to apply this configuration, this is an optional field, Example: US, MX |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Product` | string | The product or service for which is requesting the signature, this is an optional field, Example: Porting, Hosting |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/SigningRequest/Configuration",
            params: params,
@@ -65,6 +66,8 @@ defmodule Twilio.Numbers.V1.Signingrequest.ConfigurationService do
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V1.Signingrequest.Configuration.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Api.V2010.Application do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   An Application instance resource represents an application that you have created with Twilio. An application inside of Twilio is just a set of URLs and other configuration data that tells Twilio how to behave when one of your Twilio numbers receives a call or SMS message.
 
   SID prefix: `AP`
@@ -11,25 +12,40 @@ defmodule Twilio.Resources.Api.V2010.Application do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Application resource. |
   | `api_version` | The API version used to start a new TwiML session. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
   | `friendly_name` | The string that you assigned to describe the resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `message_status_callback` | The URL we call using a POST method to send message status information to your application.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `public_application_connect_enabled` | Whether to allow other Twilio accounts to dial this applicaton using Dial verb. Can be: `true` or `false`. |
   | `sid` | The unique string that that we created to identify the Application resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sms_fallback_method` | The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.. Values: `GET`, `POST`. Format: http-method |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sms_fallback_url` | The URL that we call when an error occurs while retrieving or executing the TwiML from `sms_url`.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sms_method` | The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.. Values: `GET`, `POST`. Format: http-method |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sms_status_callback` | The URL we call using a POST method to send status information to your application about SMS messages that refer to the application.. Format: uri |
   | `sms_url` | The URL we call when the phone number receives an incoming SMS message.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status_callback` | The URL we call using the `status_callback_method` to send status information to your application.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status_callback_method` | The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.. Values: `GET`, `POST`. Format: http-method |
   | `uri` | The URI of the resource, relative to `https://api.twilio.com`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `voice_caller_id_lookup` | Whether we look up the caller's caller-ID name from the CNAM database (additional charges apply). Can be: `true` or `false`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `voice_fallback_method` | The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.. Values: `GET`, `POST`. Format: http-method |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `voice_fallback_url` | The URL that we call when an error occurs retrieving or executing the TwiML requested by `url`.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `voice_method` | The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.. Values: `GET`, `POST`. Format: http-method |
   | `voice_url` | The URL we call when the phone number assigned to this application receives a call.. Format: uri |
   """

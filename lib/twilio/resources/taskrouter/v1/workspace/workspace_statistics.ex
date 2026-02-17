@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Taskrouter.V1.Workspace.WorkspaceStatistics do
   @moduledoc """
-
+  WorkspaceStatistics resource.
 
   Parent: `/Workspaces/{Sid}`
 
@@ -9,6 +9,7 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.WorkspaceStatistics do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Workspace resource. |
   | `cumulative` | An object that contains the cumulative statistics for the Workspace. |
   | `realtime` | An object that contains the real-time statistics for the Workspace. |

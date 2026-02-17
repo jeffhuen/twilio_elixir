@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Numbers.V2.Regulatorycompliance.Bundle.Evaluation do
   @moduledoc """
-
+  Evaluation resource.
 
   SID prefix: `EL`
 
@@ -11,6 +11,7 @@ defmodule Twilio.Resources.Numbers.V2.Regulatorycompliance.Bundle.Evaluation do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Bundle resource. |
   | `bundle_sid` | The unique string that we created to identify the Bundle resource. |
   | `date_created` | Format: date-time |

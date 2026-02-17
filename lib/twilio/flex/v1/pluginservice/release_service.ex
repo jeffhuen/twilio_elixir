@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Pluginservice.ReleaseService do
   @moduledoc """
-
+  Service for Release API operations.
 
   Operations: `list`, `create`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Flex.V1.Pluginservice.ReleaseService do
   Operation: `ListPluginRelease` | Tags: FlexV1PluginRelease
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/PluginService/Releases",
            params: params,
@@ -63,7 +63,10 @@ defmodule Twilio.Flex.V1.Pluginservice.ReleaseService do
   | `ConfigurationId` | string | The SID or the Version of the Flex Plugin Configuration to release. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Pluginservice.Release.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Pluginservice.Release.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/PluginService/Releases",
@@ -82,7 +85,10 @@ defmodule Twilio.Flex.V1.Pluginservice.ReleaseService do
   Operation: `FetchPluginRelease` | Tags: FlexV1PluginRelease
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Pluginservice.Release.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Pluginservice.Release.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/PluginService/Releases/#{sid}",

@@ -11,9 +11,13 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.Taskchannel do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Task Channel resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `channel_optimized_routing` | Whether the Task Channel will prioritize Workers that have been idle. When `true`, Workers that have been idle the longest are prioritized. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `friendly_name` | The string that you assigned to describe the resource. |
   | `links` | The URLs of related resources.. Format: uri-map |

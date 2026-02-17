@@ -11,9 +11,11 @@ defmodule Twilio.Resources.Content.V1.Content.Approvalrequest do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/usage/api/account) that created Content resource. |
   | `sid` | The unique string that that we created to identify the Content resource. |
   | `url` | The URL of the resource, relative to `https://content.twilio.com`.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `whatsapp` | Contains the whatsapp approval information for the Content resource, with fields such as approval status, rejection reason, and category, amongst others. |
   """
 

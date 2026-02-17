@@ -10,6 +10,7 @@ defmodule Twilio.Resources.Api.V2010.Call.Event do
   | Field | Description |
   |-------|-------------|
   | `request` | Contains a dictionary representing the request of the call.. PII: sensitive |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `response` | Contains a dictionary representing the call response, including a list of the call events.. PII: sensitive |
   """
 

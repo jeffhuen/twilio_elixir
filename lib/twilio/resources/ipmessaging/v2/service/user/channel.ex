@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.IpMessaging.V2.Service.User.Channel do
   @moduledoc """
-
+  Channel resource.
 
   Parent: `/Services/{ServiceSid}/Users/{Sid}`
 

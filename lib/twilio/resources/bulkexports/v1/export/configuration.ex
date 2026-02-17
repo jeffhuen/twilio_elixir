@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Bulkexports.V1.Export.Configuration do
   @moduledoc """
-
+  Configuration resource.
 
   ## Properties
 
@@ -10,6 +10,7 @@ defmodule Twilio.Resources.Bulkexports.V1.Export.Configuration do
   | `enabled` | If true, Twilio will automatically generate every day's file when the day is over. |
   | `resource_type` | The type of communication – Messages, Calls, Conferences, and Participants |
   | `url` | The URL of this resource.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `webhook_method` | Sets whether Twilio should call a webhook URL when the automatic generation is complete, using GET or POST. The actual destination is set in the webhook_url |
   | `webhook_url` | Stores the URL destination for the method specified in webhook_method.. Format: uri |
   """

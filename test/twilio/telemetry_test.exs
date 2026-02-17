@@ -98,7 +98,7 @@ defmodule Twilio.TelemetryTest do
       assert_receive {:telemetry, [:twilio, :request, :stop], _, metadata}
       assert metadata.status == 400
       assert metadata.retries == 0
-      assert %Twilio.Error{type: :invalid_request_error, code: 21211} = metadata.error
+      assert %Twilio.Error{type: :invalid_request_error, code: 21_211} = metadata.error
     end
 
     test "fires with error struct on 401 authentication error", %{client: client} do
@@ -110,7 +110,7 @@ defmodule Twilio.TelemetryTest do
 
       assert_receive {:telemetry, [:twilio, :request, :stop], _, metadata}
       assert metadata.status == 401
-      assert %Twilio.Error{type: :authentication_error, code: 20003} = metadata.error
+      assert %Twilio.Error{type: :authentication_error, code: 20_003} = metadata.error
     end
   end
 

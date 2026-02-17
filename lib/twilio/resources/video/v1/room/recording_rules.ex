@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Video.V1.Room.RecordingRules do
   @moduledoc """
-
+  RecordingRules resource.
 
   Parent: `/Rooms/{Sid}`
 
@@ -9,7 +9,9 @@ defmodule Twilio.Resources.Video.V1.Room.RecordingRules do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `room_sid` | The SID of the Room resource for the Recording Rules |
   | `rules` | A collection of Recording Rules that describe how to include or exclude matching tracks for recording |

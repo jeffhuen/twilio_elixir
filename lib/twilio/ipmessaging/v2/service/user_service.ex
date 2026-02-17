@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.IpMessaging.V2.Service.UserService do
   @moduledoc """
-
+  Service for User API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.IpMessaging.V2.Service.UserService do
   Operation: `ListUser` | Tags: IpMessagingV2User
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services/#{service_sid}/Users",
            params: params,
@@ -70,7 +70,10 @@ defmodule Twilio.IpMessaging.V2.Service.UserService do
   | `RoleSid` | string |  |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Service.User.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Service.User.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{service_sid}/Users",
@@ -89,7 +92,10 @@ defmodule Twilio.IpMessaging.V2.Service.UserService do
   Operation: `FetchUser` | Tags: IpMessagingV2User
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Service.User.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Service.User.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Services/#{service_sid}/Users/#{sid}",
@@ -114,7 +120,10 @@ defmodule Twilio.IpMessaging.V2.Service.UserService do
   | `RoleSid` | string |  |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Service.User.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Service.User.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{service_sid}/Users/#{sid}",
@@ -133,7 +142,7 @@ defmodule Twilio.IpMessaging.V2.Service.UserService do
   Operation: `DeleteUser` | Tags: IpMessagingV2User
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Services/#{service_sid}/Users/#{sid}",
       opts: opts,

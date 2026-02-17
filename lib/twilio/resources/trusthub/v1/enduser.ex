@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Trusthub.V1.Enduser do
   @moduledoc """
-
+  Enduser resource.
 
   SID prefix: `IT`
 
@@ -9,9 +9,13 @@ defmodule Twilio.Resources.Trusthub.V1.Enduser do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the End User resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `attributes` | The set of parameters that are the attributes of the End Users resource which are listed in the End User Types.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `friendly_name` | The string that you assigned to describe the resource. |
   | `sid` | The unique string created by Twilio to identify the End User resource. |

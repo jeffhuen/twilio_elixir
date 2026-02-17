@@ -15,7 +15,7 @@ defmodule Twilio.Conversations.V1.ServiceService do
   Operation: `ListService` | Tags: ConversationsV1Service
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services",
            params: params,
@@ -63,7 +63,10 @@ defmodule Twilio.Conversations.V1.ServiceService do
   | `FriendlyName` | string | The human-readable name of this service, limited to 256 characters. Optional. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Conversations.V1.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Conversations.V1.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services",
@@ -82,7 +85,10 @@ defmodule Twilio.Conversations.V1.ServiceService do
   Operation: `FetchService` | Tags: ConversationsV1Service
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Conversations.V1.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Conversations.V1.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Services/#{sid}",
@@ -99,7 +105,7 @@ defmodule Twilio.Conversations.V1.ServiceService do
   Operation: `DeleteService` | Tags: ConversationsV1Service
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{sid}",
       opts: opts,

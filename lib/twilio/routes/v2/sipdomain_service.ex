@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Routes.V2.SipdomainService do
   @moduledoc """
-
+  Service for Sipdomain API operations.
 
   Operations: `fetch`, `update`
   """
@@ -15,7 +15,10 @@ defmodule Twilio.Routes.V2.SipdomainService do
   Operation: `FetchSipDomain` | Tags: RoutesV2SipDomain
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Routes.V2.Sipdomain.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Routes.V2.Sipdomain.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/SipDomains/#{sid}",
@@ -39,7 +42,10 @@ defmodule Twilio.Routes.V2.SipdomainService do
   | `VoiceRegion` | string |  |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Routes.V2.Sipdomain.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Routes.V2.Sipdomain.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/SipDomains/#{sid}",

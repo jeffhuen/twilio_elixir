@@ -15,7 +15,7 @@ defmodule Twilio.Studio.V1.Flow.Execution.ExecutionStepService do
   Operation: `ListExecutionStep` | Tags: StudioV1ExecutionStep
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, flow_sid, execution_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Flows/#{flow_sid}/Executions/#{execution_sid}/Steps",
            params: params,
@@ -58,6 +58,8 @@ defmodule Twilio.Studio.V1.Flow.Execution.ExecutionStepService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Studio.V1.Flow.Execution.ExecutionStep.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, flow_sid, execution_sid, sid, opts \\ []) do
     with {:ok, data} <-

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Marketplace.V1.Installedaddon do
   @moduledoc """
-
+  Installedaddon resource.
 
   SID prefix: `XE`
 
@@ -13,13 +13,17 @@ defmodule Twilio.Resources.Marketplace.V1.Installedaddon do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the InstalledAddOn resource. |
   | `configuration` | The JSON object that represents the current configuration of installed Add-on. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `description` | A short description of the Add-on's functionality. |
   | `friendly_name` | The string that you assigned to describe the resource. |
   | `links` | The URLs of related resources.. Format: uri-map |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sid` | The unique string that we created to identify the InstalledAddOn resource. This Sid can also be found in the Console on that specific Add-ons page as the 'Available Add-on Sid'. |
   | `unique_name` | An application-defined string that uniquely identifies the resource. |
   | `url` | The absolute URL of the resource.. Format: uri |

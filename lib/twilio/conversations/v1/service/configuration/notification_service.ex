@@ -16,6 +16,8 @@ defmodule Twilio.Conversations.V1.Service.Configuration.NotificationService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Service.Configuration.Notification.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, chat_service_sid, opts \\ []) do
     with {:ok, data} <-
@@ -43,22 +45,35 @@ defmodule Twilio.Conversations.V1.Service.Configuration.NotificationService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AddedToConversation.Enabled` | boolean | Whether to send a notification when a participant is added to a conversation. The default is `false`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AddedToConversation.Sound` | string | The name of the sound to play when a participant is added to a conversation and `added_to_conversation.enabled` is `true`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AddedToConversation.Template` | string | The template to use to create the notification text displayed when a participant is added to a conversation and `added_to_conversation.enabled` is `true`. |
   | `LogEnabled` | boolean | Weather the notification logging is enabled. |
   | `NewMessage.BadgeCountEnabled` | boolean | Whether the new message badge is enabled. The default is `false`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `NewMessage.Enabled` | boolean | Whether to send a notification when a new message is added to a conversation. The default is `false`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `NewMessage.Sound` | string | The name of the sound to play when a new message is added to a conversation and `new_message.enabled` is `true`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `NewMessage.Template` | string | The template to use to create the notification text displayed when a new message is added to a conversation and `new_message.enabled` is `true`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `NewMessage.WithMedia.Enabled` | boolean | Whether to send a notification when a new message with media/file attachments is added to a conversation. The default is `false`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `NewMessage.WithMedia.Template` | string | The template to use to create the notification text displayed when a new message with media/file attachments is added to a conversation and `new_message.attachments.enabled` is `true`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RemovedFromConversation.Enabled` | boolean | Whether to send a notification to a user when they are removed from a conversation. The default is `false`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RemovedFromConversation.Sound` | string | The name of the sound to play to a user when they are removed from a conversation and `removed_from_conversation.enabled` is `true`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RemovedFromConversation.Template` | string | The template to use to create the notification text displayed to a user when they are removed from a conversation and `removed_from_conversation.enabled` is `true`. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Service.Configuration.Notification.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, chat_service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

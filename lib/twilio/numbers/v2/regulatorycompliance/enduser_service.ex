@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V2.Regulatorycompliance.EnduserService do
   @moduledoc """
-
+  Service for Enduser API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.EnduserService do
   Operation: `ListEndUser` | Tags: NumbersV2EndUser
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/RegulatoryCompliance/EndUsers",
            params: params,
@@ -66,10 +66,13 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.EnduserService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Attributes` | string | The set of parameters that are the attributes of the End User resource which are derived End User Types. |
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Enduser.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -91,6 +94,8 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.EnduserService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Enduser.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
@@ -112,11 +117,14 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.EnduserService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Attributes` | string | The set of parameters that are the attributes of the End User resource which are derived End User Types. |
   | `FriendlyName` | string | The string that you assigned to describe the resource. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Enduser.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -137,7 +145,7 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.EnduserService do
   Operation: `DeleteEndUser` | Tags: NumbersV2EndUser
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/RegulatoryCompliance/EndUsers/#{sid}",
       opts: opts,

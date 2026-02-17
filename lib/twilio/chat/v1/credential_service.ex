@@ -15,7 +15,7 @@ defmodule Twilio.Chat.V1.CredentialService do
   Operation: `ListCredential` | Tags: ChatV1Credential
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Credentials",
            params: params,
@@ -61,15 +61,24 @@ defmodule Twilio.Chat.V1.CredentialService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ApiKey` | string | [GCM only] The API key for the project that was obtained from the Google Developer console for your GCM Service application credential. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Certificate` | string | [APN only] The URL encoded representation of the certificate. For example,  `-----BEGIN CERTIFICATE----- MIIFnTCCBIWgAwIBAgIIAjy9H849+E8wDQYJKoZIhvcNAQEFBQAwgZYxCzAJBgNV.....A== -----END CERTIFICATE-----` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the new resource. It can be up to 64 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `PrivateKey` | string | [APN only] The URL encoded representation of the private key. For example, `-----BEGIN RSA PRIVATE KEY----- MIIEpQIBAAKCAQEAuyf/lNrH9ck8DmNyo3fGgvCI1l9s+cmBY3WIz+cUDqmxiieR. -----END RSA PRIVATE KEY-----` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Sandbox` | boolean | [APN only] Whether to send the credential to sandbox APNs. Can be `true` to send to sandbox APNs or `false` to send to production. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Secret` | string | [FCM only] The **Server key** of your project from the Firebase console, found under Settings / Cloud messaging. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Credential.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Credential.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Credentials",
@@ -88,7 +97,10 @@ defmodule Twilio.Chat.V1.CredentialService do
   Operation: `FetchCredential` | Tags: ChatV1Credential
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Credential.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Credential.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Credentials/#{sid}",
@@ -108,15 +120,24 @@ defmodule Twilio.Chat.V1.CredentialService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ApiKey` | string | [GCM only] The API key for the project that was obtained from the Google Developer console for your GCM Service application credential. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Certificate` | string | [APN only] The URL encoded representation of the certificate. For example,  `-----BEGIN CERTIFICATE----- MIIFnTCCBIWgAwIBAgIIAjy9H849+E8wDQYJKoZIhvcNAQEFBQAwgZYxCzAJBgNV.....A== -----END CERTIFICATE-----` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It can be up to 64 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `PrivateKey` | string | [APN only] The URL encoded representation of the private key. For example, `-----BEGIN RSA PRIVATE KEY----- MIIEpQIBAAKCAQEAuyf/lNrH9ck8DmNyo3fGgvCI1l9s+cmBY3WIz+cUDqmxiieR. -----END RSA PRIVATE KEY-----` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Sandbox` | boolean | [APN only] Whether to send the credential to sandbox APNs. Can be `true` to send to sandbox APNs or `false` to send to production. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Secret` | string | [FCM only] The **Server key** of your project from the Firebase console, found under Settings / Cloud messaging. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Credential.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Credential.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Credentials/#{sid}",
@@ -135,7 +156,7 @@ defmodule Twilio.Chat.V1.CredentialService do
   Operation: `DeleteCredential` | Tags: ChatV1Credential
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Credentials/#{sid}",
       opts: opts,

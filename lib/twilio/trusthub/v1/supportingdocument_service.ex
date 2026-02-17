@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Trusthub.V1.SupportingdocumentService do
   @moduledoc """
-
+  Service for Supportingdocument API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Trusthub.V1.SupportingdocumentService do
   Operation: `ListSupportingDocument` | Tags: TrusthubV1SupportingDocument
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/SupportingDocuments",
            params: params,
@@ -66,10 +66,14 @@ defmodule Twilio.Trusthub.V1.SupportingdocumentService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Attributes` | string | The set of parameters that are the attributes of the Supporting Documents resource which are derived Supporting Document Types. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Trusthub.V1.Supportingdocument.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trusthub.V1.Supportingdocument.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/SupportingDocuments",
@@ -88,7 +92,10 @@ defmodule Twilio.Trusthub.V1.SupportingdocumentService do
   Operation: `FetchSupportingDocument` | Tags: TrusthubV1SupportingDocument
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Trusthub.V1.Supportingdocument.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trusthub.V1.Supportingdocument.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/SupportingDocuments/#{sid}",
@@ -108,11 +115,15 @@ defmodule Twilio.Trusthub.V1.SupportingdocumentService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Attributes` | string | The set of parameters that are the attributes of the Supporting Document resource which are derived Supporting Document Types. |
   | `FriendlyName` | string | The string that you assigned to describe the resource. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Trusthub.V1.Supportingdocument.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trusthub.V1.Supportingdocument.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/SupportingDocuments/#{sid}",
@@ -131,7 +142,7 @@ defmodule Twilio.Trusthub.V1.SupportingdocumentService do
   Operation: `DeleteSupportingDocument` | Tags: TrusthubV1SupportingDocument
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/SupportingDocuments/#{sid}",
       opts: opts,

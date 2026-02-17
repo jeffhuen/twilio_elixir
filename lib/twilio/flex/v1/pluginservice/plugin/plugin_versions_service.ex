@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Pluginservice.Plugin.PluginVersionsService do
   @moduledoc """
-
+  Service for PluginVersions API operations.
 
   Operations: `list`, `create`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Flex.V1.Pluginservice.Plugin.PluginVersionsService do
   Operation: `ListPluginVersion` | Tags: FlexV1PluginVersions
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, plugin_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/PluginService/Plugins/#{plugin_sid}/Versions",
            params: params,
@@ -73,6 +73,8 @@ defmodule Twilio.Flex.V1.Pluginservice.Plugin.PluginVersionsService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Pluginservice.Plugin.PluginVersions.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, plugin_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -97,6 +99,8 @@ defmodule Twilio.Flex.V1.Pluginservice.Plugin.PluginVersionsService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Pluginservice.Plugin.PluginVersions.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, plugin_sid, sid, opts \\ []) do
     with {:ok, data} <-

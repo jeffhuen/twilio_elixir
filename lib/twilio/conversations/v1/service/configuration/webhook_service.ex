@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Conversations.V1.Service.Configuration.WebhookService do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   A service webhook configuration resource manages a service-level set of callback URLs and their configuration for receiving all the corresponding service events.
 
   Operations: `fetch`, `update`
@@ -16,6 +17,8 @@ defmodule Twilio.Conversations.V1.Service.Configuration.WebhookService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Service.Configuration.Webhook.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, chat_service_sid, opts \\ []) do
     with {:ok, data} <-
@@ -40,6 +43,7 @@ defmodule Twilio.Conversations.V1.Service.Configuration.WebhookService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Filters` | array | The list of events that your configured webhook targets will receive. Events not configured here will not fire. Possible values are `onParticipantAdd`, `onParticipantAdded`, `onDeliveryUpdated`, `onConversationUpdated`, `onConversationRemove`, `onParticipantRemove`, `onConversationUpdate`, `onMessageAdd`, `onMessageRemoved`, `onParticipantUpdated`, `onConversationAdded`, `onMessageAdded`, `onConversationAdd`, `onConversationRemoved`, `onParticipantUpdate`, `onMessageRemove`, `onMessageUpdated`, `onParticipantRemoved`, `onMessageUpdate` or `onConversationStateUpdated`. |
   | `Method` | string | The HTTP method to be used when sending a webhook request. One of `GET` or `POST`. |
   | `PostWebhookUrl` | string (uri) | The absolute url the post-event webhook request should be sent to. |
@@ -47,6 +51,8 @@ defmodule Twilio.Conversations.V1.Service.Configuration.WebhookService do
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Service.Configuration.Webhook.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, chat_service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

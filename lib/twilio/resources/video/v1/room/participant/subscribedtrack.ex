@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Video.V1.Room.Participant.Subscribedtrack do
   @moduledoc """
-
+  Subscribedtrack resource.
 
   SID prefix: `MT`
 
@@ -11,10 +11,13 @@ defmodule Twilio.Resources.Video.V1.Room.Participant.Subscribedtrack do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `enabled` | Whether the track is enabled. |
   | `kind` | The track type. Can be: `audio`, `video` or `data`.. Values: `audio`, `video`, `data` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `name` | The track name. Must have no more than 128 characters and be unique among the participant's published tracks. |
   | `participant_sid` | The SID of the participant that subscribes to the track. |
   | `publisher_sid` | The SID of the participant that publishes the track. |

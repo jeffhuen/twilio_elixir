@@ -18,10 +18,11 @@ defmodule Twilio.Conversations.V1.Conversation.MessageService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Order` | string | The sort order of the returned messages. Can be: `asc` (ascending) or `desc` (descending), with `asc` as the default. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, conversation_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Conversations/#{conversation_sid}/Messages",
            params: params,
@@ -66,18 +67,24 @@ defmodule Twilio.Conversations.V1.Conversation.MessageService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Attributes` | string | A string metadata field you can use to store any data you wish. The string value must contain structurally valid JSON if specified.  **Note** that if the attributes are not set "{}" will be returned. |
   | `Author` | string | The channel specific identifier of the message's author. Defaults to `system`. |
   | `Body` | string | The content of the message, can be up to 1,600 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ContentSid` | string | The unique ID of the multi-channel [Rich Content](https://www.twilio.com/docs/content) template, required for template-generated messages.  **Note** that if this field is set, `Body` and `MediaSid` parameters are ignored. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ContentVariables` | string | A structurally valid JSON string that contains values to resolve Rich Content template variables. |
   | `DateCreated` | string (date-time) | The date that this resource was created. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateUpdated` | string (date-time) | The date that this resource was last updated. `null` if the message has not been edited. |
   | `MediaSid` | string | The Media SID to be attached to the new Message. |
   | `Subject` | string | The subject of the message, can be up to 256 characters long. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Conversation.Message.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, conversation_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -99,6 +106,8 @@ defmodule Twilio.Conversations.V1.Conversation.MessageService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Conversation.Message.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, conversation_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -120,15 +129,19 @@ defmodule Twilio.Conversations.V1.Conversation.MessageService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Attributes` | string | A string metadata field you can use to store any data you wish. The string value must contain structurally valid JSON if specified.  **Note** that if the attributes are not set "{}" will be returned. |
   | `Author` | string | The channel specific identifier of the message's author. Defaults to `system`. |
   | `Body` | string | The content of the message, can be up to 1,600 characters long. |
   | `DateCreated` | string (date-time) | The date that this resource was created. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateUpdated` | string (date-time) | The date that this resource was last updated. `null` if the message has not been edited. |
   | `Subject` | string | The subject of the message, can be up to 256 characters long. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Conversation.Message.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, conversation_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -149,7 +162,7 @@ defmodule Twilio.Conversations.V1.Conversation.MessageService do
   Operation: `DeleteConversationMessage` | Tags: ConversationsV1Message
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, conversation_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Conversations/#{conversation_sid}/Messages/#{sid}",
       opts: opts,

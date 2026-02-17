@@ -9,7 +9,7 @@ defmodule Twilio.CodegenDeterminismTest do
     Mix.Task.rerun("twilio.generate", ["--clean"])
     first_run = hash_generated_files()
 
-    assert length(first_run) > 0, "No generated files found"
+    assert first_run != [], "No generated files found"
 
     Mix.Task.rerun("twilio.generate", ["--clean"])
     second_run = hash_generated_files()

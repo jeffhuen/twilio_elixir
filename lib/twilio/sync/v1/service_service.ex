@@ -15,7 +15,7 @@ defmodule Twilio.Sync.V1.ServiceService do
   Operation: `ListService` | Tags: SyncV1Service
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services",
            params: params,
@@ -56,16 +56,24 @@ defmodule Twilio.Sync.V1.ServiceService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AclEnabled` | boolean | Whether token identities in the Service must be granted access to Sync objects by using the [Permissions](https://www.twilio.com/docs/sync/api/sync-permissions) resource. |
   | `FriendlyName` | string | A string that you assign to describe the resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ReachabilityDebouncingEnabled` | boolean | Whether every `endpoint_disconnected` event should occur after a configurable delay. The default is `false`, where the `endpoint_disconnected` event occurs immediately after disconnection. When `true`, intervening reconnections can prevent the `endpoint_disconnected` event. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ReachabilityDebouncingWindow` | integer | The reachability event delay in milliseconds if `reachability_debouncing_enabled` = `true`.  Must be between 1,000 and 30,000 and defaults to 5,000. This is the number of milliseconds after the last running client disconnects, and a Sync identity is declared offline, before the `webhook_url` is called if all endpoints remain offline. A reconnection from the same identity by any endpoint during this interval prevents the call to `webhook_url`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ReachabilityWebhooksEnabled` | boolean | Whether the service instance should call `webhook_url` when client endpoints connect to Sync. The default is `false`. |
   | `WebhookUrl` | string (uri) | The URL we should call when Sync objects are manipulated. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `WebhooksFromRestEnabled` | boolean | Whether the Service instance should call `webhook_url` when the REST API is used to update Sync objects. The default is `false`. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Sync.V1.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Sync.V1.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services",
@@ -84,7 +92,10 @@ defmodule Twilio.Sync.V1.ServiceService do
   Operation: `FetchService` | Tags: SyncV1Service
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Sync.V1.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Sync.V1.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Services/#{sid}",
@@ -104,16 +115,24 @@ defmodule Twilio.Sync.V1.ServiceService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AclEnabled` | boolean | Whether token identities in the Service must be granted access to Sync objects by using the [Permissions](https://www.twilio.com/docs/sync/api/sync-permissions) resource. |
   | `FriendlyName` | string | A string that you assign to describe the resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ReachabilityDebouncingEnabled` | boolean | Whether every `endpoint_disconnected` event should occur after a configurable delay. The default is `false`, where the `endpoint_disconnected` event occurs immediately after disconnection. When `true`, intervening reconnections can prevent the `endpoint_disconnected` event. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ReachabilityDebouncingWindow` | integer | The reachability event delay in milliseconds if `reachability_debouncing_enabled` = `true`.  Must be between 1,000 and 30,000 and defaults to 5,000. This is the number of milliseconds after the last running client disconnects, and a Sync identity is declared offline, before the webhook is called if all endpoints remain offline. A reconnection from the same identity by any endpoint during this interval prevents the webhook from being called. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ReachabilityWebhooksEnabled` | boolean | Whether the service instance should call `webhook_url` when client endpoints connect to Sync. The default is `false`. |
   | `WebhookUrl` | string (uri) | The URL we should call when Sync objects are manipulated. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `WebhooksFromRestEnabled` | boolean | Whether the Service instance should call `webhook_url` when the REST API is used to update Sync objects. The default is `false`. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Sync.V1.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Sync.V1.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services/#{sid}",
@@ -132,7 +151,7 @@ defmodule Twilio.Sync.V1.ServiceService do
   Operation: `DeleteService` | Tags: SyncV1Service
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{sid}",
       opts: opts,

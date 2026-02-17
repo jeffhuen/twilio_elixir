@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Insight.Qualitymanagement.AssessmentsService do
   @moduledoc """
-
+  Service for Assessments API operations.
 
   Operations: `list`, `create`, `update`
   """
@@ -21,7 +21,7 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.AssessmentsService do
   | `SegmentId` | string | The id of the segment. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Insights/QualityManagement/Assessments",
            params: params,
@@ -58,6 +58,7 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.AssessmentsService do
   end
 
   @doc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Add assessments against conversation to dynamo db. Used in assessments screen by user. Users can select the questionnaire and pick up answers for each and every question.
 
   Operation: `CreateInsightsAssessments` | Tags: FlexV1Assessments
@@ -79,6 +80,8 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.AssessmentsService do
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Insight.Qualitymanagement.Assessments.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -111,6 +114,8 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.AssessmentsService do
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Insight.Qualitymanagement.Assessments.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

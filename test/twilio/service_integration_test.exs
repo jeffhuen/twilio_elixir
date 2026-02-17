@@ -1,6 +1,9 @@
 defmodule Twilio.ServiceIntegrationTest do
   use ExUnit.Case, async: true
 
+  alias Twilio.Api.V2010.MessageService
+  alias Twilio.Resources.Api.V2010.Message
+
   setup do
     Twilio.Test.stub(fn _method, _url, _headers, _body ->
       {200, [{"content-type", "application/json"}], "{}"}
@@ -29,8 +32,8 @@ defmodule Twilio.ServiceIntegrationTest do
         {200, [{"content-type", "application/json"}], body}
       end)
 
-      assert {:ok, %Twilio.Resources.Api.V2010.Message{} = msg} =
-               Twilio.Api.V2010.MessageService.fetch(client, "SM123")
+      assert {:ok, %Message{} = msg} =
+               MessageService.fetch(client, "SM123")
 
       assert msg.sid == "SM123"
       assert msg.body == "Hello world"
@@ -56,8 +59,8 @@ defmodule Twilio.ServiceIntegrationTest do
         {201, [{"content-type", "application/json"}], body}
       end)
 
-      assert {:ok, %Twilio.Resources.Api.V2010.Message{} = msg} =
-               Twilio.Api.V2010.MessageService.create(client, %{
+      assert {:ok, %Message{} = msg} =
+               MessageService.create(client, %{
                  "To" => "+15559876543",
                  "From" => "+15551234567",
                  "Body" => "New message"
@@ -90,13 +93,13 @@ defmodule Twilio.ServiceIntegrationTest do
         {200, [{"content-type", "application/json"}], body}
       end)
 
-      assert {:ok, %Twilio.Page{} = page} = Twilio.Api.V2010.MessageService.list(client)
+      assert {:ok, %Twilio.Page{} = page} = MessageService.list(client)
 
       assert length(page.items) == 2
 
       assert [
-               %Twilio.Resources.Api.V2010.Message{} = m1,
-               %Twilio.Resources.Api.V2010.Message{} = m2
+               %Message{} = m1,
+               %Message{} = m2
              ] = page.items
 
       assert m1.sid == "SM001"
@@ -113,7 +116,7 @@ defmodule Twilio.ServiceIntegrationTest do
         {204, [], ""}
       end)
 
-      assert :ok = Twilio.Api.V2010.MessageService.delete(client, "SM789")
+      assert :ok = MessageService.delete(client, "SM789")
     end
   end
 end

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V1.Porting.Portability.PhonenumberService do
   @moduledoc """
-
+  Service for Phonenumber API operations.
 
   Operations: `fetch`
   """
@@ -18,11 +18,14 @@ defmodule Twilio.Numbers.V1.Porting.Portability.PhonenumberService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TargetAccountSid` | string | Account Sid to which the number will be ported. This can be used to determine if a sub account already has the number in its inventory or a different sub account. If this is not provided, the authenticated account will be assumed to be the target account. |
   | `AddressSid` | string | Address Sid of customer to which the number will be ported. |
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V1.Porting.Portability.Phonenumber.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-

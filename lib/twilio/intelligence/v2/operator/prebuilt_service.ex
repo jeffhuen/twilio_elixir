@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Intelligence.V2.Operator.PrebuiltService do
   @moduledoc """
-
+  Service for Prebuilt API operations.
 
   Operations: `list`, `fetch`
   """
@@ -18,11 +18,12 @@ defmodule Twilio.Intelligence.V2.Operator.PrebuiltService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Availability` | string | Returns Pre-built Operators with the provided availability type. Possible values: internal, beta, public, retired. |
   | `LanguageCode` | string | Returns Pre-built Operators that support the provided language code. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Operators/PreBuilt",
            params: params,
@@ -65,6 +66,8 @@ defmodule Twilio.Intelligence.V2.Operator.PrebuiltService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Intelligence.V2.Operator.Prebuilt.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-

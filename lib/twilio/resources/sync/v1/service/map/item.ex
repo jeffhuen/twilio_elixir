@@ -9,15 +9,21 @@ defmodule Twilio.Resources.Sync.V1.Service.Map.Item do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Map Item resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `created_by` | The identity of the Map Item's creator. If the Map Item is created from the client SDK, the value matches the Access Token's `identity` field. If the Map Item was created from the REST API, the value is `system`.. PII: standard |
   | `data` | An arbitrary, schema-less object that the Map Item stores. Can be up to 16 KiB in length.. PII: sensitive |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_expires` | The date and time in GMT when the Map Item expires and will be deleted, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. If the Map Item does not expire, this value is `null`.  The Map Item might not be deleted immediately after it expires.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `key` | The unique, user-defined key for the Map Item.. PII: standard |
   | `map_sid` | The SID of the Sync Map that contains the Map Item. |
   | `revision` | The current revision of the Map Item, represented as a string. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `service_sid` | The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with. |
   | `url` | The absolute URL of the Map Item resource.. Format: uri |
   """

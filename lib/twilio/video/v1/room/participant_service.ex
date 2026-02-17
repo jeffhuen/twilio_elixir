@@ -18,13 +18,17 @@ defmodule Twilio.Video.V1.Room.ParticipantService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Status` | string | Read only the participants with this status. Can be: `connected` or `disconnected`. For `in-progress` Rooms the default Status is `connected`, for `completed` Rooms only `disconnected` Participants are returned. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Identity` | string | Read only the Participants with this [User](https://www.twilio.com/docs/chat/rest/user-resource) `identity` value. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreatedAfter` | string (date-time) | Read only Participants that started after this date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#UTC) format. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreatedBefore` | string (date-time) | Read only Participants that started before this date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#UTC) format. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, room_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Rooms/#{room_sid}/Participants",
            params: params,
@@ -66,7 +70,10 @@ defmodule Twilio.Video.V1.Room.ParticipantService do
   Operation: `FetchRoomParticipant` | Tags: VideoV1Participant
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Video.V1.Room.Participant.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Video.V1.Room.Participant.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, room_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Rooms/#{room_sid}/Participants/#{sid}",
@@ -89,7 +96,10 @@ defmodule Twilio.Video.V1.Room.ParticipantService do
   | `Status` | string |  Values: `connected`, `disconnected`, `reconnecting` |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Video.V1.Room.Participant.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Video.V1.Room.Participant.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, room_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Rooms/#{room_sid}/Participants/#{sid}",

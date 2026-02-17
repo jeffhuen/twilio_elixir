@@ -17,16 +17,24 @@ defmodule Twilio.Resources.Video.V1.Room.Participant do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the RoomParticipant resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `duration` | The duration in seconds that the participant was `connected`. Populated only after the participant is `disconnected`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `end_time` | The time when the participant disconnected from the room in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#UTC) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `identity` | The application-defined string that uniquely identifies the resource's User within a Room. If a client joins with an existing Identity, the existing client is disconnected. See [access tokens](https://www.twilio.com/docs/video/tutorials/user-identity-access-tokens) and [limits](https://www.twilio.com/docs/video/programmable-video-limits) for more info.  |
   | `links` | The URLs of related resources.. Format: uri-map |
   | `room_sid` | The SID of the participant's room. |
   | `sid` | The unique string that we created to identify the RoomParticipant resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `start_time` | The time of participant connected to the room in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#UTC) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The status of the Participant. Can be: `connected` or `disconnected`.. Values: `connected`, `disconnected`, `reconnecting` |
   | `url` | The absolute URL of the resource.. Format: uri |
   """

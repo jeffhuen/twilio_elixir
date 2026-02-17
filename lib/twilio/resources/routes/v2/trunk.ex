@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Routes.V2.Trunk do
   @moduledoc """
-
+  Trunk resource.
 
   SID prefix: `QQ`
 
@@ -10,9 +10,13 @@ defmodule Twilio.Resources.Routes.V2.Trunk do
   | Field | Description |
   |-------|-------------|
   | `account_sid` | The unique SID identifier of the Account. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date that this SIP Trunk was assigned an Inbound Processing Region, given in ISO 8601 format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date that the Inbound Processing Region was updated for this SIP Trunk, given in ISO 8601 format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `friendly_name` | A human readable description of the Inbound Processing Region assignments for this SIP Trunk, up to 64 characters. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sid` | A 34 character string that uniquely identifies the Inbound Processing Region assignments for this SIP Trunk. |
   | `sip_trunk_domain` | The absolute URL of the SIP Trunk |
   | `url` | The absolute URL of the resource.. Format: uri |

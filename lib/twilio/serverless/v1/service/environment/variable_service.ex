@@ -15,7 +15,7 @@ defmodule Twilio.Serverless.V1.Service.Environment.VariableService do
   Operation: `ListVariable` | Tags: ServerlessV1Variable
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, environment_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -64,10 +64,13 @@ defmodule Twilio.Serverless.V1.Service.Environment.VariableService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Key` | string | A string by which the Variable resource can be referenced. It can be a maximum of 128 characters. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Value` | string | A string that contains the actual value of the Variable. It can be a maximum of 450 bytes in size. |
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Serverless.V1.Service.Environment.Variable.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, service_sid, environment_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -92,6 +95,8 @@ defmodule Twilio.Serverless.V1.Service.Environment.VariableService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Serverless.V1.Service.Environment.Variable.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, environment_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -117,10 +122,13 @@ defmodule Twilio.Serverless.V1.Service.Environment.VariableService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Key` | string | A string by which the Variable resource can be referenced. It can be a maximum of 128 characters. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Value` | string | A string that contains the actual value of the Variable. It can be a maximum of 450 bytes in size. |
   """
   @spec update(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Serverless.V1.Service.Environment.Variable.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, service_sid, environment_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -144,7 +152,7 @@ defmodule Twilio.Serverless.V1.Service.Environment.VariableService do
   Operation: `DeleteVariable` | Tags: ServerlessV1Variable
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, environment_sid, sid, opts \\ []) do
     Client.request(
       client,

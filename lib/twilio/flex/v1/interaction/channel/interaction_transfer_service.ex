@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Interaction.Channel.InteractionTransferService do
   @moduledoc """
-
+  Service for InteractionTransfer API operations.
 
   Operations: `create`, `fetch`, `update`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Flex.V1.Interaction.Channel.InteractionTransferService do
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Interaction.Channel.InteractionTransfer.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, interaction_sid, channel_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -43,6 +45,8 @@ defmodule Twilio.Flex.V1.Interaction.Channel.InteractionTransferService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Interaction.Channel.InteractionTransfer.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, interaction_sid, channel_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -68,6 +72,8 @@ defmodule Twilio.Flex.V1.Interaction.Channel.InteractionTransferService do
   """
   @spec update(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Interaction.Channel.InteractionTransfer.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, interaction_sid, channel_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

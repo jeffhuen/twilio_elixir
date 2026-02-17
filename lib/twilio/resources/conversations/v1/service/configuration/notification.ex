@@ -9,8 +9,10 @@ defmodule Twilio.Resources.Conversations.V1.Service.Configuration.Notification d
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The unique ID of the [Account](https://www.twilio.com/docs/iam/api/account) responsible for this configuration. |
   | `added_to_conversation` | The Push Notification configuration for being added to a Conversation. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `chat_service_sid` | The SID of the [Conversation Service](https://www.twilio.com/docs/conversations/api/service-resource) the Configuration applies to. |
   | `log_enabled` | Weather the notification logging is enabled. |
   | `new_message` | The Push Notification configuration for New Messages. |

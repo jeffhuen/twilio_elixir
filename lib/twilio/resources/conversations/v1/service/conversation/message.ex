@@ -8,25 +8,35 @@ defmodule Twilio.Resources.Conversations.V1.Service.Conversation.Message do
   Parent: `/Services/{ChatServiceSid}/Conversations/{Sid}`
 
   ## Sub-resources
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   - `channel_metadata` — `/v1/Services/{chat_service_sid}/Conversations/{conversation_sid}/Messages/{message_sid}/ChannelMetadata`
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   - `delivery_receipts` — `/v1/Services/{chat_service_sid}/Conversations/{conversation_sid}/Messages/{message_sid}/Receipts`
 
   ## Properties
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The unique ID of the [Account](https://www.twilio.com/docs/iam/api/account) responsible for this message. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `attributes` | A string metadata field you can use to store any data you wish. The string value must contain structurally valid JSON if specified.  **Note** that if the attributes are not set "{}" will be returned.. PII: sensitive |
   | `author` | The channel specific identifier of the message's author. Defaults to `system`.. PII: standard |
   | `body` | The content of the message, can be up to 1,600 characters long.. PII: sensitive |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `chat_service_sid` | The SID of the [Conversation Service](https://www.twilio.com/docs/conversations/api/service-resource) the Participant resource is associated with. |
   | `content_sid` | The unique ID of the multi-channel [Rich Content](https://www.twilio.com/docs/content) template. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `conversation_sid` | The unique ID of the [Conversation](https://www.twilio.com/docs/conversations/api/conversation-resource) for this message. |
   | `date_created` | The date that this resource was created.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date that this resource was last updated. `null` if the message has not been edited.. Format: date-time |
   | `delivery` | An object that contains the summary of delivery statuses for the message to non-chat participants. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `index` | The index of the message within the [Conversation](https://www.twilio.com/docs/conversations/api/conversation-resource). |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `links` | Contains an absolute API resource URL to access the delivery & read receipts of this message.. Format: uri-map |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `media` | An array of objects that describe the Message's media, if the message contains media. Each object contains these fields: `content_type` with the MIME type of the media, `filename` with the name of the media, `sid` with the SID of the Media resource, and `size` with the media object's file size in bytes. If the Message has no media, this value is `null`.. PII: standard |
   | `participant_sid` | The unique ID of messages's author participant. Null in case of `system` sent message. |
   | `sid` | A 34 character string that uniquely identifies this resource. |

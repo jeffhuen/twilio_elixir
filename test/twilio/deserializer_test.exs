@@ -46,11 +46,11 @@ defmodule Twilio.DeserializerTest do
     end
 
     test "handles integer fields" do
-      data = %{"sid" => "SM1234", "error_code" => 30001}
+      data = %{"sid" => "SM1234", "error_code" => 30_001}
 
       result = Deserializer.deserialize(data, Twilio.Resources.Api.V2010.Message)
 
-      assert result.error_code == 30001
+      assert result.error_code == 30_001
     end
 
     test "handles map fields (subresource_uris)" do

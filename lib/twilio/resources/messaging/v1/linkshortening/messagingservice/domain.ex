@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Messaging.V1.Linkshortening.Messagingservice.Domain do
   @moduledoc """
-
+  Domain resource.
 
   ## Properties
 

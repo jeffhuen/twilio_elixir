@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.ConnectappService do
   Operation: `ListConnectApp` | Tags: Api20100401ConnectApp
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -40,6 +40,7 @@ defmodule Twilio.Api.V2010.ConnectappService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieve a list of connect-apps belonging to the account used to make the request (lazy auto-pagination)."
   @spec stream(Client.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, params \\ %{}, opts \\ []) do
@@ -57,7 +58,10 @@ defmodule Twilio.Api.V2010.ConnectappService do
   Operation: `FetchConnectApp` | Tags: Api20100401ConnectApp
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Connectapp.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Connectapp.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -80,17 +84,25 @@ defmodule Twilio.Api.V2010.ConnectappService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AuthorizeRedirectUrl` | string (uri) | The URL to redirect the user to after we authenticate the user and obtain authorization to access the Connect App. |
   | `CompanyName` | string | The company name to set for the Connect App. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DeauthorizeCallbackMethod` | string (http-method) | The HTTP method to use when calling `deauthorize_callback_url`. Values: `GET`, `POST` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DeauthorizeCallbackUrl` | string (uri) | The URL to call using the `deauthorize_callback_method` to de-authorize the Connect App. |
   | `Description` | string | A description of the Connect App. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It can be up to 64 characters long. |
   | `HomepageUrl` | string (uri) | A public URL where users can obtain more information about this Connect App. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Permissions` | array | A comma-separated list of the permissions you will request from the users of this ConnectApp.  Can include: `get-all` and `post-all`. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Connectapp.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Connectapp.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -112,7 +124,7 @@ defmodule Twilio.Api.V2010.ConnectappService do
   Operation: `DeleteConnectApp` | Tags: Api20100401ConnectApp
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(
       client,

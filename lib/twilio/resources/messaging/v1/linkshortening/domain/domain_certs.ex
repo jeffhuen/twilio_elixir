@@ -1,15 +1,18 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Messaging.V1.Linkshortening.Domain.DomainCerts do
   @moduledoc """
-
+  DomainCerts resource.
 
   ## Properties
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `cert_in_validation` | Optional JSON field describing the status and upload date of a new certificate in the process of validation |
   | `certificate_sid` | The unique string that we created to identify this Certificate resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | Date that this Domain was registered to the Twilio platform to create a new Domain object.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_expires` | Date that the private certificate associated with this domain expires. You will need to update the certificate before that date to ensure your shortened links will continue to work.. Format: date-time |
   | `date_updated` | Date that this Domain was last updated.. Format: date-time |
   | `domain_name` | Full url path for this domain.. Format: uri |

@@ -9,7 +9,9 @@ defmodule Twilio.Resources.Trunking.V1.Trunk.Recording do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `mode` | The recording mode for the trunk. Can be do-not-record (default), record-from-ringing, record-from-answer, record-from-ringing-dual, or record-from-answer-dual.. Values: `do-not-record`, `record-from-ringing`, `record-from-answer`, `record-from-ringing-dual`, `record-from-answer-dual` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `trim` | The recording trim setting for the trunk. Can be do-not-trim (default) or trim-silence.. Values: `trim-silence`, `do-not-trim` |
   """
 

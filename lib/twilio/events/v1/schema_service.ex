@@ -15,7 +15,10 @@ defmodule Twilio.Events.V1.SchemaService do
   Operation: `FetchSchema` | Tags: EventsV1Schema
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Events.V1.Schema.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Events.V1.Schema.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Schemas/#{sid}",

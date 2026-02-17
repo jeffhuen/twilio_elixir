@@ -18,12 +18,14 @@ defmodule Twilio.Supersim.V1.SimService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Status` | string | The status of the Sim resources to read. Can be `new`, `ready`, `active`, `inactive`, or `scheduled`. |
   | `Fleet` | string | The SID or unique name of the Fleet to which a list of Sims are assigned. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Iccid` | string | The [ICCID](https://en.wikipedia.org/wiki/Subscriber_identity_module#ICCID) associated with a Super SIM to filter the list by. Passing this parameter will always return a list containing zero or one SIMs. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Sims",
            params: params,
@@ -64,11 +66,15 @@ defmodule Twilio.Supersim.V1.SimService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Iccid` | string | The [ICCID](https://en.wikipedia.org/wiki/Subscriber_identity_module#ICCID) of the Super SIM to be added to your Account. |
   | `RegistrationCode` | string | The 10-digit code required to claim the Super SIM for your Account. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Supersim.V1.Sim.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Supersim.V1.Sim.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Sims",
@@ -87,7 +93,10 @@ defmodule Twilio.Supersim.V1.SimService do
   Operation: `FetchSim` | Tags: SupersimV1Sim
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Supersim.V1.Sim.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Supersim.V1.Sim.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Sims/#{sid}",
@@ -107,15 +116,22 @@ defmodule Twilio.Supersim.V1.SimService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AccountSid` | string | The SID of the Account to which the Sim resource should belong. The Account SID can only be that of the requesting Account or that of a Subaccount of the requesting Account. Only valid when the Sim resource's status is new. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CallbackMethod` | string (http-method) | The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is POST. Values: `GET`, `POST` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CallbackUrl` | string (uri) | The URL we should call using the `callback_method` after an asynchronous update has finished. |
   | `Fleet` | string | The SID or unique name of the Fleet to which the SIM resource should be assigned. |
   | `Status` | string |  Values: `ready`, `active`, `inactive` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Supersim.V1.Sim.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Supersim.V1.Sim.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Sims/#{sid}",

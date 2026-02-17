@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.CopyService do
   @moduledoc """
-
+  Service for Copy API operations.
 
   Operations: `list`, `create`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.CopyService do
   Operation: `ListBundleCopy` | Tags: NumbersV2BundleCopy
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, bundle_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/RegulatoryCompliance/Bundles/#{bundle_sid}/Copies",
            params: params,
@@ -52,6 +52,7 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.CopyService do
   end
 
   @doc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Creates a new copy of a Bundle. It will internally create copies of all the bundle items (identities and documents) of the original bundle
 
   Operation: `CreateBundleCopy` | Tags: NumbersV2BundleCopy
@@ -64,6 +65,8 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.CopyService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Bundle.Copy.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, bundle_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

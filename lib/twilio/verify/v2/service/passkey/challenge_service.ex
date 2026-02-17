@@ -21,7 +21,7 @@ defmodule Twilio.Verify.V2.Service.Passkey.ChallengeService do
   | `identity` | string |  |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, map()} | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def update(client, service_sid, params \\ %{}, opts \\ []) do
     Client.request(client, :post, "/v2/Services/#{service_sid}/Passkeys/Challenges",
       params: params,

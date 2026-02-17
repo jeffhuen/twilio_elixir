@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Marketplace.V1.ReferralconversionService do
   @moduledoc """
-
+  Service for Referralconversion API operations.
 
   Operations: `create`
   """
@@ -22,6 +22,8 @@ defmodule Twilio.Marketplace.V1.ReferralconversionService do
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Marketplace.V1.Referralconversion.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

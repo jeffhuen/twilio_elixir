@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Api.V2010.Incomingphonenumber.AssignedaddonService do
   @moduledoc """
-
+  Service for Assignedaddon API operations.
 
   Operations: `list`, `create`, `fetch`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.Incomingphonenumber.AssignedaddonService do
   Operation: `ListIncomingPhoneNumberAssignedAddOn` | Tags: Api20100401AssignedAddOn
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, resource_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -67,6 +67,8 @@ defmodule Twilio.Api.V2010.Incomingphonenumber.AssignedaddonService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Incomingphonenumber.Assignedaddon.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, resource_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -94,12 +96,15 @@ defmodule Twilio.Api.V2010.Incomingphonenumber.AssignedaddonService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Incomingphonenumber.Assignedaddon.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, resource_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
              client,
              :get,
+             # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
              "/2010-04-01/Accounts/#{client.account_sid}/IncomingPhoneNumbers/#{resource_sid}/AssignedAddOns/#{sid}.json",
              opts: opts,
              base_url: "https://api.twilio.com"
@@ -118,7 +123,7 @@ defmodule Twilio.Api.V2010.Incomingphonenumber.AssignedaddonService do
   Operation: `DeleteIncomingPhoneNumberAssignedAddOn` | Tags: Api20100401AssignedAddOn
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, resource_sid, sid, opts \\ []) do
     Client.request(
       client,

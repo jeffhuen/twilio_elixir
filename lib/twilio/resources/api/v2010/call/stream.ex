@@ -11,11 +11,16 @@ defmodule Twilio.Resources.Api.V2010.Call.Stream do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created this Stream resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `call_sid` | The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the Stream resource is associated with. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT that this resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `name` | The user-specified name of this Stream, if one was given when the Stream was created. This can be used to stop the Stream. |
   | `sid` | The SID of the Stream resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The status of the Stream. Possible values are `stopped` and `in-progress`.. Values: `in-progress`, `stopped` |
   | `uri` | The URI of the resource, relative to `https://api.twilio.com`. |
   """

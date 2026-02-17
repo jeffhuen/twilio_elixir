@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Proxy.V1.Service.Session.Interaction do
   @moduledoc """
-
+  Interaction resource.
 
   SID prefix: `KI`
 
@@ -11,23 +11,36 @@ defmodule Twilio.Resources.Proxy.V1.Service.Session.Interaction do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Interaction resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `data` | A JSON string that includes the message body of message interactions (e.g. `{"body": "hello"}`) or the call duration (when available) of a call (e.g. `{"duration": "5"}`).. PII: sensitive |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time in GMT when the Interaction was created.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time in GMT when the resource was last updated.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `inbound_participant_sid` | The SID of the inbound [Participant](https://www.twilio.com/docs/proxy/api/participant) resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `inbound_resource_sid` | The SID of the inbound resource; either the [Call](https://www.twilio.com/docs/voice/api/call-resource) or [Message](https://www.twilio.com/docs/sms/api/message-resource). |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `inbound_resource_status` | The inbound resource status of the Interaction. Will always be `delivered` for messages and `in-progress` for calls.. Values: `accepted`, `answered`, `busy`, `canceled`, `completed`, `deleted`, `delivered`, `delivery-unknown`, `failed`, `in-progress`, `initiated`, `no-answer`, `queued`, `received`, `receiving`, `ringing`, `scheduled`, `sending`, `sent`, `undelivered`, `unknown` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `inbound_resource_type` | The inbound resource type. Can be [Call](https://www.twilio.com/docs/voice/api/call-resource) or [Message](https://www.twilio.com/docs/sms/api/message-resource). |
   | `inbound_resource_url` | The URL of the Twilio inbound resource. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `outbound_participant_sid` | The SID of the outbound [Participant](https://www.twilio.com/docs/proxy/api/participant)). |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `outbound_resource_sid` | The SID of the outbound resource; either the [Call](https://www.twilio.com/docs/voice/api/call-resource) or [Message](https://www.twilio.com/docs/sms/api/message-resource). |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `outbound_resource_status` | The inbound resource status of the Interaction. Will always be `delivered` for messages and `in-progress` for calls.. Values: `accepted`, `answered`, `busy`, `canceled`, `completed`, `deleted`, `delivered`, `delivery-unknown`, `failed`, `in-progress`, `initiated`, `no-answer`, `queued`, `received`, `receiving`, `ringing`, `scheduled`, `sending`, `sent`, `undelivered`, `unknown` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `outbound_resource_type` | The outbound resource type. Can be: [Call](https://www.twilio.com/docs/voice/api/call-resource) or [Message](https://www.twilio.com/docs/sms/api/message-resource). |
   | `outbound_resource_url` | The URL of the Twilio outbound resource.. Format: uri |
   | `service_sid` | The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) resource. |
   | `session_sid` | The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) resource. |
   | `sid` | The unique string that we created to identify the Interaction resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `type` | The Type of the Interaction. Can be: `message`, `voice` or `unknown`.. Values: `message`, `voice`, `unknown` |
   | `url` | The absolute URL of the Interaction resource.. Format: uri |
   """

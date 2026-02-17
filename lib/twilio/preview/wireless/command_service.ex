@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Preview.Wireless.CommandService do
   @moduledoc """
-
+  Service for Command API operations.
 
   Operations: `list`, `create`, `fetch`
   """
@@ -24,7 +24,7 @@ defmodule Twilio.Preview.Wireless.CommandService do
   | `Direction` | string |  |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/wireless/Commands",
            params: params,
@@ -82,7 +82,10 @@ defmodule Twilio.Preview.Wireless.CommandService do
   | `Sim` | string |  |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Preview.Wireless.Command.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Preview.Wireless.Command.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/wireless/Commands",
@@ -101,7 +104,10 @@ defmodule Twilio.Preview.Wireless.CommandService do
   Operation: `FetchWirelessCommand` | Tags: PreviewWirelessCommand
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Preview.Wireless.Command.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Preview.Wireless.Command.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/wireless/Commands/#{sid}",

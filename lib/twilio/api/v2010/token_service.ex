@@ -18,10 +18,14 @@ defmodule Twilio.Api.V2010.TokenService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Ttl` | integer | The duration in seconds for which the generated credentials are valid. The default value is 86400 (24 hours). |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Token.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Token.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/2010-04-01/Accounts/#{client.account_sid}/Tokens.json",

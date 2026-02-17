@@ -23,6 +23,7 @@ defmodule Twilio.Api.V2010.Call.StreamService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Name` | string | The user-specified name of this Stream, if one was given when the Stream was created. This can be used to stop the Stream. |
   | `Parameter1.Name` | string | Parameter name |
   | `Parameter1.Value` | string | Parameter value |
@@ -223,11 +224,15 @@ defmodule Twilio.Api.V2010.Call.StreamService do
   | `Parameter99.Name` | string | Parameter name |
   | `Parameter99.Value` | string | Parameter value |
   | `StatusCallback` | string (uri) | Absolute URL to which Twilio sends status callback HTTP requests. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `StatusCallbackMethod` | string (http-method) | The HTTP method Twilio uses when sending `status_callback` requests. Possible values are `GET` and `POST`. Default is `POST`. Values: `GET`, `POST` |
   | `Track` | string |  Values: `inbound_track`, `outbound_track`, `both_tracks` |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Call.Stream.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Call.Stream.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, call_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -255,7 +260,10 @@ defmodule Twilio.Api.V2010.Call.StreamService do
   | `Status` | string |  Values: `stopped` |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Call.Stream.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Call.Stream.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, call_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(

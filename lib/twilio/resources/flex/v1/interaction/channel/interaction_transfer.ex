@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Flex.V1.Interaction.Channel.InteractionTransfer do
   @moduledoc """
-
+  InteractionTransfer resource.
 
   SID prefix: `UX`
 
@@ -21,6 +21,7 @@ defmodule Twilio.Resources.Flex.V1.Interaction.Channel.InteractionTransfer do
   | `interaction_sid` | The Interaction Sid for this channel. |
   | `note_sid` | The SID of the Note associated with the Transfer. |
   | `sid` | The unique string created by Twilio to identify an Interaction Transfer resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The status of the Transfer. Can be: `active`, `completed`, `failed`.. Values: `active`, `failed`, `completed` |
   | `summary_sid` | The SID of the Summary associated with the Transfer. |
   | `to` | The SID of the Participant receiving the Transfer. |

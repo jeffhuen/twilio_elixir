@@ -21,7 +21,7 @@ defmodule Twilio.Messaging.V1.A2p.Brandregistration.VettingService do
   | `VettingProvider` | string | The third-party provider of the vettings to read |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, brand_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/a2p/BrandRegistrations/#{brand_sid}/Vettings",
            params: params,
@@ -75,6 +75,8 @@ defmodule Twilio.Messaging.V1.A2p.Brandregistration.VettingService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.A2p.Brandregistration.Vetting.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, brand_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -96,6 +98,8 @@ defmodule Twilio.Messaging.V1.A2p.Brandregistration.VettingService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.A2p.Brandregistration.Vetting.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, brand_sid, sid, opts \\ []) do
     with {:ok, data} <-

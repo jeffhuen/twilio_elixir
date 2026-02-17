@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.IpMessaging.V1.Service.Channel.Invite do
   @moduledoc """
-
+  Invite resource.
 
   SID prefix: `IN`
 

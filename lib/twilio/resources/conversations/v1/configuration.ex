@@ -7,11 +7,17 @@ defmodule Twilio.Resources.Conversations.V1.Configuration do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) responsible for this configuration. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `default_chat_service_sid` | The SID of the default [Conversation Service](https://www.twilio.com/docs/conversations/api/service-resource) used when creating a conversation. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `default_closed_timer` | Default ISO8601 duration when conversation will be switched to `closed` state. Minimum value for this timer is 10 minutes. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `default_inactive_timer` | Default ISO8601 duration when conversation will be switched to `inactive` state. Minimum value for this timer is 1 minute. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `default_messaging_service_sid` | The SID of the default [Messaging Service](https://www.twilio.com/docs/messaging/api/service-resource) used when creating a conversation. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `links` | Contains absolute API resource URLs to access the webhook and default service configurations.. Format: uri-map |
   | `url` | An absolute API resource URL for this global configuration.. Format: uri |
   """

@@ -11,15 +11,22 @@ defmodule Twilio.Resources.Api.V2010.Sms.Shortcode do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created this ShortCode resource. |
   | `api_version` | The API version used to start a new TwiML session when an SMS message is sent to this short code. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT that this resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT that this resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `friendly_name` | A string that you assigned to describe this resource. By default, the `FriendlyName` is the short code. |
   | `short_code` | The short code. e.g., 894546. |
   | `sid` | The unique string that that we created to identify this ShortCode resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sms_fallback_method` | The HTTP method we use to call the `sms_fallback_url`. Can be: `GET` or `POST`.. Values: `GET`, `POST`. Format: http-method |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sms_fallback_url` | The URL that we call if an error occurs while retrieving or executing the TwiML from `sms_url`.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sms_method` | The HTTP method we use to call the `sms_url`. Can be: `GET` or `POST`.. Values: `GET`, `POST`. Format: http-method |
   | `sms_url` | The URL we call when receiving an incoming SMS message to this short code.. Format: uri |
   | `uri` | The URI of this resource, relative to `https://api.twilio.com`. |

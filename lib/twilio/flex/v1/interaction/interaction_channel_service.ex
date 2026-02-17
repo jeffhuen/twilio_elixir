@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Interaction.InteractionChannelService do
   @moduledoc """
-
+  Service for InteractionChannel API operations.
 
   Operations: `list`, `fetch`, `update`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Flex.V1.Interaction.InteractionChannelService do
   Operation: `ListInteractionChannel` | Tags: FlexV1InteractionChannel
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, interaction_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Interactions/#{interaction_sid}/Channels",
            params: params,
@@ -58,6 +58,8 @@ defmodule Twilio.Flex.V1.Interaction.InteractionChannelService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Interaction.InteractionChannel.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, interaction_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -84,10 +86,13 @@ defmodule Twilio.Flex.V1.Interaction.InteractionChannelService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Routing` | string | It changes the state of associated tasks. Routing status is required, When the channel status is set to `inactive`. Allowed Value for routing status is `closed`. Otherwise Optional, if not specified, all tasks will be set to `wrapping`. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Interaction.InteractionChannel.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, interaction_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

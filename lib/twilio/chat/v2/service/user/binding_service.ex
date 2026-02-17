@@ -18,10 +18,11 @@ defmodule Twilio.Chat.V2.Service.User.BindingService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `BindingType` | array | The push technology used by the User Binding resources to read. Can be: `apn`, `gcm`, or `fcm`.  See [push notification configuration](https://www.twilio.com/docs/chat/push-notification-configuration) for more info. |
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, user_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services/#{service_sid}/Users/#{user_sid}/Bindings",
            params: params,
@@ -63,7 +64,10 @@ defmodule Twilio.Chat.V2.Service.User.BindingService do
   Operation: `FetchUserBinding` | Tags: ChatV2UserBinding
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.User.Binding.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.User.Binding.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, user_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -83,7 +87,7 @@ defmodule Twilio.Chat.V2.Service.User.BindingService do
   Operation: `DeleteUserBinding` | Tags: ChatV2UserBinding
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, user_sid, sid, opts \\ []) do
     Client.request(
       client,

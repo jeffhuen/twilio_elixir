@@ -15,16 +15,23 @@ defmodule Twilio.Resources.Api.V2010.Conference do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created this Conference resource. |
   | `api_version` | The API version used to create this conference. |
   | `call_sid_ending_conference` | The call SID that caused the conference to end. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in UTC that this resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in UTC that this resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time-rfc-2822 |
   | `friendly_name` | A string that you assigned to describe this conference room. Maximum length is 128 characters. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `reason_conference_ended` | The reason why a conference ended. When a conference is in progress, will be `null`. When conference is completed, can be: `conference-ended-via-api`, `participant-with-end-conference-on-exit-left`, `participant-with-end-conference-on-exit-kicked`, `last-participant-kicked`, or `last-participant-left`.. Values: `conference-ended-via-api`, `participant-with-end-conference-on-exit-left`, `participant-with-end-conference-on-exit-kicked`, `last-participant-kicked`, `last-participant-left` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `region` | A string that represents the Twilio Region where the conference audio was mixed. May be `us1`, `us2`, `ie1`,  `de1`, `sg1`, `br1`, `au1`, and `jp1`. Basic conference audio will always be mixed in `us1`. Global Conference audio will be mixed nearest to the majority of participants. |
   | `sid` | The unique, Twilio-provided string used to identify this Conference resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The status of this conference. Can be: `init`, `in-progress`, or `completed`.. Values: `init`, `in-progress`, `completed` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `subresource_uris` | A list of related resources identified by their URIs relative to `https://api.twilio.com`.. Format: uri-map |
   | `uri` | The URI of this resource, relative to `https://api.twilio.com`. |
   """

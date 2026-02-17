@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.IpMessaging.V2.CredentialService do
   @moduledoc """
-
+  Service for Credential API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.IpMessaging.V2.CredentialService do
   Operation: `ListCredential` | Tags: IpMessagingV2Credential
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Credentials",
            params: params,
@@ -73,7 +73,10 @@ defmodule Twilio.IpMessaging.V2.CredentialService do
   | `Secret` | string |  |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Credential.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Credential.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Credentials",
@@ -92,7 +95,10 @@ defmodule Twilio.IpMessaging.V2.CredentialService do
   Operation: `FetchCredential` | Tags: IpMessagingV2Credential
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Credential.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Credential.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Credentials/#{sid}",
@@ -120,7 +126,10 @@ defmodule Twilio.IpMessaging.V2.CredentialService do
   | `Secret` | string |  |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Credential.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Credential.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Credentials/#{sid}",
@@ -139,7 +148,7 @@ defmodule Twilio.IpMessaging.V2.CredentialService do
   Operation: `DeleteCredential` | Tags: IpMessagingV2Credential
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Credentials/#{sid}",
       opts: opts,

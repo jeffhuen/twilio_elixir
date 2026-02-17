@@ -19,11 +19,13 @@ defmodule Twilio.Monitor.V1.AlertService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `LogLevel` | string | Only show alerts for this log-level.  Can be: `error`, `warning`, `notice`, or `debug`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `StartDate` | string (date-time) | Only include alerts that occurred on or after this date and time. Specify the date and time in GMT and format as `YYYY-MM-DD` or `YYYY-MM-DDThh:mm:ssZ`. Queries for alerts older than 30 days are not supported. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `EndDate` | string (date-time) | Only include alerts that occurred on or before this date and time. Specify the date and time in GMT and format as `YYYY-MM-DD` or `YYYY-MM-DDThh:mm:ssZ`. Queries for alerts older than 30 days are not supported. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Alerts",
            params: params,
@@ -61,7 +63,10 @@ defmodule Twilio.Monitor.V1.AlertService do
   Operation: `FetchAlert` | Tags: MonitorV1Alert
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Monitor.V1.Alert.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Monitor.V1.Alert.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Alerts/#{sid}",

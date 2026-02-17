@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Intelligence.V2.Transcript.MediaService do
   @moduledoc """
-
+  Service for Media API operations.
 
   Operations: `fetch`
   """
@@ -18,10 +18,13 @@ defmodule Twilio.Intelligence.V2.Transcript.MediaService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Redacted` | boolean | Grant access to PII Redacted/Unredacted Media. If redaction is enabled, the default is `true` to access redacted media. |
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Intelligence.V2.Transcript.Media.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-

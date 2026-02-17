@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Numbers.V1.Porting.Portin.Portinrequest do
   @moduledoc """
-
+  Portinrequest resource.
 
   ## Properties
 

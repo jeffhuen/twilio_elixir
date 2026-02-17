@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Trusthub.V1.CustomerProfilesService do
   @moduledoc """
-
+  Service for CustomerProfiles API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -23,7 +23,7 @@ defmodule Twilio.Trusthub.V1.CustomerProfilesService do
   | `PolicySid` | string | The unique string of a policy that is associated to the Customer-Profile resource. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/CustomerProfiles",
            params: params,
@@ -78,7 +78,10 @@ defmodule Twilio.Trusthub.V1.CustomerProfilesService do
   | `StatusCallback` | string (uri) | The URL we call to inform your application of status changes. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Trusthub.V1.CustomerProfiles.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trusthub.V1.CustomerProfiles.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/CustomerProfiles",
@@ -97,7 +100,10 @@ defmodule Twilio.Trusthub.V1.CustomerProfilesService do
   Operation: `FetchCustomerProfile` | Tags: TrusthubV1CustomerProfiles
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Trusthub.V1.CustomerProfiles.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trusthub.V1.CustomerProfiles.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/CustomerProfiles/#{sid}",
@@ -123,7 +129,10 @@ defmodule Twilio.Trusthub.V1.CustomerProfilesService do
   | `StatusCallback` | string (uri) | The URL we call to inform your application of status changes. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Trusthub.V1.CustomerProfiles.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trusthub.V1.CustomerProfiles.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/CustomerProfiles/#{sid}",
@@ -142,7 +151,7 @@ defmodule Twilio.Trusthub.V1.CustomerProfilesService do
   Operation: `DeleteCustomerProfile` | Tags: TrusthubV1CustomerProfiles
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/CustomerProfiles/#{sid}",
       opts: opts,

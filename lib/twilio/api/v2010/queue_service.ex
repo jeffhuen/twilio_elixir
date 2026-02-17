@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.QueueService do
   Operation: `ListQueue` | Tags: Api20100401Queue
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/2010-04-01/Accounts/#{client.account_sid}/Queues.json",
            params: params,
@@ -56,15 +56,20 @@ defmodule Twilio.Api.V2010.QueueService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you created to describe this resource. It can be up to 64 characters long. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `MaxSize` | integer | The maximum number of calls allowed to be in the queue. The default is 1000. The maximum is 5000. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Queue.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Queue.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/2010-04-01/Accounts/#{client.account_sid}/Queues.json",
@@ -83,7 +88,10 @@ defmodule Twilio.Api.V2010.QueueService do
   Operation: `FetchQueue` | Tags: Api20100401Queue
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Queue.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Queue.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -106,11 +114,16 @@ defmodule Twilio.Api.V2010.QueueService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you created to describe this resource. It can be up to 64 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `MaxSize` | integer | The maximum number of calls allowed to be in the queue. The default is 1000. The maximum is 5000. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Queue.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Queue.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -132,7 +145,7 @@ defmodule Twilio.Api.V2010.QueueService do
   Operation: `DeleteQueue` | Tags: Api20100401Queue
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(
       client,

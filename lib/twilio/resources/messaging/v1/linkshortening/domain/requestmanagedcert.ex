@@ -1,14 +1,16 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Messaging.V1.Linkshortening.Domain.Requestmanagedcert do
   @moduledoc """
-
+  Requestmanagedcert resource.
 
   ## Properties
 
   | Field | Description |
   |-------|-------------|
   | `certificate_sid` | The unique string that we created to identify this Certificate resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | Date that this Domain was registered to the Twilio platform to create a new Domain object.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_expires` | Date that the private certificate associated with this domain expires. This is the expiration date of your existing cert.. Format: date-time |
   | `date_updated` | Date that this Domain was last updated.. Format: date-time |
   | `domain_name` | Full url path for this domain.. Format: uri |

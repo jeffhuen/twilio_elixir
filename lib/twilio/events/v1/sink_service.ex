@@ -18,11 +18,13 @@ defmodule Twilio.Events.V1.SinkService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `InUse` | boolean | A boolean query parameter filtering the results to return sinks used/not used by a subscription. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Status` | string | A String query parameter filtering the results by status `initialized`, `validating`, `active` or `failed`. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Sinks",
            params: params,
@@ -43,6 +45,7 @@ defmodule Twilio.Events.V1.SinkService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieve a paginated list of Sinks belonging to the account used to make the request. (lazy auto-pagination)."
   @spec stream(Client.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, params \\ %{}, opts \\ []) do
@@ -64,11 +67,15 @@ defmodule Twilio.Events.V1.SinkService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Description` | string | A human readable description for the Sink **This value should not contain PII.** |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SinkConfiguration` | string | The information required for Twilio to connect to the provided Sink encoded as JSON. |
   | `SinkType` | string |  Values: `kinesis`, `webhook`, `segment`, `email` |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Events.V1.Sink.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Events.V1.Sink.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Sinks",
@@ -87,7 +94,10 @@ defmodule Twilio.Events.V1.SinkService do
   Operation: `FetchSink` | Tags: EventsV1Sink
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Events.V1.Sink.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Events.V1.Sink.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Sinks/#{sid}",
@@ -110,7 +120,10 @@ defmodule Twilio.Events.V1.SinkService do
   | `Description` | string | A human readable description for the Sink **This value should not contain PII.** |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Events.V1.Sink.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Events.V1.Sink.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Sinks/#{sid}",
@@ -129,7 +142,7 @@ defmodule Twilio.Events.V1.SinkService do
   Operation: `DeleteSink` | Tags: EventsV1Sink
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Sinks/#{sid}",
       opts: opts,

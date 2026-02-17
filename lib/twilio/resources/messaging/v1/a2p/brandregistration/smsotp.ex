@@ -9,6 +9,7 @@ defmodule Twilio.Resources.Messaging.V1.A2p.Brandregistration.Smsotp do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Brand Registration resource. |
   | `brand_registration_sid` | The unique string to identify Brand Registration of Sole Proprietor Brand |
   """

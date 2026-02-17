@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V2.Hostednumber.Authorizationdocument.DependenthostednumberorderService do
   @moduledoc """
-
+  Service for Dependenthostednumberorder API operations.
 
   Operations: `list`
   """
@@ -18,13 +18,15 @@ defmodule Twilio.Numbers.V2.Hostednumber.Authorizationdocument.Dependenthostednu
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Status` | string | Status of an instance resource. It can hold one of the values: 1. opened 2. signing, 3. signed LOA, 4. canceled, 5. failed. See the section entitled [Status Values](https://www.twilio.com/docs/phone-numbers/hosted-numbers/hosted-numbers-api/authorization-document-resource#status-values) for more information on each of these statuses. |
   | `PhoneNumber` | string (phone-number) | An E164 formatted phone number hosted by this HostedNumberOrder. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IncomingPhoneNumberSid` | string | A 34 character string that uniquely identifies the IncomingPhoneNumber resource created by this HostedNumberOrder. |
   | `FriendlyName` | string | A human readable description of this resource, up to 128 characters. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, signing_document_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -52,6 +54,7 @@ defmodule Twilio.Numbers.V2.Hostednumber.Authorizationdocument.Dependenthostednu
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieve a list of dependent HostedNumberOrders belonging to the AuthorizationDocument. (lazy auto-pagination)."
   @spec stream(Client.t(), String.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, signing_document_sid, params \\ %{}, opts \\ []) do

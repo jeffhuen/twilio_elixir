@@ -18,10 +18,11 @@ defmodule Twilio.Accounts.V1.Messaging.MessagingGeopermissionsService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CountryCode` | string | The country code to filter the geo permissions. If provided, only the geo permission for the specified country will be returned. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Messaging/GeoPermissions",
            params: params,

@@ -15,7 +15,7 @@ defmodule Twilio.Voice.V1.Connectionpolicy.ConnectionPolicyTargetService do
   Operation: `ListConnectionPolicyTarget` | Tags: VoiceV1ConnectionPolicyTarget
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, connection_policy_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/ConnectionPolicies/#{connection_policy_sid}/Targets",
            params: params,
@@ -60,18 +60,24 @@ defmodule Twilio.Voice.V1.Connectionpolicy.ConnectionPolicyTargetService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Target` | string (uri) | The SIP address you want Twilio to route your calls to. This must be a `sip:` schema. `sips` is NOT supported. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Enabled` | boolean | Whether the Target is enabled. The default is `true`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It is not unique and can be up to 255 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Priority` | integer | The relative importance of the target. Can be an integer from 0 to 65535, inclusive, and the default is 10. The lowest number represents the most important target. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Weight` | integer | The value that determines the relative share of the load the Target should receive compared to other Targets with the same priority. Can be an integer from 1 to 65535, inclusive, and the default is 10. Targets with higher values receive more load than those with lower ones with the same priority. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Voice.V1.Connectionpolicy.ConnectionPolicyTarget.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, connection_policy_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -99,6 +105,8 @@ defmodule Twilio.Voice.V1.Connectionpolicy.ConnectionPolicyTargetService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Voice.V1.Connectionpolicy.ConnectionPolicyTarget.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, connection_policy_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -127,13 +135,19 @@ defmodule Twilio.Voice.V1.Connectionpolicy.ConnectionPolicyTargetService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Enabled` | boolean | Whether the Target is enabled. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It is not unique and can be up to 255 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Priority` | integer | The relative importance of the target. Can be an integer from 0 to 65535, inclusive. The lowest number represents the most important target. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Target` | string (uri) | The SIP address you want Twilio to route your calls to. This must be a `sip:` schema. `sips` is NOT supported. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Weight` | integer | The value that determines the relative share of the load the Target should receive compared to other Targets with the same priority. Can be an integer from 1 to 65535, inclusive. Targets with higher values receive more load than those with lower ones with the same priority. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Voice.V1.Connectionpolicy.ConnectionPolicyTarget.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, connection_policy_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -160,7 +174,7 @@ defmodule Twilio.Voice.V1.Connectionpolicy.ConnectionPolicyTargetService do
   Operation: `DeleteConnectionPolicyTarget` | Tags: VoiceV1ConnectionPolicyTarget
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, connection_policy_sid, sid, opts \\ []) do
     Client.request(
       client,

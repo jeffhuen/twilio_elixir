@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Insights.V1.Video.Room do
   @moduledoc """
-
+  Room resource.
 
   ## Sub-resources
   - `participants` — `/v1/Video/Rooms/{room_sid}/Participants`
@@ -16,24 +16,32 @@ defmodule Twilio.Resources.Insights.V1.Video.Room do
   | `create_time` | Creation time of the room.. Format: date-time |
   | `created_method` | How the room was created. Can be `sdk`, `ad_hoc`, or `api`.. Values: `sdk`, `ad_hoc`, `api` |
   | `duration_sec` | Total room duration from create time to end time.. Format: int64 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `edge_location` | Edge location of Twilio media servers for the room. See [the list of public edge locations](https://www.twilio.com/docs/global-infrastructure/edge-locations#public-edge-locations) for the possible values.. Values: `ashburn`, `dublin`, `frankfurt`, `singapore`, `sydney`, `sao_paulo`, `roaming`, `umatilla`, `tokyo` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `end_reason` | Reason the room ended. Can be `room_ended_via_api` or `timeout`.. Values: `room_ended_via_api`, `timeout` |
   | `end_time` | End time for the room.. Format: date-time |
   | `links` | Room subresources.. Format: uri-map |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `max_concurrent_participants` | Maximum number of participants allowed in the room at the same time allowed by the application settings. |
   | `max_participants` | Max number of total participants allowed by the application settings. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `media_region` | Region of Twilio media servers for the room. See [the list of possible media servers here](https://www.twilio.com/docs/video/ip-addresses).. Values: `us1`, `us2`, `au1`, `br1`, `ie1`, `jp1`, `sg1`, `in1`, `de1`, `gll` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `processing_state` | Video Log Analyzer resource state. Will be either `in-progress` or `complete`. `in-progress` indicates that more details may be appended to the resource. `complete` indicates no further information will be added.. Values: `complete`, `in_progress`, `timeout`, `not_started` |
   | `recording_enabled` | Boolean indicating if recording is enabled for the room. |
   | `room_name` | Room friendly name. |
   | `room_sid` | Unique identifier for the room. |
   | `room_status` | Status of the room. Can be `in_progress` or `completed`.. Values: `in_progress`, `completed` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `room_type` | Type of room. Can be `go`, `peer_to_peer`, `group`, or `group_small`.. Values: `go`, `peer_to_peer`, `group`, `group_small` |
   | `status_callback` | Webhook provided for status callbacks.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status_callback_method` | HTTP method provided for status callback URL.. Values: `GET`, `POST`. Format: http-method |
   | `total_participant_duration_sec` | Combined amount of participant time in the room.. Format: int64 |
   | `total_recording_duration_sec` | Combined amount of recorded seconds for participants in the room.. Format: int64 |
   | `unique_participant_identities` | Unique number of participant identities. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `unique_participants` | Number of participants. May include duplicate identities for participants who left and rejoined. |
   | `url` | URL for the room resource.. Format: uri |
   """

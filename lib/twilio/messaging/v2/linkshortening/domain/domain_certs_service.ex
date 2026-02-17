@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Messaging.V2.Linkshortening.Domain.DomainCertsService do
   @moduledoc """
-
+  Service for DomainCerts API operations.
 
   Operations: `fetch`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Messaging.V2.Linkshortening.Domain.DomainCertsService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V2.Linkshortening.Domain.DomainCerts.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, domain_sid, opts \\ []) do
     with {:ok, data} <-

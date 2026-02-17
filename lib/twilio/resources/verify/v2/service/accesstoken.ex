@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Verify.V2.Service.Accesstoken do
   @moduledoc """
-
+  Accesstoken resource.
 
   SID prefix: `YK`
 
@@ -12,8 +12,10 @@ defmodule Twilio.Resources.Verify.V2.Service.Accesstoken do
   | Field | Description |
   |-------|-------------|
   | `account_sid` | The unique SID identifier of the Account. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date that this access token was created, given in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `entity_identity` | The unique external identifier for the Entity of the Service. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `factor_friendly_name` | A human readable description of this factor, up to 64 characters. For a push factor, this can be the device's name.. PII: standard |
   | `factor_type` | The Type of the Factor. Currently only `push` is supported.. Values: `push` |
   | `service_sid` | The unique SID identifier of the Verify Service. |

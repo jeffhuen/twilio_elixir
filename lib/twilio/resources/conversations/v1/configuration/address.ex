@@ -10,7 +10,9 @@ defmodule Twilio.Resources.Conversations.V1.Configuration.Address do
   | Field | Description |
   |-------|-------------|
   | `account_sid` | The unique ID of the [Account](https://www.twilio.com/docs/iam/api/account) the address belongs to |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `address` | The unique address to be configured. The address can be a whatsapp address or phone number. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `address_country` | An ISO 3166-1 alpha-2n country code which the address belongs to. This is currently only applicable to short code addresses. |
   | `auto_creation` | Auto Creation configuration for the address. |
   | `date_created` | The date that this resource was created.. Format: date-time |

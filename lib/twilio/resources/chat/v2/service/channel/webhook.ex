@@ -11,11 +11,17 @@ defmodule Twilio.Resources.Chat.V2.Service.Channel.Webhook do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Channel Webhook resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `channel_sid` | The SID of the [Channel](https://www.twilio.com/docs/chat/channels) the Channel Webhook resource belongs to. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `configuration` | The JSON string that describes how the channel webhook is configured. The configuration object contains the `url`, `method`, `filters`, and `retry_count` values that are configured by the create and update actions. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `service_sid` | The SID of the [Service](https://www.twilio.com/docs/chat/rest/service-resource) the Channel Webhook resource is associated with. |
   | `sid` | The unique string that we created to identify the Channel Webhook resource. |
   | `type` | The type of webhook. Can be: `webhook`, `studio`, or `trigger`. |

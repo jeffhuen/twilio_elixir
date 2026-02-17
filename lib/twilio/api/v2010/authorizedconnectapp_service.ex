@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.AuthorizedconnectappService do
   Operation: `ListAuthorizedConnectApp` | Tags: Api20100401AuthorizedConnectApp
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -43,6 +43,7 @@ defmodule Twilio.Api.V2010.AuthorizedconnectappService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieve a list of authorized-connect-apps belonging to the account used to make the request (lazy auto-pagination)."
   @spec stream(Client.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, params \\ %{}, opts \\ []) do
@@ -60,7 +61,10 @@ defmodule Twilio.Api.V2010.AuthorizedconnectappService do
   Operation: `FetchAuthorizedConnectApp` | Tags: Api20100401AuthorizedConnectApp
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Authorizedconnectapp.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Authorizedconnectapp.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(

@@ -12,7 +12,9 @@ defmodule Twilio.Resources.Api.V2010.Sip.Domain.Ipaccesscontrollistmapping do
   | Field | Description |
   |-------|-------------|
   | `account_sid` | The unique id of the Account that is responsible for this resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date that this resource was created, given as GMT in [RFC 2822](https://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date that this resource was last updated, given as GMT in [RFC 2822](https://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822) format.. Format: date-time-rfc-2822 |
   | `domain_sid` | The unique string that is created to identify the SipDomain resource. |
   | `friendly_name` | A human readable descriptive text for this resource, up to 64 characters long. |

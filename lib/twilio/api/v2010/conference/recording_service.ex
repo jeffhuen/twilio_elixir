@@ -18,12 +18,15 @@ defmodule Twilio.Api.V2010.Conference.RecordingService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreated` | string (date) | The `date_created` value, specified as `YYYY-MM-DD`, of the resources to read. You can also specify inequality: `DateCreated<=YYYY-MM-DD` will return recordings generated at or before midnight on a given date, and `DateCreated>=YYYY-MM-DD` returns recordings generated at or after midnight on a date. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreated<` | string (date) | The `date_created` value, specified as `YYYY-MM-DD`, of the resources to read. You can also specify inequality: `DateCreated<=YYYY-MM-DD` will return recordings generated at or before midnight on a given date, and `DateCreated>=YYYY-MM-DD` returns recordings generated at or after midnight on a date. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreated>` | string (date) | The `date_created` value, specified as `YYYY-MM-DD`, of the resources to read. You can also specify inequality: `DateCreated<=YYYY-MM-DD` will return recordings generated at or before midnight on a given date, and `DateCreated>=YYYY-MM-DD` returns recordings generated at or after midnight on a date. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, conference_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -68,7 +71,10 @@ defmodule Twilio.Api.V2010.Conference.RecordingService do
   Operation: `FetchConferenceRecording` | Tags: Api20100401ConferenceRecording
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Conference.Recording.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Conference.Recording.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, conference_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -83,6 +89,7 @@ defmodule Twilio.Api.V2010.Conference.RecordingService do
   end
 
   @doc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Changes the status of the recording to paused, stopped, or in-progress. Note: To use `Twilio.CURRENT`, pass it as recording sid.
 
   Operation: `UpdateConferenceRecording` | Tags: Api20100401ConferenceRecording
@@ -96,10 +103,14 @@ defmodule Twilio.Api.V2010.Conference.RecordingService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `PauseBehavior` | string | Whether to record during a pause. Can be: `skip` or `silence` and the default is `silence`. `skip` does not record during the pause period, while `silence` will replace the actual audio of the call with silence during the pause period. This parameter only applies when setting `status` is set to `paused`. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Conference.Recording.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Conference.Recording.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, conference_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -121,7 +132,7 @@ defmodule Twilio.Api.V2010.Conference.RecordingService do
   Operation: `DeleteConferenceRecording` | Tags: Api20100401ConferenceRecording
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, conference_sid, sid, opts \\ []) do
     Client.request(
       client,

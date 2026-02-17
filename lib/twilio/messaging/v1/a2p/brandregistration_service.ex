@@ -15,7 +15,7 @@ defmodule Twilio.Messaging.V1.A2p.BrandregistrationService do
   Operation: `ListBrandRegistrations` | Tags: MessagingV1BrandRegistration
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/a2p/BrandRegistrations",
            params: params,
@@ -66,12 +66,17 @@ defmodule Twilio.Messaging.V1.A2p.BrandregistrationService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `BrandType` | string | Type of brand being created. One of: "STANDARD", "SOLE_PROPRIETOR". SOLE_PROPRIETOR is for low volume, SOLE_PROPRIETOR use cases. STANDARD is for all other use cases. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Mock` | boolean | A boolean that specifies whether brand should be a mock or not. If true, brand will be registered as a mock brand. Defaults to false if no value is provided. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SkipAutomaticSecVet` | boolean | A flag to disable automatic secondary vetting for brands which it would otherwise be done. |
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.A2p.Brandregistration.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -92,6 +97,8 @@ defmodule Twilio.Messaging.V1.A2p.BrandregistrationService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.A2p.Brandregistration.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
@@ -110,6 +117,8 @@ defmodule Twilio.Messaging.V1.A2p.BrandregistrationService do
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.A2p.Brandregistration.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

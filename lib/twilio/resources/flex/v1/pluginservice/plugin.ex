@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Flex.V1.Pluginservice.Plugin do
   @moduledoc """
-
+  Plugin resource.
 
   SID prefix: `FP`
 
@@ -12,10 +12,14 @@ defmodule Twilio.Resources.Flex.V1.Pluginservice.Plugin do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Plugin resource and owns this resource. |
   | `archived` | Whether the Flex Plugin is archived. The default value is false. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT-7 when the Flex Plugin was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT-7 when the Flex Plugin was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `description` | A descriptive string that you create to describe the plugin resource. It can be up to 500 characters long. PII: standard |
   | `friendly_name` | The friendly name this Flex Plugin resource.. PII: standard |
   | `links` | Format: uri-map |

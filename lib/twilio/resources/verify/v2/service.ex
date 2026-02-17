@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Verify.V2.Service do
   @moduledoc """
-
+  Service resource.
 
   SID prefix: `VA`
 
@@ -18,23 +18,33 @@ defmodule Twilio.Resources.Verify.V2.Service do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource. |
   | `code_length` | The length of the verification code to generate. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `custom_code_enabled` | Whether to allow sending verifications with a custom code instead of a randomly generated one. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `do_not_share_warning_enabled` | Whether to add a security warning at the end of an SMS verification body. Disabled by default and applies only to SMS. Example SMS body: `Your AppName verification code is: 1234. Don’t share this code with anyone; our employees will never ask for the code` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `dtmf_input_required` | Whether to ask the user to press a number before delivering the verify code in a phone call. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `friendly_name` | The name that appears in the body of your verification messages. It can be up to 30 characters long and can include letters, numbers, spaces, dashes, underscores. Phone numbers, special characters or links are NOT allowed. It cannot contain more than 4 (consecutive or non-consecutive) digits. **This value should not contain PII.** |
   | `links` | The URLs of related resources.. Format: uri-map |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `lookup_enabled` | Whether to perform a lookup with each verification started and return info about the phone number. |
   | `psd2_enabled` | Whether to pass PSD2 transaction parameters when starting a verification. |
   | `push` | Configurations for the Push factors (channel) created under this Service. |
   | `sid` | The unique string that we created to identify the Service resource. |
   | `skip_sms_to_landlines` | Whether to skip sending SMS verifications to landlines. Requires `lookup_enabled`. |
   | `totp` | Configurations for the TOTP factors (channel) created under this Service. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `tts_name` | The name of an alternative text-to-speech service to use in phone calls. Applies only to TTS languages. |
   | `url` | The absolute URL of the resource.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `verify_event_subscription_enabled` | Whether to allow verifications from the service to reach the stream-events sinks if configured |
   """
 

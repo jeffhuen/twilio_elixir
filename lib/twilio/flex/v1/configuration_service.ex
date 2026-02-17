@@ -21,7 +21,10 @@ defmodule Twilio.Flex.V1.ConfigurationService do
   | `UiVersion` | string | The Pinned UI version of the Configuration resource to fetch. |
   """
   @spec fetch(Client.t(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Configuration.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Configuration.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Configuration",
@@ -38,7 +41,10 @@ defmodule Twilio.Flex.V1.ConfigurationService do
   Operation: `UpdateConfiguration` | Tags: FlexV1Configuration
   """
   @spec update(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Configuration.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Configuration.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Configuration",

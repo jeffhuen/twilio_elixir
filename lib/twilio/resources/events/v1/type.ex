@@ -10,9 +10,11 @@ defmodule Twilio.Resources.Events.V1.Type do
   | `date_created` | The date that this Event Type was created, given in ISO 8601 format.. Format: date-time |
   | `date_updated` | The date that this Event Type was updated, given in ISO 8601 format.. Format: date-time |
   | `description` | A human readable description for this Event Type. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `documentation_url` | The URL to the documentation or to the most relevant Twilio Changelog entry of this Event Type. |
   | `links` | Format: uri-map |
   | `schema_id` | A string that uniquely identifies the Schema this Event Type adheres to. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | A string that describes how this Event Type can be used. For example: `available`, `deprecated`, `restricted`, `discontinued`. When the status is `available`, the Event Type can be used normally. |
   | `type` | A string that uniquely identifies this Event Type. |
   | `url` | The URL of this resource.. Format: uri |

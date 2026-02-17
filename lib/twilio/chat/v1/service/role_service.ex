@@ -15,7 +15,7 @@ defmodule Twilio.Chat.V1.Service.RoleService do
   Operation: `ListRole` | Tags: ChatV1Role
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/#{service_sid}/Roles",
            params: params,
@@ -57,12 +57,17 @@ defmodule Twilio.Chat.V1.Service.RoleService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the new resource. It can be up to 64 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Permission` | array | A permission that you grant to the new role. Only one permission can be granted per parameter. To assign more than one permission, repeat this parameter for each permission value. The values for this parameter depend on the role's `type` and are described in the documentation. |
   | `Type` | string |  Values: `channel`, `deployment` |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Service.Role.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Service.Role.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services/#{service_sid}/Roles",
@@ -81,7 +86,10 @@ defmodule Twilio.Chat.V1.Service.RoleService do
   Operation: `FetchRole` | Tags: ChatV1Role
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Service.Role.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Service.Role.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Services/#{service_sid}/Roles/#{sid}",
@@ -101,10 +109,14 @@ defmodule Twilio.Chat.V1.Service.RoleService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Permission` | array | A permission that you grant to the role. Only one permission can be granted per parameter. To assign more than one permission, repeat this parameter for each permission value. The values for this parameter depend on the role's `type` and are described in the documentation. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Service.Role.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Service.Role.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services/#{service_sid}/Roles/#{sid}",
@@ -123,7 +135,7 @@ defmodule Twilio.Chat.V1.Service.RoleService do
   Operation: `DeleteRole` | Tags: ChatV1Role
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{service_sid}/Roles/#{sid}",
       opts: opts,

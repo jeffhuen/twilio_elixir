@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Supersim.V1.Networkaccessprofile do
   @moduledoc """
-
+  Networkaccessprofile resource.
 
   SID prefix: `HA`
 
@@ -12,11 +12,15 @@ defmodule Twilio.Resources.Supersim.V1.Networkaccessprofile do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the Network Access Profile belongs to. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `links` | Format: uri-map |
   | `sid` | The unique string that identifies the Network Access Profile resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `unique_name` | An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource. |
   | `url` | The absolute URL of the Network Access Profile resource.. Format: uri |
   """

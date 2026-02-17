@@ -11,7 +11,9 @@ defmodule Twilio.Resources.Pricing.V1.Phonenumber.Country do
   |-------|-------------|
   | `country` | The name of the country. |
   | `iso_country` | The [ISO country code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).. Format: iso-country-code |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `phone_number_prices` | The list of [PhoneNumberPrice](https://www.twilio.com/docs/phone-numbers/pricing#phone-number-price) records. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `price_unit` | The currency in which prices are measured, specified in [ISO 4127](http://www.iso.org/iso/home/standards/currency_codes.htm) format (e.g. `usd`, `eur`, `jpy`).. Format: currency |
   | `url` | The absolute URL of the resource.. Format: uri |
   """

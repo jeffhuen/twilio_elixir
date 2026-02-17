@@ -11,7 +11,9 @@ defmodule Twilio.Resources.Assistants.V1.Assistant.Feedback do
   |-------|-------------|
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Feedback. |
   | `assistant_id` | The Assistant ID. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the Feedback was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the Feedback was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `id` | The Feedback ID. |
   | `message_id` | The Message ID. |

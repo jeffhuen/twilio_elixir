@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Verify.V2.Service.Messagingconfiguration do
   @moduledoc """
-
+  Messagingconfiguration resource.
 
   Parent: `/Services/{Sid}`
 
@@ -9,11 +9,17 @@ defmodule Twilio.Resources.Verify.V2.Service.Messagingconfiguration do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `country` | The [ISO-3166-1](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code of the country this configuration will be applied to. If this is a global configuration, Country will take the value `all`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `messaging_service_sid` | The SID of the [Messaging Service](https://www.twilio.com/docs/messaging/api/service-resource) to be used to send SMS to the country of this configuration. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `service_sid` | The SID of the [Service](https://www.twilio.com/docs/verify/api/service) that the resource is associated with. |
   | `url` | The URL of this resource.. Format: uri |
   """

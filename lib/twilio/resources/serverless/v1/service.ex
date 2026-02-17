@@ -15,15 +15,20 @@ defmodule Twilio.Resources.Serverless.V1.Service do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the Service resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the Service resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `domain_base` | The base domain name for this Service, which is a combination of the unique name and a randomly generated string. |
   | `friendly_name` | The string that you assigned to describe the Service resource.. PII: standard |
   | `include_credentials` | Whether to inject Account credentials into a function invocation context. |
   | `links` | The URLs of the Service's nested resources.. Format: uri-map |
   | `sid` | The unique string that we created to identify the Service resource. |
   | `ui_editable` | Whether the Service resource's properties and subresources can be edited via the UI. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `unique_name` | A user-defined string that uniquely identifies the Service resource. It can be used in place of the Service resource's `sid` in the URL to address the Service resource.. PII: standard |
   | `url` | The absolute URL of the Service resource.. Format: uri |
   """

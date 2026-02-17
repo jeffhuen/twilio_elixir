@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Video.V1.Room.Participant.AnonymizeService do
   @moduledoc """
-
+  Service for Anonymize API operations.
 
   Operations: `update`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Video.V1.Room.Participant.AnonymizeService do
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Video.V1.Room.Participant.Anonymize.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, room_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

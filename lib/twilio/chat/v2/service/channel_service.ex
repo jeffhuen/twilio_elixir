@@ -21,7 +21,7 @@ defmodule Twilio.Chat.V2.Service.ChannelService do
   | `Type` | array | The visibility of the Channels to read. Can be: `public` or `private` and defaults to `public`. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services/#{service_sid}/Channels",
            params: params,
@@ -65,14 +65,21 @@ defmodule Twilio.Chat.V2.Service.ChannelService do
   |-----------|------|-------------|
   | `Attributes` | string | A valid JSON string that contains application-specific data. |
   | `CreatedBy` | string | The `identity` of the User that created the channel. Default is: `system`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreated` | string (date-time) | The date, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, to assign to the resource as the date it was created. The default value is the current time set by the Chat service.  Note that this should only be used in cases where a Channel is being recreated from a backup/separate source. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateUpdated` | string (date-time) | The date, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, to assign to the resource as the date it was last updated. The default value is `null`. Note that this parameter should only be used in cases where a Channel is being recreated from a backup/separate source  and where a Message was previously updated. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the new resource. It can be up to 64 characters long. |
   | `Type` | string |  Values: `public`, `private` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the resource. It can be used to address the resource in place of the Channel resource's `sid` in the URL. This value must be 64 characters or less in length and be unique within the Service. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.Channel.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.Channel.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{service_sid}/Channels",
@@ -91,7 +98,10 @@ defmodule Twilio.Chat.V2.Service.ChannelService do
   Operation: `FetchChannel` | Tags: ChatV2Channel
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.Channel.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.Channel.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Services/#{service_sid}/Channels/#{sid}",
@@ -113,13 +123,20 @@ defmodule Twilio.Chat.V2.Service.ChannelService do
   |-----------|------|-------------|
   | `Attributes` | string | A valid JSON string that contains application-specific data. |
   | `CreatedBy` | string | The `identity` of the User that created the channel. Default is: `system`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreated` | string (date-time) | The date, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, to assign to the resource as the date it was created. The default value is the current time set by the Chat service.  Note that this should only be used in cases where a Channel is being recreated from a backup/separate source. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateUpdated` | string (date-time) | The date, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, to assign to the resource as the date it was last updated. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It can be up to 256 characters long. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the resource. It can be used to address the resource in place of the resource's `sid` in the URL. This value must be 256 characters or less in length and unique within the Service. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.Channel.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.Channel.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{service_sid}/Channels/#{sid}",
@@ -138,7 +155,7 @@ defmodule Twilio.Chat.V2.Service.ChannelService do
   Operation: `DeleteChannel` | Tags: ChatV2Channel
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Services/#{service_sid}/Channels/#{sid}",
       opts: opts,

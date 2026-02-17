@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Flex.V1.Insight.InsightsSegments do
   @moduledoc """
-
+  InsightsSegments resource.
 
   ## Properties
 

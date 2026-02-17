@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Insights.V1.Video.RoomService do
   @moduledoc """
-
+  Service for Room API operations.
 
   Operations: `list`, `fetch`
   """
@@ -25,7 +25,7 @@ defmodule Twilio.Insights.V1.Video.RoomService do
   | `CreatedBefore` | string (date-time) | Only read rooms that started before this ISO 8601 timestamp. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Video/Rooms",
            params: params,
@@ -64,7 +64,10 @@ defmodule Twilio.Insights.V1.Video.RoomService do
   Operation: `FetchVideoRoomSummary` | Tags: InsightsV1Room
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Insights.V1.Video.Room.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Insights.V1.Video.Room.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Video/Rooms/#{sid}",

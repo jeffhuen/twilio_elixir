@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Proxy.V1.Service.Session.ParticipantService do
   @moduledoc """
-
+  Service for Participant API operations.
 
   Operations: `list`, `create`, `fetch`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Proxy.V1.Service.Session.ParticipantService do
   Operation: `ListParticipant` | Tags: ProxyV1Participant
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, session_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -68,12 +68,16 @@ defmodule Twilio.Proxy.V1.Service.Session.ParticipantService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | The string that you assigned to describe the participant. This value must be 255 characters or fewer. **This value should not have PII.** |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ProxyIdentifier` | string | The proxy phone number to use for the Participant. If not specified, Proxy will select a number from the pool. |
   | `ProxyIdentifierSid` | string | The SID of the Proxy Identifier to assign to the Participant. |
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Proxy.V1.Service.Session.Participant.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, service_sid, session_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -97,6 +101,8 @@ defmodule Twilio.Proxy.V1.Service.Session.ParticipantService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Proxy.V1.Service.Session.Participant.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, session_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -112,12 +118,13 @@ defmodule Twilio.Proxy.V1.Service.Session.ParticipantService do
   end
 
   @doc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Delete a specific Participant. This is a soft-delete. The participant remains associated with the session and cannot be re-added. Participants are only permanently deleted when the [Session](https://www.twilio.com/docs/proxy/api/session) is deleted.
 
   Operation: `DeleteParticipant` | Tags: ProxyV1Participant
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, session_sid, sid, opts \\ []) do
     Client.request(
       client,

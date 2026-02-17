@@ -14,8 +14,11 @@ defmodule Twilio.Resources.Api.V2010.Sip.Credentiallist do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The unique id of the [Account](https://www.twilio.com/docs/iam/api/account) that owns this resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date that this resource was created, given as GMT in [RFC 2822](https://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822) format.. Format: date-time-rfc-2822 |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date that this resource was last updated, given as GMT in [RFC 2822](https://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822) format.. Format: date-time-rfc-2822 |
   | `friendly_name` | A human readable descriptive text that describes the CredentialList, up to 64 characters long. |
   | `sid` | A 34 character string that uniquely identifies this resource. |

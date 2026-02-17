@@ -15,7 +15,7 @@ defmodule Twilio.Assistants.V1.Assistant.FeedbackService do
   Operation: `ListFeedback`
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, id, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Assistants/#{id}/Feedbacks",
            params: params,
@@ -58,6 +58,8 @@ defmodule Twilio.Assistants.V1.Assistant.FeedbackService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Assistants.V1.Assistant.Feedback.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, id, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

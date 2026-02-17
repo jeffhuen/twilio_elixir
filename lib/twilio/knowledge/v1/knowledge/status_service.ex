@@ -15,7 +15,10 @@ defmodule Twilio.Knowledge.V1.Knowledge.StatusService do
   Operation: `FetchKnowledgeStatus`
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Knowledge.V1.Knowledge.Status.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Knowledge.V1.Knowledge.Status.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, id, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Knowledge/#{id}/Status",

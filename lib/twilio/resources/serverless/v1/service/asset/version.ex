@@ -11,13 +11,17 @@ defmodule Twilio.Resources.Serverless.V1.Service.Asset.Version do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Asset Version resource. |
   | `asset_sid` | The SID of the Asset resource that is the parent of the Asset Version. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the Asset Version resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `path` | The URL-friendly string by which the Asset Version can be referenced. It can be a maximum of 255 characters. All paths begin with a forward slash ('/'). If an Asset Version creation request is submitted with a path not containing a leading slash, the path will automatically be prepended with one.. PII: standard |
   | `service_sid` | The SID of the Service that the Asset Version resource is associated with. |
   | `sid` | The unique string that we created to identify the Asset Version resource. |
   | `url` | The absolute URL of the Asset Version resource.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `visibility` | The access control that determines how the Asset Version resource can be accessed. Can be:  `public`, `protected`, or `private`.. Values: `public`, `private`, `protected` |
   """
 

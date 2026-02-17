@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Insight.Qualitymanagement.QuestionService do
   @moduledoc """
-
+  Service for Question API operations.
 
   Operations: `list`, `create`, `update`, `delete`
   """
@@ -21,7 +21,7 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.QuestionService do
   | `CategorySid` | array | The list of category SIDs |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Insights/QualityManagement/Questions",
            params: params,
@@ -78,6 +78,8 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.QuestionService do
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Insight.Qualitymanagement.Question.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -113,6 +115,8 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.QuestionService do
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Insight.Qualitymanagement.Question.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -133,7 +137,7 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.QuestionService do
   Operation: `DeleteInsightsQuestionnairesQuestion` | Tags: FlexV1InsightsQuestionnairesQuestion
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Insights/QualityManagement/Questions/#{sid}",
       opts: opts,

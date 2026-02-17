@@ -9,11 +9,15 @@ defmodule Twilio.Resources.Flex.V1.Channel do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Channel resource and owns this Workflow. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the Flex chat channel was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the Flex chat channel was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `flex_flow_sid` | The SID of the Flex Flow. |
   | `sid` | The unique string that we created to identify the Channel resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `task_sid` | The SID of the TaskRouter Task. Only valid when integration type is `task`. `null` for integration types `studio` & `external` |
   | `url` | The absolute URL of the Flex chat channel resource.. Format: uri |
   | `user_sid` | The SID of the chat user. |

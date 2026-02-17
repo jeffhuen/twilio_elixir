@@ -14,16 +14,19 @@ defmodule Twilio.Generator.ResourceGenerator do
       resource.schema_name ||
         "#{String.downcase(product)}.#{String.downcase(version || "")}.#{Macro.underscore(resource.name)}"
 
-    field_names = Enum.map(properties, fn p -> ":#{p.name}" end)
-    field_list = Enum.join(field_names, ", ")
+    field_list = Enum.map_join(properties, ", ", fn p -> ":#{p.name}" end)
 
     type_fields = generate_type_fields(properties)
     moduledoc = generate_moduledoc(resource)
     sid_prefix_attr = generate_sid_prefix_attr(resource.sid_prefix)
 
+    defmodule_line = "defmodule #{inspect(module_name)} do"
+    defmodule_disable = credo_line_length_disable(defmodule_line)
+    struct_disable = credo_struct_field_disable(properties)
+
     """
     # File generated from Twilio's OpenAPI spec — do not edit manually
-    defmodule #{inspect(module_name)} do
+    #{defmodule_disable}#{defmodule_line}
       @moduledoc \"\"\"
     #{moduledoc}
       \"\"\"
@@ -32,7 +35,7 @@ defmodule Twilio.Generator.ResourceGenerator do
     #{type_fields}
             }
 
-      defstruct [#{field_list}]
+    #{struct_disable}  defstruct [#{field_list}]
 
       @object_name "#{schema_name}"
       def object_name, do: @object_name
@@ -42,124 +45,122 @@ defmodule Twilio.Generator.ResourceGenerator do
   end
 
   defp generate_moduledoc(resource) do
-    lines = []
-
-    # Resource description from path-level description
-    desc = resource[:description] || "#{resource.name} resource."
-    lines = lines ++ ["  #{desc}"]
-
-    # Schema-level description (if different from path description and present)
-    lines =
-      case resource[:schema_description] do
-        nil ->
-          lines
-
-        schema_desc when schema_desc == desc ->
-          lines
-
-        schema_desc ->
-          lines ++ ["", "  #{sanitize_table_cell(schema_desc)}"]
+    desc =
+      case resource[:description] do
+        nil -> "#{resource.name} resource."
+        "" -> "#{resource.name} resource."
+        d -> d
       end
 
-    # SID prefix
-    lines =
-      case resource.sid_prefix do
-        nil -> lines
-        prefix -> lines ++ ["", "  SID prefix: `#{prefix}`"]
-      end
+    ["  #{desc}"]
+    |> append_schema_description(resource, desc)
+    |> append_sid_prefix(resource)
+    |> append_parent(resource)
+    |> append_dependent_properties(resource)
+    |> append_properties_table(resource)
+    |> Enum.join("\n")
+  end
 
-    # Parent resource
-    lines =
-      case resource[:parent] do
-        nil -> lines
-        parent -> lines ++ ["", "  Parent: `#{parent}`"]
-      end
+  defp append_schema_description(lines, resource, desc) do
+    case resource[:schema_description] do
+      nil -> lines
+      ^desc -> lines
+      schema_desc -> lines ++ ["", "  #{sanitize_table_cell(schema_desc)}"]
+    end
+  end
 
-    # Dependent sub-resources
-    lines =
-      case resource[:dependent_properties] do
-        nil ->
-          lines
+  defp append_sid_prefix(lines, resource) do
+    case resource.sid_prefix do
+      nil -> lines
+      prefix -> lines ++ ["", "  SID prefix: `#{prefix}`"]
+    end
+  end
 
-        deps when map_size(deps) == 0 ->
-          lines
+  defp append_parent(lines, resource) do
+    case resource[:parent] do
+      nil -> lines
+      parent -> lines ++ ["", "  Parent: `#{parent}`"]
+    end
+  end
 
-        deps ->
-          dep_lines =
-            Enum.map(deps, fn {name, info} ->
-              url = info["resource_url"] || ""
-              "  - `#{name}` — `#{url}`"
-            end)
+  defp append_dependent_properties(lines, resource) do
+    case resource[:dependent_properties] do
+      nil ->
+        lines
 
-          lines ++ ["", "  ## Sub-resources" | dep_lines]
-      end
+      deps when map_size(deps) == 0 ->
+        lines
 
-    # Properties table
+      deps ->
+        dep_lines =
+          Enum.map(deps, fn {name, info} ->
+            url = info["resource_url"] || ""
+            "  - `#{name}` — `#{url}`"
+          end)
+
+        lines ++ ["", "  ## Sub-resources" | dep_lines]
+    end
+  end
+
+  defp append_properties_table(lines, resource) do
     documented_props =
       (resource.properties || [])
       |> Enum.filter(fn p -> p.description || p.enum_values || p.format end)
 
-    lines =
-      if documented_props != [] do
-        header = [
-          "",
-          "  ## Properties",
-          "",
-          "  | Field | Description |",
-          "  |-------|-------------|"
-        ]
+    if documented_props == [] do
+      lines
+    else
+      header = [
+        "",
+        "  ## Properties",
+        "",
+        "  | Field | Description |",
+        "  |-------|-------------|"
+      ]
 
-        rows =
-          Enum.map(documented_props, fn prop ->
-            desc_text = sanitize_table_cell(prop.description || "")
-
-            # Use enum description if the property itself has no description
-            desc_text =
-              case {desc_text, prop[:enum_description]} do
-                {"", nil} -> ""
-                {"", enum_desc} -> sanitize_table_cell(enum_desc)
-                {d, _} -> d
-              end
-
-            extras =
-              []
-              |> maybe_append(prop.enum_values, fn vals ->
-                "Values: `#{Enum.join(vals, "`, `")}`"
-              end)
-              |> maybe_append(prop.format, fn fmt -> "Format: #{fmt}" end)
-              |> maybe_append(prop.pii, fn
-                %{"handling" => h} -> "PII: #{h}"
-                _ -> nil
-              end)
-              |> Enum.reject(&is_nil/1)
-
-            cell =
-              case {desc_text, extras} do
-                {"", []} -> ""
-                {"", _} -> Enum.join(extras, ". ")
-                {d, []} -> d
-                {d, _} -> d <> ". " <> Enum.join(extras, ". ")
-              end
-
-            "  | `#{prop.name}` | #{cell} |"
-          end)
-
-        lines ++ header ++ rows
-      else
-        lines
-      end
-
-    Enum.join(lines, "\n")
+      rows = Enum.map(documented_props, &property_table_row/1)
+      lines ++ header ++ rows
+    end
   end
 
+  defp property_table_row(prop) do
+    desc_text = prop_description(prop)
+
+    extras =
+      []
+      |> maybe_append(prop.enum_values, fn vals ->
+        "Values: `#{Enum.join(vals, "`, `")}`"
+      end)
+      |> maybe_append(prop.format, fn fmt -> "Format: #{fmt}" end)
+      |> maybe_append(prop.pii, fn
+        %{"handling" => h} -> "PII: #{h}"
+        _ -> nil
+      end)
+      |> Enum.reject(&is_nil/1)
+
+    cell = combine_desc_and_extras(desc_text, extras)
+    "  | `#{prop.name}` | #{cell} |"
+  end
+
+  defp prop_description(prop) do
+    case {sanitize_table_cell(prop.description || ""), prop[:enum_description]} do
+      {"", nil} -> ""
+      {"", enum_desc} -> sanitize_table_cell(enum_desc)
+      {d, _} -> d
+    end
+  end
+
+  defp combine_desc_and_extras("", []), do: ""
+  defp combine_desc_and_extras("", extras), do: Enum.join(extras, ". ")
+  defp combine_desc_and_extras(desc, []), do: desc
+  defp combine_desc_and_extras(desc, extras), do: desc <> ". " <> Enum.join(extras, ". ")
+
   defp generate_type_fields(properties) do
-    properties
-    |> Enum.map(fn prop ->
+    Enum.map_join(properties, ",\n", fn prop ->
       elixir_type = type_to_spec(prop.type, prop.format)
       nullable = if prop.nullable, do: " | nil", else: ""
       "          #{prop.name}: #{elixir_type}#{nullable}"
     end)
-    |> Enum.join(",\n")
   end
 
   defp generate_sid_prefix_attr(nil), do: ""
@@ -184,4 +185,23 @@ defmodule Twilio.Generator.ResourceGenerator do
 
   defp maybe_append(list, nil, _fun), do: list
   defp maybe_append(list, value, fun), do: list ++ [fun.(value)]
+
+  @max_line_length 120
+  @max_struct_fields 31
+
+  defp credo_line_length_disable(line) do
+    if String.length(line) > @max_line_length do
+      "# credo:disable-for-next-line Credo.Check.Readability.MaxLineLength\n"
+    else
+      ""
+    end
+  end
+
+  defp credo_struct_field_disable(properties) do
+    if length(properties) > @max_struct_fields do
+      "  # credo:disable-for-next-line Credo.Check.Warning.StructFieldAmount\n"
+    else
+      ""
+    end
+  end
 end

@@ -18,11 +18,15 @@ defmodule Twilio.Chat.V3.Service.ChannelService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `MessagingServiceSid` | string | The unique ID of the [Messaging Service](https://www.twilio.com/docs/messaging/api/service-resource) this channel belongs to. |
   | `Type` | string |  Values: `public`, `private` |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V3.Service.Channel.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V3.Service.Channel.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v3/Services/#{service_sid}/Channels/#{sid}",

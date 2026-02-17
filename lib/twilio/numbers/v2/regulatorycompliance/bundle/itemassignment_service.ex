@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.ItemassignmentService do
   @moduledoc """
-
+  Service for Itemassignment API operations.
 
   Operations: `list`, `create`, `fetch`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.ItemassignmentService do
   Operation: `ListItemAssignment` | Tags: NumbersV2ItemAssignment
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, bundle_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -67,6 +67,8 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.ItemassignmentService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Bundle.Itemassignment.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, bundle_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -94,6 +96,8 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.ItemassignmentService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V2.Regulatorycompliance.Bundle.Itemassignment.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, bundle_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -118,7 +122,7 @@ defmodule Twilio.Numbers.V2.Regulatorycompliance.Bundle.ItemassignmentService do
   Operation: `DeleteItemAssignment` | Tags: NumbersV2ItemAssignment
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, bundle_sid, sid, opts \\ []) do
     Client.request(
       client,

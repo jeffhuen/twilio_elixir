@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Voice.V1.SourceipmappingService do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   With Source IP Mappings, Twilio can recognize your SIP requests based on where they are sent from. The Request-URI no longer has to have the FQDN (Fully Qualified Domain Name) of your SIP Domain.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
@@ -15,7 +16,7 @@ defmodule Twilio.Voice.V1.SourceipmappingService do
   Operation: `ListSourceIpMapping` | Tags: VoiceV1SourceIpMapping
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/SourceIpMappings",
            params: params,
@@ -64,7 +65,10 @@ defmodule Twilio.Voice.V1.SourceipmappingService do
   | `SipDomainSid` | string | The SID of the SIP Domain that the IP Record should be mapped to. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Voice.V1.Sourceipmapping.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Voice.V1.Sourceipmapping.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/SourceIpMappings",
@@ -83,7 +87,10 @@ defmodule Twilio.Voice.V1.SourceipmappingService do
   Operation: `FetchSourceIpMapping` | Tags: VoiceV1SourceIpMapping
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Voice.V1.Sourceipmapping.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Voice.V1.Sourceipmapping.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/SourceIpMappings/#{sid}",
@@ -106,7 +113,10 @@ defmodule Twilio.Voice.V1.SourceipmappingService do
   | `SipDomainSid` | string | The SID of the SIP Domain that the IP Record should be mapped to. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Voice.V1.Sourceipmapping.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Voice.V1.Sourceipmapping.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/SourceIpMappings/#{sid}",
@@ -125,7 +135,7 @@ defmodule Twilio.Voice.V1.SourceipmappingService do
   Operation: `DeleteSourceIpMapping` | Tags: VoiceV1SourceIpMapping
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/SourceIpMappings/#{sid}",
       opts: opts,

@@ -9,6 +9,7 @@ defmodule Twilio.Resources.Api.V2010.Authorizedconnectapp do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the AuthorizedConnectApp resource. |
   | `connect_app_company_name` | The company name set for the Connect App. |
   | `connect_app_description` | A detailed description of the Connect App. |

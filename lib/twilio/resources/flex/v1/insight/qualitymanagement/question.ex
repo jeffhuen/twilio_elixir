@@ -1,12 +1,13 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Flex.V1.Insight.Qualitymanagement.Question do
   @moduledoc """
-
+  Question resource.
 
   ## Properties
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource. |
   | `allow_na` | The flag  to enable for disable NA for answer. |
   | `answer_set` | Set of answers for the question |

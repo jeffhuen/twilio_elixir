@@ -15,7 +15,7 @@ defmodule Twilio.Supersim.V1.Sim.IpaddressService do
   Operation: `ListSimIpAddress` | Tags: SupersimV1SimIpAddress
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, sim_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Sims/#{sim_sid}/IpAddresses",
            params: params,

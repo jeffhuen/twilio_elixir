@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Intelligence.V2.Operator do
   @moduledoc """
-
+  Operator resource.
 
   SID prefix: `LY`
 
@@ -11,7 +11,9 @@ defmodule Twilio.Resources.Intelligence.V2.Operator do
   |-------|-------------|
   | `account_sid` | The unique SID identifier of the Account the Operator belongs to. |
   | `author` | The creator of the Operator. Either Twilio or the creating Account. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `availability` | Operator availability status. Possible values: internal, beta, public, retired.. Values: `internal`, `beta`, `public`, `deprecated`, `general-availability`, `retired` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `config` | Operator configuration, following the schema defined by the Operator Type. Only available on Custom Operators created by the Account. |
   | `date_created` | The date that this Operator was created, given in ISO 8601 format.. Format: date-time |
   | `date_updated` | The date that this Operator was updated, given in ISO 8601 format.. Format: date-time |
@@ -20,6 +22,7 @@ defmodule Twilio.Resources.Intelligence.V2.Operator do
   | `operator_type` | Operator Type for this Operator. References an existing Operator Type resource. |
   | `sid` | A 34 character string that uniquely identifies this Operator. |
   | `url` | The URL of this resource.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `version` | Numeric Operator version. Incremented with each update on the resource, used to ensure integrity when updating the Operator. |
   """
 

@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.AvailablePhoneNumberCountryService do
   Operation: `ListAvailablePhoneNumberCountry` | Tags: Api20100401AvailablePhoneNumberCountry
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -61,6 +61,8 @@ defmodule Twilio.Api.V2010.AvailablePhoneNumberCountryService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.AvailablePhoneNumberCountry.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-

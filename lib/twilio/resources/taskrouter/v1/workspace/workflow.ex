@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Taskrouter.V1.Workspace.Workflow do
   @moduledoc """
-
+  Workflow resource.
 
   SID prefix: `WW`
 
@@ -16,16 +16,24 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.Workflow do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Workflow resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `assignment_callback_url` | The URL that we call when a task managed by the Workflow is assigned to a Worker. See Assignment Callback URL for more information.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `configuration` | A JSON string that contains the Workflow's configuration. See [Configuring Workflows](https://www.twilio.com/docs/taskrouter/workflow-configuration) for more information. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
   | `document_content_type` | The MIME type of the document. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `fallback_assignment_callback_url` | The URL that we call when a call to the `assignment_callback_url` fails.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `friendly_name` | The string that you assigned to describe the Workflow resource. For example, `Customer Support` or `2014 Election Campaign`.. PII: standard |
   | `links` | The URLs of related resources.. Format: uri-map |
   | `sid` | The unique string that we created to identify the Workflow resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `task_reservation_timeout` | How long TaskRouter will wait for a confirmation response from your application after it assigns a Task to a Worker. Can be up to `86,400` (24 hours) and the default is `120`. |
   | `url` | The absolute URL of the Workflow resource.. Format: uri |
   | `workspace_sid` | The SID of the Workspace that contains the Workflow. |

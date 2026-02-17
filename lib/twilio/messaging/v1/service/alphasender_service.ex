@@ -15,7 +15,7 @@ defmodule Twilio.Messaging.V1.Service.AlphasenderService do
   Operation: `ListAlphaSender` | Tags: MessagingV1AlphaSender
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/#{service_sid}/AlphaSenders",
            params: params,
@@ -60,10 +60,13 @@ defmodule Twilio.Messaging.V1.Service.AlphasenderService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AlphaSender` | string | The Alphanumeric Sender ID string. Can be up to 11 characters long. Valid characters are A-Z, a-z, 0-9, space, hyphen `-`, plus `+`, underscore `_` and ampersand `&`. This value cannot contain only numbers. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.Service.Alphasender.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -84,6 +87,8 @@ defmodule Twilio.Messaging.V1.Service.AlphasenderService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.Service.Alphasender.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -101,7 +106,7 @@ defmodule Twilio.Messaging.V1.Service.AlphasenderService do
   Operation: `DeleteAlphaSender` | Tags: MessagingV1AlphaSender
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{service_sid}/AlphaSenders/#{sid}",
       opts: opts,

@@ -16,18 +16,26 @@ defmodule Twilio.Resources.Chat.V1.Service.Channel do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Channel resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `attributes` | The JSON string that stores application-specific data. **Note** If this property has been assigned a value, it's only  displayed in a FETCH action that returns a single resource; otherwise, it's null. If the attributes have not been set, `{}` is returned.. PII: sensitive |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `created_by` | The `identity` of the User that created the channel. If the Channel was created by using the API, the value is `system`.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [RFC 2822](http://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [RFC 2822](http://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
   | `friendly_name` | The string that you assigned to describe the resource.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `links` | The absolute URLs of the [Members](https://www.twilio.com/docs/chat/api/members), [Messages](https://www.twilio.com/docs/chat/api/messages) , [Invites](https://www.twilio.com/docs/chat/api/invites) and, if it exists, the last [Message](https://www.twilio.com/docs/chat/api/messages) for the Channel.. Format: uri-map |
   | `members_count` | The number of Members in the Channel. |
   | `messages_count` | The number of Messages in the Channel. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `service_sid` | The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with. |
   | `sid` | The unique string that we created to identify the Channel resource. |
   | `type` | The visibility of the channel. Can be: `public` or `private`.. Values: `public`, `private` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `unique_name` | An application-defined string that uniquely identifies the resource. It can be used to address the resource in place of the resource's `sid` in the URL.. PII: standard |
   | `url` | The absolute URL of the Channel resource.. Format: uri |
   """

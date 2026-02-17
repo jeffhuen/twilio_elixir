@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Verify.V2.FormService do
   @moduledoc """
-
+  Service for Form API operations.
 
   Operations: `fetch`
   """
@@ -15,7 +15,10 @@ defmodule Twilio.Verify.V2.FormService do
   Operation: `FetchForm` | Tags: VerifyV2Form
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Verify.V2.Form.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Verify.V2.Form.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Forms/#{sid}",

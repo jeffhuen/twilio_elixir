@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Video.V1.Room.Participant.Publishedtrack do
   @moduledoc """
-
+  Publishedtrack resource.
 
   SID prefix: `MT`
 
@@ -11,10 +11,13 @@ defmodule Twilio.Resources.Video.V1.Room.Participant.Publishedtrack do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `enabled` | Whether the track is enabled. |
   | `kind` | The track type. Can be: `audio`, `video` or `data`.. Values: `audio`, `video`, `data` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `name` | The track name. Must be no more than 128 characters, and be unique among the participant's published tracks. |
   | `participant_sid` | The SID of the Participant resource with the published track. |
   | `room_sid` | The SID of the Room resource where the track is published. |

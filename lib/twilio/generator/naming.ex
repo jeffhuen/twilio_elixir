@@ -63,30 +63,26 @@ defmodule Twilio.Generator.Naming do
   def camelize(str) do
     str
     |> String.split(~r/[_\-]/)
-    |> Enum.map(&String.capitalize/1)
-    |> Enum.join()
+    |> Enum.map_join(&String.capitalize/1)
   end
 
   @doc "Naive singularize — handles common Twilio resource plurals."
   @spec singularize(String.t()) :: String.t()
   def singularize(str) do
     cond do
-      String.ends_with?(str, "ies") ->
-        String.replace_suffix(str, "ies", "y")
-
-      String.ends_with?(str, "sses") ->
-        String.replace_suffix(str, "es", "")
-
-      String.ends_with?(str, "ses") and not String.ends_with?(str, "sses") ->
-        String.replace_suffix(str, "ses", "se")
-
-      String.ends_with?(str, "s") and not String.ends_with?(str, "ss") and
-        not String.ends_with?(str, "us") and not String.ends_with?(str, "is") ->
-        String.replace_suffix(str, "s", "")
-
-      true ->
-        str
+      String.ends_with?(str, "ies") -> String.replace_suffix(str, "ies", "y")
+      String.ends_with?(str, "sses") -> String.replace_suffix(str, "es", "")
+      String.ends_with?(str, "ses") -> String.replace_suffix(str, "ses", "se")
+      ends_with_removable_s?(str) -> String.replace_suffix(str, "s", "")
+      true -> str
     end
+  end
+
+  defp ends_with_removable_s?(str) do
+    String.ends_with?(str, "s") and
+      not String.ends_with?(str, "ss") and
+      not String.ends_with?(str, "us") and
+      not String.ends_with?(str, "is")
   end
 
   @doc "Convert path to a service file path."
@@ -155,10 +151,8 @@ defmodule Twilio.Generator.Naming do
       |> Enum.reject(fn seg -> seg == "" end)
       # Drop version prefix (e.g., "2010-04-01", "v1", "v2")
       |> Enum.drop_while(fn seg -> Regex.match?(~r/^(v\d+|\d{4}-\d{2}-\d{2})$/i, seg) end)
-      # Split into static vs param segments
-      |> Enum.reject(fn seg -> String.starts_with?(seg, "{") end)
-      # Drop "Accounts" as implicit root for api_v2010
-      |> Enum.reject(fn seg -> seg == "Accounts" end)
+      # Drop param segments and implicit "Accounts" root
+      |> Enum.reject(fn seg -> String.starts_with?(seg, "{") or seg == "Accounts" end)
 
     case segments do
       # No segments or just the resource itself — root level

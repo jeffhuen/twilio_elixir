@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Trusthub.V1.Trustproduct.ChannelendpointassignmentService do
   @moduledoc """
-
+  Service for Channelendpointassignment API operations.
 
   Operations: `list`, `create`, `fetch`, `delete`
   """
@@ -22,7 +22,7 @@ defmodule Twilio.Trusthub.V1.Trustproduct.ChannelendpointassignmentService do
   | `ChannelEndpointSids` | string | comma separated list of channel endpoint sids |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, trust_product_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -75,6 +75,8 @@ defmodule Twilio.Trusthub.V1.Trustproduct.ChannelendpointassignmentService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Trusthub.V1.Trustproduct.Channelendpointassignment.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, trust_product_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -102,6 +104,8 @@ defmodule Twilio.Trusthub.V1.Trustproduct.ChannelendpointassignmentService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Trusthub.V1.Trustproduct.Channelendpointassignment.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, trust_product_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -126,7 +130,7 @@ defmodule Twilio.Trusthub.V1.Trustproduct.ChannelendpointassignmentService do
   Operation: `DeleteTrustProductChannelEndpointAssignment` | Tags: TrusthubV1TrustProductsChannelEndpointAssignment
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, trust_product_sid, sid, opts \\ []) do
     Client.request(
       client,

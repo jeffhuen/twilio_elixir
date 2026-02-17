@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Verify.V2.Safelist.Number do
   @moduledoc """
-
+  Number resource.
 
   SID prefix: `GN`
 

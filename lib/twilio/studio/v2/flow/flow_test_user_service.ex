@@ -15,7 +15,10 @@ defmodule Twilio.Studio.V2.Flow.FlowTestUserService do
   Operation: `FetchTestUser` | Tags: StudioV2FlowTestUser
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V2.Flow.FlowTestUser.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V2.Flow.FlowTestUser.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Flows/#{sid}/TestUsers",
@@ -38,7 +41,10 @@ defmodule Twilio.Studio.V2.Flow.FlowTestUserService do
   | `TestUsers` | array | List of test user identities that can test draft versions of the flow. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V2.Flow.FlowTestUser.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V2.Flow.FlowTestUser.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Flows/#{sid}/TestUsers",

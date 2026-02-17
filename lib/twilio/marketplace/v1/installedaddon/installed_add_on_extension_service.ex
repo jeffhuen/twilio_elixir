@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Marketplace.V1.Installedaddon.InstalledAddOnExtensionService do
   @moduledoc """
-
+  Service for InstalledAddOnExtension API operations.
 
   Operations: `list`, `fetch`, `update`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Marketplace.V1.Installedaddon.InstalledAddOnExtensionService do
   Operation: `ListInstalledAddOnExtension` | Tags: MarketplaceInstalledAddOnExtension
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, installed_add_on_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/InstalledAddOns/#{installed_add_on_sid}/Extensions",
            params: params,
@@ -58,6 +58,8 @@ defmodule Twilio.Marketplace.V1.Installedaddon.InstalledAddOnExtensionService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Marketplace.V1.Installedaddon.InstalledAddOnExtension.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, installed_add_on_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -89,6 +91,8 @@ defmodule Twilio.Marketplace.V1.Installedaddon.InstalledAddOnExtensionService do
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Marketplace.V1.Installedaddon.InstalledAddOnExtension.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, installed_add_on_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

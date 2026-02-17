@@ -15,7 +15,7 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
   Operation: `ListCredentialAws` | Tags: AccountsV1Aws
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Credentials/AWS",
            params: params,
@@ -40,6 +40,7 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieves a collection of AWS Credentials belonging to the account used to make the request (lazy auto-pagination)."
   @spec stream(Client.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, params \\ %{}, opts \\ []) do
@@ -60,16 +61,22 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Credentials` | string | A string that contains the AWS access credentials in the format `<AWS_ACCESS_KEY_ID>:<AWS_SECRET_ACCESS_KEY>`. For example, `AKIAIOSFODNN7EXAMPLE:wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY` |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AccountSid` | string | The SID of the Subaccount that this Credential should be associated with. Must be a valid Subaccount of the account issuing the request. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It can be up to 64 characters long. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Accounts.V1.Credential.Aws.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Accounts.V1.Credential.Aws.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Credentials/AWS",
@@ -88,7 +95,10 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
   Operation: `FetchCredentialAws` | Tags: AccountsV1Aws
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Accounts.V1.Credential.Aws.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Accounts.V1.Credential.Aws.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Credentials/AWS/#{sid}",
@@ -108,10 +118,14 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It can be up to 64 characters long. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Accounts.V1.Credential.Aws.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Accounts.V1.Credential.Aws.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Credentials/AWS/#{sid}",
@@ -130,7 +144,7 @@ defmodule Twilio.Accounts.V1.Credential.AwsService do
   Operation: `DeleteCredentialAws` | Tags: AccountsV1Aws
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Credentials/AWS/#{sid}",
       opts: opts,

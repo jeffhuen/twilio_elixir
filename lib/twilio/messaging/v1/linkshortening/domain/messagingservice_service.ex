@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Messaging.V1.Linkshortening.Domain.MessagingserviceService do
   @moduledoc """
-
+  Service for Messagingservice API operations.
 
   Operations: `update`, `delete`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Messaging.V1.Linkshortening.Domain.MessagingserviceService do
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Messaging.V1.Linkshortening.Domain.Messagingservice.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, domain_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -42,7 +44,7 @@ defmodule Twilio.Messaging.V1.Linkshortening.Domain.MessagingserviceService do
   Operation: `DeleteLinkshorteningMessagingService` | Tags: MessagingV1LinkshorteningMessagingService
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, domain_sid, sid, opts \\ []) do
     Client.request(
       client,

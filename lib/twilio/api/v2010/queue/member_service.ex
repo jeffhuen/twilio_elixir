@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.Queue.MemberService do
   Operation: `ListMember` | Tags: Api20100401Member
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, queue_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -57,7 +57,10 @@ defmodule Twilio.Api.V2010.Queue.MemberService do
   Operation: `FetchMember` | Tags: Api20100401Member
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Queue.Member.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Queue.Member.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, queue_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -85,10 +88,14 @@ defmodule Twilio.Api.V2010.Queue.MemberService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Method` | string (http-method) | How to pass the update request data. Can be `GET` or `POST` and the default is `POST`. `POST` sends the data as encoded form data and `GET` sends the data as query parameters. Values: `GET`, `POST` |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Queue.Member.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Queue.Member.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, queue_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(

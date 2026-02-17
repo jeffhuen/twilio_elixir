@@ -15,7 +15,7 @@ defmodule Twilio.Messaging.V1.Service.ShortcodeService do
   Operation: `ListShortCode` | Tags: MessagingV1ShortCode
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/#{service_sid}/ShortCodes",
            params: params,
@@ -63,7 +63,10 @@ defmodule Twilio.Messaging.V1.Service.ShortcodeService do
   | `ShortCodeSid` | string | The SID of the ShortCode resource being added to the Service. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Messaging.V1.Service.Shortcode.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Messaging.V1.Service.Shortcode.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services/#{service_sid}/ShortCodes",
@@ -82,7 +85,10 @@ defmodule Twilio.Messaging.V1.Service.ShortcodeService do
   Operation: `FetchShortCode` | Tags: MessagingV1ShortCode
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Messaging.V1.Service.Shortcode.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Messaging.V1.Service.Shortcode.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Services/#{service_sid}/ShortCodes/#{sid}",
@@ -99,7 +105,7 @@ defmodule Twilio.Messaging.V1.Service.ShortcodeService do
   Operation: `DeleteShortCode` | Tags: MessagingV1ShortCode
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{service_sid}/ShortCodes/#{sid}",
       opts: opts,

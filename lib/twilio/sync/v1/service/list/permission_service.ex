@@ -15,7 +15,7 @@ defmodule Twilio.Sync.V1.Service.List.PermissionService do
   Operation: `ListSyncListPermission` | Tags: SyncV1SyncListPermission
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, list_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/#{service_sid}/Lists/#{list_sid}/Permissions",
            params: params,
@@ -57,7 +57,10 @@ defmodule Twilio.Sync.V1.Service.List.PermissionService do
   Operation: `FetchSyncListPermission` | Tags: SyncV1SyncListPermission
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Sync.V1.Service.List.Permission.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Sync.V1.Service.List.Permission.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, list_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -82,10 +85,14 @@ defmodule Twilio.Sync.V1.Service.List.PermissionService do
   |-----------|------|-------------|
   | `Manage` | boolean | Whether the identity can delete the Sync List. Default value is `false`. |
   | `Read` | boolean | Whether the identity can read the Sync List and its Items. Default value is `false`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Write` | boolean | Whether the identity can create, update, and delete Items in the Sync List. Default value is `false`. |
   """
   @spec update(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Sync.V1.Service.List.Permission.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Sync.V1.Service.List.Permission.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, list_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -107,7 +114,7 @@ defmodule Twilio.Sync.V1.Service.List.PermissionService do
   Operation: `DeleteSyncListPermission` | Tags: SyncV1SyncListPermission
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, list_sid, sid, opts \\ []) do
     Client.request(
       client,

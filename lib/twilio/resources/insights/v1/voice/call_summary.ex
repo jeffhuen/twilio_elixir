@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Insights.V1.Voice.CallSummary do
   @moduledoc """
-
+  CallSummary resource.
 
   Parent: `/Voice/{Sid}`
 
@@ -10,24 +10,31 @@ defmodule Twilio.Resources.Insights.V1.Voice.CallSummary do
   | Field | Description |
   |-------|-------------|
   | `account_sid` | The unique SID identifier of the Account. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `annotation` | Programmatically labeled annotations for the Call. Developers can update the Call Summary records with Annotation during or after a Call. Annotations can be updated as long as the Call Summary record is addressable via the API. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `answered_by` | The Answered By value for the summarized call based on `Answering Machine Detection (AMD)`. One of `unknown`, `machine_start`, `machine_end_beep`, `machine_end_silence`, `machine_end_other`, `human` or `fax`. Refer to [AMD](https://www.twilio.com/docs/voice/answering-machine-detection) for more detail.. Values: `unknown`, `machine_start`, `machine_end_beep`, `machine_end_silence`, `machine_end_other`, `human`, `fax` |
   | `attributes` | Attributes capturing call-flow-specific details. |
   | `call_sid` | The unique SID identifier of the Call. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `call_state` | The Call State of the summarized Call. One of `ringing`, `completed`, `busy`, `fail`, `noanswer`, `canceled`, `answered`, `undialed`.. Values: `ringing`, `completed`, `busy`, `fail`, `noanswer`, `canceled`, `answered`, `undialed` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `call_type` | The Call Type of the summarized Call. One of `carrier`, `sip`, `trunking`, `client` and `whatsapp`.. Values: `carrier`, `sip`, `trunking`, `client`, `whatsapp` |
   | `carrier_edge` | Contains metrics and properties for the Twilio media gateway of a PSTN call. |
   | `client_edge` | Contains metrics and properties for the Twilio media gateway of a Client call. |
   | `connect_duration` | Duration between when the call was answered and when it ended |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `created_time` | The time at which the Call was created, given in ISO 8601 format. Can be different from `start_time` in the event of queueing due to CPS. Format: date-time |
   | `duration` | Duration between when the call was initiated and the call was ended |
   | `end_time` | The time at which the Call was ended, given in ISO 8601 format.. Format: date-time |
   | `from` | The calling party.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `processing_state` | The Processing State of the Call Summary. The Processing State will be `partial` until the assembly of the Call Summary finishes, which occurs approximately 30 minutes after Call end. Then the Processing State changes to `complete`. Values: `complete`, `partial` |
   | `properties` | Contains edge-agnostic call-level details. |
   | `sdk_edge` | Contains metrics and properties for the SDK sensor library for Client calls. |
   | `sip_edge` | Contains metrics and properties for the Twilio media gateway of a SIP Interface or Trunking call. |
   | `start_time` | The time at which the Call was started, given in ISO 8601 format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `tags` | Tags applied to calls by Voice Insights analysis indicating a condition that could result in subjective degradation of the call quality. |
   | `to` | The called party.. PII: standard |
   | `trust` | Contains trusted communications details including Branded Call and verified caller ID. |

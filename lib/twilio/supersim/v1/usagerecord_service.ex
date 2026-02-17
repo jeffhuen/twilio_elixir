@@ -18,17 +18,24 @@ defmodule Twilio.Supersim.V1.UsagerecordService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Sim` | string | SID or unique name of a Sim resource. Only show UsageRecords representing usage incurred by this Super SIM. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Fleet` | string | SID or unique name of a Fleet resource. Only show UsageRecords representing usage for Super SIMs belonging to this Fleet resource at the time the usage occurred. |
   | `Network` | string | SID of a Network resource. Only show UsageRecords representing usage on this network. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IsoCountry` | string (iso-country-code) | Alpha-2 ISO Country Code. Only show UsageRecords representing usage in this country. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Group` | string | Dimension over which to aggregate usage records. Can be: `sim`, `fleet`, `network`, `isoCountry`. Default is to not aggregate across any of these dimensions, UsageRecords will be aggregated into the time buckets described by the `Granularity` parameter. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Granularity` | string | Time-based grouping that UsageRecords should be aggregated by. Can be: `hour`, `day`, or `all`. Default is `all`. `all` returns one UsageRecord that describes the usage for the entire period. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `StartTime` | string (date-time) | Only include usage that occurred at or after this time, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. Default is one month before the `end_time`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `EndTime` | string (date-time) | Only include usage that occurred before this time (exclusive), specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. Default is the current time. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/UsageRecords",
            params: params,

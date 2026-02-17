@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.Sip.IpaccesscontrollistService do
   Operation: `ListSipIpAccessControlList` | Tags: Api20100401IpAccessControlList
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -43,6 +43,7 @@ defmodule Twilio.Api.V2010.Sip.IpaccesscontrollistService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieve a list of IpAccessControlLists that belong to the account used to make the request (lazy auto-pagination)."
   @spec stream(Client.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, params \\ %{}, opts \\ []) do
@@ -63,10 +64,13 @@ defmodule Twilio.Api.V2010.Sip.IpaccesscontrollistService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A human readable descriptive text that describes the IpAccessControlList, up to 255 characters long. |
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Sip.Ipaccesscontrollist.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -90,6 +94,8 @@ defmodule Twilio.Api.V2010.Sip.IpaccesscontrollistService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Sip.Ipaccesscontrollist.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
@@ -117,6 +123,8 @@ defmodule Twilio.Api.V2010.Sip.IpaccesscontrollistService do
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Sip.Ipaccesscontrollist.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -139,7 +147,7 @@ defmodule Twilio.Api.V2010.Sip.IpaccesscontrollistService do
   Operation: `DeleteSipIpAccessControlList` | Tags: Api20100401IpAccessControlList
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(
       client,

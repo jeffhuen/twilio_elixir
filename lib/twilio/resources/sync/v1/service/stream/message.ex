@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Sync.V1.Service.Stream.Message do
   @moduledoc """
-
+  Message resource.
 
   SID prefix: `TZ`
 
@@ -11,6 +11,7 @@ defmodule Twilio.Resources.Sync.V1.Service.Stream.Message do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `data` | An arbitrary, schema-less object that contains the Stream Message body. Can be up to 4 KiB in length.. PII: sensitive |
   | `sid` | The unique string that we created to identify the Stream Message resource. |
   """

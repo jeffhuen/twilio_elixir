@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Pluginservice.PluginService do
   @moduledoc """
-
+  Service for Plugin API operations.
 
   Operations: `list`, `create`, `fetch`, `update`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Flex.V1.Pluginservice.PluginService do
   Operation: `ListPlugin` | Tags: FlexV1Plugin
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/PluginService/Plugins",
            params: params,
@@ -65,11 +65,15 @@ defmodule Twilio.Flex.V1.Pluginservice.PluginService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Description` | string | A descriptive string that you create to describe the plugin resource. It can be up to 500 characters long |
   | `FriendlyName` | string | The Flex Plugin's friendly name. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Pluginservice.Plugin.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Pluginservice.Plugin.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/PluginService/Plugins",
@@ -88,7 +92,10 @@ defmodule Twilio.Flex.V1.Pluginservice.PluginService do
   Operation: `FetchPlugin` | Tags: FlexV1Plugin
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Pluginservice.Plugin.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Pluginservice.Plugin.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/PluginService/Plugins/#{sid}",
@@ -108,11 +115,15 @@ defmodule Twilio.Flex.V1.Pluginservice.PluginService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Description` | string | A descriptive string that you update to describe the plugin resource. It can be up to 500 characters long |
   | `FriendlyName` | string | The Flex Plugin's friendly name. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Pluginservice.Plugin.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Pluginservice.Plugin.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/PluginService/Plugins/#{sid}",

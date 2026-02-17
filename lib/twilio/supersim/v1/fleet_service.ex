@@ -18,10 +18,11 @@ defmodule Twilio.Supersim.V1.FleetService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `NetworkAccessProfile` | string | The SID or unique name of the Network Access Profile that controls which cellular networks the Fleet's SIMs can connect to. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Fleets",
            params: params,
@@ -62,22 +63,34 @@ defmodule Twilio.Supersim.V1.FleetService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `NetworkAccessProfile` | string | The SID or unique name of the Network Access Profile that will control which cellular networks the Fleet's SIMs can connect to. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DataEnabled` | boolean | Defines whether SIMs in the Fleet are capable of using 2G/3G/4G/LTE/CAT-M data connectivity. Defaults to `true`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DataLimit` | integer | The total data usage (download and upload combined) in Megabytes that each Super SIM assigned to the Fleet can consume during a billing period (normally one month). Value must be between 1MB (1) and 2TB (2,000,000). Defaults to 1GB (1,000). |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IpCommandsMethod` | string (http-method) | A string representing the HTTP method to use when making a request to `ip_commands_url`. Can be one of `POST` or `GET`. Defaults to `POST`. Values: `GET`, `POST` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IpCommandsUrl` | string (uri) | The URL that will receive a webhook when a Super SIM in the Fleet is used to send an IP Command from your device to a special IP address. Your server should respond with an HTTP status code in the 200 range; any response body will be ignored. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SmsCommandsEnabled` | boolean | Defines whether SIMs in the Fleet are capable of sending and receiving machine-to-machine SMS via Commands. Defaults to `true`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SmsCommandsMethod` | string (http-method) | A string representing the HTTP method to use when making a request to `sms_commands_url`. Can be one of `POST` or `GET`. Defaults to `POST`. Values: `GET`, `POST` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SmsCommandsUrl` | string (uri) | The URL that will receive a webhook when a Super SIM in the Fleet is used to send an SMS from your device to the SMS Commands number. Your server should respond with an HTTP status code in the 200 range; any response body will be ignored. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Supersim.V1.Fleet.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Supersim.V1.Fleet.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Fleets",
@@ -96,7 +109,10 @@ defmodule Twilio.Supersim.V1.FleetService do
   Operation: `FetchFleet` | Tags: SupersimV1Fleet
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Supersim.V1.Fleet.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Supersim.V1.Fleet.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Fleets/#{sid}",
@@ -116,16 +132,26 @@ defmodule Twilio.Supersim.V1.FleetService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DataLimit` | integer | The total data usage (download and upload combined) in Megabytes that each Super SIM assigned to the Fleet can consume during a billing period (normally one month). Value must be between 1MB (1) and 2TB (2,000,000). Defaults to 1GB (1,000). |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IpCommandsMethod` | string (http-method) | A string representing the HTTP method to use when making a request to `ip_commands_url`. Can be one of `POST` or `GET`. Defaults to `POST`. Values: `GET`, `POST` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IpCommandsUrl` | string (uri) | The URL that will receive a webhook when a Super SIM in the Fleet is used to send an IP Command from your device to a special IP address. Your server should respond with an HTTP status code in the 200 range; any response body will be ignored. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `NetworkAccessProfile` | string | The SID or unique name of the Network Access Profile that will control which cellular networks the Fleet's SIMs can connect to. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SmsCommandsMethod` | string (http-method) | A string representing the HTTP method to use when making a request to `sms_commands_url`. Can be one of `POST` or `GET`. Defaults to `POST`. Values: `GET`, `POST` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SmsCommandsUrl` | string (uri) | The URL that will receive a webhook when a Super SIM in the Fleet is used to send an SMS from your device to the SMS Commands number. Your server should respond with an HTTP status code in the 200 range; any response body will be ignored. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the resource. It can be used in place of the resource's `sid` in the URL to address the resource. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Supersim.V1.Fleet.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Supersim.V1.Fleet.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Fleets/#{sid}",

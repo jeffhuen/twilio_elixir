@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Verify.V2.Service.VerificationcheckService do
   @moduledoc """
-
+  Service for Verificationcheck API operations.
 
   Operations: `create`
   """
@@ -18,15 +18,21 @@ defmodule Twilio.Verify.V2.Service.VerificationcheckService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Amount` | string | The amount of the associated PSD2 compliant transaction. Requires the PSD2 Service flag enabled. |
   | `Code` | string | The 4-10 character string being verified. |
   | `Payee` | string | The payee of the associated PSD2 compliant transaction. Requires the PSD2 Service flag enabled. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SnaClientToken` | string | A sna client token received in sna url invocation response needs to be passed in Verification Check request and should match to get successful response. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `To` | string | The phone number or [email](https://www.twilio.com/docs/verify/email) to verify. Either this parameter or the `verification_sid` must be specified. Phone numbers must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164). |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `VerificationSid` | string | A SID that uniquely identifies the Verification Check. Either this parameter or the `to` phone number/[email](https://www.twilio.com/docs/verify/email) must be specified. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Verify.V2.Service.Verificationcheck.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

@@ -9,13 +9,14 @@ defmodule Twilio.Messaging.V2.Indicator.TypingService do
   alias Twilio.Client
 
   @doc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Send a typing indicator to notify the recipient that you are composing a message. Currently supported for whatsapp channel only. For WhatsApp, `messageId` is required.
 
 
   Operation: `CreateTypingIndicator` | Tags: MessagingV2TypingIndicator
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, map()} | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     Client.request(client, :post, "/v2/Indicators/Typing.json",
       params: params,

@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.Call.EventService do
   Operation: `ListCallEvent` | Tags: Api20100401Event
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, call_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,

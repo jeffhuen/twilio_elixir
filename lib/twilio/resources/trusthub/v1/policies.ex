@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Trusthub.V1.Policies do
   @moduledoc """
-
+  Policies resource.
 
   SID prefix: `RN`
 
@@ -9,6 +9,7 @@ defmodule Twilio.Resources.Trusthub.V1.Policies do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `friendly_name` | A human-readable description that is assigned to describe the Policy resource. Examples can include Primary Customer profile policy |
   | `requirements` | The SID of an object that holds the policy information |
   | `sid` | The unique string that identifies the Policy resource. |

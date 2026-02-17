@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.Sip.Credentiallist.CredentialService do
   Operation: `ListSipCredential` | Tags: Api20100401Credential
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, credential_list_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -63,11 +63,15 @@ defmodule Twilio.Api.V2010.Sip.Credentiallist.CredentialService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Password` | string | The password that the username will use when authenticating SIP requests. The password must be a minimum of 12 characters, contain at least 1 digit, and have mixed case. (eg `IWasAtSignal2018`) |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Username` | string | The username that will be passed when authenticating SIP requests. The username should be sent in response to Twilio's challenge of the initial INVITE. It can be up to 32 characters long. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Sip.Credentiallist.Credential.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, credential_list_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -92,12 +96,15 @@ defmodule Twilio.Api.V2010.Sip.Credentiallist.CredentialService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Sip.Credentiallist.Credential.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, credential_list_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
              client,
              :get,
+             # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
              "/2010-04-01/Accounts/#{client.account_sid}/SIP/CredentialLists/#{credential_list_sid}/Credentials/#{sid}.json",
              opts: opts,
              base_url: "https://api.twilio.com"
@@ -116,16 +123,20 @@ defmodule Twilio.Api.V2010.Sip.Credentiallist.CredentialService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Password` | string | The password that the username will use when authenticating SIP requests. The password must be a minimum of 12 characters, contain at least 1 digit, and have mixed case. (eg `IWasAtSignal2018`) |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Api.V2010.Sip.Credentiallist.Credential.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, credential_list_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
              client,
              :post,
+             # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
              "/2010-04-01/Accounts/#{client.account_sid}/SIP/CredentialLists/#{credential_list_sid}/Credentials/#{sid}.json",
              params: params,
              opts: opts,
@@ -143,7 +154,7 @@ defmodule Twilio.Api.V2010.Sip.Credentiallist.CredentialService do
   Operation: `DeleteSipCredential` | Tags: Api20100401Credential
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, credential_list_sid, sid, opts \\ []) do
     Client.request(
       client,

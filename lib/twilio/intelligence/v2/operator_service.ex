@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Intelligence.V2.OperatorService do
   @moduledoc """
-
+  Service for Operator API operations.
 
   Operations: `list`, `fetch`
   """
@@ -18,11 +18,12 @@ defmodule Twilio.Intelligence.V2.OperatorService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Availability` | string | Returns Operators with the provided availability type. Possible values: internal, beta, public, retired. |
   | `LanguageCode` | string | Returns Operators that support the provided language code. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Operators",
            params: params,
@@ -64,7 +65,10 @@ defmodule Twilio.Intelligence.V2.OperatorService do
   Operation: `FetchOperator` | Tags: IntelligenceV2Operator
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Intelligence.V2.Operator.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Intelligence.V2.Operator.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Operators/#{sid}",

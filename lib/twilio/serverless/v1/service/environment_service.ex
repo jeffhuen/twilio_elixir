@@ -15,7 +15,7 @@ defmodule Twilio.Serverless.V1.Service.EnvironmentService do
   Operation: `ListEnvironment` | Tags: ServerlessV1Environment
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/#{service_sid}/Environments",
            params: params,
@@ -60,15 +60,19 @@ defmodule Twilio.Serverless.V1.Service.EnvironmentService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | A user-defined string that uniquely identifies the Environment resource. It can be a maximum of 100 characters. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DomainSuffix` | string | A URL-friendly name that represents the environment and forms part of the domain name. It can be a maximum of 16 characters. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Serverless.V1.Service.Environment.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -89,6 +93,8 @@ defmodule Twilio.Serverless.V1.Service.EnvironmentService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Serverless.V1.Service.Environment.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -106,7 +112,7 @@ defmodule Twilio.Serverless.V1.Service.EnvironmentService do
   Operation: `DeleteEnvironment` | Tags: ServerlessV1Environment
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{service_sid}/Environments/#{sid}",
       opts: opts,

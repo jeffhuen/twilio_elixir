@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Flex.V1.Insight.Qualitymanagement.Assessment.CommentService do
   @moduledoc """
-
+  Service for Comment API operations.
 
   Operations: `list`, `create`
   """
@@ -22,7 +22,7 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.Assessment.CommentService do
   | `AgentId` | string | The id of the agent. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Insights/QualityManagement/Assessments/Comments",
            params: params,
@@ -76,6 +76,8 @@ defmodule Twilio.Flex.V1.Insight.Qualitymanagement.Assessment.CommentService do
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Flex.V1.Insight.Qualitymanagement.Assessment.Comment.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

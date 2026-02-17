@@ -10,6 +10,7 @@ defmodule Twilio.Resources.Messaging.V2.Channel.Sender do
   | Field | Description |
   |-------|-------------|
   | `sid` | The SID of the sender. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The status of the sender. . Values: `CREATING`, `ONLINE`, `OFFLINE`, `PENDING_VERIFICATION`, `VERIFYING`, `ONLINE:UPDATING`, `TWILIO_REVIEW`, `DRAFT`, `STUBBED` |
   | `url` | The URL of the resource.. Format: uri |
   """

@@ -15,7 +15,7 @@ defmodule Twilio.Conversations.V1.User.ConversationService do
   Operation: `ListUserConversation` | Tags: ConversationsV1UserConversation
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, user_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Users/#{user_sid}/Conversations",
            params: params,
@@ -58,6 +58,8 @@ defmodule Twilio.Conversations.V1.User.ConversationService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.User.Conversation.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, user_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -78,12 +80,16 @@ defmodule Twilio.Conversations.V1.User.ConversationService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `LastReadMessageIndex` | integer | The index of the last Message in the Conversation that the Participant has read. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `LastReadTimestamp` | string (date-time) | The date of the last message read in conversation by the user, given in ISO 8601 format. |
   | `NotificationLevel` | string |  Values: `default`, `muted` |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.User.Conversation.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, user_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -103,7 +109,7 @@ defmodule Twilio.Conversations.V1.User.ConversationService do
   Operation: `DeleteUserConversation` | Tags: ConversationsV1UserConversation
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, user_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Users/#{user_sid}/Conversations/#{sid}",
       opts: opts,

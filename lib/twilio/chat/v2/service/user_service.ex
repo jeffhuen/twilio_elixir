@@ -15,7 +15,7 @@ defmodule Twilio.Chat.V2.Service.UserService do
   Operation: `ListUser` | Tags: ChatV2User
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services/#{service_sid}/Users",
            params: params,
@@ -57,17 +57,23 @@ defmodule Twilio.Chat.V2.Service.UserService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Identity` | string | The `identity` value that uniquely identifies the new resource's [User](https://www.twilio.com/docs/chat/rest/user-resource) within the [Service](https://www.twilio.com/docs/chat/rest/service-resource). This value is often a username or email address. See the Identity documentation for more info. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Attributes` | string | A valid JSON string that contains application-specific data. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the new resource. This value is often used for display purposes. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RoleSid` | string | The SID of the [Role](https://www.twilio.com/docs/chat/rest/role-resource) to assign to the new User. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.User.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.User.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{service_sid}/Users",
@@ -86,7 +92,10 @@ defmodule Twilio.Chat.V2.Service.UserService do
   Operation: `FetchUser` | Tags: ChatV2User
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.User.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.User.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Services/#{service_sid}/Users/#{sid}",
@@ -107,11 +116,16 @@ defmodule Twilio.Chat.V2.Service.UserService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Attributes` | string | A valid JSON string that contains application-specific data. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It is often used for display purposes. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RoleSid` | string | The SID of the [Role](https://www.twilio.com/docs/chat/rest/role-resource) to assign to the User. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.User.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.User.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{service_sid}/Users/#{sid}",
@@ -130,7 +144,7 @@ defmodule Twilio.Chat.V2.Service.UserService do
   Operation: `DeleteUser` | Tags: ChatV2User
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Services/#{service_sid}/Users/#{sid}",
       opts: opts,

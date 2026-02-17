@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Flex.V1.Pluginservice.Configuration do
   @moduledoc """
-
+  Configuration resource.
 
   SID prefix: `FJ`
 
@@ -12,8 +12,10 @@ defmodule Twilio.Resources.Flex.V1.Pluginservice.Configuration do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Plugin Configuration resource and owns this resource. |
   | `archived` | Whether the Flex Plugin Configuration is archived. The default value is false. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the Flex Plugin Configuration was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `description` | The description of the Flex Plugin Configuration resource.. PII: standard |
   | `links` | Format: uri-map |

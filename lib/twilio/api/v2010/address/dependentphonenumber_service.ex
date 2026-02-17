@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.Address.DependentphonenumberService do
   Operation: `ListDependentPhoneNumber` | Tags: Api20100401DependentPhoneNumber
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, address_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,

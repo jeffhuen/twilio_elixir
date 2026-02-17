@@ -19,6 +19,7 @@ defmodule Twilio.Api.V2010.Call.SiprecService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `ConnectorName` | string | Unique name used when configuring the connector via Marketplace Add-on. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Name` | string | The user-specified name of this Siprec, if one was given when the Siprec was created. This may be used to stop the Siprec. |
   | `Parameter1.Name` | string | Parameter name |
   | `Parameter1.Value` | string | Parameter value |
@@ -219,11 +220,15 @@ defmodule Twilio.Api.V2010.Call.SiprecService do
   | `Parameter99.Name` | string | Parameter name |
   | `Parameter99.Value` | string | Parameter value |
   | `StatusCallback` | string (uri) | Absolute URL of the status callback. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `StatusCallbackMethod` | string (http-method) | The http method for the status_callback (one of GET, POST). Values: `GET`, `POST` |
   | `Track` | string |  Values: `inbound_track`, `outbound_track`, `both_tracks` |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Call.Siprec.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Call.Siprec.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, call_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -251,7 +256,10 @@ defmodule Twilio.Api.V2010.Call.SiprecService do
   | `Status` | string |  Values: `stopped` |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Call.Siprec.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Call.Siprec.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, call_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(

@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Trusthub.V1.Trustproduct.TrustProductsEvaluationsService do
   @moduledoc """
-
+  Service for TrustProductsEvaluations API operations.
 
   Operations: `list`, `create`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Trusthub.V1.Trustproduct.TrustProductsEvaluationsService do
   Operation: `ListTrustProductEvaluation` | Tags: TrusthubV1TrustProductsEvaluations
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, trust_product_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/TrustProducts/#{trust_product_sid}/Evaluations",
            params: params,
@@ -64,6 +64,8 @@ defmodule Twilio.Trusthub.V1.Trustproduct.TrustProductsEvaluationsService do
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Trusthub.V1.Trustproduct.TrustProductsEvaluations.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, trust_product_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -88,6 +90,8 @@ defmodule Twilio.Trusthub.V1.Trustproduct.TrustProductsEvaluationsService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Trusthub.V1.Trustproduct.TrustProductsEvaluations.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, trust_product_sid, sid, opts \\ []) do
     with {:ok, data} <-

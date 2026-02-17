@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Numbers.V1.Hostednumber.Eligibility.BulkService do
   @moduledoc """
-
+  Service for Bulk API operations.
 
   Operations: `create`, `fetch`
   """
@@ -16,6 +16,8 @@ defmodule Twilio.Numbers.V1.Hostednumber.Eligibility.BulkService do
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V1.Hostednumber.Eligibility.Bulk.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -37,6 +39,8 @@ defmodule Twilio.Numbers.V1.Hostednumber.Eligibility.BulkService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Numbers.V1.Hostednumber.Eligibility.Bulk.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-

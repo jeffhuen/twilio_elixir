@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Marketplace.V1.AvailableaddonService do
   @moduledoc """
-
+  Service for Availableaddon API operations.
 
   Operations: `list`, `fetch`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Marketplace.V1.AvailableaddonService do
   Operation: `ListAvailableAddOn` | Tags: MarketplaceAvailableAddOn
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/AvailableAddOns",
            params: params,
@@ -57,7 +57,10 @@ defmodule Twilio.Marketplace.V1.AvailableaddonService do
   Operation: `FetchAvailableAddOn` | Tags: MarketplaceAvailableAddOn
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Marketplace.V1.Availableaddon.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Marketplace.V1.Availableaddon.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/AvailableAddOns/#{sid}",

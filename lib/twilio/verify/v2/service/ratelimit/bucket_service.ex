@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Verify.V2.Service.Ratelimit.BucketService do
   @moduledoc """
-
+  Service for Bucket API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Verify.V2.Service.Ratelimit.BucketService do
   Operation: `ListBucket` | Tags: VerifyV2Bucket
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, rate_limit_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -68,6 +68,8 @@ defmodule Twilio.Verify.V2.Service.Ratelimit.BucketService do
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Verify.V2.Service.Ratelimit.Bucket.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, service_sid, rate_limit_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -91,6 +93,8 @@ defmodule Twilio.Verify.V2.Service.Ratelimit.BucketService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Verify.V2.Service.Ratelimit.Bucket.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, rate_limit_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -119,6 +123,8 @@ defmodule Twilio.Verify.V2.Service.Ratelimit.BucketService do
   """
   @spec update(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Verify.V2.Service.Ratelimit.Bucket.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, service_sid, rate_limit_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -141,7 +147,7 @@ defmodule Twilio.Verify.V2.Service.Ratelimit.BucketService do
   Operation: `DeleteBucket` | Tags: VerifyV2Bucket
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, rate_limit_sid, sid, opts \\ []) do
     Client.request(
       client,

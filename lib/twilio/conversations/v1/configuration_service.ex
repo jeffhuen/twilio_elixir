@@ -15,7 +15,10 @@ defmodule Twilio.Conversations.V1.ConfigurationService do
   Operation: `FetchConfiguration` | Tags: ConversationsV1Configuration
   """
   @spec fetch(Client.t(), keyword()) ::
-          {:ok, Twilio.Resources.Conversations.V1.Configuration.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Conversations.V1.Configuration.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Configuration",
@@ -35,13 +38,20 @@ defmodule Twilio.Conversations.V1.ConfigurationService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DefaultChatServiceSid` | string | The SID of the default [Conversation Service](https://www.twilio.com/docs/conversations/api/service-resource) to use when creating a conversation. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DefaultClosedTimer` | string | Default ISO8601 duration when conversation will be switched to `closed` state. Minimum value for this timer is 10 minutes. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DefaultInactiveTimer` | string | Default ISO8601 duration when conversation will be switched to `inactive` state. Minimum value for this timer is 1 minute. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DefaultMessagingServiceSid` | string | The SID of the default [Messaging Service](https://www.twilio.com/docs/messaging/api/service-resource) to use when creating a conversation. |
   """
   @spec update(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Conversations.V1.Configuration.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Conversations.V1.Configuration.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Configuration",

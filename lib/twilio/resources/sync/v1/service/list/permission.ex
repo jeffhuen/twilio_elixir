@@ -9,11 +9,14 @@ defmodule Twilio.Resources.Sync.V1.Service.List.Permission do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync List Permission resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `identity` | The application-defined string that uniquely identifies the resource's User within the Service to an FPA token.. PII: standard |
   | `list_sid` | The SID of the Sync List to which the Permission applies. |
   | `manage` | Whether the identity can delete the Sync List. |
   | `read` | Whether the identity can read the Sync List and its Items. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `service_sid` | The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with. |
   | `url` | The absolute URL of the Sync List Permission resource.. Format: uri |
   | `write` | Whether the identity can create, update, and delete Items in the Sync List. |

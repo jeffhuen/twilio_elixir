@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Marketplace.V1.Installedaddon.InstalledAddOnUsageService do
   @moduledoc """
-
+  Service for InstalledAddOnUsage API operations.
 
   Operations: `create`
   """
@@ -14,7 +14,7 @@ defmodule Twilio.Marketplace.V1.Installedaddon.InstalledAddOnUsageService do
   Operation: `CreateBillingUsage` | Tags: MarketplaceBillingUsage
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, map()} | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def create(client, installed_add_on_sid, params \\ %{}, opts \\ []) do
     Client.request(client, :post, "/v1/InstalledAddOns/#{installed_add_on_sid}/Usage",
       params: params,

@@ -19,11 +19,13 @@ defmodule Twilio.Serverless.V1.Service.Environment.LogService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `FunctionSid` | string | The SID of the function whose invocation produced the Log resources to read. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `StartDate` | string (date-time) | The date/time (in GMT, ISO 8601) after which the Log resources must have been created. Defaults to 1 day prior to current date/time. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `EndDate` | string (date-time) | The date/time (in GMT, ISO 8601) before which the Log resources must have been created. Defaults to current date/time. |
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, environment_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -69,6 +71,8 @@ defmodule Twilio.Serverless.V1.Service.Environment.LogService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Serverless.V1.Service.Environment.Log.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, environment_sid, sid, opts \\ []) do
     with {:ok, data} <-

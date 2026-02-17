@@ -15,7 +15,7 @@ defmodule Twilio.Api.V2010.Sip.CredentiallistService do
   Operation: `ListSipCredentialList` | Tags: Api20100401CredentialList
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -63,10 +63,14 @@ defmodule Twilio.Api.V2010.Sip.CredentiallistService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A human readable descriptive text that describes the CredentialList, up to 64 characters long. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Sip.Credentiallist.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Sip.Credentiallist.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -88,7 +92,10 @@ defmodule Twilio.Api.V2010.Sip.CredentiallistService do
   Operation: `FetchSipCredentialList` | Tags: Api20100401CredentialList
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Sip.Credentiallist.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Sip.Credentiallist.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -114,7 +121,10 @@ defmodule Twilio.Api.V2010.Sip.CredentiallistService do
   | `FriendlyName` | string | A human readable descriptive text for a CredentialList, up to 64 characters long. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Api.V2010.Sip.Credentiallist.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Api.V2010.Sip.Credentiallist.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -136,7 +146,7 @@ defmodule Twilio.Api.V2010.Sip.CredentiallistService do
   Operation: `DeleteSipCredentialList` | Tags: Api20100401CredentialList
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(
       client,

@@ -15,7 +15,10 @@ defmodule Twilio.Pricing.V1.Voice.NumberService do
   Operation: `FetchVoiceNumber` | Tags: PricingV1Number
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Pricing.V1.Voice.Number.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Pricing.V1.Voice.Number.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Voice/Numbers/#{sid}",

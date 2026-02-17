@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Intelligence.V2.Transcript.SentenceService do
   @moduledoc """
-
+  Service for Sentence API operations.
 
   Operations: `list`, `fetch`
   """
@@ -18,11 +18,13 @@ defmodule Twilio.Intelligence.V2.Transcript.SentenceService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Redacted` | boolean | Grant access to PII Redacted/Unredacted Sentences. If redaction is enabled, the default is `true` to access redacted sentences. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `WordTimestamps` | boolean | Returns word level timestamps information, if word_timestamps is enabled. The default is `false`. |
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, transcript_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Transcripts/#{transcript_sid}/Sentences",
            params: params,
@@ -67,10 +69,13 @@ defmodule Twilio.Intelligence.V2.Transcript.SentenceService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Redacted` | boolean | Grant access to PII Redacted/Unredacted Sentences. If redaction is enabled, the default is `true` to access redacted sentences. |
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Intelligence.V2.Transcript.Sentence.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, transcript_sid, opts \\ []) do
     with {:ok, data} <-

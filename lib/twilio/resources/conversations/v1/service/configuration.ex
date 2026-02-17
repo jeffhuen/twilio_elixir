@@ -10,10 +10,15 @@ defmodule Twilio.Resources.Conversations.V1.Service.Configuration do
   | Field | Description |
   |-------|-------------|
   | `chat_service_sid` | The unique string that we created to identify the Service configuration resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `default_chat_service_role_sid` | The service-level role assigned to users when they are added to the service. See [Conversation Role](https://www.twilio.com/docs/conversations/api/role-resource) for more info about roles. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `default_conversation_creator_role_sid` | The conversation-level role assigned to a conversation creator when they join a new conversation. See [Conversation Role](https://www.twilio.com/docs/conversations/api/role-resource) for more info about roles. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `default_conversation_role_sid` | The conversation-level role assigned to users when they are added to a conversation. See [Conversation Role](https://www.twilio.com/docs/conversations/api/role-resource) for more info about roles. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `links` | Contains an absolute API resource URL to access the push notifications configuration of this service.. Format: uri-map |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `reachability_enabled` | Whether the [Reachability Indicator](https://www.twilio.com/docs/conversations/reachability) is enabled for this Conversations Service. The default is `false`. |
   | `url` | An absolute API resource URL for this service configuration.. Format: uri |
   """

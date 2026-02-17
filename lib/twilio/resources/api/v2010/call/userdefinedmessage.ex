@@ -11,8 +11,11 @@ defmodule Twilio.Resources.Api.V2010.Call.Userdefinedmessage do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created User Defined Message. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `call_sid` | The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the User Defined Message is associated with. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date that this User Defined Message was created, given in RFC 2822 format.. Format: date-time-rfc-2822 |
   | `sid` | The SID that uniquely identifies this User Defined Message. |
   """

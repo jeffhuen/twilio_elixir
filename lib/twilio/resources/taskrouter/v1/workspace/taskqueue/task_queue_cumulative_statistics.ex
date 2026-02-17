@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Taskrouter.V1.Workspace.Taskqueue.TaskQueueCumulativeStatistics do
   @moduledoc """
-
+  TaskQueueCumulativeStatistics resource.
 
   Parent: `/Workspaces/{WorkspaceSid}/TaskQueues/{Sid}`
 
@@ -9,8 +9,10 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.Taskqueue.TaskQueueCumulative
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskQueue resource. |
   | `avg_task_acceptance_time` | The average time in seconds between Task creation and acceptance. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `end_time` | The end of the interval during which these statistics were calculated, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `reservations_accepted` | The total number of Reservations accepted for Tasks in the TaskQueue. |
   | `reservations_canceled` | The total number of Reservations canceled for Tasks in the TaskQueue. |
@@ -18,7 +20,9 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.Taskqueue.TaskQueueCumulative
   | `reservations_rejected` | The total number of Reservations rejected for Tasks in the TaskQueue. |
   | `reservations_rescinded` | The total number of Reservations rescinded. |
   | `reservations_timed_out` | The total number of Reservations that timed out for Tasks in the TaskQueue. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `split_by_wait_time` | A list of objects that describe the number of Tasks canceled and reservations accepted above and below the thresholds specified in seconds. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `start_time` | The beginning of the interval during which these statistics were calculated, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `task_queue_sid` | The SID of the TaskQueue from which these statistics were calculated. |
   | `tasks_canceled` | The total number of Tasks canceled in the TaskQueue. |
@@ -27,8 +31,11 @@ defmodule Twilio.Resources.Taskrouter.V1.Workspace.Taskqueue.TaskQueueCumulative
   | `tasks_entered` | The total number of Tasks entered into the TaskQueue. |
   | `tasks_moved` | The total number of Tasks that were moved from one queue to another. |
   | `url` | The absolute URL of the TaskQueue statistics resource.. Format: uri |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `wait_duration_in_queue_until_accepted` | The relative wait duration statistics (`avg`, `min`, `max`, `total`) for Tasks accepted while in the TaskQueue. Calculation is based on the time when the Tasks entered the TaskQueue. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `wait_duration_until_accepted` | The wait duration statistics (`avg`, `min`, `max`, `total`) for Tasks accepted while in the TaskQueue. Calculation is based on the time when the Tasks were created. For transfers, the wait duration is counted from the moment ***the Task was created***, and not from when the transfer was initiated. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `wait_duration_until_canceled` | The wait duration statistics (`avg`, `min`, `max`, `total`) for Tasks canceled while in the TaskQueue. |
   | `workspace_sid` | The SID of the Workspace that contains the TaskQueue. |
   """

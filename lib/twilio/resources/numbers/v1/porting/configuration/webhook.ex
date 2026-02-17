@@ -1,16 +1,19 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Numbers.V1.Porting.Configuration.Webhook do
   @moduledoc """
-
+  Webhook resource.
 
   ## Properties
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `notifications_of` | A list to filter what notification events to receive for this account and its sub accounts. If it is an empty list, then it means that there are no filters for the notifications events to send in each webhook and all events will get sent. |
   | `port_in_target_date_created` | Creation date for the port in webhook configuration. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `port_in_target_url` | The complete webhook url that will be called when a notification event for port in request or port in phone number happens. Format: uri |
   | `port_out_target_date_created` | Creation date for the port out webhook configuration. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `port_out_target_url` | The complete webhook url that will be called when a notification event for a port out phone number happens.. Format: uri |
   | `url` | The URL of the webhook configuration request. Format: uri |
   """

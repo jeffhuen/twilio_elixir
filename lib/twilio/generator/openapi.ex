@@ -15,11 +15,10 @@ defmodule Twilio.Generator.OpenAPI do
   def parse_all(spec_dir) do
     Path.wildcard(Path.join(spec_dir, "twilio_*.json"))
     |> Enum.map(&parse_file/1)
-    |> Enum.reject(&is_nil/1)
   end
 
   @doc "Parse a single spec file."
-  @spec parse_file(String.t()) :: parsed_spec() | nil
+  @spec parse_file(String.t()) :: parsed_spec()
   def parse_file(path) do
     filename = Path.basename(path, ".json")
     {product, version} = Naming.product_version(filename)
@@ -238,98 +237,50 @@ defmodule Twilio.Generator.OpenAPI do
   end
 
   defp extract_operations(list_path, list_item, instance_path, instance_item, schemas) do
-    list_ops =
-      Enum.flat_map(["get", "post"], fn method ->
-        case list_item[method] do
-          nil ->
-            []
-
-          operation ->
-            op_name = if method == "get", do: :list, else: :create
-
-            [
-              %{
-                name: op_name,
-                method: String.to_atom(method),
-                path: list_path,
-                content_type: detect_content_type(operation),
-                description: operation["description"],
-                operation_id: operation["operationId"],
-                tags: operation["tags"] || [],
-                request_params: extract_request_params(operation, schemas),
-                query_params: extract_query_params(operation)
-              }
-            ]
-        end
-      end)
+    list_ops = extract_ops_from_item(list_item, list_path, :list, schemas)
 
     instance_ops =
-      if instance_item do
-        Enum.flat_map(["get", "post", "delete"], fn method ->
-          case instance_item[method] do
-            nil ->
-              []
-
-            operation ->
-              op_name =
-                case method do
-                  "get" -> :fetch
-                  "post" -> :update
-                  "delete" -> :delete
-                end
-
-              [
-                %{
-                  name: op_name,
-                  method: String.to_atom(method),
-                  path: instance_path,
-                  content_type: detect_content_type(operation),
-                  description: operation["description"],
-                  operation_id: operation["operationId"],
-                  tags: operation["tags"] || [],
-                  request_params: extract_request_params(operation, schemas),
-                  query_params: extract_query_params(operation)
-                }
-              ]
-          end
-        end)
-      else
-        []
-      end
+      if instance_item,
+        do: extract_ops_from_item(instance_item, instance_path, :instance, schemas),
+        else: []
 
     list_ops ++ instance_ops
   end
 
   defp extract_instance_operations(inst_path, inst_item, schemas) do
-    Enum.flat_map(["get", "post", "delete"], fn method ->
-      case inst_item[method] do
-        nil ->
-          []
+    extract_ops_from_item(inst_item, inst_path, :instance, schemas)
+  end
 
-        operation ->
-          op_name =
-            case method do
-              "get" -> :fetch
-              "post" -> :update
-              "delete" -> :delete
-            end
+  defp extract_ops_from_item(item, path, path_type, schemas) do
+    methods = if path_type == :list, do: ["get", "post"], else: ["get", "post", "delete"]
 
-          [
-            %{
-              name: op_name,
-              method: String.to_atom(method),
-              path: inst_path,
-              content_type: detect_content_type(operation),
-              description: operation["description"],
-              operation_id: operation["operationId"],
-              tags: operation["tags"] || [],
-              request_params: extract_request_params(operation, schemas),
-              query_params: extract_query_params(operation)
-            }
-          ]
+    Enum.flat_map(methods, fn method ->
+      case item[method] do
+        nil -> []
+        operation -> [build_operation(method, path_type, path, operation, schemas)]
       end
     end)
   end
+
+  defp build_operation(method, path_type, path, operation, schemas) do
+    %{
+      name: op_name(method, path_type),
+      method: String.to_atom(method),
+      path: path,
+      content_type: detect_content_type(operation),
+      description: operation["description"],
+      operation_id: operation["operationId"],
+      tags: operation["tags"] || [],
+      request_params: extract_request_params(operation, schemas),
+      query_params: extract_query_params(operation)
+    }
+  end
+
+  defp op_name("get", :list), do: :list
+  defp op_name("post", :list), do: :create
+  defp op_name("get", :instance), do: :fetch
+  defp op_name("post", :instance), do: :update
+  defp op_name("delete", :instance), do: :delete
 
   defp detect_content_type(nil), do: :form
 
@@ -341,32 +292,36 @@ defmodule Twilio.Generator.OpenAPI do
   end
 
   defp find_schema_name(list_item, instance_item, _schemas) do
-    # Try to find the schema from the response of a fetch/create operation
     items = [instance_item, list_item] |> Enum.reject(&is_nil/1)
 
     Enum.find_value(items, fn item ->
       Enum.find_value(["get", "post"], fn method ->
-        case get_in(item, [method, "responses", "200", "content", "application/json", "schema"]) ||
-               get_in(item, [method, "responses", "201", "content", "application/json", "schema"]) do
-          %{"$ref" => ref} ->
-            ref |> String.split("/") |> List.last()
-
-          %{"properties" => props} ->
-            # List response — find the array item ref
-            Enum.find_value(props, fn
-              {_key, %{"type" => "array", "items" => %{"$ref" => ref}}} ->
-                ref |> String.split("/") |> List.last()
-
-              _ ->
-                nil
-            end)
-
-          _ ->
-            nil
-        end
+        schema_name_from_response(item, method)
       end)
     end)
   end
+
+  defp schema_name_from_response(item, method) do
+    response_schema =
+      get_in(item, [method, "responses", "200", "content", "application/json", "schema"]) ||
+        get_in(item, [method, "responses", "201", "content", "application/json", "schema"])
+
+    case response_schema do
+      %{"$ref" => ref} ->
+        ref_to_name(ref)
+
+      %{"properties" => props} ->
+        Enum.find_value(props, fn
+          {_key, %{"type" => "array", "items" => %{"$ref" => ref}}} -> ref_to_name(ref)
+          _ -> nil
+        end)
+
+      _ ->
+        nil
+    end
+  end
+
+  defp ref_to_name(ref), do: ref |> String.split("/") |> List.last()
 
   defp extract_properties(nil, _schemas), do: []
 
@@ -459,51 +414,44 @@ defmodule Twilio.Generator.OpenAPI do
     end
   end
 
-  # Extract request body parameters (POST create/update operations)
   defp extract_request_params(operation, schemas) do
-    case get_in(operation, ["requestBody", "content"]) do
-      nil ->
-        []
+    content = get_in(operation, ["requestBody", "content"])
 
-      content ->
-        schema =
-          get_in(content, ["application/x-www-form-urlencoded", "schema"]) ||
-            get_in(content, ["application/json", "schema"]) ||
-            %{}
+    if is_nil(content) do
+      []
+    else
+      schema =
+        get_in(content, ["application/x-www-form-urlencoded", "schema"]) ||
+          get_in(content, ["application/json", "schema"]) ||
+          %{}
 
-        required = MapSet.new(schema["required"] || [])
-        props = schema["properties"] || %{}
+      required = MapSet.new(schema["required"] || [])
+      props = schema["properties"] || %{}
 
-        Enum.map(props, fn {name, prop} ->
-          enum_values =
-            case prop do
-              %{"$ref" => ref} ->
-                enum_name = ref |> String.split("/") |> List.last()
-
-                case schemas[enum_name] do
-                  %{"type" => "string", "enum" => values} -> values
-                  _ -> nil
-                end
-
-              %{"enum" => values} ->
-                values
-
-              _ ->
-                nil
-            end
-
-          %{
-            name: name,
-            type: map_type(prop),
-            format: prop["format"],
-            description: prop["description"],
-            required: MapSet.member?(required, name),
-            enum_values: enum_values
-          }
-        end)
-        |> Enum.sort_by(fn p -> {!p.required, p.name} end)
+      props
+      |> Enum.map(fn {name, prop} ->
+        %{
+          name: name,
+          type: map_type(prop),
+          format: prop["format"],
+          description: prop["description"],
+          required: MapSet.member?(required, name),
+          enum_values: resolve_param_enum(prop, schemas)
+        }
+      end)
+      |> Enum.sort_by(fn p -> {!p.required, p.name} end)
     end
   end
+
+  defp resolve_param_enum(%{"$ref" => ref}, schemas) do
+    case schemas[ref_to_name(ref)] do
+      %{"type" => "string", "enum" => values} -> values
+      _ -> nil
+    end
+  end
+
+  defp resolve_param_enum(%{"enum" => values}, _schemas), do: values
+  defp resolve_param_enum(_prop, _schemas), do: nil
 
   # Extract query parameters from GET operations (filtering/pagination)
   defp extract_query_params(operation) do

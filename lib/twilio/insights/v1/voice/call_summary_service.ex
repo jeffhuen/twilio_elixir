@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Insights.V1.Voice.CallSummaryService do
   @moduledoc """
-
+  Service for CallSummary API operations.
 
   Operations: `fetch`
   """
@@ -21,7 +21,10 @@ defmodule Twilio.Insights.V1.Voice.CallSummaryService do
   | `ProcessingState` | string | The Processing State of this Call Summary. One of `complete`, `partial` or `all`. |
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Insights.V1.Voice.CallSummary.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Insights.V1.Voice.CallSummary.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, call_sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Voice/#{call_sid}/Summary",

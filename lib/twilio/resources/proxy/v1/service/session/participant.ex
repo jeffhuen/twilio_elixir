@@ -1,28 +1,37 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Proxy.V1.Service.Session.Participant do
   @moduledoc """
-
+  Participant resource.
 
   SID prefix: `KP`
 
   Parent: `/Services/{ServiceSid}/Sessions/{Sid}`
 
   ## Sub-resources
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   - `message_interactions` — `/v1/Services/{service_sid}/Sessions/{session_sid}/Participants/{participant_sid}/MessageInteractions`
 
   ## Properties
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Participant resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time in GMT when the resource was created.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_deleted` | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date when the Participant was removed from the session.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time in GMT when the resource was last updated.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `friendly_name` | The string that you assigned to describe the participant. This value must be 255 characters or fewer. Supports UTF-8 characters. **This value should not have PII.** |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `identifier` | The phone number or channel identifier of the Participant. This value must be 191 characters or fewer. Supports UTF-8 characters.. PII: standard |
   | `links` | The URLs to resources related the participant.. Format: uri-map |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `proxy_identifier` | The phone number or short code (masked number) of the participant's partner. The participant will call or message the partner participant at this number. |
   | `proxy_identifier_sid` | The SID of the Proxy Identifier assigned to the Participant. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `service_sid` | The SID of the resource's parent [Service](https://www.twilio.com/docs/proxy/api/service) resource. |
   | `session_sid` | The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) resource. |
   | `sid` | The unique string that we created to identify the Participant resource. |

@@ -15,11 +15,12 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingSe
   Operation: `ListSipAuthCallsCredentialListMapping` | Tags: Api20100401AuthCallsCredentialListMapping
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, domain_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
            :get,
+           # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
            "/2010-04-01/Accounts/#{client.account_sid}/SIP/Domains/#{domain_sid}/Auth/Calls/CredentialListMappings.json",
            params: params,
            opts: opts,
@@ -43,6 +44,7 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingSe
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Retrieve a list of credential list mappings belonging to the domain used in the request (lazy auto-pagination)."
   @spec stream(Client.t(), String.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, domain_sid, params \\ %{}, opts \\ []) do
@@ -68,12 +70,15 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingSe
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok,
            Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, domain_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
              client,
              :post,
+             # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
              "/2010-04-01/Accounts/#{client.account_sid}/SIP/Domains/#{domain_sid}/Auth/Calls/CredentialListMappings.json",
              params: params,
              opts: opts,
@@ -96,12 +101,15 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingSe
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok,
            Twilio.Resources.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMapping.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, domain_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
              client,
              :get,
+             # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
              "/2010-04-01/Accounts/#{client.account_sid}/SIP/Domains/#{domain_sid}/Auth/Calls/CredentialListMappings/#{sid}.json",
              opts: opts,
              base_url: "https://api.twilio.com"
@@ -120,11 +128,12 @@ defmodule Twilio.Api.V2010.Sip.Domain.Auth.Call.AuthCallsCredentialListMappingSe
   Operation: `DeleteSipAuthCallsCredentialListMapping` | Tags: Api20100401AuthCallsCredentialListMapping
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, domain_sid, sid, opts \\ []) do
     Client.request(
       client,
       :delete,
+      # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
       "/2010-04-01/Accounts/#{client.account_sid}/SIP/Domains/#{domain_sid}/Auth/Calls/CredentialListMappings/#{sid}.json",
       opts: opts,
       base_url: "https://api.twilio.com"

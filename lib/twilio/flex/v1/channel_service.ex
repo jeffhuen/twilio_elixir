@@ -15,7 +15,7 @@ defmodule Twilio.Flex.V1.ChannelService do
   Operation: `ListChannel` | Tags: FlexV1Channel
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Channels",
            params: params,
@@ -69,10 +69,14 @@ defmodule Twilio.Flex.V1.ChannelService do
   | `PreEngagementData` | string | The pre-engagement data. |
   | `Target` | string | The Target Contact Identity, for example the phone number of an SMS. |
   | `TaskAttributes` | string | The Task attributes to be added for the TaskRouter Task. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TaskSid` | string | The SID of the TaskRouter Task. Only valid when integration type is `task`. `null` for integration types `studio` & `external` |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Channel.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Channel.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Channels",
@@ -91,7 +95,10 @@ defmodule Twilio.Flex.V1.ChannelService do
   Operation: `FetchChannel` | Tags: FlexV1Channel
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Flex.V1.Channel.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Flex.V1.Channel.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Channels/#{sid}",
@@ -108,7 +115,7 @@ defmodule Twilio.Flex.V1.ChannelService do
   Operation: `DeleteChannel` | Tags: FlexV1Channel
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Channels/#{sid}",
       opts: opts,

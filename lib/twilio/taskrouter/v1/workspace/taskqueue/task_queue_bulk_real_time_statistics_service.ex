@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Taskrouter.V1.Workspace.Taskqueue.TaskQueueBulkRealTimeStatisticsService do
   @moduledoc """
-
+  Service for TaskQueueBulkRealTimeStatistics API operations.
 
   Operations: `create`
   """
@@ -17,6 +17,8 @@ defmodule Twilio.Taskrouter.V1.Workspace.Taskqueue.TaskQueueBulkRealTimeStatisti
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok,
            Twilio.Resources.Taskrouter.V1.Workspace.Taskqueue.TaskQueueBulkRealTimeStatistics.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, workspace_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-

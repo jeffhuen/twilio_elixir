@@ -19,7 +19,9 @@ defmodule Twilio.Resources.Events.V1.Sink do
   | `links` | Contains a dictionary of URL links to nested resources of this Sink.. Format: uri-map |
   | `sid` | A 34 character string that uniquely identifies this Sink. |
   | `sink_configuration` | The information required for Twilio to connect to the provided Sink encoded as JSON. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sink_type` | The Sink type. Can only be "kinesis" or "webhook" currently.. Values: `kinesis`, `webhook`, `segment`, `email` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The Status of this Sink. One of `initialized`, `validating`, `active` or `failed`.. Values: `initialized`, `validating`, `active`, `failed` |
   | `url` | The URL of this resource.. Format: uri |
   """

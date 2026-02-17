@@ -41,10 +41,11 @@ defmodule Twilio.Test do
                 {integer(), list(), String.t()})) ::
           :ok
   def stub(fun) when is_function(fun, 4) do
-    NimbleOwnership.get_and_update(@ownership, self(), :stub, fn
-      nil -> {:ok, fun}
-      _existing -> {:ok, fun}
-    end)
+    {:ok, _} =
+      NimbleOwnership.get_and_update(@ownership, self(), :stub, fn
+        nil -> {:ok, fun}
+        _existing -> {:ok, fun}
+      end)
 
     :ok
   end
@@ -68,7 +69,6 @@ defmodule Twilio.Test do
   """
   @spec allow(pid()) :: :ok
   def allow(pid) do
-    NimbleOwnership.allow(@ownership, self(), pid, :stub)
-    :ok
+    :ok = NimbleOwnership.allow(@ownership, self(), pid, :stub)
   end
 end

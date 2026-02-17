@@ -24,7 +24,7 @@ defmodule Twilio.Iam.Organizations.AuthorizeService do
   | `state` | string | An opaque value which can be used to maintain state between the request and callback |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/authorize",
            params: params,

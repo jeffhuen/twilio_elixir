@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Sync.V1.Service.Stream.MessageService do
   @moduledoc """
-
+  Service for Message API operations.
 
   Operations: `create`
   """
@@ -18,10 +18,14 @@ defmodule Twilio.Sync.V1.Service.Stream.MessageService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Data` | string | A JSON string that represents an arbitrary, schema-less object that makes up the Stream Message body. Can be up to 4 KiB in length. |
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Sync.V1.Service.Stream.Message.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Sync.V1.Service.Stream.Message.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, stream_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(

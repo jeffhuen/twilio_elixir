@@ -9,12 +9,15 @@ defmodule Twilio.Resources.Conversations.V1.Credential do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The unique ID of the [Account](https://www.twilio.com/docs/iam/api/account) responsible for this credential. |
   | `date_created` | The date that this resource was created.. Format: date-time |
   | `date_updated` | The date that this resource was last updated.. Format: date-time |
   | `friendly_name` | The human-readable name of this credential, limited to 64 characters. Optional.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `sandbox` | [APN only] Whether to send the credential to sandbox APNs. Can be `true` to send to sandbox APNs or `false` to send to production. |
   | `sid` | A 34 character string that uniquely identifies this resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `type` | The type of push-notification service the credential is for. Can be: `fcm`, `gcm`, or `apn`.. Values: `apn`, `gcm`, `fcm` |
   | `url` | An absolute API resource URL for this credential.. Format: uri |
   """

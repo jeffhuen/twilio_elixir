@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Serverless.V1.Service.Function do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   A wrapper that represents a Serverless JavaScript function and groups the different  and groups the different Versions of this code.
 
   SID prefix: `ZH`
@@ -14,9 +15,13 @@ defmodule Twilio.Resources.Serverless.V1.Service.Function do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Function resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the Function resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the Function resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `friendly_name` | The string that you assigned to describe the Function resource. It can be a maximum of 255 characters.. PII: standard |
   | `links` | The URLs of nested resources of the Function resource.. Format: uri-map |
   | `service_sid` | The SID of the Service that the Function resource is associated with. |

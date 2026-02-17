@@ -16,6 +16,8 @@ defmodule Twilio.Content.V1.Content.ApprovalrequestService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Content.V1.Content.Approvalrequest.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-

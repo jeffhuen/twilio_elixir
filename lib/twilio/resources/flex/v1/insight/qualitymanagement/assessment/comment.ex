@@ -1,12 +1,13 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Flex.V1.Insight.Qualitymanagement.Assessment.Comment do
   @moduledoc """
-
+  Comment resource.
 
   ## Properties
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource. |
   | `agent_id` | The id of the agent. |
   | `assessment_sid` | The SID of the assessment. |

@@ -15,7 +15,7 @@ defmodule Twilio.Conversations.V1.Service.UserService do
   Operation: `ListServiceUser` | Tags: ConversationsV1User
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, chat_service_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/#{chat_service_sid}/Users",
            params: params,
@@ -60,17 +60,23 @@ defmodule Twilio.Conversations.V1.Service.UserService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Identity` | string | The application-defined string that uniquely identifies the resource's User within the [Conversation Service](https://www.twilio.com/docs/conversations/api/service-resource). This value is often a username or an email address, and is case-sensitive. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Attributes` | string | The JSON Object string that stores application-specific data. If attributes have not been set, `{}` is returned. |
   | `FriendlyName` | string | The string that you assigned to describe the resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RoleSid` | string | The SID of a service-level [Role](https://www.twilio.com/docs/conversations/api/role-resource) to assign to the user. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Conversations.V1.Service.User.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Conversations.V1.Service.User.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, chat_service_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services/#{chat_service_sid}/Users",
@@ -89,7 +95,10 @@ defmodule Twilio.Conversations.V1.Service.UserService do
   Operation: `FetchServiceUser` | Tags: ConversationsV1User
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Conversations.V1.Service.User.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Conversations.V1.Service.User.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, chat_service_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Services/#{chat_service_sid}/Users/#{sid}",
@@ -109,12 +118,17 @@ defmodule Twilio.Conversations.V1.Service.UserService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Attributes` | string | The JSON Object string that stores application-specific data. If attributes have not been set, `{}` is returned. |
   | `FriendlyName` | string | The string that you assigned to describe the resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RoleSid` | string | The SID of a service-level [Role](https://www.twilio.com/docs/conversations/api/role-resource) to assign to the user. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Conversations.V1.Service.User.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Conversations.V1.Service.User.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, chat_service_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Services/#{chat_service_sid}/Users/#{sid}",
@@ -133,7 +147,7 @@ defmodule Twilio.Conversations.V1.Service.UserService do
   Operation: `DeleteServiceUser` | Tags: ConversationsV1User
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, chat_service_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Services/#{chat_service_sid}/Users/#{sid}",
       opts: opts,

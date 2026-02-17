@@ -11,15 +11,23 @@ defmodule Twilio.Resources.Conversations.V1.Conversation.Participant do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The unique ID of the [Account](https://www.twilio.com/docs/iam/api/account) responsible for this participant. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `attributes` | An optional string metadata field you can use to store any data you wish. The string value must contain structurally valid JSON if specified.  **Note** that if the attributes are not set "{}" will be returned.. PII: sensitive |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `conversation_sid` | The unique ID of the [Conversation](https://www.twilio.com/docs/conversations/api/conversation-resource) for this participant. |
   | `date_created` | The date that this resource was created.. Format: date-time |
   | `date_updated` | The date that this resource was last updated.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `identity` | A unique string identifier for the conversation participant as [Conversation User](https://www.twilio.com/docs/conversations/api/user-resource). This parameter is non-null if (and only if) the participant is using the Conversations SDK to communicate. Limited to 256 characters.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `last_read_message_index` | Index of last “read” message in the [Conversation](https://www.twilio.com/docs/conversations/api/conversation-resource) for the Participant. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `last_read_timestamp` | Timestamp of last “read” message in the [Conversation](https://www.twilio.com/docs/conversations/api/conversation-resource) for the Participant. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `messaging_binding` | Information about how this participant exchanges messages with the conversation. A JSON parameter consisting of type and address fields of the participant.. PII: standard |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `role_sid` | The SID of a conversation-level [Role](https://www.twilio.com/docs/conversations/api/role-resource) to assign to the participant. |
   | `sid` | A 34 character string that uniquely identifies this resource. |
   | `url` | An absolute API resource URL for this participant.. Format: uri |

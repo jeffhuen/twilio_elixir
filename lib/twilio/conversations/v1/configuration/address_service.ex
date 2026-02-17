@@ -21,7 +21,7 @@ defmodule Twilio.Conversations.V1.Configuration.AddressService do
   | `Type` | string | Filter the address configurations by its type. This value can be one of: `whatsapp`, `sms`. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Configuration/Addresses",
            params: params,
@@ -72,12 +72,16 @@ defmodule Twilio.Conversations.V1.Configuration.AddressService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AddressCountry` | string | An ISO 3166-1 alpha-2n country code which the address belongs to. This is currently only applicable to short code addresses. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AutoCreation.ConversationServiceSid` | string | Conversation Service for the auto-created conversation. If not set, the conversation is created in the default service. |
   | `AutoCreation.Enabled` | boolean | Enable/Disable auto-creating conversations for messages to this address |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AutoCreation.StudioFlowSid` | string | For type `studio`, the studio flow SID where the webhook should be sent to. |
   | `AutoCreation.StudioRetryCount` | integer | For type `studio`, number of times to retry the webhook request |
   | `AutoCreation.Type` | string |  Values: `webhook`, `studio`, `default` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AutoCreation.WebhookFilters` | array | The list of events, firing webhook event for this Conversation. Values can be any of the following: `onMessageAdded`, `onMessageUpdated`, `onMessageRemoved`, `onConversationUpdated`, `onConversationStateUpdated`, `onConversationRemoved`, `onParticipantAdded`, `onParticipantUpdated`, `onParticipantRemoved`, `onDeliveryUpdated` |
   | `AutoCreation.WebhookMethod` | string |  Values: `get`, `post` |
   | `AutoCreation.WebhookUrl` | string | For type `webhook`, the url for the webhook request. |
@@ -85,6 +89,8 @@ defmodule Twilio.Conversations.V1.Configuration.AddressService do
   """
   @spec create(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Configuration.Address.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -106,6 +112,8 @@ defmodule Twilio.Conversations.V1.Configuration.AddressService do
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Configuration.Address.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
@@ -127,11 +135,14 @@ defmodule Twilio.Conversations.V1.Configuration.AddressService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AutoCreation.ConversationServiceSid` | string | Conversation Service for the auto-created conversation. If not set, the conversation is created in the default service. |
   | `AutoCreation.Enabled` | boolean | Enable/Disable auto-creating conversations for messages to this address |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AutoCreation.StudioFlowSid` | string | For type `studio`, the studio flow SID where the webhook should be sent to. |
   | `AutoCreation.StudioRetryCount` | integer | For type `studio`, number of times to retry the webhook request |
   | `AutoCreation.Type` | string |  Values: `webhook`, `studio`, `default` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `AutoCreation.WebhookFilters` | array | The list of events, firing webhook event for this Conversation. Values can be any of the following: `onMessageAdded`, `onMessageUpdated`, `onMessageRemoved`, `onConversationUpdated`, `onConversationStateUpdated`, `onConversationRemoved`, `onParticipantAdded`, `onParticipantUpdated`, `onParticipantRemoved`, `onDeliveryUpdated` |
   | `AutoCreation.WebhookMethod` | string |  Values: `get`, `post` |
   | `AutoCreation.WebhookUrl` | string | For type `webhook`, the url for the webhook request. |
@@ -139,6 +150,8 @@ defmodule Twilio.Conversations.V1.Configuration.AddressService do
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Configuration.Address.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -159,7 +172,7 @@ defmodule Twilio.Conversations.V1.Configuration.AddressService do
   Operation: `DeleteConfigurationAddress` | Tags: ConversationsV1AddressConfiguration
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Configuration/Addresses/#{sid}",
       opts: opts,

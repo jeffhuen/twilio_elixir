@@ -21,7 +21,10 @@ defmodule Twilio.Events.V1.Sink.ValidateService do
   | `TestId` | string | A 34 character string that uniquely identifies the test event for a Sink being validated. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Events.V1.Sink.Validate.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Events.V1.Sink.Validate.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Sinks/#{sid}/Validate",

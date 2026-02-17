@@ -18,10 +18,11 @@ defmodule Twilio.Chat.V1.Service.Channel.MessageService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Order` | string | The sort order of the returned messages. Can be: `asc` (ascending) or `desc` (descending) with `asc` as the default. |
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, channel_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -69,16 +70,21 @@ defmodule Twilio.Chat.V1.Service.Channel.MessageService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Body` | string | The message to send to the channel. Can also be an empty string or `null`, which sets the value as an empty string. You can send structured data in the body by serializing it as a string. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Attributes` | string | A valid JSON string that contains application-specific data. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `From` | string | The [identity](https://www.twilio.com/docs/api/chat/guides/identity) of the new message's author. The default value is `system`. |
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Message.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Message.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, channel_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -100,7 +106,10 @@ defmodule Twilio.Chat.V1.Service.Channel.MessageService do
   Operation: `FetchMessage` | Tags: ChatV1Message
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Message.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Message.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, channel_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -124,10 +133,14 @@ defmodule Twilio.Chat.V1.Service.Channel.MessageService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Attributes` | string | A valid JSON string that contains application-specific data. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Body` | string | The message to send to the channel. Can also be an empty string or `null`, which sets the value as an empty string. You can send structured data in the body by serializing it as a string. |
   """
   @spec update(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Message.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V1.Service.Channel.Message.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, channel_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -149,7 +162,7 @@ defmodule Twilio.Chat.V1.Service.Channel.MessageService do
   Operation: `DeleteMessage` | Tags: ChatV1Message
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, channel_sid, sid, opts \\ []) do
     Client.request(
       client,

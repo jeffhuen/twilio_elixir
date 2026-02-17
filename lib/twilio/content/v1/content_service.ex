@@ -15,7 +15,7 @@ defmodule Twilio.Content.V1.ContentService do
   Operation: `ListContent` | Tags: Contentv1Content
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Content",
            params: params,
@@ -53,7 +53,10 @@ defmodule Twilio.Content.V1.ContentService do
   Operation: `CreateContent` | Tags: Contentv1Content
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Content.V1.Content.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Content.V1.Content.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Content",
@@ -72,7 +75,10 @@ defmodule Twilio.Content.V1.ContentService do
   Operation: `FetchContent` | Tags: Contentv1Content
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Content.V1.Content.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Content.V1.Content.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Content/#{sid}",
@@ -89,7 +95,7 @@ defmodule Twilio.Content.V1.ContentService do
   Operation: `DeleteContent` | Tags: Contentv1Content
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Content/#{sid}",
       opts: opts,

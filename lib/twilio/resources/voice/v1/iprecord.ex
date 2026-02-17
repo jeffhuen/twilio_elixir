@@ -1,6 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Voice.V1.Iprecord do
   @moduledoc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   IP Records hold information about the IP addresses and ranges ([CIDR](https://tools.ietf.org/html/rfc4632) blocks) that your traffic will be associated with.
 
   SID prefix: `IL`
@@ -9,9 +10,13 @@ defmodule Twilio.Resources.Voice.V1.Iprecord do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the IP Record resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `cidr_prefix_length` | An integer representing the length of the [CIDR](https://tools.ietf.org/html/rfc4632) prefix to use with this IP address. By default the entire IP address is used, which for IPv4 is value 32. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.. Format: date-time |
   | `friendly_name` | The string that you assigned to describe the resource. |
   | `ip_address` | An IP address in dotted decimal notation, IPv4 only.. PII: standard |

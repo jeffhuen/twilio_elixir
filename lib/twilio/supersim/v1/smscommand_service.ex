@@ -19,11 +19,13 @@ defmodule Twilio.Supersim.V1.SmscommandService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Sim` | string | The SID or unique name of the Sim resource that SMS Command was sent to or from. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Status` | string | The status of the SMS Command. Can be: `queued`, `sent`, `delivered`, `received` or `failed`. See the [SMS Command Status Values](https://www.twilio.com/docs/iot/supersim/api/smscommand-resource#status-values) for a description of each. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Direction` | string | The direction of the SMS Command. Can be `to_sim` or `from_sim`. The value of `to_sim` is synonymous with the term `mobile terminated`, and `from_sim` is synonymous with the term `mobile originated`. |
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/SmsCommands",
            params: params,
@@ -66,16 +68,21 @@ defmodule Twilio.Supersim.V1.SmscommandService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Payload` | string | The message body of the SMS Command. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Sim` | string | The `sid` or `unique_name` of the [SIM](https://www.twilio.com/docs/iot/supersim/api/sim-resource) to send the SMS Command to. |
   ## Optional Parameters
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CallbackMethod` | string (http-method) | The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is POST. Values: `GET`, `POST` |
   | `CallbackUrl` | string (uri) | The URL we should call using the `callback_method` after we have sent the command. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Supersim.V1.Smscommand.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Supersim.V1.Smscommand.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/SmsCommands",
@@ -94,7 +101,10 @@ defmodule Twilio.Supersim.V1.SmscommandService do
   Operation: `FetchSmsCommand` | Tags: SupersimV1SmsCommand
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Supersim.V1.Smscommand.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Supersim.V1.Smscommand.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/SmsCommands/#{sid}",

@@ -15,7 +15,7 @@ defmodule Twilio.Conversations.V1.Conversation.Message.ReceiptService do
   Operation: `ListConversationMessageReceipt` | Tags: ConversationsV1DeliveryReceipt
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, conversation_sid, message_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -61,6 +61,8 @@ defmodule Twilio.Conversations.V1.Conversation.Message.ReceiptService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Conversations.V1.Conversation.Message.Receipt.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, conversation_sid, message_sid, sid, opts \\ []) do
     with {:ok, data} <-

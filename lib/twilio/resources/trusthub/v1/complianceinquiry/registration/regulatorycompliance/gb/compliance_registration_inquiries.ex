@@ -1,7 +1,8 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
+# credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
 defmodule Twilio.Resources.Trusthub.V1.Complianceinquiry.Registration.Regulatorycompliance.Gb.ComplianceRegistrationInquiries do
   @moduledoc """
-
+  ComplianceRegistrationInquiries resource.
 
   ## Properties
 
@@ -9,6 +10,7 @@ defmodule Twilio.Resources.Trusthub.V1.Complianceinquiry.Registration.Regulatory
   |-------|-------------|
   | `inquiry_id` | The unique ID used to start an embedded compliance registration session. |
   | `inquiry_session_token` | The session token used to start an embedded compliance registration session. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `registration_id` | The RegistrationId matching the Registration Profile that should be resumed or resubmitted for editing. |
   | `url` | The URL of this resource.. Format: uri |
   """

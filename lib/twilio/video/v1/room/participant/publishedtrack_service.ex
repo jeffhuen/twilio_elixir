@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Video.V1.Room.Participant.PublishedtrackService do
   @moduledoc """
-
+  Service for Publishedtrack API operations.
 
   Operations: `list`, `fetch`
   """
@@ -10,12 +10,13 @@ defmodule Twilio.Video.V1.Room.Participant.PublishedtrackService do
   alias Twilio.Deserializer
 
   @doc """
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   Returns a list of tracks associated with a given Participant. Only `currently` Published Tracks are in the list resource.
 
   Operation: `ListRoomParticipantPublishedTrack` | Tags: VideoV1PublishedTrack
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, room_sid, participant_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -43,6 +44,7 @@ defmodule Twilio.Video.V1.Room.Participant.PublishedtrackService do
     end
   end
 
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   @doc "Stream: Returns a list of tracks associated with a given Participant. Only `currently` Published Tracks are in the list resource. (lazy auto-pagination)."
   @spec stream(Client.t(), String.t(), String.t(), map(), keyword()) :: Enumerable.t()
   def stream(client, room_sid, participant_sid, params \\ %{}, opts \\ []) do
@@ -61,6 +63,8 @@ defmodule Twilio.Video.V1.Room.Participant.PublishedtrackService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Video.V1.Room.Participant.Publishedtrack.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, room_sid, participant_sid, sid, opts \\ []) do
     with {:ok, data} <-

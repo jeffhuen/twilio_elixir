@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.IpMessaging.V2.ServiceService do
   @moduledoc """
-
+  Service for Service API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.IpMessaging.V2.ServiceService do
   Operation: `ListService` | Tags: IpMessagingV2Service
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v2/Services",
            params: params,
@@ -60,7 +60,10 @@ defmodule Twilio.IpMessaging.V2.ServiceService do
   | `FriendlyName` | string |  |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services",
@@ -79,7 +82,10 @@ defmodule Twilio.IpMessaging.V2.ServiceService do
   Operation: `FetchService` | Tags: IpMessagingV2Service
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v2/Services/#{sid}",
@@ -132,7 +138,10 @@ defmodule Twilio.IpMessaging.V2.ServiceService do
   | `WebhookMethod` | string (http-method) |  Values: `GET`, `POST` |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.IpMessaging.V2.Service.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.IpMessaging.V2.Service.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Services/#{sid}",
@@ -151,7 +160,7 @@ defmodule Twilio.IpMessaging.V2.ServiceService do
   Operation: `DeleteService` | Tags: IpMessagingV2Service
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v2/Services/#{sid}",
       opts: opts,

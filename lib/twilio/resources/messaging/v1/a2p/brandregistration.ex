@@ -14,22 +14,31 @@ defmodule Twilio.Resources.Messaging.V1.A2p.Brandregistration do
   | Field | Description |
   |-------|-------------|
   | `a2p_profile_bundle_sid` | A2P Messaging Profile Bundle BundleSid. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Brand Registration resource. |
   | `brand_feedback` | DEPRECATED. Feedback on how to improve brand score |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `brand_score` | The secondary vetting score if it was done. Otherwise, it will be the brand score if it's returned from TCR. It may be null if no score is available. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `brand_type` | Type of brand. One of: "STANDARD", "SOLE_PROPRIETOR". SOLE_PROPRIETOR is for the low volume, SOLE_PROPRIETOR campaign use case. There can only be one SOLE_PROPRIETOR campaign created per SOLE_PROPRIETOR brand. STANDARD is for all other campaign use cases. Multiple campaign use cases can be created per STANDARD brand. |
   | `customer_profile_bundle_sid` | A2P Messaging Profile Bundle BundleSid. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `errors` | A list of errors that occurred during the brand registration process. |
   | `failure_reason` | DEPRECATED. A reason why brand registration has failed. Only applicable when status is FAILED. |
   | `government_entity` | Identified as a government entity |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `identity_status` | When a brand is registered, TCR will attempt to verify the identity of the brand based on the supplied information.. Values: `SELF_DECLARED`, `UNVERIFIED`, `VERIFIED`, `VETTED_VERIFIED` |
   | `links` | Format: uri-map |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `mock` | A boolean that specifies whether brand should be a mock or not. If true, brand will be registered as a mock brand. Defaults to false if no value is provided. |
   | `russell_3000` | Publicly traded company identified in the Russell 3000 Index |
   | `sid` | The unique string to identify Brand Registration. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `skip_automatic_sec_vet` | A flag to disable automatic secondary vetting for brands which it would otherwise be done. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | Brand Registration status. One of "PENDING", "APPROVED", "FAILED", "IN_REVIEW", "DELETION_PENDING", "DELETION_FAILED", "SUSPENDED".. Values: `PENDING`, `APPROVED`, `FAILED`, `IN_REVIEW`, `DELETION_PENDING`, `DELETION_FAILED`, `SUSPENDED` |
   | `tax_exempt_status` | Nonprofit organization tax-exempt status per section 501 of the U.S. tax code. |
   | `tcr_id` | Campaign Registry (TCR) Brand ID. Assigned only after successful brand registration. |

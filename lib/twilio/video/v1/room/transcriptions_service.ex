@@ -15,7 +15,7 @@ defmodule Twilio.Video.V1.Room.TranscriptionsService do
   Operation: `ListRoomTranscriptions` | Tags: VideoV1Transcriptions
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, room_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Rooms/#{room_sid}/Transcriptions",
            params: params,
@@ -63,7 +63,10 @@ defmodule Twilio.Video.V1.Room.TranscriptionsService do
   | `Configuration` | object | A collection of properties that describe transcription behaviour. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Video.V1.Room.Transcriptions.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Video.V1.Room.Transcriptions.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, room_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Rooms/#{room_sid}/Transcriptions",
@@ -82,7 +85,10 @@ defmodule Twilio.Video.V1.Room.TranscriptionsService do
   Operation: `FetchRoomTranscriptions` | Tags: VideoV1Transcriptions
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Video.V1.Room.Transcriptions.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Video.V1.Room.Transcriptions.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, room_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Rooms/#{room_sid}/Transcriptions/#{sid}",
@@ -105,7 +111,10 @@ defmodule Twilio.Video.V1.Room.TranscriptionsService do
   | `Status` | string |  Values: `started`, `stopped`, `failed` |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Video.V1.Room.Transcriptions.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Video.V1.Room.Transcriptions.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, room_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Rooms/#{room_sid}/Transcriptions/#{sid}",

@@ -18,10 +18,11 @@ defmodule Twilio.Chat.V2.Service.Channel.MessageService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Order` | string | The sort order of the returned messages. Can be: `asc` (ascending) or `desc` (descending) with `asc` as the default. |
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, channel_sid, params \\ %{}, opts \\ []) do
     case Client.request(
            client,
@@ -70,15 +71,24 @@ defmodule Twilio.Chat.V2.Service.Channel.MessageService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Attributes` | string | A valid JSON string that contains application-specific data. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Body` | string | The message to send to the channel. Can be an empty string or `null`, which sets the value as an empty string. You can send structured data in the body by serializing it as a string. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreated` | string (date-time) | The date, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, to assign to the resource as the date it was created. The default value is the current time set by the Chat service. This parameter should only be used when a Chat's history is being recreated from a backup/separate source. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateUpdated` | string (date-time) | The date, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, to assign to the resource as the date it was last updated. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `From` | string | The [Identity](https://www.twilio.com/docs/chat/identity) of the new message's author. The default value is `system`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `LastUpdatedBy` | string | The [Identity](https://www.twilio.com/docs/chat/identity) of the User who last updated the Message, if applicable. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `MediaSid` | string | The SID of the [Media](https://www.twilio.com/docs/chat/rest/media) to attach to the new Message. |
   """
   @spec create(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.Channel.Message.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.Channel.Message.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, service_sid, channel_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -100,7 +110,10 @@ defmodule Twilio.Chat.V2.Service.Channel.MessageService do
   Operation: `FetchMessage` | Tags: ChatV2Message
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.Channel.Message.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.Channel.Message.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, channel_sid, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -124,14 +137,21 @@ defmodule Twilio.Chat.V2.Service.Channel.MessageService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   | `Attributes` | string | A valid JSON string that contains application-specific data. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Body` | string | The message to send to the channel. Can be an empty string or `null`, which sets the value as an empty string. You can send structured data in the body by serializing it as a string. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreated` | string (date-time) | The date, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, to assign to the resource as the date it was created. The default value is the current time set by the Chat service. This parameter should only be used when a Chat's history is being recreated from a backup/separate source. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateUpdated` | string (date-time) | The date, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, to assign to the resource as the date it was last updated. |
   | `From` | string | The [Identity](https://www.twilio.com/docs/chat/identity) of the message's author. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `LastUpdatedBy` | string | The [Identity](https://www.twilio.com/docs/chat/identity) of the User who last updated the Message, if applicable. |
   """
   @spec update(Client.t(), String.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Chat.V2.Service.Channel.Message.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Chat.V2.Service.Channel.Message.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, service_sid, channel_sid, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(
@@ -153,7 +173,7 @@ defmodule Twilio.Chat.V2.Service.Channel.MessageService do
   Operation: `DeleteMessage` | Tags: ChatV2Message
   """
   @spec delete(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, service_sid, channel_sid, sid, opts \\ []) do
     Client.request(
       client,

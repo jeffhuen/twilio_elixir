@@ -15,7 +15,7 @@ defmodule Twilio.Trunking.V1.Trunk.IpaccesscontrollistService do
   Operation: `ListIpAccessControlList` | Tags: TrunkingV1IpAccessControlList
   """
   @spec list(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, trunk_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Trunks/#{trunk_sid}/IpAccessControlLists",
            params: params,
@@ -60,10 +60,13 @@ defmodule Twilio.Trunking.V1.Trunk.IpaccesscontrollistService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `IpAccessControlListSid` | string | The SID of the [IP Access Control List](https://www.twilio.com/docs/voice/sip/api/sip-ipaccesscontrollist-resource) that you want to associate with the trunk. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
           {:ok, Twilio.Resources.Trunking.V1.Trunk.Ipaccesscontrollist.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def create(client, trunk_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
@@ -85,6 +88,8 @@ defmodule Twilio.Trunking.V1.Trunk.IpaccesscontrollistService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Trunking.V1.Trunk.Ipaccesscontrollist.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, trunk_sid, sid, opts \\ []) do
     with {:ok, data} <-
@@ -103,7 +108,7 @@ defmodule Twilio.Trunking.V1.Trunk.IpaccesscontrollistService do
   Operation: `DeleteIpAccessControlList` | Tags: TrunkingV1IpAccessControlList
   """
   @spec delete(Client.t(), String.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, trunk_sid, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/Trunks/#{trunk_sid}/IpAccessControlLists/#{sid}",
       opts: opts,

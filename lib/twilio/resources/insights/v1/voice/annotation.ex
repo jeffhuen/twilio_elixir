@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Insights.V1.Voice.Annotation do
   @moduledoc """
-
+  Annotation resource.
 
   Parent: `/Voice/{Sid}`
 
@@ -10,13 +10,20 @@ defmodule Twilio.Resources.Insights.V1.Voice.Annotation do
   | Field | Description |
   |-------|-------------|
   | `account_sid` | The unique SID identifier of the Account. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `answered_by` | Specifies which entity answered the call as determined by Answering Machine Detection. Possible enumerated values, one of: `human`, `machine`. `human` indicates the call was answered by a person. `machine` indicates the call was answered by an answering machine.. Values: `unknown_answered_by`, `human`, `machine` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `call_score` | Specifies the Call Score, if available. This is of type integer. Use a range of 1-5 to indicate the call experience score, with the following mapping as a reference for rating the call [5: Excellent, 4: Good, 3 : Fair, 2 : Poor, 1: Bad]. |
   | `call_sid` | The unique SID identifier of the Call. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `comment` | Specifies any comments pertaining to the call. Twilio does not treat this field as PII, so no PII should be included in comments. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `connectivity_issue` | Specifies if the call had any connectivity issues. One of `no_connectivity_issue`, `invalid_number`, `caller_id`, `dropped_call`, or `number_reachability`.. Values: `unknown_connectivity_issue`, `no_connectivity_issue`, `invalid_number`, `caller_id`, `dropped_call`, `number_reachability` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `incident` | Incident or support ticket associated with this call. The `incident` property is of type string with a maximum character limit of 100. Twilio does not treat this field as PII, so no PII should be included in `incident`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `quality_issues` | Specifies if the call had any subjective quality issues. Possible values are one or more of `no_quality_issue`, `low_volume`, `choppy_robotic`, `echo`, `dtmf`, `latency`, `owa`, or `static_noise`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `spam` | Specifies if the call was a spam call. Use this to provide feedback on whether calls placed from your account were marked as spam, or if inbound calls received by your account were unwanted spam. Is of type Boolean: true, false. Use true if the call was a spam call. |
   | `url` | Format: uri |
   """

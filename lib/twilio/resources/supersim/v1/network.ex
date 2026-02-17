@@ -10,6 +10,7 @@ defmodule Twilio.Resources.Supersim.V1.Network do
   | Field | Description |
   |-------|-------------|
   | `friendly_name` | A human readable identifier of this resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `identifiers` | Array of objects identifying the [MCC-MNCs](https://en.wikipedia.org/wiki/Mobile_country_code) that are included in the Network resource. |
   | `iso_country` | The [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the Network resource. |
   | `sid` | The unique string that we created to identify the Network resource. |

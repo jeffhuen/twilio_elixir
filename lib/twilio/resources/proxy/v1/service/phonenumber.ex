@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Proxy.V1.Service.Phonenumber do
   @moduledoc """
-
+  Phonenumber resource.
 
   SID prefix: `PN`
 
@@ -11,15 +11,22 @@ defmodule Twilio.Resources.Proxy.V1.Service.Phonenumber do
 
   | Field | Description |
   |-------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the PhoneNumber resource. |
   | `capabilities` | The capabilities of the phone number.. Format: phone-number-capabilities |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time in GMT when the resource was created.. Format: date-time |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time in GMT when the resource was last updated.. Format: date-time |
   | `friendly_name` | The string that you assigned to describe the resource. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `in_use` | The number of open session assigned to the number. See the [How many Phone Numbers do I need?](https://www.twilio.com/docs/proxy/phone-numbers-needed) guide for more information. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `is_reserved` | Whether the phone number should be reserved and not be assigned to a participant using proxy pool logic. See [Reserved Phone Numbers](https://www.twilio.com/docs/proxy/reserved-phone-numbers) for more information. |
   | `iso_country` | The ISO Country Code for the phone number. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `phone_number` | The phone number in [E.164](https://www.twilio.com/docs/glossary/what-e164) format, which consists of a + followed by the country code and subscriber number.. Format: phone-number |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `service_sid` | The SID of the PhoneNumber resource's parent [Service](https://www.twilio.com/docs/proxy/api/service) resource. |
   | `sid` | The unique string that we created to identify the PhoneNumber resource. |
   | `url` | The absolute URL of the PhoneNumber resource.. Format: uri |

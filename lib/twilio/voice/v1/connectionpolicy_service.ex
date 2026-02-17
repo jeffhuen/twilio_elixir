@@ -15,7 +15,7 @@ defmodule Twilio.Voice.V1.ConnectionpolicyService do
   Operation: `ListConnectionPolicy` | Tags: VoiceV1ConnectionPolicy
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/ConnectionPolicies",
            params: params,
@@ -60,10 +60,14 @@ defmodule Twilio.Voice.V1.ConnectionpolicyService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It is not unique and can be up to 255 characters long. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Voice.V1.Connectionpolicy.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Voice.V1.Connectionpolicy.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/ConnectionPolicies",
@@ -82,7 +86,10 @@ defmodule Twilio.Voice.V1.ConnectionpolicyService do
   Operation: `FetchConnectionPolicy` | Tags: VoiceV1ConnectionPolicy
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Voice.V1.Connectionpolicy.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Voice.V1.Connectionpolicy.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/ConnectionPolicies/#{sid}",
@@ -102,10 +109,14 @@ defmodule Twilio.Voice.V1.ConnectionpolicyService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `FriendlyName` | string | A descriptive string that you create to describe the resource. It is not unique and can be up to 255 characters long. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Voice.V1.Connectionpolicy.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Voice.V1.Connectionpolicy.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/ConnectionPolicies/#{sid}",
@@ -124,7 +135,7 @@ defmodule Twilio.Voice.V1.ConnectionpolicyService do
   Operation: `DeleteConnectionPolicy` | Tags: VoiceV1ConnectionPolicy
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/ConnectionPolicies/#{sid}",
       opts: opts,

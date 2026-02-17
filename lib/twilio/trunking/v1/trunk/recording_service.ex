@@ -15,7 +15,10 @@ defmodule Twilio.Trunking.V1.Trunk.RecordingService do
   Operation: `FetchRecording` | Tags: TrunkingV1Recording
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Trunking.V1.Trunk.Recording.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trunking.V1.Trunk.Recording.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, trunk_sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/Trunks/#{trunk_sid}/Recording",
@@ -35,11 +38,15 @@ defmodule Twilio.Trunking.V1.Trunk.RecordingService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Mode` | string |  Values: `do-not-record`, `record-from-ringing`, `record-from-answer`, `record-from-ringing-dual`, `record-from-answer-dual` |
   | `Trim` | string |  Values: `trim-silence`, `do-not-trim` |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Trunking.V1.Trunk.Recording.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trunking.V1.Trunk.Recording.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, trunk_sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/Trunks/#{trunk_sid}/Recording",

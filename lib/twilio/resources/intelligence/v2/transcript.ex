@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Resources.Intelligence.V2.Transcript do
   @moduledoc """
-
+  Transcript resource.
 
   SID prefix: `GT`
 
@@ -18,17 +18,21 @@ defmodule Twilio.Resources.Intelligence.V2.Transcript do
   |-------|-------------|
   | `account_sid` | The unique SID identifier of the Account. |
   | `channel` | Media Channel describing Transcript Source and Participant Mapping |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `data_logging` | Data logging allows Twilio to improve the quality of the speech recognition & language understanding services through using customer data to refine, fine tune and evaluate machine learning models. Note: Data logging cannot be activated via API, only via www.twilio.com, as it requires additional consent. |
   | `date_created` | The date that this Transcript was created, given in ISO 8601 format.. Format: date-time |
   | `date_updated` | The date that this Transcript was updated, given in ISO 8601 format.. Format: date-time |
   | `duration` | The duration of this Transcript's source |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `encryption_credential_sid` | The unique SID identifier of the Public Key resource used to encrypt the sentences and operator results. |
   | `language_code` | The default language code of the audio. |
   | `links` | Format: uri-map |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `media_start_time` | The date that this Transcript's media was started, given in ISO 8601 format.. Format: date-time |
   | `redaction` | If the transcript has been redacted, a redacted alternative of the transcript will be available. |
   | `service_sid` | The unique SID identifier of the Service. |
   | `sid` | A 34 character string that uniquely identifies this Transcript. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status` | The Status of this Transcript. One of `queued`, `in-progress`, `completed`, `failed` or `canceled`.. Values: `queued`, `in-progress`, `completed`, `new`, `failed`, `canceled`, `error` |
   | `url` | The URL of this resource.. Format: uri |
   """

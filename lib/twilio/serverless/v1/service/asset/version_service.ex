@@ -15,7 +15,7 @@ defmodule Twilio.Serverless.V1.Service.Asset.VersionService do
   Operation: `ListAssetVersion` | Tags: ServerlessV1AssetVersion
   """
   @spec list(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, service_sid, asset_sid, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/Services/#{service_sid}/Assets/#{asset_sid}/Versions",
            params: params,
@@ -58,6 +58,8 @@ defmodule Twilio.Serverless.V1.Service.Asset.VersionService do
   """
   @spec fetch(Client.t(), String.t(), String.t(), String.t(), keyword()) ::
           {:ok, Twilio.Resources.Serverless.V1.Service.Asset.Version.t()}
+          | {:ok, map(), map()}
+          | :ok
           | {:error, Twilio.Error.t()}
   def fetch(client, service_sid, asset_sid, sid, opts \\ []) do
     with {:ok, data} <-

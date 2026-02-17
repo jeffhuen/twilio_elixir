@@ -1,7 +1,7 @@
 # File generated from Twilio's OpenAPI spec — do not edit manually
 defmodule Twilio.Trusthub.V1.EnduserService do
   @moduledoc """
-
+  Service for Enduser API operations.
 
   Operations: `list`, `create`, `fetch`, `update`, `delete`
   """
@@ -15,7 +15,7 @@ defmodule Twilio.Trusthub.V1.EnduserService do
   Operation: `ListEndUser` | Tags: TrusthubV1EndUser
   """
   @spec list(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Page.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def list(client, params \\ %{}, opts \\ []) do
     case Client.request(client, :get, "/v1/EndUsers",
            params: params,
@@ -63,10 +63,14 @@ defmodule Twilio.Trusthub.V1.EnduserService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Attributes` | string | The set of parameters that are the attributes of the End User resource which are derived End User Types. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Trusthub.V1.Enduser.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trusthub.V1.Enduser.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/EndUsers",
@@ -85,7 +89,10 @@ defmodule Twilio.Trusthub.V1.EnduserService do
   Operation: `FetchEndUser` | Tags: TrusthubV1EndUser
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Trusthub.V1.Enduser.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trusthub.V1.Enduser.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :get, "/v1/EndUsers/#{sid}",
@@ -105,11 +112,15 @@ defmodule Twilio.Trusthub.V1.EnduserService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Attributes` | string | The set of parameters that are the attributes of the End User resource which are derived End User Types. |
   | `FriendlyName` | string | The string that you assigned to describe the resource. |
   """
   @spec update(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Trusthub.V1.Enduser.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Trusthub.V1.Enduser.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def update(client, sid, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v1/EndUsers/#{sid}",
@@ -128,7 +139,7 @@ defmodule Twilio.Trusthub.V1.EnduserService do
   Operation: `DeleteEndUser` | Tags: TrusthubV1EndUser
   """
   @spec delete(Client.t(), String.t(), keyword()) ::
-          :ok | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def delete(client, sid, opts \\ []) do
     Client.request(client, :delete, "/v1/EndUsers/#{sid}",
       opts: opts,

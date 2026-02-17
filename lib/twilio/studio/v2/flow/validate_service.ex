@@ -28,7 +28,10 @@ defmodule Twilio.Studio.V2.Flow.ValidateService do
   | `CommitMessage` | string | Description of change made in the revision. |
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Studio.V2.Flow.Validate.t()} | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Studio.V2.Flow.Validate.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
     with {:ok, data} <-
            Client.request(client, :post, "/v2/Flows/Validate",

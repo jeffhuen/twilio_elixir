@@ -10,6 +10,9 @@ defmodule Twilio.IntegrationTest do
   """
   use ExUnit.Case, async: false
 
+  alias Twilio.Api.V2010.MessageService
+  alias Twilio.Resources.Api.V2010.Message
+
   @moduletag :integration
 
   @magic_from "+15005550006"
@@ -23,13 +26,13 @@ defmodule Twilio.IntegrationTest do
   describe "SMS — send via magic number" do
     test "creates a message and returns a deserialized struct", %{client: client} do
       assert {:ok, message} =
-               Twilio.Api.V2010.MessageService.create(client, %{
+               MessageService.create(client, %{
                  "From" => @magic_from,
                  "To" => @magic_from,
                  "Body" => "Integration test"
                })
 
-      assert %Twilio.Resources.Api.V2010.Message{} = message
+      assert %Message{} = message
       assert message.sid =~ ~r/^SM/
       assert message.from == @magic_from
       assert message.body == "Integration test"
@@ -39,7 +42,7 @@ defmodule Twilio.IntegrationTest do
 
     test "returns typed error for invalid From number", %{client: client} do
       assert {:error, error} =
-               Twilio.Api.V2010.MessageService.create(client, %{
+               MessageService.create(client, %{
                  "From" => @invalid_from,
                  "To" => @magic_from,
                  "Body" => "Should fail"
@@ -76,7 +79,7 @@ defmodule Twilio.IntegrationTest do
     end
 
     test "emits start and stop events on successful request", %{client: client} do
-      Twilio.Api.V2010.MessageService.create(client, %{
+      MessageService.create(client, %{
         "From" => @magic_from,
         "To" => @magic_from,
         "Body" => "Telemetry test"
@@ -96,7 +99,7 @@ defmodule Twilio.IntegrationTest do
     end
 
     test "emits stop event with error on API failure", %{client: client} do
-      Twilio.Api.V2010.MessageService.create(client, %{
+      MessageService.create(client, %{
         "From" => @invalid_from,
         "To" => @magic_from,
         "Body" => "Should fail"
