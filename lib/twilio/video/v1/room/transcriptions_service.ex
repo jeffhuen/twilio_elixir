@@ -108,6 +108,7 @@ defmodule Twilio.Video.V1.Room.TranscriptionsService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  | `Configuration` | object | A collection of properties that describe transcription behaviour. |
   | `Status` | string |  Values: `started`, `stopped`, `failed` |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::

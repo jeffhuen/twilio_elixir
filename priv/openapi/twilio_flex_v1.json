@@ -2412,7 +2412,7 @@
   },
   "openapi": "3.0.1",
   "paths": {
-    "/v1/instances": {
+    "/v1/Instances": {
       "servers": [
         {
           "url": "https://flex-api.twilio.com"
@@ -2488,7 +2488,7 @@
         ]
       }
     },
-    "/v1/instances/{InstanceSid}": {
+    "/v1/Instances/{InstanceSid}": {
       "servers": [
         {
           "url": "https://flex-api.twilio.com"
