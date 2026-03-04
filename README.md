@@ -27,7 +27,7 @@ Add `twilio_elixir` to your dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:twilio_elixir, "~> 0.1"}
+    {:twilio_elixir, "~> 0.1.1"}
   ]
 end
 ```
