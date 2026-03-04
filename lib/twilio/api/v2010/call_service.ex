@@ -26,13 +26,13 @@ defmodule Twilio.Api.V2010.CallService do
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Status` | string | The status of the calls to include. Can be: `queued`, `ringing`, `in-progress`, `canceled`, `completed`, `failed`, `busy`, or `no-answer`. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `StartTime` | string (date-time) | Only include calls that started on this date. Specify a date as `YYYY-MM-DD` in UTC, for example: `2009-07-06`, to read only calls that started on this date. You can also specify an inequality, such as `StartTime<=YYYY-MM-DD`, to read calls that started on or before midnight of this date, and `StartTime>=YYYY-MM-DD` to read calls that started on or after midnight of this date. |
+  | `StartTime` | string (date-time) | Only include calls that started on this date. Specify a date as `YYYY-MM-DD` in UTC, for example: `2009-07-06`, to read only calls that started on this date. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `StartTime<` | string (date-time) | Only include calls that started before this date. Specify a date as `YYYY-MM-DD` in UTC, for example: `2009-07-06`, to read only calls that started before this date. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `StartTime>` | string (date-time) | Only include calls that started on or after this date. Specify a date as `YYYY-MM-DD` in UTC, for example: `2009-07-06`, to read only calls that started on or after this date. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `EndTime` | string (date-time) | Only include calls that ended on this date. Specify a date as `YYYY-MM-DD` in UTC, for example: `2009-07-06`, to read only calls that ended on this date. You can also specify an inequality, such as `EndTime<=YYYY-MM-DD`, to read calls that ended on or before midnight of this date, and `EndTime>=YYYY-MM-DD` to read calls that ended on or after midnight of this date. |
+  | `EndTime` | string (date-time) | Only include calls that ended on this date. Specify a date as `YYYY-MM-DD` in UTC, for example: `2009-07-06`, to read only calls that ended on this date. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `EndTime<` | string (date-time) | Only include calls that ended before this date. Specify a date as `YYYY-MM-DD` in UTC, for example: `2009-07-06`, to read only calls that ended before this date. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength

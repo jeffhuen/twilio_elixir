@@ -380,7 +380,7 @@
           },
           "vertical": {
             "type": "string",
-            "description": "The vertical of the sender. Allowed values are:\n- `Automotive`\n- `Beauty, Spa and Salon`\n- `Clothing and Apparel`\n- `Education`\n- `Entertainment`\n- `Event Planning and Service`\n- `Finance and Banking`\n- `Food and Grocery`\n- `Public Service`\n- `Hotel and Lodging`\n- `Medical and Health`\n- `Non-profit`\n- `Professional Services`\n- `Shopping and Retail`\n- `Travel and Transportation`\n- `Restaurant`\n- `Other`\n",
+            "description": "The vertical of the sender. Allowed values are:\n- `Alcohol`\n- `Automotive`\n- `Beauty, Spa and Salon`\n- `Clothing and Apparel`\n- `Education`\n- `Entertainment`\n- `Event Planning and Service`\n- `Finance and Banking`\n- `Food and Grocery`\n- `Hotel and Lodging`\n- `Matrimony Service`\n- `Medical and Health`\n- `Non-profit`\n- `Online Gambling`\n- `OTC Drugs`\n- `Other`\n- `Physical Gambling`\n- `Professional Services`\n- `Public Service`\n- `Restaurant`\n- `Shopping and Retail`\n- `Travel and Transportation`\n",
             "nullable": true
           },
           "websites": {
@@ -446,7 +446,7 @@
           },
           "vertical": {
             "type": "string",
-            "description": "The vertical of the sender. Allowed values are:\n- `Automotive`\n- `Beauty, Spa and Salon`\n- `Clothing and Apparel`\n- `Education`\n- `Entertainment`\n- `Event Planning and Service`\n- `Finance and Banking`\n- `Food and Grocery`\n- `Public Service`\n- `Hotel and Lodging`\n- `Medical and Health`\n- `Non-profit`\n- `Professional Services`\n- `Shopping and Retail`\n- `Travel and Transportation`\n- `Restaurant`\n- `Other`\n",
+            "description": "The vertical of the sender. Allowed values are:\n- `Alcohol`\n- `Automotive`\n- `Beauty, Spa and Salon`\n- `Clothing and Apparel`\n- `Education`\n- `Entertainment`\n- `Event Planning and Service`\n- `Finance and Banking`\n- `Food and Grocery`\n- `Hotel and Lodging`\n- `Matrimony Service`\n- `Medical and Health`\n- `Non-profit`\n- `Online Gambling`\n- `OTC Drugs`\n- `Other`\n- `Physical Gambling`\n- `Professional Services`\n- `Public Service`\n- `Restaurant`\n- `Shopping and Retail`\n- `Travel and Transportation`\n",
             "nullable": true
           },
           "websites": {
@@ -1021,10 +1021,33 @@
           "phone_number": "+14081111111"
         }
       },
-      "create_test_device_response": {
+      "test_device_response": {
         "value": {
           "phone_number": "+14081111111",
           "status": "PENDING"
+        }
+      },
+      "list_test_devices_response": {
+        "value": {
+          "phone_numbers": [
+            {
+              "phone_number": "+14081111111",
+              "status": "ACCEPTED"
+            },
+            {
+              "phone_number": "+14082222222",
+              "status": "PENDING"
+            }
+          ],
+          "meta": {
+            "page": 0,
+            "page_size": 10,
+            "first_page_url": "https://messaging.twilio.com/v2/Channels/Senders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/TestDevices?PageSize=10&Page=0",
+            "previous_page_url": null,
+            "url": "https://messaging.twilio.com/v2/Channels/Senders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/TestDevices?PageSize=10&Page=0",
+            "next_page_url": null,
+            "key": "test_devices"
+          }
         }
       },
       "whatsapp_patch_update_configuration_request": {

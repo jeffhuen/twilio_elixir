@@ -3368,6 +3368,16 @@
             }
           },
           {
+            "name": "BundleSids",
+            "in": "query",
+            "required": false,
+            "description": "A comma-separated list of Bundle SIDs to filter the results (maximum 20). Each Bundle SID must match `^BU[0-9a-fA-F]{32}$`.",
+            "schema": {
+              "type": "string",
+              "pattern": "^BU[0-9a-fA-F]{32}(,BU[0-9a-fA-F]{32}){0,19}$"
+            }
+          },
+          {
             "name": "FriendlyName",
             "in": "query",
             "description": "The string that you assigned to describe the resource. The column can contain 255 variable characters.",
@@ -3438,6 +3448,18 @@
               "readApprovedJapanTollfreeDateBetween": {
                 "value": "tollfree"
               }
+            }
+          },
+          {
+            "name": "EndUserType",
+            "in": "query",
+            "description": "The end user type of the regulation of the Bundle. Can be `business` or `individual`.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "business",
+                "individual"
+              ]
             }
           },
           {
