@@ -80,7 +80,7 @@ defmodule Twilio.Messaging.V1.Tollfree.VerificationService do
   | `OptInType` | string |  Values: `VERBAL`, `WEB_FORM`, `PAPER_FORM`, `VIA_TEXT`, `MOBILE_QR_CODE`, `IMPORT`, `IMPORT_PLEASE_REPLACE` |
   | `ProductionMessageSample` | string | An example of message content, i.e. a sample message. |
   | `TollfreePhoneNumberSid` | string | The SID of the Phone Number associated with the Tollfree Verification. |
-  | `UseCaseCategories` | array | The category of the use case for the Tollfree Number. List as many are applicable.. |
+  | `UseCaseCategories` | string |  |
   | `UseCaseSummary` | string | Use this to further explain how messaging is used by the business or organization. |
   ## Optional Parameters
 
@@ -100,7 +100,7 @@ defmodule Twilio.Messaging.V1.Tollfree.VerificationService do
   | `BusinessCountry` | string | The country of the business or organization using the Tollfree number. |
   | `BusinessPostalCode` | string | The postal code of the business or organization using the Tollfree number. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `BusinessRegistrationAuthority` | string | The organizational authority for business registrations. Required for all business types except SOLE_PROPRIETOR. |
+  | `BusinessRegistrationAuthority` | string |  Values: `EIN`, `CBN`, `CRN`, `PROVINCIAL_NUMBER`, `VAT`, `ACN`, `ABN`, `BRN`, `SIREN`, `SIRET`, `NZBN`, `USt-IdNr`, `CIF`, `NIF`, `CNPJ`, `UID`, `NEQ`, `OTHER` |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `BusinessRegistrationCountry` | string | The country where the business is registered. Required for all business types except SOLE_PROPRIETOR. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
@@ -111,7 +111,7 @@ defmodule Twilio.Messaging.V1.Tollfree.VerificationService do
   | `BusinessStreetAddress` | string | The address of the business or organization using the Tollfree number. |
   | `BusinessStreetAddress2` | string | The address of the business or organization using the Tollfree number. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `BusinessType` | string | The type of business, valid values are PRIVATE_PROFIT, PUBLIC_PROFIT, NON_PROFIT, SOLE_PROPRIETOR, GOVERNMENT. Required field. |
+  | `BusinessType` | string |  Values: `PRIVATE_PROFIT`, `PUBLIC_PROFIT`, `SOLE_PROPRIETOR`, `NON_PROFIT`, `GOVERNMENT` |
   | `CustomerProfileSid` | string | Customer's Profile Bundle BundleSid. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DoingBusinessAs` | string | Trade name, sub entity, or downstream business name of business being submitted for verification |
@@ -185,16 +185,17 @@ defmodule Twilio.Messaging.V1.Tollfree.VerificationService do
   | `BusinessCountry` | string | The country of the business or organization using the Tollfree number. |
   | `BusinessName` | string | The name of the business or organization using the Tollfree number. |
   | `BusinessPostalCode` | string | The postal code of the business or organization using the Tollfree number. |
-  | `BusinessRegistrationAuthority` | string | The organizational authority for business registrations |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `BusinessRegistrationAuthority` | string |  Values: `EIN`, `CBN`, `CRN`, `PROVINCIAL_NUMBER`, `VAT`, `ACN`, `ABN`, `BRN`, `SIREN`, `SIRET`, `NZBN`, `USt-IdNr`, `CIF`, `NIF`, `CNPJ`, `UID`, `NEQ`, `OTHER` |
   | `BusinessRegistrationCountry` | string | Country business is registered in |
-  | `BusinessRegistrationNumber` | string | A legaly recognized business registration number |
+  | `BusinessRegistrationNumber` | string | A legally recognized business registration number |
   | `BusinessRegistrationPhoneNumber` | string | The E.164 formatted number associated with the business. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `BusinessStateProvinceRegion` | string | The state/province/region of the business or organization using the Tollfree number. |
   | `BusinessStreetAddress` | string | The address of the business or organization using the Tollfree number. |
   | `BusinessStreetAddress2` | string | The address of the business or organization using the Tollfree number. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `BusinessType` | string | The type of business, valid values are PRIVATE_PROFIT, PUBLIC_PROFIT, NON_PROFIT, SOLE_PROPRIETOR, GOVERNMENT |
+  | `BusinessType` | string |  Values: `PRIVATE_PROFIT`, `PUBLIC_PROFIT`, `SOLE_PROPRIETOR`, `NON_PROFIT`, `GOVERNMENT` |
   | `BusinessWebsite` | string | The website of the business or organization using the Tollfree number. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DoingBusinessAs` | string | Trade name, sub entity, or downstream business name of business being submitted for verification |
@@ -212,7 +213,7 @@ defmodule Twilio.Messaging.V1.Tollfree.VerificationService do
   | `PrivacyPolicyUrl` | string | The URL to the privacy policy for the business or organization. |
   | `ProductionMessageSample` | string | An example of message content, i.e. a sample message. |
   | `TermsAndConditionsUrl` | string | The URL to the terms and conditions for the business or organization. |
-  | `UseCaseCategories` | array | The category of the use case for the Tollfree Number. List as many are applicable.. |
+  | `UseCaseCategories` | string |  |
   | `UseCaseSummary` | string | Use this to further explain how messaging is used by the business or organization. |
   | `VettingId` | string | The unique ID of the vetting |
   | `VettingProvider` | string |  Values: `CAMPAIGN_VERIFY` |

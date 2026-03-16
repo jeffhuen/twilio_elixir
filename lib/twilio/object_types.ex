@@ -380,7 +380,7 @@ defmodule Twilio.ObjectTypes do
         Twilio.Resources.Messaging.V1.Service.DestinationAlphaSender,
       "messaging.v1.service.phone_number" => Twilio.Resources.Messaging.V1.Service.PhoneNumber,
       "messaging.v1.service.short_code" => Twilio.Resources.Messaging.V1.Service.ShortCode,
-      "messaging.v1.service.us_app_to_person" =>
+      "messaging.v1.service.us_app_to_person_response" =>
         Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p,
       "messaging.v1.service.us_app_to_person_usecase" =>
         Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p.Usecase,

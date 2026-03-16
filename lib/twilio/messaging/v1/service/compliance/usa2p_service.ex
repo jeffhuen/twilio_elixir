@@ -7,7 +7,6 @@ defmodule Twilio.Messaging.V1.Service.Compliance.Usa2pService do
   """
 
   alias Twilio.Client
-  alias Twilio.Deserializer
 
   @doc """
 
@@ -22,21 +21,8 @@ defmodule Twilio.Messaging.V1.Service.Compliance.Usa2pService do
            opts: opts,
            base_url: "https://messaging.twilio.com"
          ) do
-      {:ok, data} ->
-        page = Twilio.Page.from_response(data, "compliance")
-
-        {:ok,
-         %{
-           page
-           | items:
-               Deserializer.deserialize_list(
-                 page.items,
-                 Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p
-               )
-         }}
-
-      error ->
-        error
+      {:ok, data} -> {:ok, Twilio.Page.from_response(data, "compliance")}
+      error -> error
     end
   end
 
@@ -88,24 +74,19 @@ defmodule Twilio.Messaging.V1.Service.Compliance.Usa2pService do
   | `OptOutKeywords` | array | End users should be able to text in a keyword to stop receiving messages from this campaign. Those keywords must be provided. This field is required if managing opt out keywords yourself (i.e. not using Twilio's Default or Advanced Opt Out features). Values must be alphanumeric. 255 character maximum. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `OptOutMessage` | string | Upon receiving the opt-out keywords from the end users, Twilio customers are expected to send back an auto-generated response, which must provide acknowledgment of the opt-out request and confirmation that no further messages will be sent. It is also recommended that these opt-out messages include the brand name. This field is required if managing opt out keywords yourself (i.e. not using Twilio's Default or Advanced Opt Out features). 20 character minimum. 320 character maximum. |
+  | `PrivacyPolicyUrl` | string (uri) | The URL of the privacy policy for the campaign. |
   | `SubscriberOptIn` | boolean | A boolean that specifies whether campaign has Subscriber Optin or not. |
+  | `TermsAndConditionsUrl` | string (uri) | The URL of the terms and conditions for the campaign. |
   """
   @spec create(Client.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p.t()}
-          | {:ok, map(), map()}
-          | :ok
-          | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def create(client, messaging_service_sid, params \\ %{}, opts \\ []) do
-    with {:ok, data} <-
-           Client.request(client, :post, "/v1/Services/#{messaging_service_sid}/Compliance/Usa2p",
-             params: params,
-             opts: opts,
-             base_url: "https://messaging.twilio.com",
-             content_type: :form
-           ) do
-      {:ok,
-       Deserializer.deserialize(data, Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p)}
-    end
+    Client.request(client, :post, "/v1/Services/#{messaging_service_sid}/Compliance/Usa2p",
+      params: params,
+      opts: opts,
+      base_url: "https://messaging.twilio.com",
+      content_type: :form
+    )
   end
 
   @doc """
@@ -114,22 +95,12 @@ defmodule Twilio.Messaging.V1.Service.Compliance.Usa2pService do
   Operation: `FetchUsAppToPerson` | Tags: MessagingV1UsAppToPerson
   """
   @spec fetch(Client.t(), String.t(), String.t(), keyword()) ::
-          {:ok, Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p.t()}
-          | {:ok, map(), map()}
-          | :ok
-          | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def fetch(client, messaging_service_sid, sid, opts \\ []) do
-    with {:ok, data} <-
-           Client.request(
-             client,
-             :get,
-             "/v1/Services/#{messaging_service_sid}/Compliance/Usa2p/#{sid}",
-             opts: opts,
-             base_url: "https://messaging.twilio.com"
-           ) do
-      {:ok,
-       Deserializer.deserialize(data, Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p)}
-    end
+    Client.request(client, :get, "/v1/Services/#{messaging_service_sid}/Compliance/Usa2p/#{sid}",
+      opts: opts,
+      base_url: "https://messaging.twilio.com"
+    )
   end
 
   @doc """
@@ -151,26 +122,22 @@ defmodule Twilio.Messaging.V1.Service.Compliance.Usa2pService do
   | `MessageFlow` | string | Required for all Campaigns. Details around how a consumer opts-in to their campaign, therefore giving consent to receive their messages. If multiple opt-in methods can be used for the same campaign, they must all be listed. 40 character minimum. 2048 character maximum. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `MessageSamples` | array | An array of sample message strings, min two and max five. Min length for each sample: 20 chars. Max length for each sample: 1024 chars. |
+  ## Optional Parameters
+
+  | Parameter | Type | Description |
+  |-----------|------|-------------|
+  | `PrivacyPolicyUrl` | string (uri) | The URL of the privacy policy for the campaign. |
+  | `TermsAndConditionsUrl` | string (uri) | The URL of the terms and conditions for the campaign. |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::
-          {:ok, Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p.t()}
-          | {:ok, map(), map()}
-          | :ok
-          | {:error, Twilio.Error.t()}
+          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
   def update(client, messaging_service_sid, sid, params \\ %{}, opts \\ []) do
-    with {:ok, data} <-
-           Client.request(
-             client,
-             :post,
-             "/v1/Services/#{messaging_service_sid}/Compliance/Usa2p/#{sid}",
-             params: params,
-             opts: opts,
-             base_url: "https://messaging.twilio.com",
-             content_type: :form
-           ) do
-      {:ok,
-       Deserializer.deserialize(data, Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p)}
-    end
+    Client.request(client, :post, "/v1/Services/#{messaging_service_sid}/Compliance/Usa2p/#{sid}",
+      params: params,
+      opts: opts,
+      base_url: "https://messaging.twilio.com",
+      content_type: :form
+    )
   end
 
   @doc """
