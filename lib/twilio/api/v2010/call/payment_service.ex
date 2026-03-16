@@ -30,6 +30,8 @@ defmodule Twilio.Api.V2010.Call.PaymentService do
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ChargeAmount` | number | A positive decimal value less than 1,000,000 to charge against the credit card or bank account. Default currency can be overwritten with `currency` field. Leave blank or set to 0 to tokenize. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `Confirmation` | string | Whether to prompt the caller to confirm their payment information before submitting to the payment gateway. If `true`, the caller will hear the last 4 digits of their card or account number and must press 1 to confirm or 2 to cancel. Default is `false`. Values: `true`, `false` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Currency` | string | The currency of the `charge_amount`, formatted as [ISO 4127](http://www.iso.org/iso/home/standards/currency_codes.htm) format. The default value is `USD` and all values allowed from the Pay Connector are accepted. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `Description` | string | The description can be used to provide more details regarding the transaction. This information is submitted along with the payment details to the Payment Connector which are then posted on the transactions. |
@@ -44,6 +46,8 @@ defmodule Twilio.Api.V2010.Call.PaymentService do
   | `PaymentMethod` | string |  Values: `credit-card`, `ach-debit` |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `PostalCode` | boolean | Indicates whether the credit card postal code (zip code) is a required piece of payment information that must be provided by the caller. The default is `true`. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `RequireMatchingInputs` | string | A comma-separated list of payment information fields that require the caller to enter the same value twice for confirmation. Supported values are `payment-card-number`, `expiration-date`, `security-code`, and `postal-code`. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SecurityCode` | boolean | Indicates whether the credit card security code is a required piece of payment information that must be provided by the caller. The default is `true`. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
@@ -90,7 +94,7 @@ defmodule Twilio.Api.V2010.Call.PaymentService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `Capture` | string |  Values: `payment-card-number`, `expiration-date`, `security-code`, `postal-code`, `bank-routing-number`, `bank-account-number` |
+  | `Capture` | string |  Values: `payment-card-number`, `expiration-date`, `security-code`, `postal-code`, `bank-routing-number`, `bank-account-number`, `payment-card-number-matcher`, `expiration-date-matcher`, `security-code-matcher`, `postal-code-matcher` |
   | `Status` | string |  Values: `complete`, `cancel` |
   """
   @spec update(Client.t(), String.t(), String.t(), map(), keyword()) ::

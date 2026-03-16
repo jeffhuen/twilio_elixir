@@ -11,7 +11,8 @@ defmodule Twilio.Resources.Messaging.V1.Tollfree.Verification do
   |-------|-------------|
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `edit_allowed` | If a rejected verification is allowed to be edited/resubmitted. Some rejection reasons allow editing and some do not. |
-  | `business_registration_authority` | The organizational authority for business registrations |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `business_registration_authority` | The organizational authority for business registrations. Required for all business types except SOLE_PROPRIETOR.. Values: `EIN`, `CBN`, `CRN`, `PROVINCIAL_NUMBER`, `VAT`, `ACN`, `ABN`, `BRN`, `SIREN`, `SIRET`, `NZBN`, `USt-IdNr`, `CIF`, `NIF`, `CNPJ`, `UID`, `NEQ`, `OTHER` |
   | `age_gated_content` | Indicates if the content is age gated. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Tollfree Verification resource. |
@@ -37,7 +38,6 @@ defmodule Twilio.Resources.Messaging.V1.Tollfree.Verification do
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `business_state_province_region` | The state/province/region of the business or organization using the Tollfree number. |
   | `business_city` | The city of the business or organization using the Tollfree number. |
-  | `use_case_categories` | The category of the use case for the Tollfree Number. List as many are applicable.. |
   | `privacy_policy_url` | The URL to the privacy policy for the business or organization.. Format: uri |
   | `business_website` | The website of the business or organization using the Tollfree number. |
   | `help_message_sample` | A sample help message provided to users. |
@@ -66,7 +66,7 @@ defmodule Twilio.Resources.Messaging.V1.Tollfree.Verification do
   | `edit_expiration` | The date and time when the ability to edit a rejected verification expires.. Format: date-time |
   | `opt_in_confirmation_message` | The confirmation message sent to users when they opt in to receive messages. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `business_type` | The type of business, valid values are PRIVATE_PROFIT, PUBLIC_PROFIT, NON_PROFIT, SOLE_PROPRIETOR, GOVERNMENT. Values: `PRIVATE_PROFIT`, `PUBLIC_PROFIT`, `SOLE_PROPRIETOR`, `NON_PROFIT`, `GOVERNMENT` |
+  | `business_type` | The type of business, valid values are PRIVATE_PROFIT, PUBLIC_PROFIT, NON_PROFIT, SOLE_PROPRIETOR, GOVERNMENT. Required field.. Values: `PRIVATE_PROFIT`, `PUBLIC_PROFIT`, `SOLE_PROPRIETOR`, `NON_PROFIT`, `GOVERNMENT` |
   | `notification_email` | The email address to receive the notification about the verification result. . |
   | `business_postal_code` | The postal code of the business or organization using the Tollfree number. |
   | `trust_product_sid` | Tollfree TrustProduct Bundle BundleSid. |
@@ -82,7 +82,7 @@ defmodule Twilio.Resources.Messaging.V1.Tollfree.Verification do
 
   @type t :: %__MODULE__{
           edit_allowed: boolean() | nil,
-          business_registration_authority: String.t() | nil,
+          business_registration_authority: String.t(),
           age_gated_content: boolean() | nil,
           account_sid: String.t() | nil,
           date_updated: String.t() | nil,
@@ -103,7 +103,7 @@ defmodule Twilio.Resources.Messaging.V1.Tollfree.Verification do
           url: String.t() | nil,
           business_state_province_region: String.t() | nil,
           business_city: String.t() | nil,
-          use_case_categories: list() | nil,
+          use_case_categories: String.t(),
           privacy_policy_url: String.t() | nil,
           business_website: String.t() | nil,
           help_message_sample: String.t() | nil,
@@ -125,7 +125,7 @@ defmodule Twilio.Resources.Messaging.V1.Tollfree.Verification do
           resource_links: String.t() | nil,
           edit_expiration: String.t() | nil,
           opt_in_confirmation_message: String.t() | nil,
-          business_type: String.t() | nil,
+          business_type: String.t(),
           notification_email: String.t() | nil,
           business_postal_code: String.t() | nil,
           trust_product_sid: String.t() | nil,
