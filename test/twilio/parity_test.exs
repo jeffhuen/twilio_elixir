@@ -1,7 +1,7 @@
 defmodule Twilio.ParityTest do
   use ExUnit.Case, async: true
 
-  alias Twilio.Generator.Naming
+  alias Twilio.Generator.{Naming, OpenAPI}
 
   @spec_dir "priv/openapi"
 
@@ -10,11 +10,15 @@ defmodule Twilio.ParityTest do
     assert length(specs) >= 50, "Expected at least 50 spec files, got #{length(specs)}"
   end
 
-  test "generated services exist for most specs" do
-    specs = Path.wildcard(Path.join(@spec_dir, "twilio_*.json"))
-
-    {covered, uncovered} =
-      Enum.split_with(specs, fn spec_path ->
+  test "every generatable spec produces service files" do
+    # A spec is "generatable" if the generator extracts at least one resource
+    # from it. Upstream Twilio occasionally ships stub/preview specs without
+    # `x-twilio.pathType` annotations or with empty operation objects; those
+    # parse to zero resources and are correctly skipped here.
+    uncovered =
+      Path.wildcard(Path.join(@spec_dir, "twilio_*.json"))
+      |> Enum.filter(fn path -> OpenAPI.parse_file(path).resources != [] end)
+      |> Enum.reject(fn spec_path ->
         filename = Path.basename(spec_path, ".json")
         {product, version} = Naming.product_version(filename)
 
@@ -25,16 +29,12 @@ defmodule Twilio.ParityTest do
             "lib/twilio/#{String.downcase(product)}"
           end
 
-        services = Path.wildcard(Path.join(dir, "**/*_service.ex"))
-        services != []
+        Path.wildcard(Path.join(dir, "**/*_service.ex")) != []
       end)
 
-    coverage_pct = length(covered) / length(specs) * 100
-
-    assert coverage_pct >= 90,
-           "Spec coverage is #{Float.round(coverage_pct, 1)}% " <>
-             "(#{length(covered)}/#{length(specs)}). " <>
-             "Uncovered: #{Enum.map_join(uncovered, ", ", &Path.basename/1)}"
+    assert uncovered == [],
+           "Specs that parsed to resources but produced no service files: " <>
+             Enum.map_join(uncovered, ", ", &Path.basename/1)
   end
 
   test "service modules compile and export expected functions" do
