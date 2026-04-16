@@ -132,13 +132,13 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "identity": "john@example.com",
                       "friendly_name": "John Doe",
                       "avatar": "https://example.com/profile.png",
                       "state": "active",
                       "is_available": true,
-                      "url": "https://frontline-api.twilio.com/v1/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://frontline-api.twilio.com/v1/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -217,13 +217,13 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "identity": "john@example.com",
                       "friendly_name": "John Doe",
                       "avatar": "https://example.com/profile.png",
                       "state": "active",
                       "is_available": true,
-                      "url": "https://frontline-api.twilio.com/v1/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://frontline-api.twilio.com/v1/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }

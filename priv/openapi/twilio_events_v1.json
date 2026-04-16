@@ -1302,14 +1302,14 @@
                         "external_id": "1234567890"
                       },
                       "description": "A Sink",
-                      "sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:00:00Z",
                       "sink_type": "kinesis",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "sink_test": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Test",
-                        "sink_validate": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Validate"
+                        "sink_test": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Test",
+                        "sink_validate": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Validate"
                       }
                     }
                   }
@@ -1431,14 +1431,14 @@
                         "external_id": "1234567890"
                       },
                       "description": "My Kinesis Sink",
-                      "sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:00:00Z",
                       "sink_type": "kinesis",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "sink_test": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Test",
-                        "sink_validate": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Validate"
+                        "sink_test": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Test",
+                        "sink_validate": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Validate"
                       }
                     }
                   }
@@ -1574,14 +1574,14 @@
                         "external_id": "1234567890"
                       },
                       "description": "My Kinesis Sink",
-                      "sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:00:00Z",
                       "sink_type": "kinesis",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "sink_test": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Test",
-                        "sink_validate": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Validate"
+                        "sink_test": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Test",
+                        "sink_validate": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Validate"
                       }
                     }
                   },
@@ -1592,14 +1592,14 @@
                         "write_key": "MY_WRITEKEY"
                       },
                       "description": "My segment Sink",
-                      "sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:00:00Z",
                       "sink_type": "segment",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "sink_test": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Test",
-                        "sink_validate": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Validate"
+                        "sink_test": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Test",
+                        "sink_validate": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Validate"
                       }
                     }
                   }
@@ -1831,14 +1831,14 @@
                             "external_id": "1234567890"
                           },
                           "description": "A Sink",
-                          "sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T19:00:00Z",
                           "sink_type": "kinesis",
                           "date_updated": "2015-07-30T19:00:00Z",
-                          "url": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "sink_test": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Test",
-                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Validate"
+                            "sink_test": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Test",
+                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Validate"
                           }
                         },
                         {
@@ -1849,14 +1849,14 @@
                             "external_id": "1234567890"
                           },
                           "description": "ANOTHER Sink",
-                          "sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T20:00:00Z",
                           "sink_type": "kinesis",
                           "date_updated": "2015-07-30T20:00:00Z",
-                          "url": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "url": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "sink_test": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab/Test",
-                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab/Validate"
+                            "sink_test": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Test",
+                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Validate"
                           }
                         },
                         {
@@ -1867,14 +1867,14 @@
                             "batch_events": true
                           },
                           "description": "A webhook Sink",
-                          "sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac",
+                          "sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T21:00:00Z",
                           "sink_type": "webhook",
                           "date_updated": "2015-07-30T21:00:00Z",
-                          "url": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac",
+                          "url": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "sink_test": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac/Test",
-                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac/Validate"
+                            "sink_test": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Test",
+                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Validate"
                           }
                         }
                       ],
@@ -1900,14 +1900,14 @@
                             "external_id": "1234567890"
                           },
                           "description": "A Sink",
-                          "sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T19:00:00Z",
                           "sink_type": "kinesis",
                           "date_updated": "2015-07-30T19:00:00Z",
-                          "url": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "sink_test": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Test",
-                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Validate"
+                            "sink_test": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Test",
+                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Validate"
                           }
                         },
                         {
@@ -1918,14 +1918,14 @@
                             "external_id": "1234567890"
                           },
                           "description": "ANOTHER Sink",
-                          "sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T20:00:00Z",
                           "sink_type": "kinesis",
                           "date_updated": "2015-07-30T20:00:00Z",
-                          "url": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "url": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "sink_test": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab/Test",
-                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab/Validate"
+                            "sink_test": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Test",
+                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Validate"
                           }
                         },
                         {
@@ -1936,14 +1936,14 @@
                             "batch_events": true
                           },
                           "description": "A webhook Sink",
-                          "sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac",
+                          "sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T21:00:00Z",
                           "sink_type": "webhook",
                           "date_updated": "2015-07-30T21:00:00Z",
-                          "url": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac",
+                          "url": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "sink_test": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac/Test",
-                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac/Validate"
+                            "sink_test": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Test",
+                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Validate"
                           }
                         }
                       ],
@@ -1969,14 +1969,14 @@
                             "batch_events": true
                           },
                           "description": "A webhook Sink",
-                          "sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac",
+                          "sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T21:00:00Z",
                           "sink_type": "webhook",
                           "date_updated": "2015-07-30T21:00:00Z",
-                          "url": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac",
+                          "url": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "sink_test": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac/Test",
-                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac/Validate"
+                            "sink_test": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Test",
+                            "sink_validate": "https://events.twilio.com/v1/Sinks/DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Validate"
                           }
                         }
                       ],
@@ -2436,9 +2436,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 10,
-                        "first_page_url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents?PageSize=10&Page=0",
+                        "first_page_url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents?PageSize=10&Page=0",
                         "previous_page_url": null,
-                        "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents?PageSize=10&Page=0",
+                        "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents?PageSize=10&Page=0",
                         "next_page_url": null,
                         "key": "types"
                       }
@@ -2448,26 +2448,26 @@
                     "value": {
                       "types": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "type": "com.twilio.messaging.message.delivered",
                           "schema_version": 2,
-                          "subscription_sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents/com.twilio.messaging.message.delivered"
+                          "subscription_sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents/com.twilio.messaging.message.delivered"
                         },
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "type": "com.twilio.messaging.message.failed",
                           "schema_version": 15,
-                          "subscription_sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents/com.twilio.messaging.message.failed"
+                          "subscription_sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents/com.twilio.messaging.message.failed"
                         }
                       ],
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents?PageSize=50&Page=0",
+                        "first_page_url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents?PageSize=50&Page=0",
+                        "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "types"
                       }
@@ -2552,11 +2552,11 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "subscription_sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "subscription_sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "type": "com.twilio.messaging.message.delivered",
                       "schema_version": 2,
-                      "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents/com.twilio.messaging.message.delivered"
+                      "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents/com.twilio.messaging.message.delivered"
                     }
                   }
                 }
@@ -2609,11 +2609,11 @@
                 "examples": {
                   "create200": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "subscription_sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "subscription_sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "type": "com.twilio.messaging.message.delivered",
                       "schema_version": 2,
-                      "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents/com.twilio.messaging.message.delivered"
+                      "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents/com.twilio.messaging.message.delivered"
                     }
                   }
                 }
@@ -2759,11 +2759,11 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "subscription_sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "subscription_sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "type": "com.twilio.messaging.message.delivered",
                       "schema_version": 2,
-                      "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents/com.twilio.messaging.message.delivered"
+                      "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents/com.twilio.messaging.message.delivered"
                     }
                   }
                 }
@@ -2854,11 +2854,11 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "subscription_sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "subscription_sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "type": "com.twilio.messaging.message.delivered",
                       "schema_version": 2,
-                      "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents/com.twilio.messaging.message.delivered"
+                      "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents/com.twilio.messaging.message.delivered"
                     }
                   }
                 }
@@ -3019,7 +3019,7 @@
             },
             "examples": {
               "readResultsFilteredBySinkSid": {
-                "value": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -3119,27 +3119,27 @@
                     "value": {
                       "subscriptions": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:01:33Z",
-                          "sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sink_sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sink_sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "description": "A subscription",
-                          "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents"
+                            "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents"
                           }
                         },
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:01:33Z",
-                          "sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
-                          "sink_sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sink_sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "description": "Another subscription",
-                          "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab/SubscribedEvents"
+                            "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents"
                           }
                         }
                       ],
@@ -3158,36 +3158,36 @@
                     "value": {
                       "subscriptions": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:01:33Z",
-                          "sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sink_sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sink_sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "description": "A subscription",
-                          "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents"
+                            "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents"
                           }
                         },
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:01:33Z",
-                          "sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
-                          "sink_sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sink_sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "description": "Another subscription",
-                          "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab/SubscribedEvents"
+                            "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents"
                           }
                         }
                       ],
                       "meta": {
                         "page": 0,
                         "page_size": 10,
-                        "first_page_url": "https://events.twilio.com/v1/Subscriptions?SinkSid=DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=10&Page=0",
+                        "first_page_url": "https://events.twilio.com/v1/Subscriptions?SinkSid=DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=10&Page=0",
                         "previous_page_url": null,
-                        "url": "https://events.twilio.com/v1/Subscriptions?SinkSid=DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=10&Page=0",
+                        "url": "https://events.twilio.com/v1/Subscriptions?SinkSid=DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=10&Page=0",
                         "next_page_url": null,
                         "key": "subscriptions"
                       }
@@ -3259,15 +3259,15 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:01:33Z",
-                      "sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sink_sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sink_sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "description": "A subscription",
-                      "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents"
+                        "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents"
                       }
                     }
                   }
@@ -3352,7 +3352,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "SinkSid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "SinkSid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Description": "A subscription",
                     "Types": [
                       "{\"type\": \"com.twilio.messaging.message.delivered\",\"schema_version\": 1}",
@@ -3422,15 +3422,15 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:01:33Z",
-                      "sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sink_sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sink_sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "description": "A subscription",
-                      "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents"
+                        "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents"
                       }
                     }
                   }
@@ -3513,15 +3513,15 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2020-07-30T20:01:33Z",
-                      "sid": "DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sink_sid": "DGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                      "sid": "DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sink_sid": "DGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "description": "Updated description",
-                      "url": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SubscribedEvents"
+                        "subscribed_events": "https://events.twilio.com/v1/Subscriptions/DFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SubscribedEvents"
                       }
                     }
                   }

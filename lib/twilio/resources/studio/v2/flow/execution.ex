@@ -19,6 +19,7 @@ defmodule Twilio.Resources.Studio.V2.Flow.Execution do
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Execution resource. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `contact_channel_address` | The phone number, SIP address or Client identifier that triggered the Execution. Phone numbers are in E.164 format (e.g. +16175551212). SIP addresses are formatted as `name@company.com`. Client identifiers are formatted `client:name`.. PII: standard |
+  | `contact_sid` | The SID of the Contact. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `context` | The current state of the Flow's Execution. As a flow executes, we save its state in this context. We save data that your widgets can access as variables in configuration fields or in text areas as variable substitution.. PII: standard |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
@@ -26,6 +27,9 @@ defmodule Twilio.Resources.Studio.V2.Flow.Execution do
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_updated` | The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   | `flow_sid` | The SID of the Flow. |
+  | `flow_version` | The Flow version number at the time of Execution creation. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `initiated_by` | The SID or identifier that triggered this Execution. For example, a Call SID if triggered by an incoming call, a Message SID if triggered by an incoming message, a Request SID if triggered by a REST API request, and so on. |
   | `links` | The URLs of nested resources.. Format: uri-map |
   | `sid` | The unique string that we created to identify the Execution resource. |
   | `status` | The status of the Execution. Can be: `active` or `ended`.. Values: `active`, `ended` |
@@ -35,10 +39,13 @@ defmodule Twilio.Resources.Studio.V2.Flow.Execution do
   @type t :: %__MODULE__{
           account_sid: String.t() | nil,
           contact_channel_address: String.t() | nil,
+          contact_sid: String.t() | nil,
           context: String.t() | nil,
           date_created: String.t() | nil,
           date_updated: String.t() | nil,
           flow_sid: String.t() | nil,
+          flow_version: integer() | nil,
+          initiated_by: String.t() | nil,
           links: map() | nil,
           sid: String.t() | nil,
           status: String.t(),
@@ -48,10 +55,13 @@ defmodule Twilio.Resources.Studio.V2.Flow.Execution do
   defstruct [
     :account_sid,
     :contact_channel_address,
+    :contact_sid,
     :context,
     :date_created,
     :date_updated,
     :flow_sid,
+    :flow_version,
+    :initiated_by,
     :links,
     :sid,
     :status,

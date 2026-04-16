@@ -18,6 +18,7 @@ defmodule Twilio.Studio.V2.Flow.ExecutionService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  | `status` | string | Only show Execution resources with the given status. Can be: `active` or `ended`. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DateCreatedFrom` | string (date-time) | Only show Execution resources starting on or after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time, given as `YYYY-MM-DDThh:mm:ss-hh:mm`. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength

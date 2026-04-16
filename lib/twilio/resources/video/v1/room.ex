@@ -45,7 +45,8 @@ defmodule Twilio.Resources.Video.V1.Room do
   | `status_callback` | The URL Twilio calls using the `status_callback_method` to send status information to your application on every room event. See [Status Callbacks](https://www.twilio.com/docs/video/api/status-callbacks) for more info.. Format: uri |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `status_callback_method` | The HTTP method Twilio uses to call `status_callback`. Can be `POST` or `GET` and defaults to `POST`.. Values: `GET`, `POST`. Format: http-method |
-  | `type` | Values: `go`, `peer-to-peer`, `group`, `group-small` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `type` | Type of room. Use `group` for new implementations. `go`, `peer-to-peer`, and `group-small` are deprecated.. Values: `group`, `go`, `peer-to-peer`, `group-small` |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `unique_name` | An application-defined string that uniquely identifies the resource. It can be used as a `room_sid` in place of the resource's `sid` in the URL to address the resource, assuming it does not contain any [reserved characters](https://tools.ietf.org/html/rfc3986#section-2.2) that would need to be URL encoded. This value is unique for `in-progress` rooms. SDK clients can use this name to connect to the room. REST API clients can use this name in place of the Room SID to interact with the room as long as the room is `in-progress`. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength

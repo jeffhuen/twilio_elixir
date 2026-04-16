@@ -218,10 +218,10 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "unique_name": "unique_name",
                       "attributes": "{ \"foo\": \"bar\" }",
@@ -231,7 +231,7 @@
                       "created_by": "username",
                       "members_count": 0,
                       "messages_count": 0,
-                      "url": "https://chat.twilio.com/v3/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v3/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -305,7 +305,7 @@
                 "update": {
                   "value": {
                     "Type": "private",
-                    "MessagingServiceSid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "MessagingServiceSid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }

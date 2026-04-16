@@ -89,7 +89,7 @@ defmodule Twilio.Video.V1.RoomService do
   | `TranscribeParticipantsOnConnect` | boolean | Whether to start transcriptions when Participants connect. If TranscriptionsConfiguration is not provided, default settings will be used. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TranscriptionsConfiguration` | object | A collection of properties that describe transcription behaviour. If TranscribeParticipantsOnConnect is set to true and TranscriptionsConfiguration is not provided, default settings will be used. |
-  | `Type` | string |  Values: `go`, `peer-to-peer`, `group`, `group-small` |
+  | `Type` | string |  Values: `group`, `go`, `peer-to-peer`, `group-small` |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `UniqueName` | string | An application-defined string that uniquely identifies the resource. It can be used as a `room_sid` in place of the resource's `sid` in the URL to address the resource, assuming it does not contain any [reserved characters](https://tools.ietf.org/html/rfc3986#section-2.2) that would need to be URL encoded. This value is unique for `in-progress` rooms. SDK clients can use this name to connect to the room. REST API clients can use this name in place of the Room SID to interact with the room as long as the room is `in-progress`. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength

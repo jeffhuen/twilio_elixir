@@ -1233,8 +1233,8 @@
                 "examples": {
                   "getApproval": {
                     "value": {
-                      "sid": "HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "whatsapp": {
                         "type": "whatsapp",
                         "name": "tree_fiddy",
@@ -1244,7 +1244,7 @@
                         "rejection_reason": "",
                         "allow_category_change": true
                       },
-                      "url": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests"
+                      "url": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests"
                     }
                   }
                 }
@@ -1362,8 +1362,8 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Some content",
                       "language": "en",
                       "variables": {
@@ -1379,12 +1379,12 @@
                           "label": "Foo Bar Co"
                         }
                       },
-                      "url": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T19:00:00Z",
                       "date_updated": "2015-07-30T19:00:00Z",
                       "links": {
-                        "approval_create": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests/whatsapp",
-                        "approval_fetch": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests"
+                        "approval_create": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests/whatsapp",
+                        "approval_fetch": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests"
                       }
                     }
                   }
@@ -1509,8 +1509,8 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "",
                       "language": "en",
                       "variables": {
@@ -1526,12 +1526,12 @@
                           "label": "Foo Bar Co"
                         }
                       },
-                      "url": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T19:00:00Z",
                       "date_updated": "2015-07-30T19:00:00Z",
                       "links": {
-                        "approval_create": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests/whatsapp",
-                        "approval_fetch": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests"
+                        "approval_create": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests/whatsapp",
+                        "approval_fetch": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests"
                       }
                     }
                   }
@@ -1646,8 +1646,8 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "",
                       "language": "en",
                       "variables": {
@@ -1663,12 +1663,12 @@
                           "label": "Foo Bar Co"
                         }
                       },
-                      "url": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T19:00:00Z",
                       "date_updated": "2015-07-30T19:00:00Z",
                       "links": {
-                        "approval_create": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests/whatsapp",
-                        "approval_fetch": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests"
+                        "approval_create": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests/whatsapp",
+                        "approval_fetch": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests"
                       }
                     }
                   }
@@ -1823,8 +1823,8 @@
                     "value": {
                       "contents": [
                         {
-                          "sid": "HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Some content",
                           "language": "en",
                           "variables": {
@@ -1840,17 +1840,17 @@
                               "label": "Foo Bar Co"
                             }
                           },
-                          "url": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T19:00:00Z",
                           "date_updated": "2015-07-30T19:00:00Z",
                           "links": {
-                            "approval_create": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests/whatsapp",
-                            "approval_fetch": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests"
+                            "approval_create": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests/whatsapp",
+                            "approval_fetch": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests"
                           }
                         },
                         {
-                          "sid": "HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Anotha content",
                           "language": "en",
                           "variables": {
@@ -1866,17 +1866,17 @@
                               "label": "Foo Bar Co"
                             }
                           },
-                          "url": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T19:00:00Z",
                           "date_updated": "2015-07-30T19:00:00Z",
                           "links": {
-                            "approval_create": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests/whatsapp",
-                            "approval_fetch": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests"
+                            "approval_create": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests/whatsapp",
+                            "approval_fetch": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests"
                           }
                         },
                         {
-                          "sid": "HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Third content",
                           "language": "en",
                           "variables": {
@@ -1892,12 +1892,12 @@
                               "label": "Foo Bar Co"
                             }
                           },
-                          "url": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T19:00:00Z",
                           "date_updated": "2015-07-30T19:00:00Z",
                           "links": {
-                            "approval_create": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests/whatsapp",
-                            "approval_fetch": "https://content.twilio.com/v1/Content/HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ApprovalRequests"
+                            "approval_create": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests/whatsapp",
+                            "approval_fetch": "https://content.twilio.com/v1/Content/HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ApprovalRequests"
                           }
                         }
                       ],
@@ -2088,8 +2088,8 @@
                         {
                           "date_created": "2015-07-30T19:00:00Z",
                           "date_updated": "2015-07-30T19:00:00Z",
-                          "sid": "HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Some content",
                           "language": "en",
                           "variables": {
@@ -2122,8 +2122,8 @@
                             "2": "typedocument"
                           },
                           "friendly_name": "Media Test",
-                          "account_sid": "AC25c0d4b9093547216c460212e24e77ee",
-                          "sid": "HX5fcd48a417c1cb59da349ad6d5da4607",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2023-01-13T23:33:46Z",
                           "types": {
                             "twilio/media": {
@@ -2151,8 +2151,8 @@
                             "3": "small.mp4"
                           },
                           "friendly_name": "Video Highlights",
-                          "account_sid": "AC25c0d4b9093547216c460212e24e77ee",
-                          "sid": "HX15c711fcc6d9ea5268d7ab77938a20ff",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2023-01-18T02:46:35Z",
                           "types": {
                             "twilio/media": {
@@ -2358,8 +2358,8 @@
                     "value": {
                       "contents": [
                         {
-                          "sid": "HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Some content",
                           "language": "en",
                           "variables": {
@@ -2382,8 +2382,8 @@
                           "date_updated": "2015-07-30T19:00:00Z"
                         },
                         {
-                          "sid": "HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Anotha content",
                           "language": "en",
                           "variables": {
@@ -2406,8 +2406,8 @@
                           "date_updated": "2015-07-30T19:00:00Z"
                         },
                         {
-                          "sid": "HXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Third content",
                           "language": "en",
                           "variables": {

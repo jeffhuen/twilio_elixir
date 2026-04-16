@@ -13,6 +13,7 @@ defmodule Twilio.Resources.Studio.V2.Flow.FlowRevision do
   |-------|-------------|
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `account_sid` | The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flow resource. |
+  | `author_sid` | The SID of the User that created or last updated the Flow. |
   | `commit_message` | Description of change made in the revision. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
@@ -30,6 +31,7 @@ defmodule Twilio.Resources.Studio.V2.Flow.FlowRevision do
 
   @type t :: %__MODULE__{
           account_sid: String.t() | nil,
+          author_sid: String.t() | nil,
           commit_message: String.t() | nil,
           date_created: String.t() | nil,
           date_updated: String.t() | nil,
@@ -45,6 +47,7 @@ defmodule Twilio.Resources.Studio.V2.Flow.FlowRevision do
 
   defstruct [
     :account_sid,
+    :author_sid,
     :commit_message,
     :date_created,
     :date_updated,

@@ -45,6 +45,19 @@
               }
             }
           },
+          "contact_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^FC[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The SID of the Contact."
+          },
+          "flow_version": {
+            "type": "integer",
+            "nullable": true,
+            "description": "The Flow version number at the time of Execution creation."
+          },
           "context": {
             "nullable": true,
             "description": "The current state of the Flow's Execution. As a flow executes, we save its state in this context. We save data that your widgets can access as variables in configuration fields or in text areas as variable substitution.",
@@ -69,6 +82,11 @@
             "format": "date-time",
             "nullable": true,
             "description": "The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format."
+          },
+          "initiated_by": {
+            "type": "string",
+            "nullable": true,
+            "description": "The SID or identifier that triggered this Execution. For example, a Call SID if triggered by an incoming call, a Message SID if triggered by an incoming message, a Request SID if triggered by a REST API request, and so on."
           },
           "url": {
             "type": "string",
@@ -308,6 +326,14 @@
             "nullable": true,
             "description": "The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flow resource."
           },
+          "author_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^US[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The SID of the User that created or last updated the Flow."
+          },
           "friendly_name": {
             "type": "string",
             "nullable": true,
@@ -404,6 +430,14 @@
             "pattern": "^AC[0-9a-fA-F]{32}$",
             "nullable": true,
             "description": "The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flow resource."
+          },
+          "author_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^US[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The SID of the User that created or last updated the Flow."
           },
           "friendly_name": {
             "type": "string",
@@ -585,6 +619,14 @@
             "required": true
           },
           {
+            "name": "status",
+            "in": "query",
+            "description": "Only show Execution resources with the given status. Can be: `active` or `ended`.",
+            "schema": {
+              "$ref": "#/components/schemas/execution_enum_status"
+            }
+          },
+          {
             "name": "DateCreatedFrom",
             "in": "query",
             "description": "Only show Execution resources starting on or after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time, given as `YYYY-MM-DDThh:mm:ss-hh:mm`.",
@@ -685,9 +727,9 @@
                       "meta": {
                         "previous_page_url": null,
                         "next_page_url": null,
-                        "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions?PageSize=50&Page=0",
+                        "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions?PageSize=50&Page=0",
                         "page": 0,
-                        "first_page_url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions?PageSize=50&Page=0",
+                        "first_page_url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions?PageSize=50&Page=0",
                         "page_size": 50,
                         "key": "executions"
                       },
@@ -773,18 +815,21 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "flow_sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "flow_sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "context": {},
                       "contact_channel_address": "+18001234567",
+                      "contact_sid": "FCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "flow_version": 1,
                       "status": "active",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
+                      "initiated_by": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "steps": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Steps",
-                        "execution_context": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Context"
+                        "steps": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Steps",
+                        "execution_context": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Context"
                       }
                     }
                   }
@@ -951,18 +996,21 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "flow_sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "flow_sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "contact_channel_address": "+14155555555",
+                      "contact_sid": "FCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "flow_version": 1,
                       "status": "ended",
                       "context": {},
                       "date_created": "2017-11-06T12:00:00Z",
                       "date_updated": null,
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "initiated_by": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "steps": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Steps",
-                        "execution_context": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Context"
+                        "steps": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Steps",
+                        "execution_context": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Context"
                       }
                     }
                   }
@@ -1101,18 +1149,21 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "flow_sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "flow_sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "context": {},
                       "contact_channel_address": "+14155555555",
+                      "contact_sid": "FCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "flow_version": 1,
                       "status": "ended",
                       "date_created": "2017-11-06T12:00:00Z",
                       "date_updated": "2017-11-06T12:00:00Z",
+                      "initiated_by": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "steps": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Steps",
-                        "execution_context": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Context"
+                        "steps": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Steps",
+                        "execution_context": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Context"
                       }
                     }
                   }
@@ -1248,13 +1299,13 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "context": {
                         "foo": "bar"
                       },
-                      "flow_sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "execution_sid": "FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Context"
+                      "flow_sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "execution_sid": "FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Context"
                     }
                   }
                 }
@@ -1448,9 +1499,9 @@
                       "meta": {
                         "previous_page_url": null,
                         "next_page_url": null,
-                        "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Steps?PageSize=50&Page=0",
+                        "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Steps?PageSize=50&Page=0",
                         "page": 0,
-                        "first_page_url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Steps?PageSize=50&Page=0",
+                        "first_page_url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Steps?PageSize=50&Page=0",
                         "page_size": 50,
                         "key": "steps"
                       },
@@ -1588,21 +1639,21 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "FTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "flow_sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "execution_sid": "FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "FTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "flow_sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "execution_sid": "FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "name": "incomingRequest",
                       "context": {},
-                      "parent_step_sid": "FTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "parent_step_sid": "FTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "transitioned_from": "Trigger",
                       "transitioned_to": "Ended",
                       "type": "trigger",
                       "date_created": "2017-11-06T12:00:00Z",
                       "date_updated": null,
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Steps/FTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Steps/FTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "step_context": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Steps/FTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Context"
+                        "step_context": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Steps/FTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Context"
                       }
                     }
                   }
@@ -1726,14 +1777,14 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "context": {
                         "foo": "bar"
                       },
-                      "flow_sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "execution_sid": "FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "step_sid": "FTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions/FNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Steps/FTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Context"
+                      "flow_sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "execution_sid": "FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "step_sid": "FTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions/FNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Steps/FTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Context"
                     }
                   }
                 }
@@ -1838,8 +1889,9 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "author_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "definition": {
                         "initial_state": "Trigger"
                       },
@@ -1850,14 +1902,14 @@
                       "valid": true,
                       "errors": [],
                       "warnings": [],
-                      "webhook_url": "http://webhooks.twilio.com/v1/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "webhook_url": "http://webhooks.twilio.com/v1/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2017-11-06T12:00:00Z",
                       "date_updated": null,
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "test_users": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/TestUsers",
-                        "revisions": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Revisions",
-                        "executions": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions"
+                        "test_users": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/TestUsers",
+                        "revisions": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Revisions",
+                        "executions": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions"
                       }
                     }
                   }
@@ -2048,8 +2100,9 @@
                       },
                       "flows": [
                         {
-                          "sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "author_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Test Flow",
                           "status": "published",
                           "revision": 1,
@@ -2058,14 +2111,14 @@
                           "valid": null,
                           "errors": null,
                           "warnings": null,
-                          "webhook_url": "http://webhooks.twilio.com/v1/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "webhook_url": "http://webhooks.twilio.com/v1/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2017-11-06T12:00:00Z",
                           "date_updated": "2017-11-06T12:00:00Z",
-                          "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "test_users": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/TestUsers",
-                            "revisions": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Revisions",
-                            "executions": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions"
+                            "test_users": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/TestUsers",
+                            "revisions": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Revisions",
+                            "executions": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions"
                           }
                         }
                       ]
@@ -2187,8 +2240,9 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "author_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "definition": {
                         "initial_state": "Trigger"
                       },
@@ -2199,14 +2253,14 @@
                       "valid": true,
                       "errors": [],
                       "warnings": [],
-                      "webhook_url": "http://webhooks.twilio.com/v1/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "webhook_url": "http://webhooks.twilio.com/v1/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2017-11-06T12:00:00Z",
                       "date_updated": "2017-11-06T12:00:00Z",
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "test_users": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/TestUsers",
-                        "revisions": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Revisions",
-                        "executions": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions"
+                        "test_users": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/TestUsers",
+                        "revisions": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Revisions",
+                        "executions": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions"
                       }
                     }
                   }
@@ -2327,8 +2381,9 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "author_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Test Flow",
                       "definition": {
                         "initial_state": "Trigger"
@@ -2339,14 +2394,14 @@
                       "valid": true,
                       "errors": [],
                       "warnings": [],
-                      "webhook_url": "http://webhooks.twilio.com/v1/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "webhook_url": "http://webhooks.twilio.com/v1/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2017-11-06T12:00:00Z",
                       "date_updated": null,
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "test_users": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/TestUsers",
-                        "revisions": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Revisions",
-                        "executions": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Executions"
+                        "test_users": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/TestUsers",
+                        "revisions": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Revisions",
+                        "executions": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Executions"
                       }
                     }
                   }
@@ -2552,16 +2607,17 @@
                       "meta": {
                         "previous_page_url": null,
                         "next_page_url": null,
-                        "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Revisions?PageSize=50&Page=0",
+                        "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Revisions?PageSize=50&Page=0",
                         "page": 0,
-                        "first_page_url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Revisions?PageSize=50&Page=0",
+                        "first_page_url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Revisions?PageSize=50&Page=0",
                         "page_size": 50,
                         "key": "revisions"
                       },
                       "revisions": [
                         {
-                          "sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "author_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Test Flow",
                           "status": "published",
                           "revision": 1,
@@ -2571,7 +2627,7 @@
                           "errors": null,
                           "date_created": "2017-11-06T12:00:00Z",
                           "date_updated": "2017-11-06T12:00:00Z",
-                          "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Revisions/1"
+                          "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Revisions/1"
                         }
                       ]
                     }
@@ -2683,8 +2739,9 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "author_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "definition": {
                         "initial_state": "Trigger"
                       },
@@ -2696,7 +2753,7 @@
                       "errors": [],
                       "date_created": "2017-11-06T12:00:00Z",
                       "date_updated": null,
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Revisions/1"
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Revisions/1"
                     }
                   }
                 }
@@ -2917,12 +2974,12 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "test_users": [
                         "user1",
                         "user2"
                       ],
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/TestUsers"
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/TestUsers"
                     }
                   }
                 }
@@ -3004,12 +3061,12 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "test_users": [
                         "user1",
                         "user2"
                       ],
-                      "url": "https://studio.twilio.com/v2/Flows/FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/TestUsers"
+                      "url": "https://studio.twilio.com/v2/Flows/FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/TestUsers"
                     }
                   }
                 }

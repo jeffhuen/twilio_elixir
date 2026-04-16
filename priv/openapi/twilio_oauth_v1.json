@@ -112,7 +112,7 @@
             },
             "examples": {
               "fetch": {
-                "value": "OQ7cda1a615f05a95634e643aaaf7081d7"
+                "value": "OQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -166,7 +166,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "redirect_to": "https://www.twilio.com/authorize?response_type=code&client_id=OQ7cda1a615f05a95634e643aaaf7081d7&redirect_uri=www.twilio.com&scope=offline_access&state=xvz"
+                      "redirect_to": "https://www.twilio.com/authorize?response_type=code&client_id=OQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&redirect_uri=www.twilio.com&scope=offline_access&state=xvz"
                     }
                   }
                 }
@@ -341,7 +341,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "ClientId": "OQ7cda1a615f05a95634e643aaaf7081d7",
+                    "ClientId": "OQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "ClientSecret": "sUWblrQ4wx_aYkdAWjHXNvHinynkYOgBoiRyEQUeEntpgDEG47qnBFD98yoEzsTh",
                     "GrantType": "client_credentials",
                     "RedirectUri": "",

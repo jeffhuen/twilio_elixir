@@ -870,6 +870,361 @@
           }
         }
       },
+      "latency_event": {
+        "type": "object",
+        "properties": {
+          "latency_ms": {
+            "type": "integer",
+            "description": "Latency in milliseconds."
+          }
+        }
+      },
+      "interrupt_event": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "DTMF",
+              "SPEECH"
+            ],
+            "description": "Type of interruption event."
+          }
+        }
+      },
+      "last_token_received_event": {
+        "type": "object",
+        "properties": {
+          "total_tokens": {
+            "type": "integer",
+            "description": "Total number of tokens received."
+          },
+          "total_words": {
+            "type": "integer",
+            "description": "Total number of words received."
+          }
+        }
+      },
+      "configuration_event": {
+        "type": "object",
+        "properties": {
+          "configurations": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Key-value pairs for configuration settings."
+          },
+          "languages": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "tts_provider": {
+                  "type": "string"
+                },
+                "voice": {
+                  "type": "string"
+                },
+                "transcription_provider": {
+                  "type": "string"
+                },
+                "speech_model": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Key-value pairs for language configurations."
+          }
+        }
+      },
+      "language_changed_event": {
+        "type": "object",
+        "properties": {
+          "tts_language_code": {
+            "type": "string"
+          },
+          "transcription_language_code": {
+            "type": "string"
+          },
+          "tts_provider": {
+            "type": "string"
+          },
+          "voice": {
+            "type": "string"
+          },
+          "transcription_provider": {
+            "type": "string"
+          },
+          "speech_model": {
+            "type": "string"
+          }
+        }
+      },
+      "call_wrap_up_event": {
+        "type": "object",
+        "properties": {
+          "duration_in_seconds": {
+            "type": "integer",
+            "description": "Duration in seconds."
+          },
+          "end_status": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "failure",
+              "ended",
+              "hung_up"
+            ],
+            "description": "End status of the call wrap up event."
+          }
+        }
+      },
+      "error_event": {
+        "type": "object",
+        "properties": {
+          "error_code": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Error code."
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message."
+          }
+        }
+      },
+      "language_info_event": {
+        "type": "object",
+        "properties": {
+          "tts_language_code": {
+            "type": "string"
+          },
+          "transcription_language_code": {
+            "type": "string"
+          },
+          "tts_provider": {
+            "type": "string"
+          },
+          "voice": {
+            "type": "string"
+          },
+          "transcription_provider": {
+            "type": "string"
+          },
+          "speech_model": {
+            "type": "string"
+          }
+        }
+      },
+      "base_relay_data": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "sequence_number"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Session id of the conversation relay."
+          },
+          "sequence_number": {
+            "type": "integer",
+            "description": "Sequence number of the event."
+          }
+        },
+        "maxProperties": 2,
+        "additionalProperties": false
+      },
+      "tts_latency_relay_data": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "sequence_number",
+          "tts_latency"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Session id of the conversation relay."
+          },
+          "sequence_number": {
+            "type": "integer",
+            "description": "Sequence number of the event."
+          },
+          "tts_latency": {
+            "$ref": "#/components/schemas/latency_event"
+          }
+        }
+      },
+      "stt_latency_relay_data": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "sequence_number",
+          "stt_latency"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Session id of the conversation relay."
+          },
+          "sequence_number": {
+            "type": "integer",
+            "description": "Sequence number of the event."
+          },
+          "stt_latency": {
+            "$ref": "#/components/schemas/latency_event"
+          }
+        }
+      },
+      "interrupt_relay_data": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "sequence_number",
+          "interrupt"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Session id of the conversation relay."
+          },
+          "sequence_number": {
+            "type": "integer",
+            "description": "Sequence number of the event."
+          },
+          "interrupt": {
+            "$ref": "#/components/schemas/interrupt_event"
+          }
+        }
+      },
+      "last_token_received_relay_data": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "sequence_number",
+          "last_token_received"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Session id of the conversation relay."
+          },
+          "sequence_number": {
+            "type": "integer",
+            "description": "Sequence number of the event."
+          },
+          "last_token_received": {
+            "$ref": "#/components/schemas/last_token_received_event"
+          }
+        }
+      },
+      "configurations_relay_data": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "sequence_number",
+          "configurations"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Session id of the conversation relay."
+          },
+          "sequence_number": {
+            "type": "integer",
+            "description": "Sequence number of the event."
+          },
+          "configurations": {
+            "$ref": "#/components/schemas/configuration_event"
+          }
+        }
+      },
+      "language_changed_relay_data": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "sequence_number",
+          "language_changed"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Session id of the conversation relay."
+          },
+          "sequence_number": {
+            "type": "integer",
+            "description": "Sequence number of the event."
+          },
+          "language_changed": {
+            "$ref": "#/components/schemas/language_changed_event"
+          }
+        }
+      },
+      "call_wrap_up_relay_data": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "sequence_number",
+          "call_wrap_up"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Session id of the conversation relay."
+          },
+          "sequence_number": {
+            "type": "integer",
+            "description": "Sequence number of the event."
+          },
+          "call_wrap_up": {
+            "$ref": "#/components/schemas/call_wrap_up_event"
+          }
+        }
+      },
+      "error_relay_data": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "sequence_number",
+          "error"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Session id of the conversation relay."
+          },
+          "sequence_number": {
+            "type": "integer",
+            "description": "Sequence number of the event."
+          },
+          "error": {
+            "$ref": "#/components/schemas/error_event"
+          }
+        }
+      },
+      "language_info_relay_data": {
+        "type": "object",
+        "required": [
+          "session_id",
+          "sequence_number",
+          "language_info"
+        ],
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "description": "Session id of the conversation relay."
+          },
+          "sequence_number": {
+            "type": "integer",
+            "description": "Sequence number of the event."
+          },
+          "language_info": {
+            "$ref": "#/components/schemas/language_info_event"
+          }
+        }
+      },
       "event_enum_twilio_edge": {
         "type": "string",
         "enum": [
@@ -1541,6 +1896,108 @@
           "umatilla",
           "tokyo"
         ]
+      },
+      "call_summary_agent_session_summary": {
+        "type": "object",
+        "properties": {
+          "session_id": {
+            "type": "string"
+          },
+          "tts_latency_ms": {
+            "$ref": "#/components/schemas/call_summary_crelay_rate_stats"
+          },
+          "stt_latency_ms": {
+            "$ref": "#/components/schemas/call_summary_crelay_rate_stats"
+          },
+          "network_latency_ms": {
+            "$ref": "#/components/schemas/call_summary_crelay_rate_stats"
+          },
+          "time_to_first_audio_ms": {
+            "$ref": "#/components/schemas/call_summary_crelay_rate_stats"
+          },
+          "application_latency_ms": {
+            "$ref": "#/components/schemas/call_summary_crelay_rate_stats"
+          },
+          "tokens": {
+            "$ref": "#/components/schemas/call_summary_crelay_token_stats"
+          },
+          "words": {
+            "$ref": "#/components/schemas/call_summary_crelay_word_stats"
+          },
+          "turns": {
+            "type": "integer"
+          },
+          "interruptions": {
+            "$ref": "#/components/schemas/call_summary_crelay_interruptions"
+          },
+          "session_state": {
+            "$ref": "#/components/schemas/call_summary_crelay_session_state"
+          }
+        }
+      },
+      "call_summary_crelay_rate_stats": {
+        "type": "object",
+        "properties": {
+          "min": {
+            "type": "number",
+            "format": "float",
+            "default": 0
+          },
+          "max": {
+            "type": "number",
+            "format": "float",
+            "default": 0
+          },
+          "avg": {
+            "type": "number",
+            "format": "float",
+            "default": 0
+          }
+        }
+      },
+      "call_summary_crelay_token_stats": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "tokens_per_second": {
+            "$ref": "#/components/schemas/call_summary_crelay_rate_stats"
+          }
+        }
+      },
+      "call_summary_crelay_word_stats": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "words_per_minute": {
+            "$ref": "#/components/schemas/call_summary_crelay_rate_stats"
+          }
+        }
+      },
+      "call_summary_crelay_interruptions": {
+        "type": "object",
+        "properties": {
+          "customer_to_agent": {
+            "type": "integer",
+            "default": 0
+          },
+          "agent_to_customer": {
+            "type": "integer",
+            "default": 0
+          }
+        }
+      },
+      "call_summary_crelay_session_state": {
+        "type": "string",
+        "enum": [
+          "unknown",
+          "failure",
+          "ended",
+          "hung_up"
+        ]
       }
     }
   },
@@ -1607,7 +2064,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "voice_trace": true,
                       "advanced_features": true,
                       "url": "https://insights.twilio.com/v1/Voice/Settings"
@@ -1678,7 +2135,7 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "voice_trace": true,
                       "advanced_features": true,
                       "url": "https://insights.twilio.com/v1/Voice/Settings"
@@ -1761,7 +2218,7 @@
                   "value": {
                     "VoiceTrace": true,
                     "AdvancedFeatures": true,
-                    "SubaccountSid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                    "SubaccountSid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -1815,8 +2272,8 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "answered_by": "human",
                       "connectivity_issue": "invalid_number",
                       "quality_issues": [
@@ -1827,7 +2284,7 @@
                       "call_score": 2,
                       "comment": "this is a call",
                       "incident": "https://twilio.zendesk.com/support/tickets/17353089",
-                      "url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Annotation"
+                      "url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Annotation"
                     }
                   }
                 }
@@ -1965,8 +2422,8 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "answered_by": "human",
                       "connectivity_issue": "invalid_number",
                       "quality_issues": [
@@ -1976,7 +2433,7 @@
                       "call_score": 2,
                       "comment": "this is a call",
                       "incident": "https://twilio.zendesk.com/support/tickets/17353089",
-                      "url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Annotation"
+                      "url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Annotation"
                     }
                   }
                 }
@@ -2097,13 +2554,13 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "events": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Events",
-                        "metrics": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Metrics",
-                        "summary": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Summary",
-                        "annotation": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Annotation"
+                        "events": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Events",
+                        "metrics": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Metrics",
+                        "summary": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Summary",
+                        "annotation": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Annotation"
                       }
                     }
                   }
@@ -2380,7 +2837,7 @@
             },
             "examples": {
               "readWithSubaccount": {
-                "value": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                "value": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -2695,8 +3152,8 @@
                       },
                       "call_summaries": [
                         {
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_time": "2021-08-25T03:40:25Z",
                           "start_time": "2021-08-25T03:40:25Z",
                           "end_time": "2021-08-25T03:40:45Z",
@@ -2784,21 +3241,21 @@
                               "enabled": true,
                               "display_name": "Owl bank",
                               "long_display_name": "Owl bank Ltd",
-                              "bundle_sid": "BU5ceeea51b1424478fc541dfef0e2b167",
+                              "bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                               "logo": true,
                               "type": "in_band",
                               "use_case": "Customer Care",
                               "call_reason": "Branded CTIA"
                             },
                             "business_profile": {
-                              "bundle_sid": "BU5ceeea51b1424478fc541dfef0e2b167",
+                              "bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                               "identity": "direct_customer",
                               "industry": "BANKING",
                               "type": "corporate"
                             },
                             "voice_integrity": {
                               "enabled": true,
-                              "bundle_sid": "BU5ceeea51b1424478fc541dfef0e2b167",
+                              "bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                               "use_case": "customer_support"
                             }
                           },
@@ -2806,8 +3263,8 @@
                           "url": "https://insights.twilio.com/v1/Voice/Summaries"
                         },
                         {
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_time": "2021-08-25T02:20:25Z",
                           "start_time": "2021-08-25T02:20:25Z",
                           "end_time": "2021-08-25T02:40:45Z",
@@ -2892,21 +3349,21 @@
                               "enabled": true,
                               "display_name": "Owl bank",
                               "long_display_name": "Owl bank Ltd",
-                              "bundle_sid": "BU5ceeea51b1424478fc541dfef0e2b167",
+                              "bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                               "logo": true,
                               "type": "in_band",
                               "use_case": "Customer Care",
                               "call_reason": "Branded CTIA"
                             },
                             "business_profile": {
-                              "bundle_sid": "BU5ceeea51b1424478fc541dfef0e2b167",
+                              "bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                               "identity": "direct_customer",
                               "industry": "BANKING",
                               "type": "corporate"
                             },
                             "voice_integrity": {
                               "enabled": true,
-                              "bundle_sid": "BU5ceeea51b1424478fc541dfef0e2b167",
+                              "bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                               "use_case": "customer_support"
                             }
                           },
@@ -2921,16 +3378,16 @@
                       "meta": {
                         "page": 0,
                         "page_size": 25,
-                        "first_page_url": "https://insights.twilio.com/v1/Voice/Summaries?CallType=client&StartTime=7d&HasTag=true&Subaccount=ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&PageSize=25&Page=0",
+                        "first_page_url": "https://insights.twilio.com/v1/Voice/Summaries?CallType=client&StartTime=7d&HasTag=true&Subaccount=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=25&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
                         "key": "call_summaries",
-                        "url": "https://insights.twilio.com/v1/Voice/Summaries?CallType=client&StartTime=7d&HasTag=true&Subaccount=ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab&PageSize=25&Page=0"
+                        "url": "https://insights.twilio.com/v1/Voice/Summaries?CallType=client&StartTime=7d&HasTag=true&Subaccount=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=25&Page=0"
                       },
                       "call_summaries": [
                         {
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_time": "2021-08-25T04:16:35Z",
                           "start_time": "2021-08-25T04:16:36Z",
                           "end_time": "2021-08-25T04:16:42Z",
@@ -3002,8 +3459,8 @@
                           "url": "https://insights.twilio.com/v1/Voice/Summaries"
                         },
                         {
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_time": "2021-08-25T04:16:35Z",
                           "start_time": "2021-08-25T04:16:37Z",
                           "end_time": "2021-08-25T04:16:40Z",
@@ -3095,8 +3552,8 @@
                       },
                       "call_summaries": [
                         {
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_time": "2021-08-25T14:31:18Z",
                           "start_time": "2021-08-25T14:31:22Z",
                           "end_time": "2021-08-25T14:32:02Z",
@@ -3190,8 +3647,8 @@
                           "url": "https://insights.twilio.com/v1/Voice/Summaries"
                         },
                         {
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_time": "2021-08-25T14:03:31Z",
                           "start_time": "2021-08-25T14:03:32Z",
                           "end_time": "2021-08-25T14:03:38Z",
@@ -3277,8 +3734,8 @@
                           "url": "https://insights.twilio.com/v1/Voice/Summaries"
                         },
                         {
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_time": "2021-08-24T22:28:17Z",
                           "start_time": "2021-08-24T22:28:20Z",
                           "end_time": "2021-08-24T22:28:23Z",
@@ -3357,8 +3814,8 @@
                       },
                       "call_summaries": [
                         {
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_time": "2021-08-25T14:46:40Z",
                           "start_time": "2021-08-25T14:46:40Z",
                           "end_time": "2021-08-25T14:46:52Z",
@@ -3438,8 +3895,8 @@
                           "url": "https://insights.twilio.com/v1/Voice/Summaries"
                         },
                         {
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_time": "2021-08-25T14:31:18Z",
                           "start_time": "2021-08-25T14:31:22Z",
                           "end_time": "2021-08-25T14:32:02Z",
@@ -3548,8 +4005,8 @@
                       },
                       "call_summaries": [
                         {
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_time": "2021-08-25T14:46:40Z",
                           "start_time": "2021-08-25T14:46:40Z",
                           "end_time": "2021-08-25T14:46:52Z",
@@ -3637,8 +4094,111 @@
                           "url": "https://insights.twilio.com/v1/Voice/Summaries"
                         },
                         {
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "created_time": "2021-08-25T14:31:18Z",
+                          "start_time": "2021-08-25T14:31:22Z",
+                          "end_time": "2021-08-25T14:32:02Z",
+                          "duration": 44,
+                          "connect_duration": 41,
+                          "call_type": "trunking",
+                          "call_state": "completed",
+                          "answered_by": "machine_start",
+                          "from": {
+                            "caller": "+15555555555",
+                            "carrier": "ACS",
+                            "connection": "landline",
+                            "number_prefix": "1555",
+                            "location": {
+                              "lat": 60.268353,
+                              "lon": -141.13632
+                            },
+                            "country_code": "US"
+                          },
+                          "to": {
+                            "callee": "+15555555556",
+                            "carrier": "Hawaiian Telcom, Inc. - HI",
+                            "connection": "landline",
+                            "number_prefix": "1555",
+                            "location": {
+                              "lat": 20.956036,
+                              "lon": -157.23793
+                            },
+                            "country_code": "US"
+                          },
+                          "processing_state": "complete",
+                          "sdk_edge": null,
+                          "sip_edge": {
+                            "properties": {
+                              "media_region": "us1",
+                              "signaling_region": "us1",
+                              "twilio_media_ip": "54.xxx.xx.xx",
+                              "twilio_signaling_ip": "54.xxx.xx.xx",
+                              "external_signaling_ip": "54.xxx.xx.xx",
+                              "sip_call_id": "xxxxx@0.0.0.0",
+                              "user_agent": "xxxx",
+                              "edge_location": "xxxxx",
+                              "trunk_sid": "xxxxxxx",
+                              "direction": "inbound"
+                            },
+                            "metrics": {
+                              "outbound": {
+                                "codec": 0,
+                                "codec_name": "pcmu",
+                                "packets_sent": 1953,
+                                "packets_lost": 0,
+                                "packets_loss_percentage": 0.0,
+                                "jitter": {
+                                  "max": 1.76407,
+                                  "avg": 0.23138
+                                },
+                                "latency": {
+                                  "max": 0.386,
+                                  "avg": 0.3765
+                                }
+                              }
+                            }
+                          },
+                          "client_edge": null,
+                          "carrier_edge": {
+                            "properties": {
+                              "media_region": "us1",
+                              "signaling_region": "us1",
+                              "edge_location": "xxxx",
+                              "direction": "outbound"
+                            }
+                          },
+                          "tags": [
+                            "silence"
+                          ],
+                          "attributes": {
+                            "conference_participant": false
+                          },
+                          "properties": {
+                            "last_sip_response_num": 200,
+                            "pdd_ms": 1990,
+                            "disconnected_by": "caller",
+                            "direction": "trunking_terminating"
+                          },
+                          "trust": {
+                            "verified_caller": {
+                              "verified": true
+                            }
+                          },
+                          "annotation": {
+                            "answered_by": "human",
+                            "spam": true,
+                            "connectivity_issue": "invalid_number",
+                            "quality_issues": [
+                              "choppy_robotic"
+                            ],
+                            "call_score": 1
+                          },
+                          "url": "https://insights.twilio.com/v1/Voice/Summaries"
+                        },
+                        {
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_time": "2021-08-25T14:31:18Z",
                           "start_time": "2021-08-25T14:31:22Z",
                           "end_time": "2021-08-25T14:32:02Z",
@@ -3844,8 +4404,8 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "conference1",
                       "start_time": "2021-10-08T02:58:51Z",
                       "create_time": "2021-10-08T02:58:47Z",
@@ -3857,7 +4417,7 @@
                       "max_concurrent_participants": 4,
                       "unique_participants": 4,
                       "end_reason": "last_participant_left",
-                      "ended_by": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "ended_by": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "mixer_region": "us1",
                       "mixer_region_requested": "us1",
                       "recording_enabled": false,
@@ -3873,9 +4433,9 @@
                         "participant_behavior_issues"
                       ],
                       "tag_info": null,
-                      "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "conference_participants": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants"
+                        "conference_participants": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants"
                       }
                     }
                   }
@@ -4181,8 +4741,8 @@
                       },
                       "conferences": [
                         {
-                          "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "conference 1",
                           "start_time": "2021-10-12T18:11:10Z",
                           "create_time": "2021-10-12T18:11:09Z",
@@ -4194,7 +4754,7 @@
                           "max_concurrent_participants": 2,
                           "unique_participants": 2,
                           "end_reason": "last_participant_left",
-                          "ended_by": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "ended_by": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "mixer_region": "us1",
                           "mixer_region_requested": null,
                           "recording_enabled": false,
@@ -4206,14 +4766,14 @@
                           },
                           "tags": null,
                           "tag_info": null,
-                          "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants"
+                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants"
                           }
                         },
                         {
-                          "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "conference 2",
                           "start_time": null,
                           "create_time": "2021-10-12T18:09:21Z",
@@ -4225,7 +4785,7 @@
                           "max_concurrent_participants": 2,
                           "unique_participants": 3,
                           "end_reason": "last_participant_left",
-                          "ended_by": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "ended_by": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "mixer_region": "us1",
                           "mixer_region_requested": null,
                           "recording_enabled": false,
@@ -4240,9 +4800,9 @@
                             "participant_behavior_issues"
                           ],
                           "tag_info": null,
-                          "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab/Participants"
+                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants"
                           }
                         }
                       ]
@@ -4261,8 +4821,8 @@
                       },
                       "conferences": [
                         {
-                          "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "conference 1",
                           "start_time": "2021-10-12T18:19:10Z",
                           "create_time": "2021-10-12T18:19:09Z",
@@ -4274,7 +4834,7 @@
                           "max_concurrent_participants": 2,
                           "unique_participants": 2,
                           "end_reason": "participant_with_end_conference_on_exit_kicked",
-                          "ended_by": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "ended_by": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "mixer_region": "au1",
                           "mixer_region_requested": "au1",
                           "recording_enabled": true,
@@ -4288,14 +4848,14 @@
                             "region_configuration_issues"
                           ],
                           "tag_info": null,
-                          "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants"
+                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants"
                           }
                         },
                         {
-                          "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "conference 2",
                           "start_time": "2021-10-12T18:16:53Z",
                           "create_time": "2021-10-12T18:16:51Z",
@@ -4307,7 +4867,7 @@
                           "max_concurrent_participants": 2,
                           "unique_participants": 2,
                           "end_reason": "last_participant_left",
-                          "ended_by": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "ended_by": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "mixer_region": "au1",
                           "mixer_region_requested": null,
                           "recording_enabled": false,
@@ -4323,9 +4883,9 @@
                             "participant_behavior_issues"
                           ],
                           "tag_info": null,
-                          "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab/Participants"
+                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants"
                           }
                         }
                       ]
@@ -4344,8 +4904,8 @@
                       },
                       "conferences": [
                         {
-                          "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "outboundConfCallTransferThrice_1",
                           "start_time": null,
                           "create_time": "2021-11-18T00:09:09Z",
@@ -4357,7 +4917,7 @@
                           "max_concurrent_participants": 1,
                           "unique_participants": 1,
                           "end_reason": "last_participant_left",
-                          "ended_by": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "ended_by": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "mixer_region": null,
                           "mixer_region_requested": null,
                           "recording_enabled": false,
@@ -4376,9 +4936,9 @@
                               "reason": "no_concurrent_participants"
                             }
                           },
-                          "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants"
+                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants"
                           }
                         }
                       ]
@@ -4397,8 +4957,8 @@
                       },
                       "conferences": [
                         {
-                          "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "conference 1",
                           "start_time": "2021-11-17T16:21:45Z",
                           "create_time": "2021-11-17T16:21:40Z",
@@ -4410,7 +4970,7 @@
                           "max_concurrent_participants": 3,
                           "unique_participants": 4,
                           "end_reason": "last_participant_left",
-                          "ended_by": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "ended_by": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "mixer_region": "us1",
                           "mixer_region_requested": null,
                           "recording_enabled": false,
@@ -4426,9 +4986,9 @@
                             "participant_behavior_issues"
                           ],
                           "tag_info": null,
-                          "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants"
+                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants"
                           }
                         }
                       ]
@@ -4447,8 +5007,8 @@
                       },
                       "conferences": [
                         {
-                          "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "conference 1",
                           "start_time": "2021-11-17T16:21:45Z",
                           "create_time": "2021-11-17T16:21:40Z",
@@ -4460,7 +5020,7 @@
                           "max_concurrent_participants": 3,
                           "unique_participants": 3,
                           "end_reason": "participant_with_end_conference_on_exit_left",
-                          "ended_by": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "ended_by": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "mixer_region": "us1",
                           "mixer_region_requested": null,
                           "recording_enabled": false,
@@ -4479,9 +5039,9 @@
                             "detected_silence"
                           ],
                           "tag_info": null,
-                          "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants"
+                            "conference_participants": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants"
                           }
                         }
                       ]
@@ -4613,11 +5173,11 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "participant_sid": "CPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "participant_sid": "CPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "label": null,
-                      "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "call_direction": "outbound",
                       "from": "+10000000000",
                       "to": "+1000000001",
@@ -4679,7 +5239,7 @@
                           "mos": 4.4
                         }
                       },
-                      "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants/CPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants/CPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4887,19 +5447,19 @@
                       "meta": {
                         "page": 0,
                         "page_size": 25,
-                        "first_page_url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants?PageSize=25&Page=0",
+                        "first_page_url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants?PageSize=25&Page=0",
                         "previous_page_url": null,
-                        "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants?PageSize=25&Page=0",
+                        "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants?PageSize=25&Page=0",
                         "next_page_url": null,
                         "key": "participants"
                       },
                       "participants": [
                         {
-                          "participant_sid": "CPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "participant_sid": "CPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "label": null,
-                          "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "call_direction": "outbound",
                           "from": "+10000000000",
                           "to": "+10000000001",
@@ -4957,14 +5517,14 @@
                             }
                           },
                           "events": null,
-                          "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants/CPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants/CPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         },
                         {
-                          "participant_sid": "CPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "participant_sid": "CPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "label": null,
-                          "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "call_direction": "outbound",
                           "from": "+10000000000",
                           "to": "+10000000002",
@@ -5029,7 +5589,7 @@
                               1633705131000
                             ]
                           },
-                          "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants/CPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                          "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants/CPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -5039,18 +5599,18 @@
                       "meta": {
                         "page": 0,
                         "page_size": 25,
-                        "first_page_url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants?Label=client&PageSize=25&Page=0",
+                        "first_page_url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants?Label=client&PageSize=25&Page=0",
                         "previous_page_url": null,
-                        "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants?Label=client&PageSize=25&Page=0",
+                        "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants?Label=client&PageSize=25&Page=0",
                         "next_page_url": null,
                         "key": "participants"
                       },
                       "participants": [
                         {
-                          "participant_sid": "CPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "conference_sid": "CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "participant_sid": "CPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "conference_sid": "CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "call_direction": "outbound",
                           "from": "+10000000000",
                           "to": "+10000000001",
@@ -5109,7 +5669,7 @@
                             }
                           },
                           "events": null,
-                          "url": "https://insights.twilio.com/v1/Conferences/CFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants/CPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://insights.twilio.com/v1/Conferences/CFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants/CPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -5293,17 +5853,17 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Events?PageSize=50&Page=0",
+                        "first_page_url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Events?PageSize=50&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
                         "key": "events",
-                        "url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Events?PageSize=50&Page=0"
+                        "url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Events?PageSize=50&Page=0"
                       },
                       "events": [
                         {
                           "timestamp": "2019-09-19T22:15:23Z",
-                          "call_sid": "CA03a02b156c6faa96c86906f7e9ad0f38",
-                          "account_sid": "AC998c10b68cbfda9f67277f7d8f4439c9",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "edge": "sdk_edge",
                           "group": "connection",
                           "name": "error",
@@ -5313,7 +5873,7 @@
                               "code": 31600
                             },
                             "metadata": {
-                              "client_name": "GTI9300323095d271b890c91568931321395",
+                              "client_name": "GTIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx5",
                               "location": {
                                 "lat": 37.4192,
                                 "lon": -122.0574
@@ -5343,6 +5903,44 @@
                           "client_edge": null,
                           "carrier_edge": null,
                           "sip_edge": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "configurations",
+                          "group": "conversation_relay",
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null,
+                          "carrier_edge": null,
+                          "level": null,
+                          "edge": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "call_wrap_up",
+                          "group": "conversation_relay",
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null,
+                          "carrier_edge": null,
+                          "edge": null,
+                          "level": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "final_token_received",
+                          "group": "conversation_relay",
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null,
+                          "carrier_edge": null,
+                          "level": null
                         }
                       ]
                     }
@@ -5352,17 +5950,17 @@
                       "meta": {
                         "page": 10,
                         "page_size": 5,
-                        "first_page_url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Events?PageSize=5&Page=0",
-                        "previous_page_url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Events?PageSize=5&Page=9&PageToken=PT10",
+                        "first_page_url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Events?PageSize=5&Page=0",
+                        "previous_page_url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Events?PageSize=5&Page=9&PageToken=PT10",
                         "next_page_url": null,
                         "key": "events",
-                        "url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Events?PageSize=5&Page=10"
+                        "url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Events?PageSize=5&Page=10"
                       },
                       "events": [
                         {
                           "timestamp": "2019-09-19T22:15:23Z",
-                          "call_sid": "CA03a02b156c6faa96c86906f7e9ad0f38",
-                          "account_sid": "AC998c10b68cbfda9f67277f7d8f4439c9",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "edge": "sdk_edge",
                           "group": "connection",
                           "name": "error",
@@ -5372,7 +5970,7 @@
                               "code": 31600
                             },
                             "metadata": {
-                              "client_name": "GTI9300323095d271b890c91568931321395",
+                              "client_name": "GTIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx5",
                               "location": {
                                 "lat": 37.4192,
                                 "lon": -122.0574
@@ -5402,6 +6000,123 @@
                           "client_edge": null,
                           "carrier_edge": null,
                           "sip_edge": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "configurations",
+                          "group": "conversation_relay",
+                          "edge": null,
+                          "carrier_edge": null,
+                          "level": null,
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "call_wrap_up",
+                          "group": "conversation_relay",
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null,
+                          "carrier_edge": null,
+                          "edge": null,
+                          "level": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "final_token_received",
+                          "group": "conversation_relay",
+                          "edge": null,
+                          "carrier_edge": null,
+                          "level": null,
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "tts_latency",
+                          "group": "conversation_relay",
+                          "edge": null,
+                          "carrier_edge": null,
+                          "level": null,
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "stt_latency",
+                          "group": "conversation_relay",
+                          "edge": null,
+                          "carrier_edge": null,
+                          "level": null,
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "interrupt",
+                          "group": "conversation_relay",
+                          "edge": null,
+                          "carrier_edge": null,
+                          "level": null,
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "language_changed",
+                          "group": "conversation_relay",
+                          "edge": null,
+                          "carrier_edge": null,
+                          "level": null,
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "error",
+                          "group": "conversation_relay",
+                          "edge": null,
+                          "carrier_edge": null,
+                          "level": "ERROR",
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null
+                        },
+                        {
+                          "timestamp": "2019-09-19T22:15:23Z",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "name": "language_info",
+                          "group": "conversation_relay",
+                          "edge": null,
+                          "carrier_edge": null,
+                          "level": null,
+                          "sdk_edge": null,
+                          "sip_edge": null,
+                          "client_edge": null
                         }
                       ]
                     }
@@ -5604,17 +6319,17 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Metrics?PageSize=50&Page=0",
+                        "first_page_url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Metrics?PageSize=50&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
                         "key": "metrics",
-                        "url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Metrics?PageSize=50&Page=0"
+                        "url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Metrics?PageSize=50&Page=0"
                       },
                       "metrics": [
                         {
                           "timestamp": "2019-10-07T22:32:06Z",
-                          "call_sid": "CA7569efe0253644fa4a88aa97beca3310",
-                          "account_sid": "AC998c10b68cbfda9f67277f7d8f4439c9",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "edge": "sdk_edge",
                           "direction": "both",
                           "sdk_edge": {
@@ -5657,17 +6372,17 @@
                       "meta": {
                         "page": 10,
                         "page_size": 5,
-                        "first_page_url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Metrics?Direction=both&Edge=sdk_edge&PageSize=5&Page=0",
-                        "previous_page_url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Metrics?Direction=both&Edge=sdk_edge&PageSize=5&Page=9&PageToken=PT10",
+                        "first_page_url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Metrics?Direction=both&Edge=sdk_edge&PageSize=5&Page=0",
+                        "previous_page_url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Metrics?Direction=both&Edge=sdk_edge&PageSize=5&Page=9&PageToken=PT10",
                         "next_page_url": null,
                         "key": "metrics",
-                        "url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Metrics?Direction=both&Edge=sdk_edge&PageSize=5&Page=10"
+                        "url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Metrics?Direction=both&Edge=sdk_edge&PageSize=5&Page=10"
                       },
                       "metrics": [
                         {
                           "timestamp": "2019-10-07T22:32:06Z",
-                          "call_sid": "CA7569efe0253644fa4a88aa97beca3310",
-                          "account_sid": "AC998c10b68cbfda9f67277f7d8f4439c9",
+                          "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "edge": "sdk_edge",
                           "direction": "both",
                           "sdk_edge": {
@@ -5812,8 +6527,8 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "call_type": "carrier",
                       "call_state": "ringing",
                       "answered_by": "machine_start",
@@ -5842,27 +6557,27 @@
                           "enabled": true,
                           "display_name": "Owl bank",
                           "long_display_name": "Owl bank Ltd",
-                          "bundle_sid": "BU5ceeea51b1424478fc541dfef0e2b167",
+                          "bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "logo": true,
                           "type": "in_band",
                           "use_case": "Customer Care",
                           "call_reason": "Branded CTIA"
                         },
                         "business_profile": {
-                          "bundle_sid": "BU5ceeea51b1424478fc541dfef0e2b167",
+                          "bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "identity": "direct_customer",
                           "industry": "BANKING",
                           "type": "corporate"
                         },
                         "voice_integrity": {
                           "enabled": true,
-                          "bundle_sid": "BU5ceeea51b1424478fc541dfef0e2b167",
+                          "bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "use_case": "customer_support"
                         }
                       },
                       "annotation": {
-                        "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "call_sid": "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "call_sid": "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                         "answered_by": "human",
                         "connectivity_issue": "invalid_number",
                         "quality_issues": [
@@ -5873,7 +6588,7 @@
                         "comment": "this is a call",
                         "incident": "https://twilio.zendesk.com/support/tickets/17353089"
                       },
-                      "url": "https://insights.twilio.com/v1/Voice/CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Summary"
+                      "url": "https://insights.twilio.com/v1/Voice/CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Summary"
                     }
                   }
                 }
@@ -5981,20 +6696,20 @@
                       "join_time": "2015-07-30T20:00:00Z",
                       "leave_time": "2015-07-30T20:00:00Z",
                       "end_reason": "disconnected_via_api",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "error_code": 0,
                       "media_region": "us1",
                       "properties": {},
-                      "room_sid": "RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "room_sid": "RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "error_code_url": "error_code_url",
-                      "participant_sid": "PAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "participant_sid": "PAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "codecs": [
                         "VP8"
                       ],
                       "status": "in_progress",
                       "duration_sec": 50000000,
                       "participant_identity": "participant_identity",
-                      "url": "https://insights.twilio.com/v1/Video/Rooms/RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants/PAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://insights.twilio.com/v1/Video/Rooms/RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants/PAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -6158,9 +6873,9 @@
                   "readEmpty": {
                     "value": {
                       "meta": {
-                        "url": "https://insights.twilio.com/v1/Video/Rooms/RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants?PageSize=50&Page=0",
+                        "url": "https://insights.twilio.com/v1/Video/Rooms/RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants?PageSize=50&Page=0",
                         "key": "participants",
-                        "first_page_url": "https://insights.twilio.com/v1/Video/Rooms/RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants?PageSize=50&Page=0",
+                        "first_page_url": "https://insights.twilio.com/v1/Video/Rooms/RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants?PageSize=50&Page=0",
                         "page_size": 50,
                         "next_page_url": null,
                         "page": 0,
@@ -6172,9 +6887,9 @@
                   "readFull": {
                     "value": {
                       "meta": {
-                        "url": "https://insights.twilio.com/v1/Video/Rooms/RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants?PageSize=50&Page=0",
+                        "url": "https://insights.twilio.com/v1/Video/Rooms/RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants?PageSize=50&Page=0",
                         "key": "participants",
-                        "first_page_url": "https://insights.twilio.com/v1/Video/Rooms/RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants?PageSize=50&Page=0",
+                        "first_page_url": "https://insights.twilio.com/v1/Video/Rooms/RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants?PageSize=50&Page=0",
                         "page_size": 50,
                         "next_page_url": null,
                         "page": 0,
@@ -6187,20 +6902,20 @@
                           "join_time": "2015-07-30T20:00:00Z",
                           "leave_time": "2015-07-30T20:00:00Z",
                           "end_reason": "disconnected_via_api",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "error_code": 53205,
                           "media_region": "us1",
                           "properties": {},
-                          "room_sid": "RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "room_sid": "RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "error_code_url": "error_code_url",
-                          "participant_sid": "PAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "participant_sid": "PAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "codecs": [
                             "VP8"
                           ],
                           "status": "in_progress",
                           "duration_sec": 50000000,
                           "participant_identity": "participant_identity",
-                          "url": "https://insights.twilio.com/v1/Video/Rooms/RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants/PAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://insights.twilio.com/v1/Video/Rooms/RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants/PAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -6310,7 +7025,7 @@
                         "VP8"
                       ],
                       "max_participants": 0,
-                      "room_sid": "RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "room_sid": "RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "create_time": "2015-07-30T20:00:00Z",
                       "end_reason": "room_ended_via_api",
                       "duration_sec": 50000000,
@@ -6324,15 +7039,15 @@
                       "created_method": "sdk",
                       "total_participant_duration_sec": 50000000,
                       "status_callback_method": "GET",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "end_time": "2015-07-30T20:00:00Z",
                       "total_recording_duration_sec": 50000000,
                       "processing_state": "complete",
                       "concurrent_participants": 0,
                       "status_callback": "http://www.example.com",
-                      "url": "https://insights.twilio.com/v1/Video/Rooms/RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://insights.twilio.com/v1/Video/Rooms/RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "participants": "https://insights.twilio.com/v1/Video/Rooms/RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants"
+                        "participants": "https://insights.twilio.com/v1/Video/Rooms/RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants"
                       }
                     }
                   }
@@ -6576,7 +7291,7 @@
                             "VP8"
                           ],
                           "max_participants": 0,
-                          "room_sid": "RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "room_sid": "RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "create_time": "2015-07-30T20:00:00Z",
                           "end_reason": "room_ended_via_api",
                           "duration_sec": 50000000,
@@ -6590,15 +7305,15 @@
                           "created_method": "sdk",
                           "total_participant_duration_sec": 50000000,
                           "status_callback_method": "GET",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "end_time": "2015-07-30T20:00:00Z",
                           "total_recording_duration_sec": 50000000,
                           "processing_state": "complete",
                           "concurrent_participants": 0,
                           "status_callback": "http://www.example.com",
-                          "url": "https://insights.twilio.com/v1/Video/Rooms/RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://insights.twilio.com/v1/Video/Rooms/RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "participants": "https://insights.twilio.com/v1/Video/Rooms/RMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Participants"
+                            "participants": "https://insights.twilio.com/v1/Video/Rooms/RMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Participants"
                           }
                         }
                       ]
@@ -6653,6 +7368,20 @@
         ],
         "operationId": "ListVideoRoomSummary"
       }
+    },
+    "/v1/InsightsDomains/Flex/Reports/Metadata": {
+      "servers": [
+        {
+          "url": "https://insights.twilio.com"
+        }
+      ]
+    },
+    "/v1/InsightsDomains/Flex/Reports/Query": {
+      "servers": [
+        {
+          "url": "https://insights.twilio.com"
+        }
+      ]
     }
   },
   "servers": [

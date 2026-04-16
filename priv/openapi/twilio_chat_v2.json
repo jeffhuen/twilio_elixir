@@ -1418,32 +1418,32 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "bindings"
                       },
                       "bindings": [
                         {
-                          "sid": "BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2016-10-21T11:37:03Z",
                           "date_updated": "2016-10-21T11:37:03Z",
                           "endpoint": "TestUser-endpoint",
                           "identity": "TestUser",
                           "binding_type": "gcm",
-                          "credential_sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "credential_sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "message_types": [
                             "removed_from_channel",
                             "new_message",
                             "added_to_channel",
                             "invited_to_channel"
                           ],
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings/BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings/BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "user": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/TestUser"
+                            "user": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/TestUser"
                           }
                         }
                       ]
@@ -1454,9 +1454,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "bindings"
                       },
@@ -1571,24 +1571,24 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2016-10-21T11:37:03Z",
                       "date_updated": "2016-10-21T11:37:03Z",
                       "endpoint": "TestUser-endpoint",
                       "identity": "TestUser",
                       "binding_type": "gcm",
-                      "credential_sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "credential_sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "message_types": [
                         "removed_from_channel",
                         "new_message",
                         "added_to_channel",
                         "invited_to_channel"
                       ],
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings/BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings/BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "user": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/TestUser"
+                        "user": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/TestUser"
                       }
                     }
                   }
@@ -1771,9 +1771,9 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "unique_name": "unique_name",
                       "attributes": "{ \"foo\": \"bar\" }",
@@ -1783,12 +1783,12 @@
                       "created_by": "system",
                       "members_count": 0,
                       "messages_count": 0,
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "members": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members",
-                        "messages": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages",
-                        "invites": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Invites",
-                        "webhooks": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks",
+                        "members": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members",
+                        "messages": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages",
+                        "invites": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Invites",
+                        "webhooks": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks",
                         "last_message": null
                       }
                     }
@@ -1938,9 +1938,9 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "unique_name": "unique_name",
                       "attributes": "{ \"foo\": \"bar\" }",
@@ -1950,12 +1950,12 @@
                       "created_by": "username",
                       "members_count": 0,
                       "messages_count": 0,
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "members": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members",
-                        "messages": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages",
-                        "invites": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Invites",
-                        "webhooks": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks",
+                        "members": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members",
+                        "messages": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages",
+                        "invites": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Invites",
+                        "webhooks": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks",
                         "last_message": null
                       }
                     }
@@ -2145,9 +2145,9 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "unique_name": "unique_name",
                       "attributes": "{ \"foo\": \"bar\" }",
@@ -2157,12 +2157,12 @@
                       "created_by": "username",
                       "members_count": 0,
                       "messages_count": 0,
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "members": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members",
-                        "messages": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages",
-                        "invites": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Invites",
-                        "webhooks": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks",
+                        "members": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members",
+                        "messages": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages",
+                        "invites": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Invites",
+                        "webhooks": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks",
                         "last_message": null
                       }
                     }
@@ -2382,9 +2382,9 @@
                     "value": {
                       "channels": [
                         {
-                          "sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "friendly_name",
                           "unique_name": "unique_name",
                           "attributes": "{ \"foo\": \"bar\" }",
@@ -2394,12 +2394,12 @@
                           "created_by": "system",
                           "members_count": 0,
                           "messages_count": 0,
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "members": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members",
-                            "messages": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages",
-                            "invites": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Invites",
-                            "webhooks": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks",
+                            "members": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members",
+                            "messages": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages",
+                            "invites": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Invites",
+                            "webhooks": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks",
                             "last_message": null
                           }
                         }
@@ -2407,9 +2407,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "channels"
                       }
@@ -2421,9 +2421,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "channels"
                       }
@@ -2605,18 +2605,18 @@
                       "meta": {
                         "page": 0,
                         "page_size": 5,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks?PageSize=5&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks?PageSize=5&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks?PageSize=5&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks?PageSize=5&Page=0",
                         "next_page_url": null,
                         "key": "webhooks"
                       },
                       "webhooks": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "type": "webhook",
                           "configuration": {
                             "url": "dummy",
@@ -2629,13 +2629,13 @@
                           },
                           "date_created": "2016-03-24T21:05:50Z",
                           "date_updated": "2016-03-24T21:05:50Z",
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         },
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "type": "trigger",
                           "configuration": {
                             "url": "dummy",
@@ -2648,20 +2648,20 @@
                           },
                           "date_created": "2016-03-24T21:05:50Z",
                           "date_updated": "2016-03-24T21:05:50Z",
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         },
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "type": "studio",
                           "configuration": {
-                            "flow_sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                            "flow_sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                           },
                           "date_created": "2016-03-24T21:05:50Z",
                           "date_updated": "2016-03-24T21:05:50Z",
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -2671,8 +2671,8 @@
                       "meta": {
                         "page": 0,
                         "page_size": 5,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks?PageSize=5&Page=0",
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks?PageSize=5&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks?PageSize=5&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks?PageSize=5&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
                         "key": "webhooks"
@@ -2768,10 +2768,10 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "type": "webhook",
                       "configuration": {
                         "url": "dummy",
@@ -2784,7 +2784,7 @@
                       },
                       "date_created": "2016-03-24T21:05:50Z",
                       "date_updated": "2016-03-24T21:05:50Z",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2967,17 +2967,17 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "type": "studio",
                       "configuration": {
-                        "flow_sid": "FWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "flow_sid": "FWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       },
                       "date_created": "2016-03-24T21:05:50Z",
                       "date_updated": "2016-03-24T21:05:50Z",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -3080,10 +3080,10 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "type": "trigger",
                       "configuration": {
                         "url": "dummy",
@@ -3096,7 +3096,7 @@
                       },
                       "date_created": "2016-03-24T21:05:50Z",
                       "date_updated": "2016-03-24T21:05:51Z",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/WHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/WHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -3363,14 +3363,14 @@
                     "value": {
                       "credentials": [
                         {
-                          "sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Test slow create",
                           "type": "apn",
                           "sandbox": "False",
                           "date_created": "2015-10-07T17:50:01Z",
                           "date_updated": "2015-10-07T17:50:01Z",
-                          "url": "https://chat.twilio.com/v2/Credentials/CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://chat.twilio.com/v2/Credentials/CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -3463,14 +3463,14 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Test slow create",
                       "type": "apn",
                       "sandbox": "False",
                       "date_created": "2015-10-07T17:50:01Z",
                       "date_updated": "2015-10-07T17:50:01Z",
-                      "url": "https://chat.twilio.com/v2/Credentials/CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Credentials/CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -3617,14 +3617,14 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Test slow create",
                       "type": "apn",
                       "sandbox": "False",
                       "date_created": "2015-10-07T17:50:01Z",
                       "date_updated": "2015-10-07T17:50:01Z",
-                      "url": "https://chat.twilio.com/v2/Credentials/CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Credentials/CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -3706,14 +3706,14 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Test slow create",
                       "type": "apn",
                       "sandbox": "False",
                       "date_created": "2015-10-07T17:50:01Z",
                       "date_updated": "2015-10-07T17:50:01Z",
-                      "url": "https://chat.twilio.com/v2/Credentials/CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Credentials/CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -3908,16 +3908,16 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "created_by": "created_by",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
                       "identity": "identity",
-                      "role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "INaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Invites/INaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "INxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Invites/INxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4078,16 +4078,16 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "created_by": "created_by",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
                       "identity": "identity",
-                      "role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "INaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Invites/INaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "INxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Invites/INxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4165,7 +4165,7 @@
                 "create": {
                   "value": {
                     "Identity": "identity",
-                    "RoleSid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "RoleSid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -4312,13 +4312,13 @@
                     "value": {
                       "invites": [],
                       "meta": {
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Invites?Identity=identity&PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Invites?Identity=identity&PageSize=50&Page=0",
                         "key": "invites",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Invites?Identity=identity&PageSize=50&Page=0"
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Invites?Identity=identity&PageSize=50&Page=0"
                       }
                     }
                   },
@@ -4326,26 +4326,26 @@
                     "value": {
                       "invites": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "created_by": "created_by",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:00:00Z",
                           "identity": "identity",
-                          "role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "INaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Invites/INaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "INxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Invites/INxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Invites?Identity=identity&PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Invites?Identity=identity&PageSize=50&Page=0",
                         "key": "invites",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Invites?Identity=identity&PageSize=50&Page=0"
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Invites?Identity=identity&PageSize=50&Page=0"
                       }
                     }
                   }
@@ -4463,18 +4463,18 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "identity": "jing",
-                      "role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "last_consumed_message_index": null,
                       "last_consumption_timestamp": null,
                       "date_created": "2016-03-24T21:05:50Z",
                       "date_updated": "2016-03-24T21:05:50Z",
                       "attributes": "{}",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members/MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members/MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4640,18 +4640,18 @@
                 "examples": {
                   "updateRoleSid": {
                     "value": {
-                      "sid": "MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "identity": "jing",
-                      "role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "last_consumed_message_index": 20,
                       "last_consumption_timestamp": "2016-03-24T21:05:52Z",
                       "date_created": "2016-03-24T21:05:50Z",
                       "date_updated": "2016-03-24T21:05:51Z",
                       "attributes": "{}",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members/MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members/MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4745,7 +4745,7 @@
               "examples": {
                 "updateRoleSid": {
                   "value": {
-                    "RoleSid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "RoleSid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "DateCreated": "2016-03-24T21:05:50Z",
                     "DateUpdated": "2016-03-24T21:05:51Z",
                     "LastConsumedMessageIndex": 20,
@@ -4822,18 +4822,18 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "identity": "jing",
-                      "role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "last_consumed_message_index": null,
                       "last_consumption_timestamp": null,
                       "date_created": "2016-03-24T21:05:50Z",
                       "date_updated": "2016-03-24T21:05:50Z",
                       "attributes": "{}",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members/MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members/MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -5071,26 +5071,26 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "members"
                       },
                       "members": [
                         {
-                          "sid": "MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "identity": "jing",
-                          "role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "last_consumed_message_index": null,
                           "last_consumption_timestamp": null,
                           "date_created": "2016-03-24T21:05:50Z",
                           "date_updated": "2016-03-24T21:05:50Z",
                           "attributes": "{}",
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members/MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members/MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -5100,9 +5100,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "members"
                       },
@@ -5227,11 +5227,11 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "to": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "to": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2016-03-24T20:37:57Z",
                       "date_updated": "2016-03-24T20:37:57Z",
                       "last_updated_by": null,
@@ -5242,16 +5242,16 @@
                       "index": 0,
                       "type": "text",
                       "media": null,
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages/IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages/IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "fetchMedia": {
                     "value": {
-                      "sid": "IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "to": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "to": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2016-03-24T20:37:57Z",
                       "date_updated": "2016-03-24T20:37:57Z",
                       "last_updated_by": null,
@@ -5262,12 +5262,12 @@
                       "index": 0,
                       "type": "media",
                       "media": {
-                        "sid": "MEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "sid": "MExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                         "size": 99999999999999,
                         "content_type": "application/pdf",
                         "filename": "hello.pdf"
                       },
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages/IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages/IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -5439,11 +5439,11 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "to": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "to": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "attributes": "{ \"foo\": \"bar\" }",
                       "date_created": "2015-12-16T22:18:37Z",
                       "date_updated": "2015-12-16T22:18:38Z",
@@ -5454,7 +5454,7 @@
                       "index": 0,
                       "type": "text",
                       "media": null,
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages/IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages/IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -5621,11 +5621,11 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "to": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "to": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "attributes": null,
                       "date_created": "2016-03-24T20:37:57Z",
                       "date_updated": "2016-03-24T20:37:57Z",
@@ -5636,16 +5636,16 @@
                       "index": 0,
                       "type": "text",
                       "media": null,
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages/IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages/IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "createWithAll": {
                     "value": {
-                      "sid": "IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "to": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "to": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-12-16T22:18:37Z",
                       "date_updated": "2015-12-16T22:18:38Z",
                       "last_updated_by": "username",
@@ -5656,16 +5656,16 @@
                       "index": 0,
                       "type": "text",
                       "media": null,
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages/IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages/IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "createMedia": {
                     "value": {
-                      "sid": "IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "to": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "to": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "attributes": null,
                       "date_created": "2016-03-24T20:37:57Z",
                       "date_updated": "2016-03-24T20:37:57Z",
@@ -5676,12 +5676,12 @@
                       "index": 0,
                       "type": "text",
                       "media": {
-                        "sid": "MEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        "sid": "MExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                         "size": 99999999999999,
                         "content_type": "application/pdf",
                         "filename": "hello.pdf"
                       },
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages/IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages/IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -5791,7 +5791,7 @@
                 },
                 "createMedia": {
                   "value": {
-                    "MediaSid": "MEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "MediaSid": "MExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -5918,19 +5918,19 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "messages"
                       },
                       "messages": [
                         {
-                          "sid": "IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "to": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "to": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2016-03-24T20:37:57Z",
                           "date_updated": "2016-03-24T20:37:57Z",
                           "last_updated_by": null,
@@ -5941,14 +5941,14 @@
                           "index": 0,
                           "type": "text",
                           "media": null,
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages/IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages/IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         },
                         {
-                          "sid": "IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "to": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "to": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2016-03-24T20:37:57Z",
                           "date_updated": "2016-03-24T20:37:57Z",
                           "last_updated_by": null,
@@ -5959,12 +5959,12 @@
                           "index": 0,
                           "type": "media",
                           "media": {
-                            "sid": "MEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                            "sid": "MExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                             "size": 99999999999999,
                             "content_type": "application/pdf",
                             "filename": "hello.pdf"
                           },
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages/IMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages/IMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -5974,9 +5974,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "messages"
                       },
@@ -6091,9 +6091,9 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "channel user",
                       "type": "channel",
                       "permissions": [
@@ -6104,7 +6104,7 @@
                       ],
                       "date_created": "2016-03-03T19:47:15Z",
                       "date_updated": "2016-03-03T19:47:15Z",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles/RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles/RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -6242,9 +6242,9 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "channel user",
                       "type": "channel",
                       "permissions": [
@@ -6255,7 +6255,7 @@
                       ],
                       "date_created": "2016-03-03T19:47:15Z",
                       "date_updated": "2016-03-03T19:47:15Z",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles/RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles/RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -6383,9 +6383,9 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "channel user",
                       "type": "channel",
                       "permissions": [
@@ -6396,7 +6396,7 @@
                       ],
                       "date_created": "2016-03-03T19:47:15Z",
                       "date_updated": "2016-03-03T19:47:15Z",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles/RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles/RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -6590,17 +6590,17 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "roles"
                       },
                       "roles": [
                         {
-                          "sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "channel user",
                           "type": "channel",
                           "permissions": [
@@ -6611,7 +6611,7 @@
                           ],
                           "date_created": "2016-03-03T19:47:15Z",
                           "date_updated": "2016-03-03T19:47:15Z",
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles/RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles/RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -6621,9 +6621,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "roles"
                       },
@@ -6751,23 +6751,23 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "consumption_report_interval": 100,
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "default_channel_creator_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "default_channel_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "default_service_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "default_channel_creator_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "default_channel_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "default_service_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "limits": {
                         "channel_members": 100,
                         "user_channels": 250
                       },
                       "links": {
-                        "channels": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels",
-                        "users": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users",
-                        "roles": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles",
-                        "bindings": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings"
+                        "channels": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels",
+                        "users": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users",
+                        "roles": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles",
+                        "bindings": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings"
                       },
                       "notifications": {},
                       "post_webhook_url": "post_webhook_url",
@@ -6776,9 +6776,9 @@
                       "post_webhook_retry_count": 3,
                       "reachability_enabled": false,
                       "read_status_enabled": false,
-                      "sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "typing_indicator_timeout": 100,
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "webhook_filters": [
                         "webhook_filters"
                       ],
@@ -6900,23 +6900,23 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "consumption_report_interval": 100,
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "default_channel_creator_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "default_channel_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "default_service_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "default_channel_creator_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "default_channel_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "default_service_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "limits": {
                         "channel_members": 500,
                         "user_channels": 600
                       },
                       "links": {
-                        "channels": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels",
-                        "users": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users",
-                        "roles": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles",
-                        "bindings": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings"
+                        "channels": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels",
+                        "users": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users",
+                        "roles": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles",
+                        "bindings": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings"
                       },
                       "notifications": {
                         "log_enabled": true,
@@ -6944,9 +6944,9 @@
                       "post_webhook_retry_count": 3,
                       "reachability_enabled": false,
                       "read_status_enabled": false,
-                      "sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "typing_indicator_timeout": 100,
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "webhook_filters": [
                         "webhook_filters"
                       ],
@@ -7161,9 +7161,9 @@
                 "update": {
                   "value": {
                     "ConsumptionReportInterval": 100,
-                    "DefaultChannelCreatorRoleSid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                    "DefaultChannelRoleSid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                    "DefaultServiceRoleSid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "DefaultChannelCreatorRoleSid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "DefaultChannelRoleSid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "DefaultServiceRoleSid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "FriendlyName": "friendly_name",
                     "Notifications.AddedToChannel.Enabled": false,
                     "Notifications.AddedToChannel.Template": "notifications.added_to_channel.template",
@@ -7254,23 +7254,23 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "consumption_report_interval": 100,
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "default_channel_creator_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "default_channel_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "default_service_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "default_channel_creator_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "default_channel_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "default_service_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "limits": {
                         "channel_members": 100,
                         "user_channels": 250
                       },
                       "links": {
-                        "channels": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels",
-                        "users": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users",
-                        "roles": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles",
-                        "bindings": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings"
+                        "channels": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels",
+                        "users": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users",
+                        "roles": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles",
+                        "bindings": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings"
                       },
                       "notifications": {},
                       "post_webhook_url": "post_webhook_url",
@@ -7279,9 +7279,9 @@
                       "post_webhook_retry_count": 3,
                       "reachability_enabled": false,
                       "read_status_enabled": false,
-                      "sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "typing_indicator_timeout": 100,
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "webhook_filters": [
                         "webhook_filters"
                       ],
@@ -7479,23 +7479,23 @@
                       },
                       "services": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "consumption_report_interval": 100,
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:00:00Z",
-                          "default_channel_creator_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "default_channel_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "default_service_role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "default_channel_creator_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "default_channel_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "default_service_role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "friendly_name",
                           "limits": {
                             "channel_members": 100,
                             "user_channels": 250
                           },
                           "links": {
-                            "channels": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels",
-                            "users": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users",
-                            "roles": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Roles",
-                            "bindings": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings"
+                            "channels": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels",
+                            "users": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users",
+                            "roles": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Roles",
+                            "bindings": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings"
                           },
                           "notifications": {},
                           "post_webhook_url": "post_webhook_url",
@@ -7504,9 +7504,9 @@
                           "post_webhook_retry_count": 3,
                           "reachability_enabled": false,
                           "read_status_enabled": false,
-                          "sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "typing_indicator_timeout": 100,
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "webhook_filters": [
                             "webhook_filters"
                           ],
@@ -7641,10 +7641,10 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "identity": "jing",
                       "attributes": null,
                       "is_online": true,
@@ -7654,10 +7654,10 @@
                       "date_created": "2016-03-24T21:05:19Z",
                       "date_updated": "2016-03-24T21:05:19Z",
                       "links": {
-                        "user_channels": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels",
-                        "user_bindings": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings"
+                        "user_channels": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels",
+                        "user_bindings": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings"
                       },
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -7797,10 +7797,10 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "identity": "jing",
                       "attributes": null,
                       "is_online": true,
@@ -7810,10 +7810,10 @@
                       "date_created": "2016-03-24T21:05:19Z",
                       "date_updated": "2016-03-24T21:05:19Z",
                       "links": {
-                        "user_channels": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels",
-                        "user_bindings": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings"
+                        "user_channels": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels",
+                        "user_bindings": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings"
                       },
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -7891,7 +7891,7 @@
               "examples": {
                 "update": {
                   "value": {
-                    "RoleSid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "RoleSid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Attributes": "{\"test\":\"test\"}",
                     "FriendlyName": "friendly_name"
                   }
@@ -7973,10 +7973,10 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "identity": "jing",
                       "attributes": null,
                       "is_online": true,
@@ -7986,10 +7986,10 @@
                       "date_created": "2016-03-24T21:05:19Z",
                       "date_updated": "2016-03-24T21:05:19Z",
                       "links": {
-                        "user_channels": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels",
-                        "user_bindings": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings"
+                        "user_channels": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels",
+                        "user_bindings": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings"
                       },
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -8075,7 +8075,7 @@
                 "create": {
                   "value": {
                     "Identity": "jing",
-                    "RoleSid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "RoleSid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Attributes": "{\"test\":\"test\"}",
                     "FriendlyName": "friendly_name"
                   }
@@ -8187,18 +8187,18 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "users"
                       },
                       "users": [
                         {
-                          "sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "role_sid": "RLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "role_sid": "RLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "identity": "jing",
                           "attributes": null,
                           "is_online": true,
@@ -8208,10 +8208,10 @@
                           "date_updated": "2016-03-24T21:05:19Z",
                           "joined_channels_count": 0,
                           "links": {
-                            "user_channels": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels",
-                            "user_bindings": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings"
+                            "user_channels": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels",
+                            "user_bindings": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings"
                           },
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -8221,9 +8221,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "users"
                       },
@@ -8420,31 +8420,31 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "bindings"
                       },
                       "bindings": [
                         {
-                          "sid": "BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2016-10-21T11:37:03Z",
                           "date_updated": "2016-10-21T11:37:03Z",
                           "endpoint": "TestUser-endpoint",
                           "identity": "TestUser",
-                          "user_sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "user_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "binding_type": "gcm",
-                          "credential_sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "credential_sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "message_types": [
                             "removed_from_channel",
                             "new_message",
                             "added_to_channel",
                             "invited_to_channel"
                           ],
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings/BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings/BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -8454,9 +8454,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "bindings"
                       },
@@ -8582,23 +8582,23 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2016-10-21T11:37:03Z",
                       "date_updated": "2016-10-21T11:37:03Z",
                       "endpoint": "TestUser-endpoint",
                       "identity": "TestUser",
-                      "user_sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "user_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "binding_type": "gcm",
-                      "credential_sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "credential_sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "message_types": [
                         "removed_from_channel",
                         "new_message",
                         "added_to_channel",
                         "invited_to_channel"
                       ],
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings/BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings/BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -8831,27 +8831,27 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "channels"
                       },
                       "channels": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "user_sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "member_sid": "MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "user_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "member_sid": "MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "joined",
                           "last_consumed_message_index": 5,
                           "unread_messages_count": 5,
                           "notification_level": "default",
-                          "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "channel": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                            "member": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members/MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                            "channel": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                            "member": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members/MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                           }
                         }
                       ]
@@ -8862,9 +8862,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels?PageSize=50&Page=0",
+                        "first_page_url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels?PageSize=50&Page=0",
+                        "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "channels"
                       },
@@ -8985,19 +8985,19 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "user_sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "member_sid": "MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "user_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "member_sid": "MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "joined",
                       "last_consumed_message_index": 5,
                       "unread_messages_count": 5,
                       "notification_level": "default",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "channel": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "member": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members/MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "channel": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "member": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members/MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       }
                     }
                   }
@@ -9156,37 +9156,37 @@
                 "examples": {
                   "updateNotificationLevel": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "user_sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "member_sid": "MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "user_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "member_sid": "MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "joined",
                       "last_consumed_message_index": 5,
                       "unread_messages_count": 5,
                       "notification_level": "muted",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "channel": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "member": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members/MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "channel": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "member": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members/MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       }
                     }
                   },
                   "updateLastConsumedMessageIndex": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "channel_sid": "CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "user_sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "member_sid": "MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "channel_sid": "CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "user_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "member_sid": "MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "joined",
                       "last_consumed_message_index": 10,
                       "unread_messages_count": 5,
                       "notification_level": "muted",
-                      "url": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "channel": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "member": "https://chat.twilio.com/v2/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Channels/CHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Members/MBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "channel": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "member": "https://chat.twilio.com/v2/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Channels/CHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Members/MBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       }
                     }
                   }

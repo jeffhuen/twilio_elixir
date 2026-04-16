@@ -748,7 +748,7 @@
                     "value": {
                       "usage_records": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "commands": {
                             "billing_units": "USD",
                             "billed": 0,
@@ -802,7 +802,7 @@
                           }
                         },
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "commands": {},
                           "data": {},
                           "period": {}
@@ -917,34 +917,34 @@
                 "examples": {
                   "fetchCommandSms": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "command": "command",
                       "command_mode": "text",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
                       "delivery_receipt_requested": true,
-                      "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "direction": "from_sim",
-                      "sid": "DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "queued",
                       "transport": "sms",
-                      "url": "https://wireless.twilio.com/v1/Commands/DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://wireless.twilio.com/v1/Commands/DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "fetchCommandIp": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "command": "command",
                       "command_mode": "text",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
                       "delivery_receipt_requested": false,
-                      "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "direction": "to_sim",
-                      "sid": "DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "queued",
                       "transport": "ip",
-                      "url": "https://wireless.twilio.com/v1/Commands/DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://wireless.twilio.com/v1/Commands/DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1220,18 +1220,18 @@
                     "value": {
                       "commands": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "command": "command",
                           "command_mode": "text",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:00:00Z",
                           "delivery_receipt_requested": true,
-                          "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "direction": "from_sim",
-                          "sid": "DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "queued",
                           "transport": "sms",
-                          "url": "https://wireless.twilio.com/v1/Commands/DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://wireless.twilio.com/v1/Commands/DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -1249,18 +1249,18 @@
                     "value": {
                       "commands": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "command": "command",
                           "command_mode": "binary",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:00:00Z",
                           "delivery_receipt_requested": true,
-                          "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "direction": "to_sim",
-                          "sid": "DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "queued",
                           "transport": "ip",
-                          "url": "https://wireless.twilio.com/v1/Commands/DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://wireless.twilio.com/v1/Commands/DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -1339,34 +1339,34 @@
                 "examples": {
                   "createCommandSms": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "command": "command",
                       "command_mode": "text",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
                       "delivery_receipt_requested": true,
-                      "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "direction": "from_sim",
-                      "sid": "DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "queued",
                       "transport": "sms",
-                      "url": "https://wireless.twilio.com/v1/Commands/DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://wireless.twilio.com/v1/Commands/DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "createCommandIp": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "command": "command",
                       "command_mode": "binary",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
                       "delivery_receipt_requested": true,
                       "direction": "to_sim",
-                      "sid": "DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "queued",
                       "transport": "ip",
-                      "url": "https://wireless.twilio.com/v1/Commands/DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://wireless.twilio.com/v1/Commands/DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1606,9 +1606,9 @@
                     "value": {
                       "data_sessions": [
                         {
-                          "sid": "WNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "WNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "radio_link": "LTE",
                           "operator_mcc": "",
                           "operator_mnc": "",
@@ -1624,9 +1624,9 @@
                           "imei": null
                         },
                         {
-                          "sid": "WNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "WNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "radio_link": "3G",
                           "operator_mcc": "",
                           "operator_mnc": "",
@@ -1643,13 +1643,13 @@
                         }
                       ],
                       "meta": {
-                        "first_page_url": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DataSessions?PageSize=50&Page=0",
+                        "first_page_url": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DataSessions?PageSize=50&Page=0",
                         "key": "data_sessions",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DataSessions?PageSize=50&Page=0"
+                        "url": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DataSessions?PageSize=50&Page=0"
                       }
                     }
                   }
@@ -1831,7 +1831,7 @@
                       },
                       "rate_plans": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "unique_name": "unique_name",
                           "data_enabled": true,
                           "data_limit": 1000,
@@ -1849,8 +1849,8 @@
                             "voice"
                           ],
                           "international_roaming_data_limit": 1000,
-                          "sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://wireless.twilio.com/v1/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://wireless.twilio.com/v1/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -1920,7 +1920,7 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "data_enabled": true,
                       "data_limit": 1000,
@@ -1938,8 +1938,8 @@
                         "voice"
                       ],
                       "international_roaming_data_limit": 1000,
-                      "sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://wireless.twilio.com/v1/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://wireless.twilio.com/v1/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2119,7 +2119,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "data_enabled": true,
                       "data_limit": 1000,
@@ -2137,8 +2137,8 @@
                         "voice"
                       ],
                       "international_roaming_data_limit": 1000,
-                      "sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://wireless.twilio.com/v1/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://wireless.twilio.com/v1/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2217,7 +2217,7 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "data_enabled": true,
                       "data_limit": 1000,
@@ -2235,8 +2235,8 @@
                         "voice"
                       ],
                       "international_roaming_data_limit": 1000,
-                      "sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://wireless.twilio.com/v1/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://wireless.twilio.com/v1/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2405,7 +2405,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "commands_callback_method": "POST",
                       "commands_callback_url": "http://www.example.com",
@@ -2421,17 +2421,17 @@
                       "voice_method": "POST",
                       "voice_url": "http://www.example.com",
                       "links": {
-                        "data_sessions": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DataSessions",
-                        "rate_plan": "https://wireless.twilio.com/v1/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "usage_records": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/UsageRecords"
+                        "data_sessions": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DataSessions",
+                        "rate_plan": "https://wireless.twilio.com/v1/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "usage_records": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/UsageRecords"
                       },
-                      "rate_plan_sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "rate_plan_sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": "iccid",
                       "e_id": "e_id",
                       "status": "new",
                       "reset_status": null,
-                      "url": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "ip_address": "192.168.1.1"
                     }
                   }
@@ -2511,7 +2511,7 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "commands_callback_method": "POST",
                       "commands_callback_url": "http://www.example.com",
@@ -2519,12 +2519,12 @@
                       "date_updated": "2015-07-30T20:00:00Z",
                       "friendly_name": "friendly_name",
                       "links": {
-                        "data_sessions": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DataSessions",
-                        "rate_plan": "https://wireless.twilio.com/v1/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "usage_records": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/UsageRecords"
+                        "data_sessions": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DataSessions",
+                        "rate_plan": "https://wireless.twilio.com/v1/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "usage_records": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/UsageRecords"
                       },
-                      "rate_plan_sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "rate_plan_sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": "iccid",
                       "e_id": "e_id",
                       "status": "new",
@@ -2537,13 +2537,13 @@
                       "voice_fallback_url": "http://www.example.com",
                       "voice_method": "POST",
                       "voice_url": "http://www.example.com",
-                      "url": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "ip_address": "192.168.1.30"
                     }
                   },
                   "updateMoveToSubaccount": {
                     "value": {
-                      "account_sid": "ACbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "commands_callback_method": "POST",
                       "commands_callback_url": "http://www.example.com",
@@ -2551,12 +2551,12 @@
                       "date_updated": "2015-07-30T20:00:00Z",
                       "friendly_name": "friendly_name",
                       "links": {
-                        "data_sessions": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DataSessions",
-                        "rate_plan": "https://wireless.twilio.com/v1/RatePlans/WPbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-                        "usage_records": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/UsageRecords"
+                        "data_sessions": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DataSessions",
+                        "rate_plan": "https://wireless.twilio.com/v1/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "usage_records": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/UsageRecords"
                       },
-                      "rate_plan_sid": "WPbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-                      "sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "rate_plan_sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": "iccid",
                       "e_id": "e_id",
                       "status": "new",
@@ -2569,13 +2569,13 @@
                       "voice_fallback_url": "http://www.example.com",
                       "voice_method": "POST",
                       "voice_url": "http://www.example.com",
-                      "url": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "ip_address": "192.168.1.30"
                     }
                   },
                   "updateResetConnectivity": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "commands_callback_method": "GET",
                       "commands_callback_url": "http://www.example.com",
@@ -2583,12 +2583,12 @@
                       "date_updated": "2015-07-30T20:00:00Z",
                       "friendly_name": "friendly_name",
                       "links": {
-                        "data_sessions": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DataSessions",
-                        "rate_plan": "https://wireless.twilio.com/v1/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "usage_records": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/UsageRecords"
+                        "data_sessions": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DataSessions",
+                        "rate_plan": "https://wireless.twilio.com/v1/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "usage_records": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/UsageRecords"
                       },
-                      "rate_plan_sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "rate_plan_sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": "iccid",
                       "e_id": "e_id",
                       "status": "active",
@@ -2601,7 +2601,7 @@
                       "voice_fallback_url": "http://www.example.com",
                       "voice_method": "POST",
                       "voice_url": "http://www.example.com",
-                      "url": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "ip_address": "192.168.1.30"
                     }
                   }
@@ -2785,15 +2785,15 @@
                     "SmsFallbackMethod": "POST",
                     "SmsFallbackUrl": "http://www.example.com",
                     "FriendlyName": "friendly_name",
-                    "RatePlan": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "RatePlan": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Status": "new"
                   }
                 },
                 "updateMoveToSubaccount": {
                   "value": {
-                    "AccountSid": "ACbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                    "AccountSid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "UniqueName": "unique_name",
-                    "RatePlan": "WPbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                    "RatePlan": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Status": "new"
                   }
                 },
@@ -3040,7 +3040,7 @@
                     "value": {
                       "sims": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "unique_name": "unique_name",
                           "commands_callback_method": "POST",
                           "commands_callback_url": "http://www.example.com",
@@ -3048,12 +3048,12 @@
                           "date_updated": "2015-07-30T20:00:00Z",
                           "friendly_name": "friendly_name",
                           "links": {
-                            "data_sessions": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DataSessions",
-                            "rate_plan": "https://wireless.twilio.com/v1/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                            "usage_records": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/UsageRecords"
+                            "data_sessions": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DataSessions",
+                            "rate_plan": "https://wireless.twilio.com/v1/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                            "usage_records": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/UsageRecords"
                           },
-                          "rate_plan_sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "rate_plan_sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iccid": "iccid",
                           "e_id": "e_id",
                           "status": "new",
@@ -3066,7 +3066,7 @@
                           "voice_fallback_url": "http://www.example.com",
                           "voice_method": "POST",
                           "voice_url": "http://www.example.com",
-                          "url": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "ip_address": "192.168.1.30"
                         }
                       ],
@@ -3279,7 +3279,7 @@
                     "value": {
                       "usage_records": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "commands": {
                             "billing_units": "USD",
                             "billed": 0,
@@ -3327,28 +3327,28 @@
                             },
                             "international_roaming": []
                           },
-                          "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "period": {
                             "start": "2015-07-30T20:00:00Z",
                             "end": "2015-07-30T20:00:00Z"
                           }
                         },
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "commands": {},
                           "data": {},
-                          "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "period": {}
                         }
                       ],
                       "meta": {
-                        "first_page_url": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/UsageRecords?Start=2015-07-30T20%3A00%3A00Z&End=2015-07-30T20%3A00%3A00Z&PageSize=50&Page=0",
+                        "first_page_url": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/UsageRecords?Start=2015-07-30T20%3A00%3A00Z&End=2015-07-30T20%3A00%3A00Z&PageSize=50&Page=0",
                         "key": "usage_records",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://wireless.twilio.com/v1/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/UsageRecords?Start=2015-07-30T20%3A00%3A00Z&End=2015-07-30T20%3A00%3A00Z&PageSize=50&Page=0"
+                        "url": "https://wireless.twilio.com/v1/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/UsageRecords?Start=2015-07-30T20%3A00%3A00Z&End=2015-07-30T20%3A00%3A00Z&PageSize=50&Page=0"
                       }
                     }
                   }

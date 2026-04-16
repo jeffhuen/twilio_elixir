@@ -255,6 +255,15 @@
             "type": "string",
             "description": "The SID of the Twilio Voice application.",
             "nullable": true
+          },
+          "account_type": {
+            "type": "string",
+            "enum": [
+              "ISV",
+              "ISVSubAccount"
+            ],
+            "description": "The account type for ISV Account Type Migration. Set to 'ISV' or 'ISVSubAccount' to configure, empty string to clear, or omit to preserve the existing value.",
+            "nullable": true
           }
         },
         "description": "The configuration settings for creating a sender."
@@ -320,7 +329,7 @@
             "type": "string",
             "pattern": "^(SM|MM)[0-9a-fA-F]{32}$",
             "description": "Message SID that identifies the conversation thread for the typing indicator. Must be a valid Twilio Message SID (SM*) or Media SID (MM*) from an existing WhatsApp conversation.\n",
-            "example": "SM1234567890abcdef1234567890abcdef"
+            "example": "SMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           }
         },
         "required": [
@@ -617,6 +626,64 @@
             "description": "Optional JSON field describing the status and upload date of a new certificate in the process of validation"
           }
         }
+      },
+      "messaging.v2.presigned_url.request": {
+        "type": "object",
+        "properties": {
+          "imageContentMd5": {
+            "type": "string",
+            "description": "Base64-encoded MD5 hash of the image"
+          },
+          "imageContentType": {
+            "type": "string",
+            "description": "MIME type of the image (e.g., image/png, image/jpeg)"
+          },
+          "imageKind": {
+            "type": "string",
+            "description": "Type of image (logo, hero, etc.)"
+          },
+          "imageName": {
+            "type": "string",
+            "description": "Name of the image file"
+          },
+          "imageSizeBytes": {
+            "type": "integer",
+            "description": "Size of the image in bytes"
+          },
+          "imageHeight": {
+            "type": "integer",
+            "description": "Height of the image in pixels"
+          },
+          "imageWidth": {
+            "type": "integer",
+            "description": "Width of the image in pixels"
+          }
+        },
+        "required": [
+          "imageContentMd5",
+          "imageContentType",
+          "imageKind",
+          "imageName",
+          "imageSizeBytes"
+        ]
+      },
+      "messaging.v2.presigned_url.response": {
+        "type": "object",
+        "properties": {
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fetchUrl": {
+            "type": "string"
+          },
+          "uploadUrl": {
+            "type": "string"
+          },
+          "uploadFields": {
+            "type": "object"
+          }
+        }
       }
     },
     "examples": {
@@ -667,14 +734,15 @@
       },
       "whatsapp_create_response": {
         "value": {
-          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "status": "CREATING",
           "sender_id": "whatsapp:+999999999XX",
           "configuration": {
             "waba_id": "1234567XXX",
             "verification_method": "sms",
             "verification_code": null,
-            "voice_application_sid": "APXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+            "voice_application_sid": "APXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "account_type": null
           },
           "webhook": {
             "callback_url": "https://callback.example.com",
@@ -764,7 +832,7 @@
       },
       "rcs_create_response": {
         "value": {
-          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "status": "CREATING",
           "sender_id": "rcs:twilio_agent",
           "webhook": {
@@ -818,14 +886,15 @@
       },
       "whatsapp_fetch": {
         "value": {
-          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "status": "ONLINE",
           "sender_id": "whatsapp:+999999999XX",
           "configuration": {
             "waba_id": "1234567XXX",
             "verification_method": null,
             "verification_code": null,
-            "voice_application_sid": "APXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+            "voice_application_sid": "APXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "account_type": null
           },
           "webhook": {
             "callback_url": "https://callback.example.com",
@@ -870,19 +939,20 @@
             "messaging_limit": "10K Customers/24hr"
           },
           "offline_reasons": null,
-          "url": "https://messaging.twilio.com/v2/Channels/Senders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          "url": "https://messaging.twilio.com/v2/Channels/Senders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         }
       },
       "whatsapp_fetch_offline_reasons": {
         "value": {
-          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "status": "OFFLINE",
           "sender_id": "whatsapp:+999999999XX",
           "configuration": {
             "waba_id": "1234567XXX",
             "verification_method": null,
             "verification_code": null,
-            "voice_application_sid": "APXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+            "voice_application_sid": "APXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "account_type": null
           },
           "webhook": {
             "callback_url": "https://callback.example.com",
@@ -933,12 +1003,12 @@
               "more_info": "https://www.twilio.com/docs/api/errors/30008"
             }
           ],
-          "url": "https://messaging.twilio.com/v2/Channels/Senders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          "url": "https://messaging.twilio.com/v2/Channels/Senders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         }
       },
       "rcs_fetch": {
         "value": {
-          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "status": "PENDING_VERIFICATION",
           "sender_id": "rcs:twilio_agent",
           "webhook": {
@@ -1042,9 +1112,9 @@
           "meta": {
             "page": 0,
             "page_size": 10,
-            "first_page_url": "https://messaging.twilio.com/v2/Channels/Senders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/TestDevices?PageSize=10&Page=0",
+            "first_page_url": "https://messaging.twilio.com/v2/Channels/Senders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/TestDevices?PageSize=10&Page=0",
             "previous_page_url": null,
-            "url": "https://messaging.twilio.com/v2/Channels/Senders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/TestDevices?PageSize=10&Page=0",
+            "url": "https://messaging.twilio.com/v2/Channels/Senders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/TestDevices?PageSize=10&Page=0",
             "next_page_url": null,
             "key": "test_devices"
           }
@@ -1054,7 +1124,8 @@
         "value": {
           "configuration": {
             "verification_code": "123456",
-            "voice_application_sid": "APaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            "voice_application_sid": "APxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "account_type": null
           }
         }
       },
@@ -1167,7 +1238,7 @@
       },
       "rcs_patch_update_webhook_response": {
         "value": {
-          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "status": "DRAFT",
           "sender_id": "rcs:test_agent",
           "compliance": null,
@@ -1185,7 +1256,7 @@
       },
       "whatsapp_patch_update_configuration_response": {
         "value": {
-          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "status": "VERIFYING",
           "sender_id": "whatsapp:+999999999XX",
           "compliance": null,
@@ -1193,13 +1264,14 @@
           "profile": null,
           "configuration": {
             "verification_code": "123456",
-            "voice_application_sid": "APaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            "voice_application_sid": "APxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "account_type": null
           }
         }
       },
       "whatsapp_patch_update_profile_response": {
         "value": {
-          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "status": "VERIFYING",
           "sender_id": "whatsapp:+999999999XX",
           "compliance": null,
@@ -1238,7 +1310,7 @@
       },
       "whatsapp_patch_update_webhook_response": {
         "value": {
-          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "status": "VERIFYING",
           "sender_id": "whatsapp:+999999999XX",
           "compliance": null,
@@ -1256,7 +1328,7 @@
       },
       "rcs_patch_update_compliance_response": {
         "value": {
-          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "status": "DRAFT",
           "sender_id": "rcs:test_agent",
           "compliance": {
@@ -1281,7 +1353,7 @@
       },
       "rcs_patch_update_profile_response": {
         "value": {
-          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "status": "DRAFT",
           "sender_id": "rcs:test_agent",
           "compliance": null,
@@ -1383,7 +1455,7 @@
                   "description": "Send a typing indicator for an active WhatsApp conversation",
                   "value": {
                     "channel": "whatsapp",
-                    "messageId": "SM1234567890abcdef1234567890abcdef"
+                    "messageId": "SMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -1868,7 +1940,7 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "VERIFYING",
                       "sender_id": "whatsapp:+999999999XX",
                       "compliance": null,
@@ -1876,7 +1948,8 @@
                         "waba_id": "1234567XXX",
                         "verification_method": "sms",
                         "verification_code": null,
-                        "voice_application_sid": "APaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "voice_application_sid": "APxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "account_type": null
                       },
                       "webhook": {
                         "callback_url": "https://callback.example.com",
@@ -1981,7 +2054,7 @@
                   "value": {
                     "configuration": {
                       "verification_code": "123456",
-                      "voice_application_sid": "APaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "voice_application_sid": "APxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     },
                     "webhook": {
                       "callback_url": "https://callback.example.com",
@@ -2147,13 +2220,13 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "certificate_sid": "CWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "certificate_sid": "CWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "domain_name": "https://api.example.com",
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_expires": "2021-02-06T18:02:04Z",
                       "date_created": "2021-02-06T18:02:04Z",
                       "date_updated": "2021-02-06T18:02:04Z",
-                      "url": "https://messaging.twilio.com/v2/LinkShortening/Domains/DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Certificate",
+                      "url": "https://messaging.twilio.com/v2/LinkShortening/Domains/DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Certificate",
                       "cert_in_validation": {
                         "date_expires": "2021-02-06T18:02:04Z",
                         "status": "pending"

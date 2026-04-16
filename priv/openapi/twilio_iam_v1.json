@@ -165,6 +165,44 @@
           "RESOURCE"
         ]
       },
+      "iam.v1.role_permission": {
+        "type": "object",
+        "properties": {
+          "sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^IZ[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The unique string that identifies the Permission resource."
+          },
+          "namespace": {
+            "type": "string",
+            "nullable": true,
+            "description": "The namespace of the permission (e.g., twilio)."
+          },
+          "product": {
+            "type": "string",
+            "nullable": true,
+            "description": "The product the permission belongs to (e.g., iam)."
+          },
+          "resource": {
+            "type": "string",
+            "nullable": true,
+            "description": "The resource the permission applies to (e.g., roles)."
+          },
+          "action": {
+            "type": "string",
+            "nullable": true,
+            "description": "The action granted by the permission (e.g., read)."
+          },
+          "externalDescription": {
+            "type": "string",
+            "nullable": true,
+            "description": "The external description of the permission."
+          }
+        }
+      },
       "oauth.v1.token": {
         "type": "object",
         "properties": {
@@ -324,7 +362,7 @@
             "pattern": "OR[0-9a-f]{32}",
             "type": "string",
             "format": "OrganizationSid",
-            "example": "OR33f4f3aa6fffe840d000f8ef22e883db",
+            "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio organization sid"
           },
           "friendlyName": {
@@ -344,6 +382,21 @@
             "type": "string",
             "format": "date-time",
             "description": "Creation date of the organization"
+          }
+        }
+      },
+      "iam.v1.OrganizationFeatures": {
+        "type": "object",
+        "properties": {
+          "enabledFeatures": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of features enabled for the organization",
+            "example": [
+              "sso"
+            ]
           }
         }
       },
@@ -378,7 +431,7 @@
             "type": "string",
             "pattern": "DN[0-9a-f]{32}",
             "format": "DomainVerificationSid",
-            "example": "DN33f4f3aa6fffe840d000f8ef22e883db"
+            "example": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           },
           "token": {
             "description": "Verification token for the domain",
@@ -397,7 +450,7 @@
             "type": "string",
             "pattern": "DN[0-9a-f]{32}",
             "format": "DomainVerificationSid",
-            "example": "DN33f4f3aa6fffe840d000f8ef22e883db"
+            "example": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           },
           "name": {
             "description": "Name of the domain",
@@ -471,14 +524,14 @@
             "pattern": "OR[0-9a-f]{32}",
             "type": "string",
             "format": "OrganizationSid",
-            "example": "OR33f4f3aa6fffe840d000f8ef22e883db",
+            "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio organization sid"
           },
           "userSid": {
             "pattern": "US[0-9a-f]{32}",
             "type": "string",
             "format": "UserSid",
-            "example": "USb51dccce9ac8e67b938253c7bcaa4f45",
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio user sid"
           },
           "firstName": {
@@ -521,14 +574,14 @@
             "pattern": "OR[0-9a-f]{32}",
             "type": "string",
             "format": "OrganizationSid",
-            "example": "OR33f4f3aa6fffe840d000f8ef22e883db",
+            "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio organization sid"
           },
           "userSid": {
             "pattern": "US[0-9a-f]{32}",
             "type": "string",
             "format": "UserSid",
-            "example": "USb51dccce9ac8e67b938253c7bcaa4f45",
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio user sid"
           },
           "email": {
@@ -567,14 +620,14 @@
                   "type": "string",
                   "format": "IamRoleAssignmentSid",
                   "description": "Unique identifier for the role assignment",
-                  "example": "IY1234567890abcdef1234567890abcdef"
+                  "example": "IYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                 },
                 "roleSid": {
                   "pattern": "IX[0-9a-f]{32}",
                   "type": "string",
                   "format": "IamRoleSid",
                   "description": "Unique identifier for the role",
-                  "example": "IX1234567890abcdef1234567890abcdef"
+                  "example": "IXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                 },
                 "roleName": {
                   "type": "string",
@@ -621,7 +674,7 @@
             "pattern": "OR[0-9a-f]{32}",
             "description": "Unique Twilio organization sid",
             "format": "OrganizationSid",
-            "example": "OR33f4f3aa6fffe840d000f8ef22e883db"
+            "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           },
           "status": {
             "type": "string",
@@ -678,7 +731,7 @@
             "pattern": "US[0-9a-f]{32}",
             "type": "string",
             "format": "UserSid",
-            "example": "USb51dccce9ac8e67b938253c7bcaa4f45",
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio user sid"
           },
           "firstName": {
@@ -712,12 +765,19 @@
             "pattern": "OR[0-9a-f]{32}",
             "type": "string",
             "format": "OrganizationSid",
-            "example": "OR33f4f3aa6fffe840d000f8ef22e883db",
+            "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio organization sid"
           },
           "organizationFriendlyName": {
             "type": "string",
             "description": "Organization friendly name"
+          },
+          "currentAccountSid": {
+            "pattern": "AC[0-9a-f]{32}",
+            "type": "string",
+            "format": "AccountSid",
+            "example": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "description": "Unique Twilio account sid"
           },
           "timeZone": {
             "type": "string",
@@ -761,7 +821,7 @@
             "pattern": "US[0-9a-f]{32}",
             "type": "string",
             "format": "UserSid",
-            "example": "USb51dccce9ac8e67b938253c7bcaa4f45",
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio user sid"
           },
           "firstName": {
@@ -802,7 +862,7 @@
             "pattern": "NF[0-9a-f]{32}",
             "type": "string",
             "format": "IdentityNotificationSid",
-            "example": "NFbfd75767416fbd8418bedafce743700a",
+            "example": "NFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio notification sid"
           }
         }
@@ -814,7 +874,7 @@
             "pattern": "NF[0-9a-f]{32}",
             "type": "string",
             "format": "IdentityNotificationSid",
-            "example": "NFbfd75767416fbd8418bedafce743700a",
+            "example": "NFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio notification sid"
           },
           "code": {
@@ -833,7 +893,7 @@
             "pattern": "NF[0-9a-f]{32}",
             "type": "string",
             "format": "IdentityNotificationSid",
-            "example": "NFbfd75767416fbd8418bedafce743700a",
+            "example": "NFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio notification sid"
           }
         }
@@ -942,6 +1002,10 @@
             "format": "AccountSid",
             "description": "Unique Twilio account sid"
           },
+          "friendlyName": {
+            "type": "string",
+            "description": "Friendly name of the account"
+          },
           "senderFirstName": {
             "type": "string",
             "description": "First name of the sender who invited the account"
@@ -1010,14 +1074,14 @@
             "pattern": "OR[0-9a-f]{32}",
             "type": "string",
             "format": "OrganizationSid",
-            "example": "OR33f4f3aa6fffe840d000f8ef22e883db",
+            "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio organization sid"
           },
           "userSid": {
             "pattern": "US[0-9a-f]{32}",
             "type": "string",
             "format": "UserSid",
-            "example": "USb51dccce9ac8e67b938253c7bcaa4f45",
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio user sid"
           },
           "firstName": {
@@ -1116,7 +1180,8 @@
                   "enum": [
                     "organization",
                     "account",
-                    "subaccount"
+                    "subaccount",
+                    "resource"
                   ]
                 },
                 "scopeName": {
@@ -1145,7 +1210,7 @@
             "pattern": "US[0-9a-f]{32}",
             "type": "string",
             "format": "UserSid",
-            "example": "USb51dccce9ac8e67b938253c7bcaa4f45",
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "The SID of the new owner to transfer the account to"
           }
         }
@@ -1157,8 +1222,73 @@
             "type": "string",
             "pattern": "WX[0-9a-f]{32}",
             "format": "WorkflowExecutionSid",
-            "example": "WXe0c97ff86651669fefcd6cc4ecd96e9a",
+            "example": "WXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "The SID of the workflow that will handle the account ownership change"
+          }
+        }
+      },
+      "iam.v1.ManagedAccountOrganizationResponse": {
+        "type": "object",
+        "properties": {
+          "organizationSid": {
+            "pattern": "OR[0-9a-f]{32}",
+            "type": "string",
+            "format": "OrganizationSid",
+            "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "description": "Unique Twilio organization sid"
+          }
+        }
+      },
+      "iam.v1.create-consent": {
+        "type": "object",
+        "required": [
+          "csrf_token",
+          "csrf_token_session_state",
+          "client_sid",
+          "vendor_client_id",
+          "response",
+          "owner_sid",
+          "actor_sid",
+          "issuer"
+        ],
+        "properties": {
+          "csrf_token": {
+            "type": "string"
+          },
+          "csrf_token_session_state": {
+            "type": "string"
+          },
+          "redirect_uri": {
+            "type": "string",
+            "format": "uri"
+          },
+          "client_sid": {
+            "type": "string"
+          },
+          "vendor_client_id": {
+            "type": "string"
+          },
+          "response": {
+            "type": "string",
+            "enum": [
+              "allow",
+              "deny"
+            ]
+          },
+          "owner_sid": {
+            "type": "string"
+          },
+          "actor_sid": {
+            "type": "string"
+          },
+          "issuer": {
+            "type": "string"
+          },
+          "allow": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -1229,6 +1359,16 @@
             "type": "string",
             "format": "uri"
           },
+          "presigned_image_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Presigned URL for temporary direct access to the image. Valid for 5 minutes."
+          },
+          "presigned_image_url_expires_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the presigned image URL expires"
+          },
           "authorization_url": {
             "type": "string",
             "format": "uri"
@@ -1287,6 +1427,9 @@
             "type": "string",
             "format": "uri"
           },
+          "image_key": {
+            "type": "string"
+          },
           "company_name": {
             "type": "string"
           },
@@ -1313,10 +1456,6 @@
       "iam.v1.organization.VendorOauthAppUpdateRequest": {
         "type": "object",
         "properties": {
-          "type": {
-            "type": "string",
-            "nullable": true
-          },
           "friendly_name": {
             "type": "string",
             "nullable": true
@@ -1365,6 +1504,15 @@
               "type": "string",
               "format": "uri"
             },
+            "nullable": true
+          },
+          "image_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true
+          },
+          "image_key": {
+            "type": "string",
             "nullable": true
           },
           "access_token_ttl": {
@@ -1452,6 +1600,25 @@
           }
         }
       },
+      "iam.v1.organization.GeneratePresignedImageUploadUrlResponse": {
+        "type": "object",
+        "properties": {
+          "presigned_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Presigned S3 URL for uploading the image (PUT request). Valid for 5 minutes."
+          },
+          "image_key": {
+            "type": "string",
+            "description": "S3 key where the image will be stored."
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the presigned URL expires"
+          }
+        }
+      },
       "iam.v1.CreateAccountRequest": {
         "type": "object",
         "required": [
@@ -1462,7 +1629,7 @@
           "ownerId": {
             "type": "string",
             "description": "The owner of the account to be provisioned.",
-            "example": "USd41d8cd98f00b204e9800998ecf8427e",
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "pattern": "^US[0-9A-Fa-f]{32}$"
           },
           "friendlyName": {
@@ -1492,7 +1659,7 @@
           "parentAccountId": {
             "type": "string",
             "description": "The parent account ID of the subaccount to be provisioned.",
-            "example": "ACd41d8cd98f00b204e9800998ecf8427e",
+            "example": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "pattern": "^AC[0-9A-Fa-f]{32}$"
           },
           "friendlyName": {
@@ -1610,7 +1777,7 @@
           "ownerId": {
             "type": "string",
             "description": "The owner of the account to be provisioned.",
-            "example": "USd41d8cd98f00b204e9800998ecf8427e",
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "pattern": "^US[0-9A-Fa-f]{32}$"
           },
           "status": {
@@ -1665,7 +1832,7 @@
             "type": "string",
             "pattern": "WX[0-9a-f]{32}",
             "format": "WorkflowExecutionSid",
-            "example": "WXe0c97ff86651669fefcd6cc4ecd96e9a",
+            "example": "WXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "The SID of the workflow that will handle the account ownership change"
           }
         }
@@ -1872,7 +2039,7 @@
             "pattern": "IX[0-9a-f]{32}",
             "type": "string",
             "format": "IamRoleSid",
-            "example": "IX8b69703c2a65ec199f061b0ae29745b1",
+            "example": "IXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio sid of the account role"
           },
           "name": {
@@ -1890,15 +2057,27 @@
             "pattern": "AC[0-9a-f]{32}",
             "type": "string",
             "format": "AccountSid",
-            "example": "AC114547f9207efd8c49aa1e70bfd8c191",
+            "example": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio sid of the account that the user was invited to"
           },
           "sid": {
             "pattern": "NF[0-9a-f]{32}",
             "type": "string",
             "format": "IdentityNotificationSid",
-            "example": "NFbfd75767416fbd8418bedafce743700a",
+            "example": "NFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
             "description": "Unique Twilio notification sid of the invitation"
+          },
+          "friendlyName": {
+            "type": "string",
+            "description": "Friendly name of the account"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Account",
+              "Subaccount"
+            ],
+            "description": "Type of the account"
           },
           "email": {
             "type": "string",
@@ -2004,10 +2183,10 @@
             "required": true,
             "examples": {
               "readEmpty": {
-                "value": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               },
               "readFull": {
-                "value": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -2095,9 +2274,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://iam.twilio.com/v1/Keys?AccountSid=ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://iam.twilio.com/v1/Keys?AccountSid=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://iam.twilio.com/v1/Keys?AccountSid=ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "url": "https://iam.twilio.com/v1/Keys?AccountSid=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "keys"
                       }
@@ -2107,7 +2286,7 @@
                     "value": {
                       "keys": [
                         {
-                          "sid": "SKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "foo",
                           "date_created": "Mon, 13 Jun 2016 22:50:08 +0000",
                           "date_updated": "Mon, 13 Jun 2016 22:50:08 +0000",
@@ -2117,7 +2296,7 @@
                           ]
                         },
                         {
-                          "sid": "SKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "sid": "SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "bar",
                           "date_created": "Mon, 13 Jun 2016 20:50:08 +0000",
                           "date_updated": "Mon, 13 Jun 2016 20:50:08 +0000",
@@ -2130,9 +2309,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://iam.twilio.com/v1/Keys?AccountSid=ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://iam.twilio.com/v1/Keys?AccountSid=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://iam.twilio.com/v1/Keys?AccountSid=ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "url": "https://iam.twilio.com/v1/Keys?AccountSid=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "keys"
                       }
@@ -2202,7 +2381,7 @@
                 "examples": {
                   "createStandardKey": {
                     "value": {
-                      "sid": "SKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "foo",
                       "date_created": "Mon, 13 Jun 2016 22:50:08 +0000",
                       "date_updated": "Mon, 13 Jun 2016 22:50:08 +0000",
@@ -2212,7 +2391,7 @@
                   },
                   "createRestrictedKey": {
                     "value": {
-                      "sid": "SKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "foo",
                       "date_created": "Mon, 13 Jun 2016 22:50:08 +0000",
                       "date_updated": "Mon, 13 Jun 2016 22:50:08 +0000",
@@ -2307,13 +2486,13 @@
                 "createStandardKey": {
                   "value": {
                     "FriendlyName": "foo",
-                    "AccountSid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "AccountSid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 },
                 "createRestrictedKey": {
                   "value": {
                     "FriendlyName": "foo",
-                    "AccountSid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "AccountSid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "KeyType": "restricted",
                     "Policy": "{\"allow\":[\"/twilio/messaging/messages/read\"]}"
                   }
@@ -2372,7 +2551,7 @@
                 "examples": {
                   "fetchStandardKey": {
                     "value": {
-                      "sid": "SKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "foo",
                       "date_created": "Mon, 13 Jun 2016 22:50:08 +0000",
                       "date_updated": "Mon, 13 Jun 2016 22:50:08 +0000",
@@ -2381,7 +2560,7 @@
                   },
                   "fetchRestrictedKey": {
                     "value": {
-                      "sid": "SKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "foo",
                       "date_created": "Mon, 13 Jun 2016 22:50:08 +0000",
                       "date_updated": "Mon, 13 Jun 2016 22:50:08 +0000",
@@ -2470,7 +2649,7 @@
                 "examples": {
                   "updateStandardKey": {
                     "value": {
-                      "sid": "SKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "foo",
                       "date_created": "Mon, 13 Jun 2016 22:50:08 +0000",
                       "date_updated": "Mon, 13 Jun 2016 22:50:08 +0000",
@@ -2479,7 +2658,7 @@
                   },
                   "updateRestrictedKey": {
                     "value": {
-                      "sid": "SKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "foo",
                       "date_created": "Mon, 13 Jun 2016 22:50:08 +0000",
                       "date_updated": "Mon, 13 Jun 2016 22:50:08 +0000",
@@ -2604,6 +2783,198 @@
         "operationId": "DeleteKey"
       }
     },
+    "/v1/Roles/{RoleSid}/Permissions": {
+      "servers": [
+        {
+          "url": "https://iam.twilio.com"
+        }
+      ],
+      "description": "",
+      "x-twilio": {
+        "defaultOutputProperties": [],
+        "mountName": "role_permission",
+        "parent": "/v1/Roles/{Sid}",
+        "pathType": "list"
+      },
+      "get": {
+        "description": "List resolved permissions for a role",
+        "tags": [
+          "IamV1RolePermission"
+        ],
+        "parameters": [
+          {
+            "name": "RoleSid",
+            "in": "path",
+            "description": "The SID of the Role for which Permissions will be fetched.",
+            "schema": {
+              "type": "string",
+              "minLength": 34,
+              "maxLength": 34,
+              "pattern": "^IX[0-9a-fA-F]{32}$"
+            },
+            "required": true
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "description": "How many resources to return in each list page. The default is 50, and the maximum is 100.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "minimum": 1,
+              "maximum": 100
+            }
+          },
+          {
+            "name": "Page",
+            "in": "query",
+            "description": "The page index. This value is simply for client state.",
+            "schema": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          {
+            "name": "PageToken",
+            "in": "query",
+            "description": "The page token. This is provided by the API.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "permissions": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/iam.v1.role_permission"
+                      }
+                    },
+                    "meta": {
+                      "properties": {
+                        "first_page_url": {
+                          "format": "uri",
+                          "type": "string"
+                        },
+                        "key": {
+                          "type": "string"
+                        },
+                        "next_page_url": {
+                          "format": "uri",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "page": {
+                          "type": "integer"
+                        },
+                        "page_size": {
+                          "type": "integer"
+                        },
+                        "previous_page_url": {
+                          "format": "uri",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "url": {
+                          "format": "uri",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "title": "ListRolePermissionResponse"
+                },
+                "examples": {
+                  "readEmpty": {
+                    "value": {
+                      "permissions": [],
+                      "meta": {
+                        "page": 0,
+                        "page_size": 50,
+                        "first_page_url": "https://iam.twilio.com/v1/Roles/IXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Permissions?PageSize=50&Page=0",
+                        "previous_page_url": null,
+                        "url": "https://iam.twilio.com/v1/Roles/IXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Permissions?PageSize=50&Page=0",
+                        "next_page_url": null,
+                        "key": "permissions"
+                      }
+                    }
+                  },
+                  "readFull": {
+                    "value": {
+                      "permissions": [
+                        {
+                          "sid": "IZxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "namespace": "twilio",
+                          "product": "iam",
+                          "resource": "roles",
+                          "action": "read",
+                          "externalDescription": "Read access to IAM roles"
+                        }
+                      ],
+                      "meta": {
+                        "page": 0,
+                        "page_size": 50,
+                        "first_page_url": "https://iam.twilio.com/v1/Roles/IXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Permissions?PageSize=50&Page=0",
+                        "previous_page_url": null,
+                        "url": "https://iam.twilio.com/v1/Roles/IXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Permissions?PageSize=50&Page=0",
+                        "next_page_url": null,
+                        "key": "permissions"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "description": "Specify the origin(s) allowed to access the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "*"
+              },
+              "Access-Control-Allow-Methods": {
+                "description": "Specify the HTTP methods allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "POST, OPTIONS"
+              },
+              "Access-Control-Allow-Headers": {
+                "description": "Specify the headers allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Content-Type, Authorization"
+              },
+              "Access-Control-Allow-Credentials": {
+                "description": "Indicates whether the browser should include credentials",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "description": "Headers exposed to the client",
+                "schema": {
+                  "type": "string",
+                  "example": "X-Custom-Header1, X-Custom-Header2"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [],
+        "operationId": "ListRolePermission"
+      }
+    },
     "/v1/token": {
       "servers": [
         {
@@ -2692,7 +3063,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "client_id": "OQ7cda1a615f05a95634e643aaaf7081d7",
+                    "client_id": "OQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "client_secret": "sUWblrQ4wx_aYkdAWjHXNvHinynkYOgBoiRyEQUeEntpgDEG47qnBFD98yoEzsTh",
                     "grant_type": "client_credentials",
                     "redirect_uri": "",
@@ -2727,6 +3098,7 @@
     "/v1/Operations/{operationId}": {},
     "/v1/Operations/{operationId}/ChildOperations": {},
     "/v1/Organizations/Info": {},
+    "/v1/Organizations/Features": {},
     "/v1/Organizations/Domains": {},
     "/v1/Organizations/Domains/{domainSid}": {},
     "/v1/Organizations/Domains/Limit": {},
@@ -3091,6 +3463,13 @@
         }
       ]
     },
+    "/v1/Organization/OAuthApps/image/presigned-url": {
+      "servers": [
+        {
+          "url": "https://iam.twilio.com"
+        }
+      ]
+    },
     "/v1/Organizations/InvitedAccounts": {},
     "/v1/Organizations/InvitedAccounts/Limit": {},
     "/v1/Organizations/ImportUsers/EligibleUsers/Count": {},
@@ -3254,9 +3633,15 @@
     },
     "/v1/Organizations/InvitedUsers": {},
     "/v1/Organizations/ManagedAccounts/{accountSid}/ChangeOwner": {},
+    "/v1/Organizations/ManagedAccounts/{accountSid}/Organization": {},
     "/v1/Users/SendPasswordResetEmail": {},
     "/v1/Accounts/ChangeOwner": {},
     "/v1/Accounts/Invitations": {},
+    "/v1/console/api/ipam/acr_list": {},
+    "/v1/console/api/ipam/add_ip": {},
+    "/v1/console/api/ipam/edit_ip": {},
+    "/v1/console/api/ipam/remove_ip": {},
+    "/v1/console/api/ipam/set_ipam_status": {},
     "/v1/Authorize": {}
   },
   "servers": [

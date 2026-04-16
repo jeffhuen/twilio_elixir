@@ -227,8 +227,8 @@
                     "value": {
                       "phone_number": "+18001234567",
                       "url": "https://routes.twilio.com/v2/PhoneNumbers/+18001234567",
-                      "sid": "QQaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "voice_region": "au1",
                       "date_created": "2015-07-30T20:00:00Z",
@@ -341,8 +341,8 @@
                     "value": {
                       "phone_number": "+18001234567",
                       "url": "https://routes.twilio.com/v2/PhoneNumbers/+18001234567",
-                      "sid": "QQaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "voice_region": "au1",
                       "date_created": "2015-07-30T20:00:00Z",
@@ -443,8 +443,8 @@
                     "value": {
                       "url": "https://routes.twilio.com/v2/SipDomains/test.sip.twilio.com",
                       "sip_domain": "test.sip.twilio.com",
-                      "sid": "QQaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "voice_region": "au1",
                       "date_created": "2020-08-07T22:29:24Z",
@@ -556,8 +556,8 @@
                   "fetch": {
                     "value": {
                       "url": "https://routes.twilio.com/v2/SipDomains/test.sip.twilio.com",
-                      "account_sid": "AC00000000000000000000000000000000",
-                      "sid": "QQ00000000000000000000000000000000",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "QQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "sip_domain": "test.sip.twilio.com",
                       "friendly_name": "string",
                       "voice_region": "string",
@@ -659,8 +659,8 @@
                     "value": {
                       "sip_trunk_domain": "test.pstn.twilio.com",
                       "url": "https://routes.twilio.com/v2/Trunks/test.pstn.twilio.com",
-                      "sid": "QQaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "voice_region": "au1",
                       "date_created": "2020-08-07T22:29:24Z",
@@ -773,8 +773,8 @@
                     "value": {
                       "sip_trunk_domain": "test.pstn.twilio.com",
                       "url": "https://routes.twilio.com/v2/Trunks/test.pstn.twilio.com",
-                      "account_sid": "AC00000000000000000000000000000000",
-                      "sid": "QQ00000000000000000000000000000000",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "QQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "string",
                       "voice_region": "string",
                       "date_created": "2022-06-02T22:33:47Z",

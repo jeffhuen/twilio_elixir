@@ -337,7 +337,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "redirect_to": "https://documentation-example-twilio-bucket.s3.amazonaws.com/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "redirect_to": "https://documentation-example-twilio-bucket.s3.amazonaws.com/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1090,7 +1090,7 @@
                       "jobs": [
                         {
                           "start_day": "start_day",
-                          "job_sid": "JSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "job_sid": "JSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "friendly_name",
                           "webhook_method": "webhook_method",
                           "details": [
@@ -1183,7 +1183,7 @@
                   "create": {
                     "value": {
                       "start_day": "start_day",
-                      "job_sid": "JSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "job_sid": "JSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "webhook_method": "webhook_method",
                       "details": [
@@ -1355,8 +1355,8 @@
                   "fetch": {
                     "value": {
                       "start_day": "start_day",
-                      "job_sid": "JSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://bulkexports.twilio.com/v1/Exports/Jobs/JSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "job_sid": "JSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://bulkexports.twilio.com/v1/Exports/Jobs/JSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "friendly_name",
                       "end_day": "end_day",
                       "details": [

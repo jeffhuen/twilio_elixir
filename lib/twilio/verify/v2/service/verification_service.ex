@@ -36,7 +36,7 @@ defmodule Twilio.Verify.V2.Service.VerificationService do
   | `CustomCode` | string | A pre-generated code to use for verification. The code can be between 4 and 10 characters, inclusive. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `CustomFriendlyName` | string | A custom user defined friendly name that overwrites the existing one in the verification message |
-  | `CustomMessage` | string | The text of a custom message to use for the verification. |
+  | `CustomMessage` | string | The text of a custom message to use for the verification [DEPRECATED]. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `DeviceIp` | string | Strongly encouraged if using the auto channel. The IP address of the client's device. If provided, it has to be a valid IPv4 or IPv6 address. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
@@ -50,7 +50,7 @@ defmodule Twilio.Verify.V2.Service.VerificationService do
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `SendDigits` | string | The digits to send after a phone call is answered, for example, to dial an extension. For more information, see the Programmable Voice documentation of [sendDigits](https://www.twilio.com/docs/voice/twiml/number#attributes-sendDigits). |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `Tags` | string | A string containing a JSON map of key value pairs of tags to be recorded as metadata for the message. The object may contain up to 10 tags. Keys and values can each be up to 128 characters in length. |
+  | `Tags` | string | A string containing a JSON map of key value pairs of tags to be recorded as metadata for the message. The tags will also be included as part of the verification and message status event type payloads. The object may contain up to 10 tags. Keys and values can each be up to 128 characters in length. **This value should not contain PII.** |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TemplateCustomSubstitutions` | string | A stringified JSON object in which the keys are the template's special variables and the values are the variables substitutions. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
