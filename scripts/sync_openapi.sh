@@ -24,6 +24,18 @@ cp "$TMP_DIR/spec/json"/twilio_*.json "$OUTPUT_DIR/"
 # Cleanup
 rm -rf "$TMP_DIR"
 
+# Sanitize Twilio SID-shaped substrings. GitHub push protection flags any
+# [A-Z]{2}[0-9a-f]{32} string as a Twilio Account String Identifier, even
+# when it appears as a documentation example, response sample, or in a
+# query-string (e.g. ?AccountSid=AC...). Codegen ignores these literals
+# (it uses schema patterns, not example values), so replacing the hex tail
+# with a non-hex placeholder is safe and preserves the prefix for readers.
+# Schema patterns like "AC[0-9a-f]{32}" are not affected because the chars
+# after the two-letter prefix are literal `[`, not hex.
+find "$OUTPUT_DIR" -name 'twilio_*.json' -print0 \
+  | xargs -0 sed -i.sedbak -E 's/([A-Z]{2})[0-9a-f]{32}/\1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/g'
+find "$OUTPUT_DIR" -name '*.sedbak' -delete
+
 # Track version
 echo "$LATEST_TAG" > "$VERSION_FILE"
 
