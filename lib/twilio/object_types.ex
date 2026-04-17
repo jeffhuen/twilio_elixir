@@ -256,7 +256,6 @@ defmodule Twilio.ObjectTypes do
       "flex.v1.insights_settings_comment" =>
         Twilio.Resources.Flex.V1.Insight.QualityManagement.Setting.CommentTag,
       "flex.v1.insights_user_roles" => Twilio.Resources.Flex.V1.Insight.InsightsUserRoles,
-      "flex.v1.instance" => Twilio.Resources.Flex.V1.Instance,
       "flex.v1.interaction" => Twilio.Resources.Flex.V1.Interaction,
       "flex.v1.interaction.interaction_channel" =>
         Twilio.Resources.Flex.V1.Interaction.InteractionChannel,
@@ -284,6 +283,7 @@ defmodule Twilio.ObjectTypes do
       "flex.v2.web_channel" => Twilio.Resources.Flex.V2.WebChannels,
       "frontline.v1.user" => Twilio.Resources.Frontline.V1.User,
       "iam.v1.key" => Twilio.Resources.Iam.V1.GetApiKeys,
+      "iam.v1.role_permission" => Twilio.Resources.Iam.V1.Role.Permission,
       "insights.v1.account_settings" => Twilio.Resources.Insights.V1.Voice.Setting,
       "insights.v1.call" => Twilio.Resources.Insights.V1.Voice,
       "insights.v1.call.annotation" => Twilio.Resources.Insights.V1.Voice.Annotation,
@@ -297,6 +297,13 @@ defmodule Twilio.ObjectTypes do
       "insights.v1.video_room_summary" => Twilio.Resources.Insights.V1.Video.Room,
       "insights.v1.video_room_summary.video_participant_summary" =>
         Twilio.Resources.Insights.V1.Video.Room.Participant,
+      "insights.v2.account_report" => Twilio.Resources.Insights.V2.Voice.Report,
+      "insights.v2.create_report_response" =>
+        Twilio.Resources.Insights.V2.Voice.Report.PhoneNumber.Outbound,
+      "insights.v2.inbound_phone_number_report" =>
+        Twilio.Resources.Insights.V2.Voice.Report.PhoneNumber.Inbound,
+      "insights.v2.outbound_phone_number_report" =>
+        Twilio.Resources.Insights.V2.Voice.Report.PhoneNumber.Outbound,
       "intelligence.v2.custom_operator" => Twilio.Resources.Intelligence.V2.Operator.Custom,
       "intelligence.v2.operator" => Twilio.Resources.Intelligence.V2.Operator,
       "intelligence.v2.operator_attachments" =>
@@ -380,7 +387,7 @@ defmodule Twilio.ObjectTypes do
         Twilio.Resources.Messaging.V1.Service.DestinationAlphaSender,
       "messaging.v1.service.phone_number" => Twilio.Resources.Messaging.V1.Service.PhoneNumber,
       "messaging.v1.service.short_code" => Twilio.Resources.Messaging.V1.Service.ShortCode,
-      "messaging.v1.service.us_app_to_person" =>
+      "messaging.v1.service.us_app_to_person_response" =>
         Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p,
       "messaging.v1.service.us_app_to_person_usecase" =>
         Twilio.Resources.Messaging.V1.Service.Compliance.Usa2p.Usecase,
@@ -396,6 +403,10 @@ defmodule Twilio.ObjectTypes do
       "notify.v1.service.binding" => Twilio.Resources.Notify.V1.Service.Binding,
       "notify.v1.service.notification" => Twilio.Resources.Notify.V1.Service.Notification,
       "numbers.v1.bulk_eligibility" => Twilio.Resources.Numbers.V1.HostedNumber.Eligibility.Bulk,
+      "numbers.v1.create_embedded_registration_response" =>
+        Twilio.Resources.Numbers.V1.SenderIdRegistration,
+      "numbers.v1.create_embedded_session_response" =>
+        Twilio.Resources.Numbers.V1.SenderIdRegistration.EmbeddedSession,
       "numbers.v1.eligibility" => Twilio.Resources.Numbers.V1.HostedNumber.Eligibility,
       "numbers.v1.port_in_request_list" =>
         Twilio.Resources.Numbers.V1.Porting.PortIn.PortInRequest,

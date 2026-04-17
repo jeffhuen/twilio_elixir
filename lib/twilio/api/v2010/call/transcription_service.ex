@@ -18,6 +18,12 @@ defmodule Twilio.Api.V2010.Call.TranscriptionService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `ConfigurationId` | string | The ID of the RealTimeTranscription Configuration for configuring all the non-default behaviors in one go. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `ConversationConfiguration` | string | The ID of the Conversations Configuration for customizing conversation behavior in Intelligence Service |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `ConversationId` | string | The ID of the Conversation for associating this Transcription with an existing Conversation in Intelligence Service |
   | `EnableAutomaticPunctuation` | boolean | The provider will add punctuation to recognition result |
   | `EnableProviderData` | boolean | Whether the callback includes raw provider data. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength

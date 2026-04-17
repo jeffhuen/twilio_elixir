@@ -3174,7 +3174,7 @@
           "overridden_by_account_sid": {
             "type": "string",
             "description": "The Account SID for the user who made the override",
-            "example": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            "example": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           }
         }
       }

@@ -947,11 +947,11 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "My New Operator",
                       "description": "New Operator",
-                      "author": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "author": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "operator_type": "operator-type-name",
                       "version": 1,
                       "availability": "public",
@@ -962,7 +962,7 @@
                       },
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
-                      "url": "https://intelligence.twilio.com/v2/Operators/Custom/LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://intelligence.twilio.com/v2/Operators/Custom/LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1192,11 +1192,11 @@
                     "value": {
                       "operators": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "My New Operator",
                           "description": "New Operator",
-                          "author": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "author": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "operator_type": "operator-type-name",
                           "version": 1,
                           "availability": "public",
@@ -1207,7 +1207,7 @@
                           },
                           "date_created": "2010-08-31T20:36:28Z",
                           "date_updated": "2010-08-31T20:36:28Z",
-                          "url": "https://intelligence.twilio.com/v2/Operators/Custom/LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://intelligence.twilio.com/v2/Operators/Custom/LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -1352,11 +1352,11 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "My New Operator",
                       "description": "My New Operator",
-                      "author": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "author": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "operator_type": "operator-type-name",
                       "version": 2,
                       "availability": "public",
@@ -1367,7 +1367,7 @@
                       },
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
-                      "url": "https://intelligence.twilio.com/v2/Operators/Custom/LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://intelligence.twilio.com/v2/Operators/Custom/LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1549,11 +1549,11 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "My New Operator",
                       "description": "New Operator",
-                      "author": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "author": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "operator_type": "operator-type-name",
                       "version": 1,
                       "availability": "public",
@@ -1564,7 +1564,7 @@
                       },
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
-                      "url": "https://intelligence.twilio.com/v2/Operators/Custom/LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://intelligence.twilio.com/v2/Operators/Custom/LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1697,21 +1697,21 @@
                   "fetch": {
                     "value": {
                       "locations": [
-                        "https://com.twilio.us1.operatorresults.s3.amazonaws.com/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults1",
-                        "https://com.twilio.us1.operatorresults.s3.amazonaws.com/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults2"
+                        "https://com.twilio.us1.operatorresults.s3.amazonaws.com/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults1",
+                        "https://com.twilio.us1.operatorresults.s3.amazonaws.com/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults2"
                       ],
-                      "transcript_sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults/Encrypted"
+                      "transcript_sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults/Encrypted"
                     }
                   },
                   "fetchRedacted": {
                     "value": {
                       "locations": [
-                        "https://com.twilio.us1.operatorresults.s3.amazonaws.com/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults1",
-                        "https://com.twilio.us1.operatorresults.s3.amazonaws.com/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults2"
+                        "https://com.twilio.us1.operatorresults.s3.amazonaws.com/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults1",
+                        "https://com.twilio.us1.operatorresults.s3.amazonaws.com/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults2"
                       ],
-                      "transcript_sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults/Encrypted"
+                      "transcript_sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults/Encrypted"
                     }
                   }
                 }
@@ -1823,16 +1823,16 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "location": "https://com.twilio.us1.sentences.s3.amazonaws.com/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "transcript_sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences/Encrypted"
+                      "location": "https://com.twilio.us1.sentences.s3.amazonaws.com/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "transcript_sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences/Encrypted"
                     }
                   },
                   "fetchRedacted": {
                     "value": {
-                      "location": "https://com.twilio.us1.sentences.s3.amazonaws.com/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "transcript_sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences/Encrypted"
+                      "location": "https://com.twilio.us1.sentences.s3.amazonaws.com/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "transcript_sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences/Encrypted"
                     }
                   }
                 }
@@ -1944,20 +1944,20 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "media_url": "https://media.server.com/media.wav",
-                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Media"
+                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Media"
                     }
                   },
                   "fetchParams": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "media_url": "https://media.server.com/media.wav",
-                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Media"
+                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Media"
                     }
                   }
                 }
@@ -2068,11 +2068,11 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "My New Operator",
                       "description": "New Operator",
-                      "author": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "author": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "operator_type": "operator-type-name",
                       "version": 1,
                       "availability": "public",
@@ -2083,7 +2083,7 @@
                       },
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
-                      "url": "https://intelligence.twilio.com/v2/Operators/LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://intelligence.twilio.com/v2/Operators/LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2285,11 +2285,11 @@
                     "value": {
                       "operators": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "My New Operator",
                           "description": "New Operator",
-                          "author": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "author": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "operator_type": "operator-type-name",
                           "version": 1,
                           "availability": "public",
@@ -2300,7 +2300,7 @@
                           },
                           "date_created": "2010-08-31T20:36:28Z",
                           "date_updated": "2010-08-31T20:36:28Z",
-                          "url": "https://intelligence.twilio.com/v2/Operators/LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://intelligence.twilio.com/v2/Operators/LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -2450,9 +2450,9 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "operator_sid": "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://intelligence.twilio.com/v2/Services/GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Operators/LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "operator_sid": "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://intelligence.twilio.com/v2/Services/GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Operators/LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2594,12 +2594,12 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "service_sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "service_sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "operator_sids": [
-                        "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                        "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       ],
-                      "url": "https://intelligence.twilio.com/v2/Services/GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Operators"
+                      "url": "https://intelligence.twilio.com/v2/Services/GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Operators"
                     }
                   }
                 }
@@ -2782,9 +2782,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults?PageSize=50&Page=0",
+                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults?PageSize=50&Page=0",
+                        "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "operator_results"
                       }
@@ -2796,7 +2796,7 @@
                         {
                           "operator_type": "conversation-classify",
                           "name": "name",
-                          "operator_sid": "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "operator_sid": "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "extract_match": false,
                           "match_probability": "0.05",
                           "normalized_result": "normalized_result",
@@ -2810,16 +2810,16 @@
                           "extract_results": {},
                           "text_generation_results": {},
                           "json_results": {},
-                          "transcript_sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults/LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "transcript_sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults/LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults?Redacted=true&PageSize=50&Page=0",
+                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults?Redacted=true&PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults?Redacted=true&PageSize=50&Page=0",
+                        "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults?Redacted=true&PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "operator_results"
                       }
@@ -2961,7 +2961,7 @@
                     "value": {
                       "operator_type": "conversation-classify",
                       "name": "name",
-                      "operator_sid": "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "operator_sid": "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "extract_match": false,
                       "match_probability": "0.05",
                       "normalized_result": "normalized_result",
@@ -2975,8 +2975,8 @@
                       "extract_results": {},
                       "text_generation_results": {},
                       "json_results": {},
-                      "transcript_sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults/LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "transcript_sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults/LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -3092,6 +3092,22 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "LanguageCode",
+            "in": "query",
+            "description": "Returns Operator Types that support the provided language code.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "readFull": {
+                "value": "en"
+              },
+              "readEmpty": {
+                "value": "en"
+              }
+            }
           }
         ],
         "responses": {
@@ -3148,7 +3164,7 @@
                       "operator_types": [
                         {
                           "name": "Summarization",
-                          "sid": "EYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "EYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Summarize Conversations",
                           "description": "Summarize Conversations",
                           "docs_link": "https://www.twilio.com/docs/conversational-intelligence/key-concepts#language-operators",
@@ -3164,7 +3180,7 @@
                           },
                           "date_created": "2010-08-31T20:36:28Z",
                           "date_updated": "2010-08-31T20:36:28Z",
-                          "url": "https://intelligence.twilio.com/v2/OperatorTypes/EYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://intelligence.twilio.com/v2/OperatorTypes/EYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -3299,7 +3315,7 @@
                   "fetch": {
                     "value": {
                       "name": "Summarization",
-                      "sid": "EYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "EYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Summarize Conversations",
                       "description": "Summarize Conversations",
                       "docs_link": "https://www.twilio.com/docs/conversational-intelligence/key-concepts#language-operators",
@@ -3315,7 +3331,7 @@
                       },
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
-                      "url": "https://intelligence.twilio.com/v2/OperatorTypes/EYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://intelligence.twilio.com/v2/OperatorTypes/EYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -3427,11 +3443,11 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "My New Operator",
                       "description": "New Operator",
-                      "author": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "author": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "operator_type": "operator-type-name",
                       "version": 1,
                       "availability": "public",
@@ -3442,7 +3458,7 @@
                       },
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
-                      "url": "https://intelligence.twilio.com/v2/Operators/PreBuilt/LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://intelligence.twilio.com/v2/Operators/PreBuilt/LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -3645,11 +3661,11 @@
                     "value": {
                       "operators": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "My New Operator",
                           "description": "New Operator",
-                          "author": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "author": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "operator_type": "operator-type-name",
                           "version": 1,
                           "availability": "public",
@@ -3660,7 +3676,7 @@
                           },
                           "date_created": "2010-08-31T20:36:28Z",
                           "date_updated": "2010-08-31T20:36:28Z",
-                          "url": "https://intelligence.twilio.com/v2/Operators/PreBuilt/LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://intelligence.twilio.com/v2/Operators/PreBuilt/LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -3906,7 +3922,7 @@
                           "start_time": null,
                           "end_time": null,
                           "transcript": "test test",
-                          "sid": "GXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "GXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "confidence": null,
                           "words": [
                             {
@@ -3926,8 +3942,8 @@
                         "key": "sentences",
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences?PageSize=50&Page=0",
-                        "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences?PageSize=50&Page=0",
+                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences?PageSize=50&Page=0",
+                        "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences?PageSize=50&Page=0",
                         "next_page_url": null,
                         "previous_page_url": null
                       }
@@ -3942,7 +3958,7 @@
                           "start_time": null,
                           "end_time": null,
                           "transcript": "test test",
-                          "sid": "GXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "GXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "confidence": null,
                           "words": [
                             {
@@ -3962,8 +3978,8 @@
                         "key": "sentences",
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences?Redacted=true&WordTimestamps=true&PageSize=50&Page=0",
-                        "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences?Redacted=true&WordTimestamps=true&PageSize=50&Page=0",
+                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences?Redacted=true&WordTimestamps=true&PageSize=50&Page=0",
+                        "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences?Redacted=true&WordTimestamps=true&PageSize=50&Page=0",
                         "next_page_url": null,
                         "previous_page_url": null
                       }
@@ -4068,12 +4084,12 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "something",
                       "friendly_name": "some friendly name",
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "auto_redaction": false,
                       "media_redaction": false,
                       "auto_transcribe": true,
@@ -4082,11 +4098,11 @@
                       "webhook_url": "https://www.twilio.com",
                       "webhook_http_method": "POST",
                       "read_only_attached_operator_sids": [
-                        "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       ],
                       "version": 1,
-                      "encryption_credential_sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://intelligence.twilio.com/v2/Services/GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "encryption_credential_sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://intelligence.twilio.com/v2/Services/GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4219,7 +4235,7 @@
                     "LanguageCode": "en-US",
                     "WebhookUrl": "https://www.twilio.com",
                     "WebhookHttpMethod": "POST",
-                    "EncryptionCredentialSid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "EncryptionCredentialSid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -4316,12 +4332,12 @@
                     "value": {
                       "services": [
                         {
-                          "sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "unique_name": "something",
                           "friendly_name": "some friendly name",
                           "date_created": "2010-08-31T20:36:28Z",
                           "date_updated": "2010-08-31T20:36:28Z",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "auto_redaction": false,
                           "media_redaction": false,
                           "auto_transcribe": true,
@@ -4330,11 +4346,11 @@
                           "webhook_url": "https://www.twilio.com",
                           "webhook_http_method": "POST",
                           "read_only_attached_operator_sids": [
-                            "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                            "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                           ],
-                          "encryption_credential_sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "encryption_credential_sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "version": 1,
-                          "url": "https://intelligence.twilio.com/v2/Services/GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://intelligence.twilio.com/v2/Services/GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -4523,12 +4539,12 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "something",
                       "friendly_name": "some friendly name",
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "auto_redaction": false,
                       "media_redaction": false,
                       "auto_transcribe": true,
@@ -4537,11 +4553,11 @@
                       "webhook_url": "https://www.twilio.com",
                       "webhook_http_method": "POST",
                       "read_only_attached_operator_sids": [
-                        "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       ],
-                      "encryption_credential_sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "encryption_credential_sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "version": 1,
-                      "url": "https://intelligence.twilio.com/v2/Services/GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://intelligence.twilio.com/v2/Services/GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4648,12 +4664,12 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "something",
                       "friendly_name": "some friendly name",
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "auto_redaction": false,
                       "media_redaction": false,
                       "auto_transcribe": true,
@@ -4662,11 +4678,11 @@
                       "webhook_http_method": "GET",
                       "language_code": "en-US",
                       "read_only_attached_operator_sids": [
-                        "LYaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "LYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       ],
                       "version": 2,
-                      "encryption_credential_sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://intelligence.twilio.com/v2/Services/GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "encryption_credential_sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://intelligence.twilio.com/v2/Services/GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4791,7 +4807,7 @@
                     "FriendlyName": "some friendly name",
                     "WebhookUrl": "https://www.sendgrid.com",
                     "WebhookHttpMethod": "GET",
-                    "EncryptionCredentialSid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "EncryptionCredentialSid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -4865,9 +4881,9 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
                       "status": "queued",
@@ -4881,23 +4897,23 @@
                       "media_start_time": null,
                       "duration": 0,
                       "customer_key": "aaaaaaaa",
-                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "redaction": true,
-                      "encryption_credential_sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "encryption_credential_sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "sentences": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences",
-                        "encrypted_sentences": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences/Encrypted",
-                        "media": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Media",
-                        "operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults",
-                        "encrypted_operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults/Encrypted"
+                        "sentences": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences",
+                        "encrypted_sentences": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences/Encrypted",
+                        "media": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Media",
+                        "operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults",
+                        "encrypted_operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults/Encrypted"
                       }
                     }
                   },
                   "createParams": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
                       "status": "queued",
@@ -4911,15 +4927,15 @@
                       "media_start_time": null,
                       "duration": 0,
                       "customer_key": null,
-                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "redaction": true,
                       "encryption_credential_sid": null,
                       "links": {
-                        "sentences": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences",
-                        "encrypted_sentences": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences/Encrypted",
-                        "media": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Media",
-                        "operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults",
-                        "encrypted_operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults/Encrypted"
+                        "sentences": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences",
+                        "encrypted_sentences": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences/Encrypted",
+                        "media": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Media",
+                        "operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults",
+                        "encrypted_operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults/Encrypted"
                       }
                     }
                   }
@@ -5021,14 +5037,14 @@
               "examples": {
                 "create": {
                   "value": {
-                    "ServiceSid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "ServiceSid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Channel": "{ \"media_properties\" : { \"media_url\": \"http://foobar.test/ClusterTests/call1.wav\"}}",
                     "CustomerKey": "aaaaaaaa"
                   }
                 },
                 "createParams": {
                   "value": {
-                    "ServiceSid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "ServiceSid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Channel": "{ \"media_properties\" : { \"media_url\": \"http://foobar.test/ClusterTests/call1.wav\"}}",
                     "CustomerKey": "aaaaaaaa"
                   }
@@ -5057,13 +5073,13 @@
             },
             "examples": {
               "readFull": {
-                "value": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               },
               "readEmpty": {
-                "value": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               },
               "readQuery": {
-                "value": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -5134,7 +5150,7 @@
             },
             "examples": {
               "readFull": {
-                "value": "REaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "RExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -5220,9 +5236,9 @@
                     "value": {
                       "transcripts": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2010-08-31T20:36:28Z",
                           "date_updated": "2010-08-31T20:36:28Z",
                           "status": "queued",
@@ -5232,15 +5248,15 @@
                           "media_start_time": null,
                           "duration": 0,
                           "customer_key": null,
-                          "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "redaction": true,
                           "encryption_credential_sid": null,
                           "links": {
-                            "sentences": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences",
-                            "encrypted_sentences": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences/Encrypted",
-                            "media": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Media",
-                            "operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults",
-                            "encrypted_operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults/Encrypted"
+                            "sentences": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences",
+                            "encrypted_sentences": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences/Encrypted",
+                            "media": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Media",
+                            "operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults",
+                            "encrypted_operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults/Encrypted"
                           }
                         }
                       ],
@@ -5248,10 +5264,10 @@
                         "key": "transcripts",
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts?LanguageCode=en-US&SourceSid=REaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&ServiceSid=GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&AfterDateCreated=2019-11-22T23%3A46%3A00Z&PageSize=50&Page=0",
+                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts?LanguageCode=en-US&SourceSid=RExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&ServiceSid=GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&AfterDateCreated=2019-11-22T23%3A46%3A00Z&PageSize=50&Page=0",
                         "next_page_url": null,
                         "previous_page_url": null,
-                        "url": "https://intelligence.twilio.com/v2/Transcripts?LanguageCode=en-US&SourceSid=REaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&ServiceSid=GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&AfterDateCreated=2019-11-22T23%3A46%3A00Z&PageSize=50&Page=0"
+                        "url": "https://intelligence.twilio.com/v2/Transcripts?LanguageCode=en-US&SourceSid=RExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&ServiceSid=GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&AfterDateCreated=2019-11-22T23%3A46%3A00Z&PageSize=50&Page=0"
                       }
                     }
                   },
@@ -5262,10 +5278,10 @@
                         "key": "transcripts",
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts?ServiceSid=GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts?ServiceSid=GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "next_page_url": null,
                         "previous_page_url": null,
-                        "url": "https://intelligence.twilio.com/v2/Transcripts?ServiceSid=GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://intelligence.twilio.com/v2/Transcripts?ServiceSid=GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       }
                     }
                   },
@@ -5273,9 +5289,9 @@
                     "value": {
                       "transcripts": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2010-08-31T20:36:28Z",
                           "date_updated": "2010-08-31T20:36:28Z",
                           "status": "queued",
@@ -5285,15 +5301,15 @@
                           "media_start_time": null,
                           "duration": 0,
                           "customer_key": null,
-                          "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "redaction": true,
                           "encryption_credential_sid": null,
                           "links": {
-                            "sentences": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences",
-                            "encrypted_sentences": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences/Encrypted",
-                            "media": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Media",
-                            "operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults",
-                            "encrypted_operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults/Encrypted"
+                            "sentences": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences",
+                            "encrypted_sentences": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences/Encrypted",
+                            "media": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Media",
+                            "operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults",
+                            "encrypted_operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults/Encrypted"
                           }
                         }
                       ],
@@ -5301,10 +5317,10 @@
                         "key": "transcripts",
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts?ServiceSid=GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://intelligence.twilio.com/v2/Transcripts?ServiceSid=GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "next_page_url": null,
                         "previous_page_url": null,
-                        "url": "https://intelligence.twilio.com/v2/Transcripts?ServiceSid=GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://intelligence.twilio.com/v2/Transcripts?ServiceSid=GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       }
                     }
                   }
@@ -5452,9 +5468,9 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "GAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "GAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2010-08-31T20:36:28Z",
                       "date_updated": "2010-08-31T20:36:28Z",
                       "status": "queued",
@@ -5464,15 +5480,15 @@
                       "media_start_time": null,
                       "duration": 0,
                       "customer_key": null,
-                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "redaction": true,
                       "encryption_credential_sid": null,
                       "links": {
-                        "sentences": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences",
-                        "encrypted_sentences": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Sentences/Encrypted",
-                        "media": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Media",
-                        "operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults",
-                        "encrypted_operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OperatorResults/Encrypted"
+                        "sentences": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences",
+                        "encrypted_sentences": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Sentences/Encrypted",
+                        "media": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Media",
+                        "operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults",
+                        "encrypted_operator_results": "https://intelligence.twilio.com/v2/Transcripts/GTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OperatorResults/Encrypted"
                       }
                     }
                   }

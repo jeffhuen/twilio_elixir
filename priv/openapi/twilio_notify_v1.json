@@ -553,7 +553,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "address": "a7c658f4111ec4ff5a1a647f9d0edd819025b9f20522d2fae897049f32873e73",
                       "binding_type": "apn",
                       "credential_sid": null,
@@ -562,15 +562,15 @@
                       "endpoint": "26607274",
                       "identity": "24987039",
                       "notification_protocol_version": "3",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "tags": [
                         "26607274"
                       ],
                       "links": {
-                        "user": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/24987039"
+                        "user": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/24987039"
                       },
-                      "url": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings/BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings/BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -715,7 +715,7 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "address": "a7c658f4111ec4ff5a1a647f9d0edd819025b9f20522d2fae897049f32873e73",
                       "binding_type": "apn",
                       "credential_sid": null,
@@ -724,15 +724,15 @@
                       "endpoint": "26607274",
                       "identity": "24987039",
                       "notification_protocol_version": "3",
-                      "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "tags": [
                         "26607274"
                       ],
                       "links": {
-                        "user": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/24987039"
+                        "user": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/24987039"
                       },
-                      "url": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings/BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings/BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -835,7 +835,7 @@
                   "value": {
                     "Address": "address",
                     "BindingType": "apn",
-                    "CredentialSid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "CredentialSid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Endpoint": "endpoint",
                     "Identity": "24987039",
                     "NotificationProtocolVersion": "notification_protocol_version",
@@ -1020,13 +1020,13 @@
                     "value": {
                       "bindings": [],
                       "meta": {
-                        "first_page_url": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?Tag=tag&Identity=identity&PageSize=50&Page=0",
+                        "first_page_url": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?Tag=tag&Identity=identity&PageSize=50&Page=0",
                         "key": "bindings",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?Tag=tag&Identity=identity&PageSize=50&Page=0"
+                        "url": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?Tag=tag&Identity=identity&PageSize=50&Page=0"
                       }
                     }
                   },
@@ -1034,7 +1034,7 @@
                     "value": {
                       "bindings": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "address": "a7c658f4111ec4ff5a1a647f9d0edd819025b9f20522d2fae897049f32873e73",
                           "binding_type": "apn",
                           "credential_sid": null,
@@ -1043,25 +1043,25 @@
                           "endpoint": "26607274",
                           "identity": "24987039",
                           "notification_protocol_version": "3",
-                          "service_sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "tags": [
                             "26607274"
                           ],
                           "links": {
-                            "user": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users/24987039"
+                            "user": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users/24987039"
                           },
-                          "url": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings/BSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings/BSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
-                        "first_page_url": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?Tag=tag&Identity=identity&PageSize=50&Page=0",
+                        "first_page_url": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?Tag=tag&Identity=identity&PageSize=50&Page=0",
                         "key": "bindings",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings?Tag=tag&Identity=identity&PageSize=50&Page=0"
+                        "url": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings?Tag=tag&Identity=identity&PageSize=50&Page=0"
                       }
                     }
                   }
@@ -1219,14 +1219,14 @@
                     "value": {
                       "credentials": [
                         {
-                          "sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Test slow create",
                           "type": "apn",
                           "sandbox": "False",
                           "date_created": "2015-10-07T17:50:01Z",
                           "date_updated": "2015-10-07T17:50:01Z",
-                          "url": "https://notify.twilio.com/v1/Credentials/CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://notify.twilio.com/v1/Credentials/CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -1319,14 +1319,14 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Test slow create",
                       "type": "apn",
                       "sandbox": "False",
                       "date_created": "2015-10-07T17:50:01Z",
                       "date_updated": "2015-10-07T17:50:01Z",
-                      "url": "https://notify.twilio.com/v1/Credentials/CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://notify.twilio.com/v1/Credentials/CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1473,14 +1473,14 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Test slow create",
                       "type": "apn",
                       "sandbox": "False",
                       "date_created": "2015-10-07T17:50:01Z",
                       "date_updated": "2015-10-07T17:50:01Z",
-                      "url": "https://notify.twilio.com/v1/Credentials/CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://notify.twilio.com/v1/Credentials/CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1562,14 +1562,14 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Test slow create",
                       "type": "apn",
                       "sandbox": "False",
                       "date_created": "2015-10-07T17:50:01Z",
                       "date_updated": "2015-10-07T17:50:01Z",
-                      "url": "https://notify.twilio.com/v1/Credentials/CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://notify.twilio.com/v1/Credentials/CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1743,9 +1743,9 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "NTb8021351170b4e1286adaac3fdd6d082",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "IS699b53e02da45a1ba9d13b7d7d2766af",
+                      "sid": "NTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2016-03-24T23:42:28Z",
                       "identities": [
                         "jing"
@@ -1769,9 +1769,9 @@
                   },
                   "createDirectNotification": {
                     "value": {
-                      "sid": "NTb8021351170b4e1286adaac3fdd6d082",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "IS699b53e02da45a1ba9d13b7d7d2766af",
+                      "sid": "NTxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2016-03-24T23:42:28Z",
                       "identities": [],
                       "tags": [],
@@ -2011,15 +2011,15 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "733c7f0f-6541-42ec-84ce-e2ae1cac588c",
                       "date_created": "2016-03-09T20:22:31Z",
                       "date_updated": "2016-03-09T20:22:31Z",
                       "apn_credential_sid": null,
                       "gcm_credential_sid": null,
                       "fcm_credential_sid": null,
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "facebook_messenger_page_id": "4",
                       "alexa_skill_id": null,
                       "default_apn_notification_protocol_version": "3",
@@ -2029,12 +2029,12 @@
                       "log_enabled": true,
                       "delivery_callback_url": "Hello",
                       "delivery_callback_enabled": true,
-                      "url": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "bindings": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings",
-                        "notifications": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Notifications",
-                        "segments": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Segments",
-                        "users": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users"
+                        "bindings": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings",
+                        "notifications": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Notifications",
+                        "segments": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Segments",
+                        "users": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users"
                       }
                     }
                   }
@@ -2167,9 +2167,9 @@
                 "create": {
                   "value": {
                     "FriendlyName": "friendly_name",
-                    "ApnCredentialSid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                    "GcmCredentialSid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                    "MessagingServiceSid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "ApnCredentialSid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "GcmCredentialSid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "MessagingServiceSid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "FacebookMessengerPageId": "4",
                     "DefaultApnNotificationProtocolVersion": "3",
                     "DefaultGcmNotificationProtocolVersion": "3",
@@ -2291,15 +2291,15 @@
                       },
                       "services": [
                         {
-                          "sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "733c7f0f-6541-42ec-84ce-e2ae1cac588c",
                           "date_created": "2016-03-09T20:22:31Z",
                           "date_updated": "2016-03-09T20:22:31Z",
                           "apn_credential_sid": null,
                           "gcm_credential_sid": null,
                           "fcm_credential_sid": null,
-                          "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "facebook_messenger_page_id": "4",
                           "alexa_skill_id": null,
                           "default_apn_notification_protocol_version": "3",
@@ -2309,12 +2309,12 @@
                           "log_enabled": true,
                           "delivery_callback_url": "Hello",
                           "delivery_callback_enabled": true,
-                          "url": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "bindings": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings",
-                            "notifications": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Notifications",
-                            "segments": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Segments",
-                            "users": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users"
+                            "bindings": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings",
+                            "notifications": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Notifications",
+                            "segments": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Segments",
+                            "users": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users"
                           }
                         }
                       ]
@@ -2487,15 +2487,15 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "733c7f0f-6541-42ec-84ce-e2ae1cac588c",
                       "date_created": "2016-03-09T20:22:31Z",
                       "date_updated": "2016-03-09T20:22:31Z",
                       "apn_credential_sid": null,
                       "gcm_credential_sid": null,
                       "fcm_credential_sid": null,
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "facebook_messenger_page_id": "4",
                       "alexa_skill_id": null,
                       "default_apn_notification_protocol_version": "3",
@@ -2505,12 +2505,12 @@
                       "log_enabled": true,
                       "delivery_callback_url": "Hello",
                       "delivery_callback_enabled": true,
-                      "url": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "bindings": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings",
-                        "notifications": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Notifications",
-                        "segments": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Segments",
-                        "users": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users"
+                        "bindings": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings",
+                        "notifications": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Notifications",
+                        "segments": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Segments",
+                        "users": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users"
                       }
                     }
                   }
@@ -2593,8 +2593,8 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "733c7f0f-6541-42ec-84ce-e2ae1cac588c",
                       "date_created": "2016-03-09T20:22:31Z",
                       "date_updated": "2016-03-09T20:22:31Z",
@@ -2605,18 +2605,18 @@
                       "default_gcm_notification_protocol_version": "3",
                       "default_fcm_notification_protocol_version": "3",
                       "default_alexa_notification_protocol_version": "3",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "alexa_skill_id": null,
                       "facebook_messenger_page_id": "4",
                       "log_enabled": true,
                       "delivery_callback_url": "Hello",
                       "delivery_callback_enabled": true,
-                      "url": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "bindings": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Bindings",
-                        "notifications": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Notifications",
-                        "segments": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Segments",
-                        "users": "https://notify.twilio.com/v1/Services/ISaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Users"
+                        "bindings": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Bindings",
+                        "notifications": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Notifications",
+                        "segments": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Segments",
+                        "users": "https://notify.twilio.com/v1/Services/ISxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Users"
                       }
                     }
                   }
@@ -2749,9 +2749,9 @@
                 "update": {
                   "value": {
                     "FriendlyName": "friendly_name",
-                    "ApnCredentialSid": "CRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                    "GcmCredentialSid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                    "MessagingServiceSid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "ApnCredentialSid": "CRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "GcmCredentialSid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "MessagingServiceSid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "FacebookMessengerPageId": "4",
                     "DefaultApnNotificationProtocolVersion": "3",
                     "DefaultGcmNotificationProtocolVersion": "3",

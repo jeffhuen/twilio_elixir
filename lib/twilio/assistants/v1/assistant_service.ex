@@ -7,6 +7,7 @@ defmodule Twilio.Assistants.V1.AssistantService do
   """
 
   alias Twilio.Client
+  alias Twilio.Deserializer
 
   @doc """
   list assistants
@@ -21,8 +22,18 @@ defmodule Twilio.Assistants.V1.AssistantService do
            opts: opts,
            base_url: "https://assistants.twilio.com"
          ) do
-      {:ok, data} -> {:ok, Twilio.Page.from_response(data, "assistants")}
-      error -> error
+      {:ok, data} ->
+        page = Twilio.Page.from_response(data, "assistants")
+
+        {:ok,
+         %{
+           page
+           | items:
+               Deserializer.deserialize_list(page.items, Twilio.Resources.Assistants.V1.Assistant)
+         }}
+
+      error ->
+        error
     end
   end
 
@@ -43,14 +54,20 @@ defmodule Twilio.Assistants.V1.AssistantService do
   Operation: `CreateAssistant`
   """
   @spec create(Client.t(), map(), keyword()) ::
-          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Assistants.V1.Assistant.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def create(client, params \\ %{}, opts \\ []) do
-    Client.request(client, :post, "/v1/Assistants",
-      params: params,
-      opts: opts,
-      base_url: "https://assistants.twilio.com",
-      content_type: :json
-    )
+    with {:ok, data} <-
+           Client.request(client, :post, "/v1/Assistants",
+             params: params,
+             opts: opts,
+             base_url: "https://assistants.twilio.com",
+             content_type: :json
+           ) do
+      {:ok, Deserializer.deserialize(data, Twilio.Resources.Assistants.V1.Assistant)}
+    end
   end
 
   @doc """
@@ -59,12 +76,18 @@ defmodule Twilio.Assistants.V1.AssistantService do
   Operation: `FetchAssistant`
   """
   @spec fetch(Client.t(), String.t(), keyword()) ::
-          {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
+          {:ok, Twilio.Resources.Assistants.V1.Assistant.t()}
+          | {:ok, map(), map()}
+          | :ok
+          | {:error, Twilio.Error.t()}
   def fetch(client, sid, opts \\ []) do
-    Client.request(client, :get, "/v1/Assistants/#{sid}",
-      opts: opts,
-      base_url: "https://assistants.twilio.com"
-    )
+    with {:ok, data} <-
+           Client.request(client, :get, "/v1/Assistants/#{sid}",
+             opts: opts,
+             base_url: "https://assistants.twilio.com"
+           ) do
+      {:ok, Deserializer.deserialize(data, Twilio.Resources.Assistants.V1.Assistant)}
+    end
   end
 
   @doc """

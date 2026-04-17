@@ -375,8 +375,8 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "accountSid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "addressSid": "AD11111111111111111111111111111111",
+                      "accountSid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "addressSid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "callDelay": 0,
                       "capabilities": {
                         "sms": true,
@@ -389,13 +389,13 @@
                       "extension": null,
                       "failureReason": "",
                       "friendlyName": null,
-                      "incomingPhoneNumberSid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "incomingPhoneNumberSid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "phoneNumber": "+14153608311",
-                      "sid": "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "signingDocumentSid": null,
                       "status": "received",
                       "uniqueName": null,
-                      "url": "https://numbers.twilio.com/v3/HostedNumbers/HostedNumberOrders/HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://numbers.twilio.com/v3/HostedNumbers/HostedNumberOrders/HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "verificationAttempts": 0,
                       "verificationCallSids": null,
                       "verificationCode": null,
@@ -405,7 +405,7 @@
                   },
                   "createWithoutOptionalLoaFields": {
                     "value": {
-                      "accountSid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "accountSid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "addressSid": null,
                       "callDelay": 0,
                       "capabilities": {
@@ -419,13 +419,13 @@
                       "extension": null,
                       "failureReason": "",
                       "friendlyName": null,
-                      "incomingPhoneNumberSid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "incomingPhoneNumberSid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "phoneNumber": "+14153608311",
-                      "sid": "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "signingDocumentSid": null,
                       "status": "twilio-processing",
                       "uniqueName": null,
-                      "url": "https://numbers.twilio.com/v3/HostedNumbers/HostedNumberOrders/HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://numbers.twilio.com/v3/HostedNumbers/HostedNumberOrders/HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "verificationAttempts": 0,
                       "verificationCallSids": null,
                       "verificationCode": null,
@@ -490,7 +490,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "addressSid": "AD11111111111111111111111111111111",
+                    "addressSid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "phoneNumber": "+14153608311",
                     "smsCapability": true,
                     "email": "test@twilio.com"

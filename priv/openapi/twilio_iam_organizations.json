@@ -70,7 +70,7 @@
               "pattern": "OR[0-9a-f]{32}",
               "type": "string",
               "format": "OrganizationSid",
-              "example": "OR33f4f3aa6fffe840d000f8ef22e883db"
+              "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           },
           {
@@ -329,7 +329,7 @@
               "pattern": "OR[0-9a-f]{32}",
               "type": "string",
               "format": "OrganizationSid",
-              "example": "ORceef74a747c1ae8d837aafb5a31e475f"
+              "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           }
         ],
@@ -649,7 +649,7 @@
               "pattern": "OR[0-9a-f]{32}",
               "type": "string",
               "format": "OrganizationSid",
-              "example": "OR5f3baf01a0f8273e74266afb84341766"
+              "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           },
           {
@@ -660,7 +660,7 @@
               "pattern": "US[0-9a-f]{32}",
               "type": "string",
               "format": "UserSid",
-              "example": "USb51dccce9ac8e67b938253c7bcaa4f45"
+              "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           }
         ],
@@ -965,7 +965,7 @@
               "pattern": "OR[0-9a-f]{32}",
               "type": "string",
               "format": "OrganizationSid",
-              "example": "ORd3a1c06d4942d123cd8fa2a052fe110a"
+              "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           },
           {
@@ -976,7 +976,7 @@
               "pattern": "US[0-9a-f]{32}",
               "type": "string",
               "format": "UserSid",
-              "example": "US14def5586bc0799a5c7aab80247af278"
+              "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           }
         ],
@@ -1335,7 +1335,7 @@
               "pattern": "OR[0-9a-f]{32}",
               "type": "string",
               "format": "OrganizationSid",
-              "example": "OR80b7392892f0a424d07c42f5b11dce2a"
+              "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           },
           {
@@ -1346,7 +1346,7 @@
               "pattern": "US[0-9a-f]{32}",
               "type": "string",
               "format": "UserSid",
-              "example": "US23c7d4510f1398849aaac5c543475b12"
+              "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           }
         ],
@@ -1621,6 +1621,383 @@
             }
           }
         }
+      },
+      "patch": {
+        "tags": [
+          "SCIM"
+        ],
+        "summary": "Patch SCIM User",
+        "operationId": "PatchOrganizationUser",
+        "parameters": [
+          {
+            "name": "If-Match",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "OrganizationSid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "OR[0-9a-f]{32}",
+              "type": "string",
+              "format": "OrganizationSid",
+              "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+          },
+          {
+            "name": "UserSid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "US[0-9a-f]{32}",
+              "type": "string",
+              "format": "UserSid",
+              "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimPatchRequest"
+              }
+            },
+            "application/scim+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScimPatchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "User object with updated attributes",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimUser"
+                }
+              }
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "description": "Specify the origin(s) allowed to access the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "*"
+              },
+              "Access-Control-Allow-Methods": {
+                "description": "Specify the HTTP methods allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "POST, OPTIONS"
+              },
+              "Access-Control-Allow-Headers": {
+                "description": "Specify the headers allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Content-Type, Authorization"
+              },
+              "Access-Control-Allow-Credentials": {
+                "description": "Indicates whether the browser should include credentials",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "description": "Headers exposed to the client",
+                "schema": {
+                  "type": "string",
+                  "example": "X-Custom-Header1, X-Custom-Header2"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request or business rules violation",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimError"
+                }
+              }
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "description": "Specify the origin(s) allowed to access the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "*"
+              },
+              "Access-Control-Allow-Methods": {
+                "description": "Specify the HTTP methods allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "POST, OPTIONS"
+              },
+              "Access-Control-Allow-Headers": {
+                "description": "Specify the headers allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Content-Type, Authorization"
+              },
+              "Access-Control-Allow-Credentials": {
+                "description": "Indicates whether the browser should include credentials",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "description": "Headers exposed to the client",
+                "schema": {
+                  "type": "string",
+                  "example": "X-Custom-Header1, X-Custom-Header2"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimError"
+                }
+              }
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "description": "Specify the origin(s) allowed to access the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "*"
+              },
+              "Access-Control-Allow-Methods": {
+                "description": "Specify the HTTP methods allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "POST, OPTIONS"
+              },
+              "Access-Control-Allow-Headers": {
+                "description": "Specify the headers allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Content-Type, Authorization"
+              },
+              "Access-Control-Allow-Credentials": {
+                "description": "Indicates whether the browser should include credentials",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "description": "Headers exposed to the client",
+                "schema": {
+                  "type": "string",
+                  "example": "X-Custom-Header1, X-Custom-Header2"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimError"
+                }
+              }
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "description": "Specify the origin(s) allowed to access the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "*"
+              },
+              "Access-Control-Allow-Methods": {
+                "description": "Specify the HTTP methods allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "POST, OPTIONS"
+              },
+              "Access-Control-Allow-Headers": {
+                "description": "Specify the headers allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Content-Type, Authorization"
+              },
+              "Access-Control-Allow-Credentials": {
+                "description": "Indicates whether the browser should include credentials",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "description": "Headers exposed to the client",
+                "schema": {
+                  "type": "string",
+                  "example": "X-Custom-Header1, X-Custom-Header2"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimError"
+                }
+              }
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "description": "Specify the origin(s) allowed to access the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "*"
+              },
+              "Access-Control-Allow-Methods": {
+                "description": "Specify the HTTP methods allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "POST, OPTIONS"
+              },
+              "Access-Control-Allow-Headers": {
+                "description": "Specify the headers allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Content-Type, Authorization"
+              },
+              "Access-Control-Allow-Credentials": {
+                "description": "Indicates whether the browser should include credentials",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "description": "Headers exposed to the client",
+                "schema": {
+                  "type": "string",
+                  "example": "X-Custom-Header1, X-Custom-Header2"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Version conflict",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimError"
+                }
+              }
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "description": "Specify the origin(s) allowed to access the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "*"
+              },
+              "Access-Control-Allow-Methods": {
+                "description": "Specify the HTTP methods allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "POST, OPTIONS"
+              },
+              "Access-Control-Allow-Headers": {
+                "description": "Specify the headers allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Content-Type, Authorization"
+              },
+              "Access-Control-Allow-Credentials": {
+                "description": "Indicates whether the browser should include credentials",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "description": "Headers exposed to the client",
+                "schema": {
+                  "type": "string",
+                  "example": "X-Custom-Header1, X-Custom-Header2"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests",
+            "content": {
+              "application/scim+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScimError"
+                }
+              }
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "description": "Specify the origin(s) allowed to access the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "*"
+              },
+              "Access-Control-Allow-Methods": {
+                "description": "Specify the HTTP methods allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "POST, OPTIONS"
+              },
+              "Access-Control-Allow-Headers": {
+                "description": "Specify the headers allowed when accessing the resource",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Content-Type, Authorization"
+              },
+              "Access-Control-Allow-Credentials": {
+                "description": "Indicates whether the browser should include credentials",
+                "schema": {
+                  "type": "boolean"
+                }
+              },
+              "Access-Control-Expose-Headers": {
+                "description": "Headers exposed to the client",
+                "schema": {
+                  "type": "string",
+                  "example": "X-Custom-Header1, X-Custom-Header2"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/Organizations/{OrganizationSid}/Accounts": {
@@ -1644,7 +2021,7 @@
               "pattern": "OR[0-9a-f]{32}",
               "type": "string",
               "format": "OrganizationSid",
-              "example": "ORa36de9717566c7eb6363671f54b87ba9"
+              "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           },
           {
@@ -1871,7 +2248,7 @@
               "pattern": "OR[0-9a-f]{32}",
               "type": "string",
               "format": "OrganizationSid",
-              "example": "ORf9618e7f043b4bc13832e4946fde06c9"
+              "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           },
           {
@@ -1882,7 +2259,7 @@
               "pattern": "AC[0-9a-f]{32}",
               "type": "string",
               "format": "AccountSid",
-              "example": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              "example": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           }
         ],
@@ -2090,7 +2467,7 @@
               "pattern": "OR[0-9a-f]{32}",
               "type": "string",
               "format": "OrganizationSid",
-              "example": "OR33f4f3aa6fffe840d000f8ef22e883db"
+              "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           },
           {
@@ -2121,7 +2498,7 @@
               "pattern": "^[A-Z]{2}[0-9a-fA-F]{32}$",
               "type": "string",
               "format": "Sid",
-              "example": "USa36de9717566c7eb6363671f54b87ba9"
+              "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           },
           {
@@ -2132,7 +2509,7 @@
               "pattern": "^[A-Z]{2}[0-9a-fA-F]{32}$",
               "type": "string",
               "format": "Sid",
-              "example": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+              "example": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           }
         ],
@@ -2333,7 +2710,7 @@
               "pattern": "OR[0-9a-f]{32}",
               "type": "string",
               "format": "OrganizationSid",
-              "example": "ORa36de9717566c7eb6363671f54b87ba9"
+              "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           }
         ],
@@ -2511,7 +2888,7 @@
               "pattern": "OR[0-9a-f]{32}",
               "type": "string",
               "format": "OrganizationSid",
-              "example": "ORa36de9717566c7eb6363671f54b87ba9"
+              "example": "ORxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           },
           {
@@ -2522,7 +2899,7 @@
               "pattern": "IY[0-9a-f]{32}",
               "type": "string",
               "format": "IamRoleAssignmentSid",
-              "example": "IYa36de9717566c7eb6363671f54b87ba9"
+              "example": "IYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           }
         ],
@@ -2696,7 +3073,7 @@
             "description": "The Client Identifier",
             "schema": {
               "type": "string",
-              "example": "OQ7cda1a615f05a95634e643aaaf7081d7"
+              "example": "OQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
             }
           },
           {
@@ -2737,7 +3114,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "redirect_to": "https://www.twilio.com/authorize?response_type=code&client_id=OQ7cda1a615f05a95634e643aaaf7081d7&redirect_uri=www.twilio.com&scope=offline_access&state=xvz"
+                      "redirect_to": "https://www.twilio.com/authorize?response_type=code&client_id=OQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&redirect_uri=www.twilio.com&scope=offline_access&state=xvz"
                     }
                   }
                 }
@@ -2836,7 +3213,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "client_id": "OQ7cda1a615f05a95634e643aaaf7081d7",
+                    "client_id": "OQxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "client_secret": "sUWblrQ4wx_aYkdAWjHXNvHinynkYOgBoiRyEQUeEntpgDEG47qnBFD98yoEzsTh",
                     "grant_type": "client_credentials",
                     "redirect_uri": "",
@@ -3115,7 +3492,7 @@
             "type": "string",
             "description": "Optional owner sid. If not provided, the owner will be the organization owner.",
             "format": "UserSid",
-            "example": "USa4faef6467378082de67039e533b515a"
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           }
         }
       },
@@ -3127,7 +3504,7 @@
             "type": "string",
             "description": "Twilio account sid for the new account, creation is asynchronous owner.",
             "format": "AccountSid",
-            "example": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            "example": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           }
         }
       },
@@ -3139,7 +3516,7 @@
             "type": "string",
             "description": "Twilio account sid",
             "format": "AccountSid",
-            "example": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            "example": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           },
           "friendly_name": {
             "type": "string",
@@ -3161,7 +3538,7 @@
             "type": "string",
             "description": "Twilio account sid",
             "format": "UserSid",
-            "example": "US9a6d63d00bdbb50aa1c1889b3066bd30"
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           },
           "date_created": {
             "type": "string",
@@ -3228,21 +3605,21 @@
             "type": "string",
             "description": "Twilio Role Sid representing assigned role",
             "format": "IamRoleSid",
-            "example": "IXc4ddb9d0befdb122b0eff334e3084544"
+            "example": "IXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           },
           "scope": {
             "pattern": "^[A-Z]{2}[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Twilio Sid representing scope of this assignment",
             "format": "Sid",
-            "example": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            "example": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           },
           "identity": {
             "pattern": "^[A-Z]{2}[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Twilio Sid representing identity of this assignment",
             "format": "Sid",
-            "example": "USc4ddb9d0befdb122b0eff334e3084544"
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           }
         }
       },
@@ -3298,28 +3675,28 @@
             "type": "string",
             "description": "Twilio Role Assignment Sid representing this role assignment",
             "format": "IamRoleAssignmentSid",
-            "example": "IYc4ddb9d0befdb122b0eff334e3084544"
+            "example": "IYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           },
           "role_sid": {
             "pattern": "IX[0-9a-f]{32}",
             "type": "string",
             "description": "Twilio Role Sid representing assigned role",
             "format": "IamRoleSid",
-            "example": "IXc4ddb9d0befdb122b0eff334e3084544"
+            "example": "IXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           },
           "scope": {
             "pattern": "^[A-Z]{2}[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Twilio Sid representing identity of this assignment",
             "format": "Sid",
-            "example": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            "example": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           },
           "identity": {
             "pattern": "^[A-Z]{2}[0-9a-fA-F]{32}$",
             "type": "string",
             "description": "Twilio Sid representing scope of this assignment",
             "format": "Sid",
-            "example": "USc4ddb9d0befdb122b0eff334e3084544"
+            "example": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
           }
         }
       },

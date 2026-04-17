@@ -1078,7 +1078,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "address_sid": "AD11111111111111111111111111111111",
+                      "address_sid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "cc_emails": [
                         "aaa@twilio.com",
                         "bbb@twilio.com"
@@ -1087,11 +1087,11 @@
                       "date_updated": "2017-03-28T20:06:39Z",
                       "email": "test@twilio.com",
                       "links": {
-                        "dependent_hosted_number_orders": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DependentHostedNumberOrders"
+                        "dependent_hosted_number_orders": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DependentHostedNumberOrders"
                       },
-                      "sid": "PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "signing",
-                      "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1173,7 +1173,7 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "address_sid": "ADaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "address_sid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "cc_emails": [
                         "test1@twilio.com",
                         "test2@twilio.com"
@@ -1182,11 +1182,11 @@
                       "date_updated": "2017-03-28T20:06:39Z",
                       "email": "test+hosted@twilio.com",
                       "links": {
-                        "dependent_hosted_number_orders": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DependentHostedNumberOrders"
+                        "dependent_hosted_number_orders": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DependentHostedNumberOrders"
                       },
-                      "sid": "PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "signing",
-                      "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1285,15 +1285,15 @@
               "examples": {
                 "update": {
                   "value": {
-                    "AddressSid": "ADaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "AddressSid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Email": "test+hosted@twilio.com",
                     "CcEmails": [
                       "test1@twilio.com",
                       "test2@twilio.com"
                     ],
                     "HostedNumberOrderSids": [
-                      "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa01",
-                      "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa02"
+                      "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     ],
                     "Status": "signing",
                     "ContactTitle": "Mr.",
@@ -1469,7 +1469,7 @@
                       },
                       "items": [
                         {
-                          "address_sid": "ADaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "address_sid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "cc_emails": [
                             "test1@twilio.com",
                             "test2@twilio.com"
@@ -1478,11 +1478,11 @@
                           "date_updated": "2017-03-28T20:06:39Z",
                           "email": "test+hosted@twilio.com",
                           "links": {
-                            "dependent_hosted_number_orders": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DependentHostedNumberOrders"
+                            "dependent_hosted_number_orders": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DependentHostedNumberOrders"
                           },
-                          "sid": "PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "signing",
-                          "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -1552,7 +1552,7 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "address_sid": "ADaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "address_sid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "cc_emails": [
                         "test1@twilio.com",
                         "test2@twilio.com"
@@ -1561,11 +1561,11 @@
                       "date_updated": "2017-03-28T20:06:39Z",
                       "email": "test+hosted@twilio.com",
                       "links": {
-                        "dependent_hosted_number_orders": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DependentHostedNumberOrders"
+                        "dependent_hosted_number_orders": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DependentHostedNumberOrders"
                       },
-                      "sid": "PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "signing",
-                      "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1668,15 +1668,15 @@
               "examples": {
                 "create": {
                   "value": {
-                    "AddressSid": "ADaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "AddressSid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Email": "test+hosted@twilio.com",
                     "CcEmails": [
                       "test1@twilio.com",
                       "test2@twilio.com"
                     ],
                     "HostedNumberOrderSids": [
-                      "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa01",
-                      "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa02"
+                      "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     ],
                     "ContactTitle": "Mr.",
                     "ContactPhoneNumber": "+14155555555"
@@ -1758,7 +1758,7 @@
             },
             "examples": {
               "readEmpty": {
-                "value": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -1881,13 +1881,13 @@
                   "readEmpty": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DependentHostedNumberOrders?Status=completed&FriendlyName=example&PhoneNumber=%2B19193608000&UniqueName=something123&IncomingPhoneNumberSid=PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DependentHostedNumberOrders?Status=completed&FriendlyName=example&PhoneNumber=%2B19193608000&UniqueName=something123&IncomingPhoneNumberSid=PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "key": "items",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DependentHostedNumberOrders?Status=completed&FriendlyName=example&PhoneNumber=%2B19193608000&UniqueName=something123&IncomingPhoneNumberSid=PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DependentHostedNumberOrders?Status=completed&FriendlyName=example&PhoneNumber=%2B19193608000&UniqueName=something123&IncomingPhoneNumberSid=PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       },
                       "items": []
                     }
@@ -1895,18 +1895,18 @@
                   "readFull": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DependentHostedNumberOrders?PageSize=50&Page=0",
+                        "first_page_url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DependentHostedNumberOrders?PageSize=50&Page=0",
                         "key": "items",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DependentHostedNumberOrders?PageSize=50&Page=0"
+                        "url": "https://preview.twilio.com/HostedNumbers/AuthorizationDocuments/PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DependentHostedNumberOrders?PageSize=50&Page=0"
                       },
                       "items": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "address_sid": "AD11111111111111111111111111111111",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "address_sid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "call_delay": 15,
                           "capabilities": {
                             "sms": true,
@@ -1921,17 +1921,17 @@
                           "email": "test@twilio.com",
                           "extension": "1234",
                           "friendly_name": "friendly_name",
-                          "incoming_phone_number_sid": "PN11111111111111111111111111111111",
+                          "incoming_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "phone_number": "+14153608311",
-                          "sid": "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "signing_document_sid": "PX11111111111111111111111111111111",
+                          "sid": "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "signing_document_sid": "PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "received",
                           "failure_reason": "",
                           "unique_name": "foobar",
                           "verification_attempts": 0,
                           "verification_call_sids": [
-                            "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                            "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                            "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                            "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                           ],
                           "verification_code": "8794",
                           "verification_document_sid": null,
@@ -2031,8 +2031,8 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "address_sid": "AD11111111111111111111111111111111",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "address_sid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "call_delay": 15,
                       "capabilities": {
                         "sms": true,
@@ -2048,17 +2048,17 @@
                       "extension": "5105",
                       "failure_reason": "",
                       "friendly_name": "friendly_name",
-                      "incoming_phone_number_sid": "PN11111111111111111111111111111111",
+                      "incoming_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "phone_number": "+14153608311",
-                      "sid": "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "signing_document_sid": "PX11111111111111111111111111111111",
+                      "sid": "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "signing_document_sid": "PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "received",
                       "unique_name": "foobar",
-                      "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "verification_attempts": 0,
                       "verification_call_sids": [
-                        "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                        "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       ],
                       "verification_code": "8794",
                       "verification_document_sid": null,
@@ -2176,8 +2176,8 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "address_sid": "AD11111111111111111111111111111111",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "address_sid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "call_delay": 15,
                       "capabilities": {
                         "sms": true,
@@ -2193,17 +2193,17 @@
                       "extension": "1234",
                       "failure_reason": "",
                       "friendly_name": "new friendly name",
-                      "incoming_phone_number_sid": "PN11111111111111111111111111111111",
+                      "incoming_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "phone_number": "+14153608311",
-                      "sid": "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "signing_document_sid": "PX11111111111111111111111111111111",
+                      "sid": "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "signing_document_sid": "PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "pending-loa",
                       "unique_name": "new unique name",
-                      "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "verification_attempts": 1,
                       "verification_call_sids": [
-                        "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                        "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       ],
                       "verification_code": "8794",
                       "verification_document_sid": null,
@@ -2389,7 +2389,7 @@
             },
             "examples": {
               "readEmpty": {
-                "value": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -2512,13 +2512,13 @@
                   "readEmpty": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders?Status=completed&FriendlyName=example&PhoneNumber=%2B19193608000&UniqueName=something123&IncomingPhoneNumberSid=PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders?Status=completed&FriendlyName=example&PhoneNumber=%2B19193608000&UniqueName=something123&IncomingPhoneNumberSid=PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "key": "items",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders?Status=completed&FriendlyName=example&PhoneNumber=%2B19193608000&UniqueName=something123&IncomingPhoneNumberSid=PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders?Status=completed&FriendlyName=example&PhoneNumber=%2B19193608000&UniqueName=something123&IncomingPhoneNumberSid=PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       },
                       "items": []
                     }
@@ -2536,8 +2536,8 @@
                       },
                       "items": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "address_sid": "AD11111111111111111111111111111111",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "address_sid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "call_delay": 15,
                           "capabilities": {
                             "sms": true,
@@ -2553,17 +2553,17 @@
                           "extension": "1234",
                           "failure_reason": "",
                           "friendly_name": "friendly_name",
-                          "incoming_phone_number_sid": "PN11111111111111111111111111111111",
+                          "incoming_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "phone_number": "+14153608311",
-                          "sid": "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "signing_document_sid": "PX11111111111111111111111111111111",
+                          "sid": "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "signing_document_sid": "PXxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "received",
                           "unique_name": "foobar",
-                          "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "verification_attempts": 0,
                           "verification_call_sids": [
-                            "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                            "CAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                            "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                            "CAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                           ],
                           "verification_code": "8794",
                           "verification_document_sid": null,
@@ -2637,8 +2637,8 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "address_sid": "AD11111111111111111111111111111111",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "address_sid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "call_delay": 0,
                       "capabilities": {
                         "sms": true,
@@ -2651,13 +2651,13 @@
                       "extension": null,
                       "failure_reason": "",
                       "friendly_name": null,
-                      "incoming_phone_number_sid": "PN11111111111111111111111111111111",
+                      "incoming_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "phone_number": "+14153608311",
-                      "sid": "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "signing_document_sid": null,
                       "status": "received",
                       "unique_name": null,
-                      "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "verification_attempts": 0,
                       "verification_call_sids": null,
                       "verification_code": null,
@@ -2667,7 +2667,7 @@
                   },
                   "createWithoutOptionalLoaFields": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "address_sid": null,
                       "call_delay": 0,
                       "capabilities": {
@@ -2681,13 +2681,13 @@
                       "extension": null,
                       "failure_reason": "",
                       "friendly_name": null,
-                      "incoming_phone_number_sid": "PN11111111111111111111111111111111",
+                      "incoming_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "phone_number": "+14153608311",
-                      "sid": "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "signing_document_sid": null,
                       "status": "received",
                       "unique_name": null,
-                      "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "verification_attempts": 0,
                       "verification_call_sids": null,
                       "verification_code": null,
@@ -2697,7 +2697,7 @@
                   },
                   "createWithPhoneBillVerification": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "address_sid": null,
                       "call_delay": 0,
                       "capabilities": {
@@ -2711,17 +2711,17 @@
                       "extension": null,
                       "failure_reason": "",
                       "friendly_name": null,
-                      "incoming_phone_number_sid": "PN11111111111111111111111111111111",
+                      "incoming_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "phone_number": "+14153608311",
-                      "sid": "HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "signing_document_sid": null,
                       "status": "received",
                       "unique_name": null,
-                      "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://preview.twilio.com/HostedNumbers/HostedNumberOrders/HRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "verification_attempts": 0,
                       "verification_call_sids": null,
                       "verification_code": null,
-                      "verification_document_sid": "RIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "verification_document_sid": "RIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "verification_type": "phone-bill"
                     }
                   }
@@ -2890,7 +2890,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "AddressSid": "AD11111111111111111111111111111111",
+                    "AddressSid": "ADxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "PhoneNumber": "+14153608311",
                     "SmsCapability": true,
                     "Email": "test@twilio.com"
@@ -2907,7 +2907,7 @@
                     "PhoneNumber": "+14153608311",
                     "SmsCapability": true,
                     "VerificationType": "phone-bill",
-                    "VerificationDocumentSid": "RIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "VerificationDocumentSid": "RIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -2965,7 +2965,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "VoiceBase High Accuracy Transcription",
                       "description": "Automatic Transcription and Keyword Extract...",
                       "pricing_type": "per minute",
@@ -2980,9 +2980,9 @@
                           "bad_words"
                         ]
                       },
-                      "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "extensions": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions"
+                        "extensions": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions"
                       }
                     }
                   }
@@ -3144,7 +3144,7 @@
                     "value": {
                       "available_add_ons": [
                         {
-                          "sid": "XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "VoiceBase High Accuracy Transcription",
                           "description": "Automatic Transcription and Keyword Extract...",
                           "pricing_type": "per minute",
@@ -3159,9 +3159,9 @@
                               "bad_words"
                             ]
                           },
-                          "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "extensions": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions"
+                            "extensions": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions"
                           }
                         }
                       ],
@@ -3295,12 +3295,12 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "XFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "available_add_on_sid": "XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "XFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "available_add_on_sid": "XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Incoming Voice Call",
                       "product_name": "Programmable Voice",
                       "unique_name": "voice-incoming",
-                      "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions/XFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions/XFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -3467,20 +3467,20 @@
                     "value": {
                       "extensions": [
                         {
-                          "sid": "XFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "available_add_on_sid": "XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "XFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "available_add_on_sid": "XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Incoming Voice Call",
                           "product_name": "Programmable Voice",
                           "unique_name": "voice-incoming",
-                          "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions/XFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions/XFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions?PageSize=50&Page=0",
+                        "first_page_url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions?PageSize=50&Page=0",
+                        "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "extensions"
                       }
@@ -3492,9 +3492,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions?PageSize=50&Page=0",
+                        "first_page_url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions?PageSize=50&Page=0",
+                        "url": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "extensions"
                       }
@@ -3591,8 +3591,8 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "VoiceBase High Accuracy Transcription",
                       "description": "Automatic Transcription and Keyword Extract...",
                       "configuration": {
@@ -3601,10 +3601,10 @@
                       "unique_name": "voicebase_high_accuracy_transcription_1",
                       "date_created": "2016-04-07T23:52:28Z",
                       "date_updated": "2016-04-07T23:52:28Z",
-                      "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "extensions": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions",
-                        "available_add_on": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "extensions": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions",
+                        "available_add_on": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       }
                     }
                   }
@@ -3690,7 +3690,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "AvailableAddOnSid": "XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "AvailableAddOnSid": "XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "AcceptTermsOfService": true,
                     "Configuration": "{\"bad_words\": true}",
                     "UniqueName": "voicebase_high_accuracy_transcription_1"
@@ -3790,8 +3790,8 @@
                     "value": {
                       "installed_add_ons": [
                         {
-                          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "VoiceBase High Accuracy Transcription",
                           "description": "Automatic Transcription and Keyword Extract...",
                           "configuration": {
@@ -3800,10 +3800,10 @@
                           "unique_name": "voicebase_high_accuracy_transcription",
                           "date_created": "2016-04-07T23:52:28Z",
                           "date_updated": "2016-04-07T23:52:28Z",
-                          "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "extensions": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions",
-                            "available_add_on": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                            "extensions": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions",
+                            "available_add_on": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                           }
                         }
                       ],
@@ -3969,8 +3969,8 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "VoiceBase High Accuracy Transcription",
                       "description": "Automatic Transcription and Keyword Extract...",
                       "configuration": {
@@ -3979,10 +3979,10 @@
                       "unique_name": "voicebase_high_accuracy_transcription",
                       "date_created": "2016-04-07T23:52:28Z",
                       "date_updated": "2016-04-07T23:52:28Z",
-                      "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "extensions": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions",
-                        "available_add_on": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "extensions": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions",
+                        "available_add_on": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       }
                     }
                   }
@@ -4065,8 +4065,8 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "VoiceBase High Accuracy Transcription",
                       "description": "Automatic Transcription and Keyword Extract...",
                       "configuration": {
@@ -4075,10 +4075,10 @@
                       "unique_name": "voicebase_high_accuracy_transcription_2",
                       "date_created": "2016-04-07T23:52:28Z",
                       "date_updated": "2016-04-07T23:52:28Z",
-                      "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "extensions": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions",
-                        "available_add_on": "https://preview.twilio.com/marketplace/AvailableAddOns/XBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "extensions": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions",
+                        "available_add_on": "https://preview.twilio.com/marketplace/AvailableAddOns/XBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       }
                     }
                   }
@@ -4214,13 +4214,13 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "XFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "installed_add_on_sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "XFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "installed_add_on_sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Incoming Voice Call",
                       "product_name": "Programmable Voice",
                       "unique_name": "voice-incoming",
                       "enabled": true,
-                      "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions/XFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions/XFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4314,13 +4314,13 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "XFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "installed_add_on_sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "XFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "installed_add_on_sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "Incoming Voice Call",
                       "product_name": "Programmable Voice",
                       "unique_name": "voice-incoming",
                       "enabled": false,
-                      "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions/XFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions/XFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4513,21 +4513,21 @@
                     "value": {
                       "extensions": [
                         {
-                          "sid": "XFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "installed_add_on_sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "XFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "installed_add_on_sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "Incoming Voice Call",
                           "product_name": "Programmable Voice",
                           "unique_name": "voice-incoming",
                           "enabled": true,
-                          "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions/XFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions/XFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions?PageSize=50&Page=0",
+                        "first_page_url": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions?PageSize=50&Page=0",
+                        "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "extensions"
                       }
@@ -4539,9 +4539,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions?PageSize=50&Page=0",
+                        "first_page_url": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Extensions?PageSize=50&Page=0",
+                        "url": "https://preview.twilio.com/marketplace/InstalledAddOns/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Extensions?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "extensions"
                       }
@@ -4638,17 +4638,17 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "command": "command",
                       "command_mode": "command_mode",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "device_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "device_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "direction": "direction",
-                      "sid": "DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "status",
-                      "url": "https://preview.twilio.com/wireless/Commands/DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://preview.twilio.com/wireless/Commands/DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4879,17 +4879,17 @@
                     "value": {
                       "commands": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "command": "command",
                           "command_mode": "command_mode",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:00:00Z",
-                          "device_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "device_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "direction": "direction",
-                          "sid": "DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "status",
-                          "url": "https://preview.twilio.com/wireless/Commands/DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://preview.twilio.com/wireless/Commands/DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -4968,17 +4968,17 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "command": "command",
                       "command_mode": "command_mode",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "device_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "device_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "direction": "direction",
-                      "sid": "DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "status",
-                      "url": "https://preview.twilio.com/wireless/Commands/DCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://preview.twilio.com/wireless/Commands/DCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -5211,7 +5211,7 @@
                       },
                       "rate_plans": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "unique_name": "unique_name",
                           "data_enabled": true,
                           "data_limit": 1000,
@@ -5227,8 +5227,8 @@
                             "messaging",
                             "voice"
                           ],
-                          "sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://preview.twilio.com/wireless/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://preview.twilio.com/wireless/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -5298,7 +5298,7 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "data_enabled": true,
                       "data_limit": 1000,
@@ -5314,8 +5314,8 @@
                         "messaging",
                         "voice"
                       ],
-                      "sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://preview.twilio.com/wireless/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://preview.twilio.com/wireless/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -5481,7 +5481,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "data_enabled": true,
                       "data_limit": 1000,
@@ -5497,8 +5497,8 @@
                         "messaging",
                         "voice"
                       ],
-                      "sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://preview.twilio.com/wireless/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://preview.twilio.com/wireless/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -5577,7 +5577,7 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "data_enabled": true,
                       "data_limit": 1000,
@@ -5593,8 +5593,8 @@
                         "messaging",
                         "voice"
                       ],
-                      "sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://preview.twilio.com/wireless/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://preview.twilio.com/wireless/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -5750,7 +5750,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "commands_callback_method": "http_method",
                       "commands_callback_url": "http://www.example.com",
@@ -5766,15 +5766,15 @@
                       "voice_method": "http_method",
                       "voice_url": "http://www.example.com",
                       "links": {
-                        "usage": "https://preview.twilio.com/wireless/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Usage",
-                        "rate_plan": "https://preview.twilio.com/wireless/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "usage": "https://preview.twilio.com/wireless/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Usage",
+                        "rate_plan": "https://preview.twilio.com/wireless/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       },
-                      "rate_plan_sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "rate_plan_sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": "iccid",
                       "e_id": "e_id",
                       "status": "status",
-                      "url": "https://preview.twilio.com/wireless/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://preview.twilio.com/wireless/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -5853,7 +5853,7 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "commands_callback_method": "http_method",
                       "commands_callback_url": "http://www.example.com",
@@ -5861,11 +5861,11 @@
                       "date_updated": "2015-07-30T20:00:00Z",
                       "friendly_name": "friendly_name",
                       "links": {
-                        "usage": "https://preview.twilio.com/wireless/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Usage",
-                        "rate_plan": "https://preview.twilio.com/wireless/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "usage": "https://preview.twilio.com/wireless/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Usage",
+                        "rate_plan": "https://preview.twilio.com/wireless/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       },
-                      "rate_plan_sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "rate_plan_sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": "iccid",
                       "e_id": "e_id",
                       "status": "status",
@@ -5877,7 +5877,7 @@
                       "voice_fallback_url": "http://www.example.com",
                       "voice_method": "http_method",
                       "voice_url": "http://www.example.com",
-                      "url": "https://preview.twilio.com/wireless/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://preview.twilio.com/wireless/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -6049,7 +6049,7 @@
                     "SmsFallbackMethod": "http_method",
                     "SmsFallbackUrl": "http://www.example.com",
                     "FriendlyName": "friendly_name",
-                    "RatePlan": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "RatePlan": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Status": "status"
                   }
                 }
@@ -6245,7 +6245,7 @@
                     "value": {
                       "sims": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "unique_name": "unique_name",
                           "commands_callback_method": "http_method",
                           "commands_callback_url": "http://www.example.com",
@@ -6253,11 +6253,11 @@
                           "date_updated": "2015-07-30T20:00:00Z",
                           "friendly_name": "friendly_name",
                           "links": {
-                            "usage": "https://preview.twilio.com/wireless/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Usage",
-                            "rate_plan": "https://preview.twilio.com/wireless/RatePlans/WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                            "usage": "https://preview.twilio.com/wireless/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Usage",
+                            "rate_plan": "https://preview.twilio.com/wireless/RatePlans/WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                           },
-                          "rate_plan_sid": "WPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "rate_plan_sid": "WPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iccid": "iccid",
                           "e_id": "e_id",
                           "status": "status",
@@ -6269,7 +6269,7 @@
                           "voice_fallback_url": "http://www.example.com",
                           "voice_method": "http_method",
                           "voice_url": "http://www.example.com",
-                          "url": "https://preview.twilio.com/wireless/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://preview.twilio.com/wireless/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -6398,15 +6398,15 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "commands_costs": {},
                       "commands_usage": {},
                       "data_costs": {},
                       "data_usage": {},
                       "sim_unique_name": "sim_unique_name",
-                      "sim_sid": "DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sim_sid": "DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "period": {},
-                      "url": "https://preview.twilio.com/wireless/Sims/DEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Usage"
+                      "url": "https://preview.twilio.com/wireless/Sims/DExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Usage"
                     }
                   }
                 }

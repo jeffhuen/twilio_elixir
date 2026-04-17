@@ -1017,9 +1017,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods?PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods?PageSize=50&Page=0",
+                        "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "billing_periods"
                       }
@@ -1029,9 +1029,9 @@
                     "value": {
                       "billing_periods": [
                         {
-                          "sid": "HBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "period_type": "active",
                           "start_time": "2021-06-09T13:18:15Z",
                           "end_time": "2021-07-09T13:18:15Z",
@@ -1042,9 +1042,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods?PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods?PageSize=50&Page=0",
+                        "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "billing_periods"
                       }
@@ -1054,9 +1054,9 @@
                     "value": {
                       "billing_periods": [
                         {
-                          "sid": "HBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "period_type": "ready",
                           "start_time": "2021-06-09T13:18:15Z",
                           "end_time": "2021-07-09T13:18:15Z",
@@ -1067,9 +1067,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods?PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods?PageSize=50&Page=0",
+                        "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "billing_periods"
                       }
@@ -1156,8 +1156,8 @@
                 "examples": {
                   "createDefaultSmdp": {
                     "value": {
-                      "sid": "HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": null,
                       "sim_sid": null,
                       "status": "new",
@@ -1169,13 +1169,13 @@
                       "error_message": null,
                       "date_created": "2020-09-01T20:00:00Z",
                       "date_updated": "2020-09-01T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/ESimProfiles/HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/ESimProfiles/HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "createActivationCode": {
                     "value": {
-                      "sid": "HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": null,
                       "sim_sid": null,
                       "status": "new",
@@ -1187,13 +1187,13 @@
                       "error_message": null,
                       "date_created": "2020-09-01T20:00:00Z",
                       "date_updated": "2020-09-01T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/ESimProfiles/HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/ESimProfiles/HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "createWithCallback": {
                     "value": {
-                      "sid": "HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": null,
                       "sim_sid": null,
                       "status": "reserving",
@@ -1205,7 +1205,7 @@
                       "error_message": null,
                       "date_created": "2020-09-01T20:00:00Z",
                       "date_updated": "2020-09-01T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/ESimProfiles/HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/ESimProfiles/HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1338,7 +1338,7 @@
             },
             "examples": {
               "readBySimSid": {
-                "value": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -1437,10 +1437,10 @@
                     "value": {
                       "esim_profiles": [
                         {
-                          "sid": "HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iccid": "8988307aaaaaaaaaaaaa",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "available",
                           "eid": "89049032005008882600033489aaaaaa",
                           "smdp_plus_address": "sm-dp-plus.twilio.com",
@@ -1450,7 +1450,7 @@
                           "error_message": null,
                           "date_created": "2020-09-01T20:00:00Z",
                           "date_updated": "2020-09-01T20:00:00Z",
-                          "url": "https://supersim.twilio.com/v1/ESimProfiles/HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://supersim.twilio.com/v1/ESimProfiles/HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -1468,10 +1468,10 @@
                     "value": {
                       "esim_profiles": [
                         {
-                          "sid": "HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iccid": "8988307aaaaaaaaaaaaa",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "available",
                           "eid": "89049032005008882600033489aaaaaa",
                           "smdp_plus_address": "sm-dp-plus.twilio.com",
@@ -1481,7 +1481,7 @@
                           "error_message": null,
                           "date_created": "2020-09-01T20:00:00Z",
                           "date_updated": "2020-09-01T20:00:00Z",
-                          "url": "https://supersim.twilio.com/v1/ESimProfiles/HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://supersim.twilio.com/v1/ESimProfiles/HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -1499,10 +1499,10 @@
                     "value": {
                       "esim_profiles": [
                         {
-                          "sid": "HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iccid": "8988307aaaaaaaaaaaaa",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "available",
                           "eid": "89049032005008882600033489aaaaaa",
                           "smdp_plus_address": "sm-dp-plus.twilio.com",
@@ -1512,17 +1512,17 @@
                           "error_message": null,
                           "date_created": "2020-09-01T20:00:00Z",
                           "date_updated": "2020-09-01T20:00:00Z",
-                          "url": "https://supersim.twilio.com/v1/ESimProfiles/HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://supersim.twilio.com/v1/ESimProfiles/HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/ESimProfiles?SimSid=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/ESimProfiles?SimSid=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "key": "esim_profiles",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/ESimProfiles?SimSid=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/ESimProfiles?SimSid=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       }
                     }
                   },
@@ -1530,10 +1530,10 @@
                     "value": {
                       "esim_profiles": [
                         {
-                          "sid": "HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iccid": "8988307aaaaaaaaaaaaa",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "downloaded",
                           "eid": "89049032005008882600033489aaaaaa",
                           "smdp_plus_address": "sm-dp-plus.twilio.com",
@@ -1543,7 +1543,7 @@
                           "error_message": null,
                           "date_created": "2020-09-01T20:00:00Z",
                           "date_updated": "2020-09-01T20:00:00Z",
-                          "url": "https://supersim.twilio.com/v1/ESimProfiles/HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://supersim.twilio.com/v1/ESimProfiles/HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -1649,10 +1649,10 @@
                 "examples": {
                   "fetchDefaultSmdp": {
                     "value": {
-                      "sid": "HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": "8988307aaaaaaaaaaaaa",
-                      "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "available",
                       "eid": "89049032005008882600033489aaaaaa",
                       "smdp_plus_address": "sm-dp-plus.twilio.com",
@@ -1662,15 +1662,15 @@
                       "error_message": null,
                       "date_created": "2020-09-01T20:00:00Z",
                       "date_updated": "2020-09-01T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/ESimProfiles/HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/ESimProfiles/HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "fetchActivationCode": {
                     "value": {
-                      "sid": "HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": "8988307aaaaaaaaaaaaa",
-                      "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "available",
                       "eid": null,
                       "smdp_plus_address": "sm-dp-plus.twilio.com",
@@ -1680,7 +1680,7 @@
                       "error_message": null,
                       "date_created": "2020-09-01T20:00:00Z",
                       "date_updated": "2020-09-01T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/ESimProfiles/HPaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/ESimProfiles/HPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1764,7 +1764,7 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "data_enabled": true,
                       "data_limit": 500,
@@ -1776,9 +1776,9 @@
                       "sms_commands_url": "https://google.com",
                       "ip_commands_method": "GET",
                       "ip_commands_url": "https://google.com",
-                      "network_access_profile_sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://supersim.twilio.com/v1/Fleets/HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "network_access_profile_sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://supersim.twilio.com/v1/Fleets/HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1900,7 +1900,7 @@
                     "SmsCommandsUrl": "https://google.com",
                     "IpCommandsMethod": "GET",
                     "IpCommandsUrl": "https://google.com",
-                    "NetworkAccessProfile": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "NetworkAccessProfile": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -1924,10 +1924,10 @@
             },
             "examples": {
               "readEmpty": {
-                "value": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               },
               "readFull": {
-                "value": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -2013,30 +2013,30 @@
                     "value": {
                       "fleets": [],
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/Fleets?NetworkAccessProfile=HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/Fleets?NetworkAccessProfile=HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "key": "fleets",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/Fleets?NetworkAccessProfile=HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/Fleets?NetworkAccessProfile=HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       }
                     }
                   },
                   "readFull": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/Fleets?NetworkAccessProfile=HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/Fleets?NetworkAccessProfile=HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "key": "fleets",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/Fleets?NetworkAccessProfile=HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/Fleets?NetworkAccessProfile=HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       },
                       "fleets": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "unique_name": "Pilot Fleet",
                           "data_enabled": true,
                           "data_limit": 1000,
@@ -2048,9 +2048,9 @@
                           "sms_commands_url": null,
                           "ip_commands_method": "POST",
                           "ip_commands_url": null,
-                          "network_access_profile_sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://supersim.twilio.com/v1/Fleets/HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "network_access_profile_sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://supersim.twilio.com/v1/Fleets/HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -2147,7 +2147,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "unique_name",
                       "data_enabled": true,
                       "data_limit": 1000,
@@ -2159,9 +2159,9 @@
                       "sms_commands_url": null,
                       "ip_commands_method": "POST",
                       "ip_commands_url": null,
-                      "network_access_profile_sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://supersim.twilio.com/v1/Fleets/HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "network_access_profile_sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://supersim.twilio.com/v1/Fleets/HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2240,7 +2240,7 @@
                 "examples": {
                   "updateUniqueNameAndDataLimit": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "GPS Trackers Fleet 5GB",
                       "data_enabled": true,
                       "data_limit": 5000,
@@ -2252,9 +2252,9 @@
                       "sms_commands_url": null,
                       "ip_commands_method": "POST",
                       "ip_commands_url": null,
-                      "network_access_profile_sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://supersim.twilio.com/v1/Fleets/HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "network_access_profile_sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://supersim.twilio.com/v1/Fleets/HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2358,7 +2358,7 @@
                 "updateUniqueNameAndDataLimit": {
                   "value": {
                     "UniqueName": "GPS Trackers Fleet 5GB",
-                    "NetworkAccessProfile": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "NetworkAccessProfile": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "DataLimit": 5000
                   }
                 }
@@ -2399,9 +2399,9 @@
                 "examples": {
                   "createFull": {
                     "value": {
-                      "sid": "HGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "sim_iccid": "89883070000123456789",
                       "status": "queued",
                       "direction": "to_sim",
@@ -2411,14 +2411,14 @@
                       "payload": "checkin: firmware update",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/IpCommands/HGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/IpCommands/HGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "createMinimal": {
                     "value": {
-                      "sid": "HGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "sim_iccid": "89883070000123456789",
                       "status": "queued",
                       "direction": "to_sim",
@@ -2428,7 +2428,7 @@
                       "payload": "checkin: firmware update",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/IpCommands/HGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/IpCommands/HGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2561,10 +2561,10 @@
             },
             "examples": {
               "readEmpty": {
-                "value": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               },
               "readFull": {
-                "value": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -2682,32 +2682,32 @@
                     "value": {
                       "ip_commands": [],
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/IpCommands?Status=received&Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/IpCommands?Status=received&Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "key": "ip_commands",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/IpCommands?Status=received&Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/IpCommands?Status=received&Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       }
                     }
                   },
                   "readFull": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/IpCommands?Status=received&Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/IpCommands?Status=received&Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "key": "ip_commands",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/IpCommands?Status=received&Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/IpCommands?Status=received&Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       },
                       "ip_commands": [
                         {
-                          "sid": "HGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "sim_iccid": "89883070000123456789",
                           "status": "received",
                           "direction": "from_sim",
@@ -2717,7 +2717,7 @@
                           "payload": "checkin: firmware update",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:00:00Z",
-                          "url": "https://supersim.twilio.com/v1/IpCommands/HGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://supersim.twilio.com/v1/IpCommands/HGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -2817,9 +2817,9 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "HGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "sim_iccid": "89883070000123456789",
                       "status": "queued",
                       "direction": "to_sim",
@@ -2829,7 +2829,7 @@
                       "payload": "checkin: firmware update",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/IpCommands/HGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/IpCommands/HGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2933,8 +2933,8 @@
                           "mnc": "410"
                         }
                       ],
-                      "sid": "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://supersim.twilio.com/v1/Networks/HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "sid": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://supersim.twilio.com/v1/Networks/HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -3145,8 +3145,8 @@
                               "mnc": "410"
                             }
                           ],
-                          "sid": "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://supersim.twilio.com/v1/Networks/HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "sid": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://supersim.twilio.com/v1/Networks/HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -3172,8 +3172,8 @@
                               "mnc": "410"
                             }
                           ],
-                          "sid": "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://supersim.twilio.com/v1/Networks/HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "sid": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://supersim.twilio.com/v1/Networks/HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -3268,26 +3268,26 @@
                   "createMinimal": {
                     "value": {
                       "unique_name": null,
-                      "sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2020-05-01T20:00:00Z",
                       "date_updated": "2020-05-01T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "networks": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Networks"
+                        "networks": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Networks"
                       }
                     }
                   },
                   "createWithNameAndNetworks": {
                     "value": {
                       "unique_name": "My Network Access Profile",
-                      "sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2020-05-01T20:00:00Z",
                       "date_updated": "2020-05-01T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "networks": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Networks"
+                        "networks": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Networks"
                       }
                     }
                   }
@@ -3367,8 +3367,8 @@
                   "value": {
                     "UniqueName": "My Network Access Profile",
                     "Networks": [
-                      "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                      "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     ]
                   }
                 }
@@ -3490,13 +3490,13 @@
                       "network_access_profiles": [
                         {
                           "unique_name": "My Network Access Profile",
-                          "sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2020-05-01T20:00:00Z",
                           "date_updated": "2020-05-01T20:00:00Z",
-                          "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "networks": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Networks"
+                            "networks": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Networks"
                           }
                         }
                       ]
@@ -3603,13 +3603,13 @@
                   "fetch": {
                     "value": {
                       "unique_name": "My Network Access Profile",
-                      "sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2020-05-01T20:00:00Z",
                       "date_updated": "2020-05-01T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "networks": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Networks"
+                        "networks": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Networks"
                       }
                     }
                   }
@@ -3690,13 +3690,13 @@
                   "updateUniqueName": {
                     "value": {
                       "unique_name": "My Network Access Profile",
-                      "sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2020-05-01T20:00:00Z",
                       "date_updated": "2020-05-01T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "networks": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Networks"
+                        "networks": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Networks"
                       }
                     }
                   }
@@ -3885,18 +3885,18 @@
                   "readFull": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Networks?PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Networks?PageSize=50&Page=0",
                         "key": "networks",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Networks?PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Networks?PageSize=50&Page=0"
                       },
                       "networks": [
                         {
-                          "sid": "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "network_access_profile_sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "network_access_profile_sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "AT&T",
                           "iso_country": "us",
                           "identifiers": [
@@ -3905,7 +3905,7 @@
                               "mnc": "410"
                             }
                           ],
-                          "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Networks/HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Networks/HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -3986,8 +3986,8 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "network_access_profile_sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "network_access_profile_sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "AT&T",
                       "iso_country": "us",
                       "identifiers": [
@@ -3996,7 +3996,7 @@
                           "mnc": "410"
                         }
                       ],
-                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Networks/HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Networks/HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4069,7 +4069,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "Network": "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "Network": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -4176,8 +4176,8 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "network_access_profile_sid": "HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "network_access_profile_sid": "HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "AT&T",
                       "iso_country": "us",
                       "identifiers": [
@@ -4186,7 +4186,7 @@
                           "mnc": "410"
                         }
                       ],
-                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Networks/HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/NetworkAccessProfiles/HAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Networks/HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4271,10 +4271,10 @@
             },
             "examples": {
               "readSimOnly": {
-                "value": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               },
               "readFull": {
-                "value": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -4390,9 +4390,9 @@
                     "value": {
                       "settings_updates": [
                         {
-                          "sid": "OBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "OBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iccid": "89883070000123456789",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "successful",
                           "packages": [
                             {
@@ -4409,9 +4409,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://supersim.twilio.com/v1/SettingsUpdates?Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/SettingsUpdates?Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/SettingsUpdates?Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "url": "https://supersim.twilio.com/v1/SettingsUpdates?Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "settings_updates"
                       }
@@ -4421,9 +4421,9 @@
                     "value": {
                       "settings_updates": [
                         {
-                          "sid": "OBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "OBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iccid": "89883070000123456789",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "scheduled",
                           "packages": [
                             {
@@ -4452,9 +4452,9 @@
                     "value": {
                       "settings_updates": [
                         {
-                          "sid": "OBaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "OBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iccid": "89883070000123456789",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "scheduled",
                           "packages": [
                             {
@@ -4471,9 +4471,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://supersim.twilio.com/v1/SettingsUpdates?Status=scheduled&Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/SettingsUpdates?Status=scheduled&Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/SettingsUpdates?Status=scheduled&Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "url": "https://supersim.twilio.com/v1/SettingsUpdates?Status=scheduled&Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "settings_updates"
                       }
@@ -4574,18 +4574,18 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "",
                       "status": "new",
                       "fleet_sid": null,
                       "iccid": "89883070000123456789",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods",
-                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses"
+                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods",
+                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses"
                       }
                     }
                   }
@@ -4705,10 +4705,10 @@
             },
             "examples": {
               "readEmpty": {
-                "value": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               },
               "readFullByFleetSid": {
-                "value": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               },
               "readFullByFleetName": {
                 "value": "MyFleet"
@@ -4816,41 +4816,41 @@
                     "value": {
                       "sims": [],
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/Sims?Status=new&Fleet=HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/Sims?Status=new&Fleet=HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "key": "sims",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/Sims?Status=new&Fleet=HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/Sims?Status=new&Fleet=HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       }
                     }
                   },
                   "readFullByFleetSid": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/Sims?Status=new&Fleet=HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/Sims?Status=new&Fleet=HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "key": "sims",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/Sims?Status=new&Fleet=HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/Sims?Status=new&Fleet=HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       },
                       "sims": [
                         {
-                          "sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "unique_name": "My SIM",
                           "status": "new",
-                          "fleet_sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "fleet_sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iccid": "89883070000123456789",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:00:00Z",
-                          "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "billing_periods": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods",
-                            "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses"
+                            "billing_periods": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods",
+                            "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses"
                           }
                         }
                       ]
@@ -4869,18 +4869,18 @@
                       },
                       "sims": [
                         {
-                          "sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "unique_name": "My SIM",
                           "status": "new",
-                          "fleet_sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "fleet_sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iccid": "89883070000123456789",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:00:00Z",
-                          "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "billing_periods": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods",
-                            "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses"
+                            "billing_periods": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods",
+                            "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses"
                           }
                         }
                       ]
@@ -4899,18 +4899,18 @@
                       },
                       "sims": [
                         {
-                          "sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "unique_name": "My SIM",
                           "status": "new",
                           "fleet_sid": null,
                           "iccid": "89883070000123456789",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:00:00Z",
-                          "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "billing_periods": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods",
-                            "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses"
+                            "billing_periods": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods",
+                            "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses"
                           }
                         }
                       ]
@@ -5022,18 +5022,18 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "My SIM",
                       "status": "new",
                       "fleet_sid": null,
                       "iccid": "89883070000123456789",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods",
-                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses"
+                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods",
+                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses"
                       }
                     }
                   }
@@ -5113,69 +5113,69 @@
                 "examples": {
                   "updateUniqueName": {
                     "value": {
-                      "sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": "MySIM",
                       "status": "new",
                       "fleet_sid": null,
                       "iccid": "89883070000123456789",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods",
-                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses"
+                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods",
+                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses"
                       }
                     }
                   },
                   "updateFleetWithSid": {
                     "value": {
-                      "sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": null,
                       "status": "new",
-                      "fleet_sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "fleet_sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": "89883070000123456789",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods",
-                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses"
+                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods",
+                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses"
                       }
                     }
                   },
                   "updateFleetWithUniqueName": {
                     "value": {
-                      "sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": null,
                       "status": "new",
-                      "fleet_sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "fleet_sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": "89883070000123456789",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods",
-                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses"
+                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods",
+                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses"
                       }
                     }
                   },
                   "transferSimToAnotherAccount": {
                     "value": {
-                      "sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                      "sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": null,
                       "status": "new",
-                      "fleet_sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "fleet_sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "iccid": "89883070000123456789",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods",
-                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses"
+                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods",
+                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses"
                       }
                     }
                   }
@@ -5229,18 +5229,18 @@
                 "examples": {
                   "updateStatus": {
                     "value": {
-                      "sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "unique_name": null,
                       "status": "scheduled",
                       "fleet_sid": null,
                       "iccid": "89883070000123456789",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/BillingPeriods",
-                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses"
+                        "billing_periods": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/BillingPeriods",
+                        "sim_ip_addresses": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses"
                       }
                     }
                   }
@@ -5345,7 +5345,7 @@
                 },
                 "updateFleetWithSid": {
                   "value": {
-                    "Fleet": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "Fleet": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "CallbackUrl": "http://127.0.0.1:9876/path",
                     "CallbackMethod": "POST"
                   }
@@ -5359,7 +5359,7 @@
                 },
                 "transferSimToAnotherAccount": {
                   "value": {
-                    "AccountSid": "ACbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                    "AccountSid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Fleet": "My Fleet"
                   }
                 }
@@ -5483,12 +5483,12 @@
                     "value": {
                       "meta": {
                         "key": "ip_addresses",
-                        "first_page_url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses?PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses?PageSize=50&Page=0",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses?PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses?PageSize=50&Page=0"
                       },
                       "ip_addresses": []
                     }
@@ -5497,12 +5497,12 @@
                     "value": {
                       "meta": {
                         "key": "ip_addresses",
-                        "first_page_url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses?PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses?PageSize=50&Page=0",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/Sims/HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAddresses?PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/Sims/HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAddresses?PageSize=50&Page=0"
                       },
                       "ip_addresses": [
                         {
@@ -5593,28 +5593,28 @@
                 "examples": {
                   "createCommandMinimal": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "payload": "checkin: firmware update",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "HCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "HCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "queued",
                       "direction": "to_sim",
-                      "url": "https://supersim.twilio.com/v1/SmsCommands/HCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/SmsCommands/HCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "createCommandFull": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "payload": "Report location: (52.520008, 13.404954)",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "HCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "HCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "queued",
                       "direction": "to_sim",
-                      "url": "https://supersim.twilio.com/v1/SmsCommands/HCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/SmsCommands/HCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -5736,10 +5736,10 @@
             },
             "examples": {
               "readEmpty": {
-                "value": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               },
               "readFull": {
-                "value": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -5849,38 +5849,38 @@
                     "value": {
                       "sms_commands": [],
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/SmsCommands?Status=received&Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/SmsCommands?Status=received&Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "key": "sms_commands",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/SmsCommands?Status=received&Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/SmsCommands?Status=received&Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       }
                     }
                   },
                   "readFull": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/SmsCommands?Status=received&Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/SmsCommands?Status=received&Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "key": "sms_commands",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/SmsCommands?Status=received&Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/SmsCommands?Status=received&Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0"
                       },
                       "sms_commands": [
                         {
-                          "sid": "HCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "payload": "content of the command",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "received",
                           "direction": "from_sim",
                           "date_created": "2015-07-30T20:00:00Z",
                           "date_updated": "2015-07-30T20:00:00Z",
-                          "url": "https://supersim.twilio.com/v1/SmsCommands/HCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://supersim.twilio.com/v1/SmsCommands/HCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -5980,15 +5980,15 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "HCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "payload": "content of the command",
-                      "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "queued",
                       "direction": "to_sim",
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://supersim.twilio.com/v1/SmsCommands/HCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://supersim.twilio.com/v1/SmsCommands/HCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -6071,7 +6071,7 @@
             },
             "examples": {
               "readDaySimFilter": {
-                "value": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -6084,7 +6084,7 @@
             },
             "examples": {
               "readDayFleetFilter": {
-                "value": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -6100,7 +6100,7 @@
             },
             "examples": {
               "readDayNetworkFilter": {
-                "value": "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -6278,7 +6278,7 @@
                             "start_time": "2015-05-01T20:00:00Z",
                             "end_time": "2015-06-01T20:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6309,7 +6309,7 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6325,7 +6325,7 @@
                             "start_time": "2019-05-02T00:00:00Z",
                             "end_time": "2019-05-03T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6356,7 +6356,7 @@
                             "start_time": "2019-05-01T01:00:00Z",
                             "end_time": "2019-05-01T02:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6372,7 +6372,7 @@
                             "start_time": "2019-05-01T00:00:00Z",
                             "end_time": "2019-05-01T01:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6403,8 +6403,8 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6419,26 +6419,26 @@
                             "start_time": "2019-05-02T00:00:00Z",
                             "end_time": "2019-05-03T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
                           "data_total_billed": "0.03",
                           "billed_unit": "USD",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "fleet_sid": null,
                           "network_sid": null,
                           "iso_country": null
                         }
                       ],
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/UsageRecords?Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&Granularity=day&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/UsageRecords?Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&Granularity=day&PageSize=50&Page=0",
                         "key": "usage_records",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/UsageRecords?Sim=HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&Granularity=day&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/UsageRecords?Sim=HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&Granularity=day&PageSize=50&Page=0"
                       }
                     }
                   },
@@ -6450,7 +6450,7 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6458,7 +6458,7 @@
                           "billed_unit": "USD",
                           "sim_sid": null,
                           "fleet_sid": null,
-                          "network_sid": "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "network_sid": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iso_country": null
                         },
                         {
@@ -6466,7 +6466,7 @@
                             "start_time": "2019-05-02T00:00:00Z",
                             "end_time": "2019-05-03T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6474,18 +6474,18 @@
                           "billed_unit": "USD",
                           "sim_sid": null,
                           "fleet_sid": null,
-                          "network_sid": "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "network_sid": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iso_country": null
                         }
                       ],
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/UsageRecords?Network=HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&Granularity=day&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/UsageRecords?Network=HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&Granularity=day&PageSize=50&Page=0",
                         "key": "usage_records",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/UsageRecords?Network=HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&Granularity=day&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/UsageRecords?Network=HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&Granularity=day&PageSize=50&Page=0"
                       }
                     }
                   },
@@ -6497,7 +6497,7 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6513,7 +6513,7 @@
                             "start_time": "2019-05-02T00:00:00Z",
                             "end_time": "2019-05-03T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6544,14 +6544,14 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
                           "data_total_billed": "0.03",
                           "billed_unit": "USD",
                           "sim_sid": null,
-                          "fleet_sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "fleet_sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "network_sid": null,
                           "iso_country": null
                         },
@@ -6560,26 +6560,26 @@
                             "start_time": "2019-05-02T00:00:00Z",
                             "end_time": "2019-05-03T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
                           "data_total_billed": "0.03",
                           "billed_unit": "USD",
                           "sim_sid": null,
-                          "fleet_sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "fleet_sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "network_sid": null,
                           "iso_country": null
                         }
                       ],
                       "meta": {
-                        "first_page_url": "https://supersim.twilio.com/v1/UsageRecords?Fleet=HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&Granularity=day&PageSize=50&Page=0",
+                        "first_page_url": "https://supersim.twilio.com/v1/UsageRecords?Fleet=HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&Granularity=day&PageSize=50&Page=0",
                         "key": "usage_records",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://supersim.twilio.com/v1/UsageRecords?Fleet=HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&Granularity=day&PageSize=50&Page=0"
+                        "url": "https://supersim.twilio.com/v1/UsageRecords?Fleet=HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&Granularity=day&PageSize=50&Page=0"
                       }
                     }
                   },
@@ -6591,13 +6591,13 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
                           "data_total_billed": "0.03",
                           "billed_unit": "USD",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "fleet_sid": null,
                           "network_sid": null,
                           "iso_country": null
@@ -6607,13 +6607,13 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
                           "data_total_billed": "0.03",
                           "billed_unit": "USD",
-                          "sim_sid": "HSbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "fleet_sid": null,
                           "network_sid": null,
                           "iso_country": null
@@ -6638,14 +6638,14 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
                           "data_total_billed": "0.03",
                           "billed_unit": "USD",
                           "sim_sid": null,
-                          "fleet_sid": "HFaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "fleet_sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "network_sid": null,
                           "iso_country": null
                         },
@@ -6654,14 +6654,14 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
                           "data_total_billed": "0.03",
                           "billed_unit": "USD",
                           "sim_sid": null,
-                          "fleet_sid": "HFbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                          "fleet_sid": "HFxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "network_sid": null,
                           "iso_country": null
                         }
@@ -6685,7 +6685,7 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6693,7 +6693,7 @@
                           "billed_unit": "USD",
                           "sim_sid": null,
                           "fleet_sid": null,
-                          "network_sid": "HWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "network_sid": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iso_country": null
                         },
                         {
@@ -6701,7 +6701,7 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6709,7 +6709,7 @@
                           "billed_unit": "USD",
                           "sim_sid": null,
                           "fleet_sid": null,
-                          "network_sid": "HWbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                          "network_sid": "HWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "iso_country": null
                         }
                       ],
@@ -6732,7 +6732,7 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6748,7 +6748,7 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
@@ -6779,13 +6779,13 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
                           "data_total_billed": "0.03",
                           "billed_unit": "USD",
-                          "sim_sid": "HSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "fleet_sid": null,
                           "network_sid": null,
                           "iso_country": "FR"
@@ -6795,13 +6795,13 @@
                             "start_time": "2019-05-03T00:00:00Z",
                             "end_time": "2019-05-04T00:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 150000,
                           "data_download": 150000,
                           "data_total": 300000,
                           "data_total_billed": "0.03",
                           "billed_unit": "USD",
-                          "sim_sid": "HSbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+                          "sim_sid": "HSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "fleet_sid": null,
                           "network_sid": null,
                           "iso_country": "FR"
@@ -6826,7 +6826,7 @@
                             "start_time": "2015-05-01T20:00:00Z",
                             "end_time": "2015-06-01T20:00:00Z"
                           },
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "data_upload": 1000,
                           "data_download": 1000,
                           "data_total": 2000,

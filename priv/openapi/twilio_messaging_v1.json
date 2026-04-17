@@ -6,6 +6,20 @@
         "type": "http"
       }
     },
+    "parameters": {
+      "XTwilioApiVersion": {
+        "name": "X-Twilio-Api-Version",
+        "in": "header",
+        "description": "The version of the Messaging API to use for this request",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "x-twilio": {
+          "shortDescription": "The Messaging API version"
+        }
+      }
+    },
     "schemas": {
       "messaging.v1.service.alpha_sender": {
         "type": "object",
@@ -726,7 +740,7 @@
             "maxLength": 34,
             "pattern": "^QE[0-9a-fA-F]{32}$",
             "nullable": true,
-            "description": "The unique string that identifies a US A2P Compliance resource `QE2c6890da8086d771620e9b13fadeba0b`."
+            "description": "The unique string that identifies a US A2P Compliance resource `QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`."
           },
           "account_sid": {
             "type": "string",
@@ -1359,12 +1373,7 @@
             "description": "The email address to receive the notification about the verification result. ."
           },
           "use_case_categories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true,
-            "description": "The category of the use case for the Tollfree Number. List as many are applicable.."
+            "$ref": "#/components/schemas/tollfree_verification_enum_use_case_categories"
           },
           "use_case_summary": {
             "type": "string",
@@ -1447,9 +1456,7 @@
             "description": "A legally recognized business registration number"
           },
           "business_registration_authority": {
-            "type": "string",
-            "nullable": true,
-            "description": "The organizational authority for business registrations"
+            "$ref": "#/components/schemas/tollfree_verification_enum_business_registration_authority"
           },
           "business_registration_country": {
             "type": "string",
@@ -1457,16 +1464,7 @@
             "description": "Country business is registered in"
           },
           "business_type": {
-            "type": "string",
-            "enum": [
-              "PRIVATE_PROFIT",
-              "PUBLIC_PROFIT",
-              "SOLE_PROPRIETOR",
-              "NON_PROFIT",
-              "GOVERNMENT"
-            ],
-            "nullable": true,
-            "description": "The type of business, valid values are PRIVATE_PROFIT, PUBLIC_PROFIT, NON_PROFIT, SOLE_PROPRIETOR, GOVERNMENT"
+            "$ref": "#/components/schemas/tollfree_verification_enum_business_type"
           },
           "business_registration_phone_number": {
             "type": "string",
@@ -1543,6 +1541,43 @@
           }
         }
       },
+      "tollfree_verification_enum_business_type": {
+        "type": "string",
+        "enum": [
+          "PRIVATE_PROFIT",
+          "PUBLIC_PROFIT",
+          "SOLE_PROPRIETOR",
+          "NON_PROFIT",
+          "GOVERNMENT"
+        ],
+        "nullable": true,
+        "description": "The type of business, valid values are PRIVATE_PROFIT, PUBLIC_PROFIT, NON_PROFIT, SOLE_PROPRIETOR, GOVERNMENT. Required field."
+      },
+      "tollfree_verification_enum_business_registration_authority": {
+        "type": "string",
+        "nullable": true,
+        "enum": [
+          "EIN",
+          "CBN",
+          "CRN",
+          "PROVINCIAL_NUMBER",
+          "VAT",
+          "ACN",
+          "ABN",
+          "BRN",
+          "SIREN",
+          "SIRET",
+          "NZBN",
+          "USt-IdNr",
+          "CIF",
+          "NIF",
+          "CNPJ",
+          "UID",
+          "NEQ",
+          "OTHER"
+        ],
+        "description": "The organizational authority for business registrations. Required for all business types except SOLE_PROPRIETOR."
+      },
       "tollfree_verification_enum_vetting_provider": {
         "type": "string",
         "nullable": true,
@@ -1561,6 +1596,30 @@
         ],
         "description": "The compliance status of the Tollfree Verification record."
       },
+      "tollfree_verification_enum_use_case_categories": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "TWO_FACTOR_AUTHENTICATION",
+            "ACCOUNT_NOTIFICATIONS",
+            "CUSTOMER_CARE",
+            "CHARITY_NONPROFIT",
+            "DELIVERY_NOTIFICATIONS",
+            "FRAUD_ALERT_MESSAGING",
+            "EVENTS",
+            "HIGHER_EDUCATION",
+            "K12",
+            "MARKETING",
+            "POLLING_AND_VOTING_NON_POLITICAL",
+            "POLITICAL_ELECTION_CAMPAIGNS",
+            "PUBLIC_SERVICE_ANNOUNCEMENT",
+            "SECURITY_ALERT"
+          ]
+        },
+        "nullable": true,
+        "description": "The category of the use case for the Tollfree Number. List as many as are applicable."
+      },
       "tollfree_verification_enum_opt_in_type": {
         "type": "string",
         "enum": [
@@ -1574,6 +1633,16 @@
         ],
         "description": "Describe how a user opts-in to text messages."
       },
+      "messaging.v1.service.us_app_to_person_response": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/messaging.v1.service.us_app_to_person"
+          },
+          {
+            "$ref": "#/components/schemas/messaging.v1.service.us_app_to_person_v2"
+          }
+        ]
+      },
       "messaging.v1.service.us_app_to_person": {
         "type": "object",
         "properties": {
@@ -1583,7 +1652,7 @@
             "maxLength": 34,
             "pattern": "^QE[0-9a-fA-F]{32}$",
             "nullable": true,
-            "description": "The unique string that identifies a US A2P Compliance resource `QE2c6890da8086d771620e9b13fadeba0b`."
+            "description": "The unique string that identifies a US A2P Compliance resource `QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`."
           },
           "account_sid": {
             "type": "string",
@@ -1744,7 +1813,8 @@
             "nullable": true,
             "description": "Details indicating why a campaign registration failed. These errors can indicate one or more fields that were incorrect or did not meet review requirements."
           }
-        }
+        },
+        "additionalProperties": false
       },
       "messaging.v1.service.us_app_to_person_usecase": {
         "type": "object",
@@ -1754,6 +1824,194 @@
             "items": {},
             "nullable": true,
             "description": "Human readable name, code, description and post_approval_required (indicates whether or not post approval is required for this Use Case) of A2P Campaign Use Cases."
+          }
+        }
+      },
+      "messaging.v1.service.us_app_to_person_v2": {
+        "type": "object",
+        "required": [
+          "privacy_policy_url",
+          "terms_and_conditions_url"
+        ],
+        "properties": {
+          "sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^QE[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The unique string that identifies a US A2P Compliance resource `QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`."
+          },
+          "account_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^AC[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the Campaign belongs to."
+          },
+          "brand_registration_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^BN[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The unique string to identify the A2P brand."
+          },
+          "messaging_service_sid": {
+            "type": "string",
+            "minLength": 34,
+            "maxLength": 34,
+            "pattern": "^MG[0-9a-fA-F]{32}$",
+            "nullable": true,
+            "description": "The SID of the [Messaging Service](https://www.twilio.com/docs/messaging/api/service-resource) that the resource is associated with."
+          },
+          "description": {
+            "type": "string",
+            "nullable": true,
+            "description": "A short description of what this SMS campaign does. Min length: 40 characters. Max length: 4096 characters."
+          },
+          "message_samples": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "An array of sample message strings, min two and max five. Min length for each sample: 20 chars. Max length for each sample: 1024 chars."
+          },
+          "us_app_to_person_usecase": {
+            "type": "string",
+            "nullable": true,
+            "description": "A2P Campaign Use Case. Examples: [ 2FA, EMERGENCY, MARKETING, SOLE_PROPRIETOR...]. SOLE_PROPRIETOR campaign use cases can only be created by SOLE_PROPRIETOR Brands, and there can only be one SOLE_PROPRIETOR campaign created per SOLE_PROPRIETOR Brand."
+          },
+          "has_embedded_links": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Indicate that this SMS campaign will send messages that contain links."
+          },
+          "has_embedded_phone": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Indicates that this SMS campaign will send messages that contain phone numbers."
+          },
+          "subscriber_opt_in": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "A boolean that specifies whether campaign has Subscriber Optin or not."
+          },
+          "age_gated": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "A boolean that specifies whether campaign is age gated or not."
+          },
+          "direct_lending": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "A boolean that specifies whether campaign allows direct lending or not."
+          },
+          "campaign_status": {
+            "type": "string",
+            "nullable": true,
+            "description": "Campaign status. Examples: IN_PROGRESS, VERIFIED, FAILED."
+          },
+          "campaign_id": {
+            "type": "string",
+            "nullable": true,
+            "description": "The Campaign Registry (TCR) Campaign ID."
+          },
+          "is_externally_registered": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "Indicates whether the campaign was registered externally or not."
+          },
+          "rate_limits": {
+            "nullable": true,
+            "description": "Rate limit and/or classification set by each carrier, Ex. AT&T or T-Mobile."
+          },
+          "message_flow": {
+            "type": "string",
+            "nullable": true,
+            "description": "Details around how a consumer opts-in to their campaign, therefore giving consent to receive their messages. If multiple opt-in methods can be used for the same campaign, they must all be listed. 40 character minimum. 2048 character maximum."
+          },
+          "opt_in_message": {
+            "type": "string",
+            "nullable": true,
+            "description": "If end users can text in a keyword to start receiving messages from this campaign, the auto-reply messages sent to the end users must be provided. The opt-in response should include the Brand name, confirmation of opt-in enrollment to a recurring message campaign, how to get help, and clear description of how to opt-out. This field is required if end users can text in a keyword to start receiving messages from this campaign. 20 character minimum. 320 character maximum."
+          },
+          "opt_out_message": {
+            "type": "string",
+            "nullable": true,
+            "description": "Upon receiving the opt-out keywords from the end users, Twilio customers are expected to send back an auto-generated response, which must provide acknowledgment of the opt-out request and confirmation that no further messages will be sent. It is also recommended that these opt-out messages include the brand name. This field is required if managing opt out keywords yourself (i.e. not using Twilio's Default or Advanced Opt Out features). 20 character minimum. 320 character maximum."
+          },
+          "help_message": {
+            "type": "string",
+            "nullable": true,
+            "description": "When customers receive the help keywords from their end users, Twilio customers are expected to send back an auto-generated response; this may include the brand name and additional support contact information. This field is required if managing help keywords yourself (i.e. not using Twilio's Default or Advanced Opt Out features). 20 character minimum. 320 character maximum."
+          },
+          "opt_in_keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "If end users can text in a keyword to start receiving messages from this campaign, those keywords must be provided. This field is required if end users can text in a keyword to start receiving messages from this campaign. Values must be alphanumeric. 255 character maximum."
+          },
+          "opt_out_keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "End users should be able to text in a keyword to stop receiving messages from this campaign. Those keywords must be provided. This field is required if managing opt out keywords yourself (i.e. not using Twilio's Default or Advanced Opt Out features). Values must be alphanumeric. 255 character maximum."
+          },
+          "help_keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "description": "End users should be able to text in a keyword to receive help. Those keywords must be provided as part of the campaign registration request. This field is required if managing help keywords yourself (i.e. not using Twilio's Default or Advanced Opt Out features). Values must be alphanumeric. 255 character maximum."
+          },
+          "date_created": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format."
+          },
+          "date_updated": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "description": "The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "description": "The absolute URL of the US App to Person resource."
+          },
+          "mock": {
+            "type": "boolean",
+            "nullable": true,
+            "description": "A boolean that specifies whether campaign is a mock or not. Mock campaigns will be automatically created if using a mock brand. Mock campaigns should only be used for testing purposes."
+          },
+          "errors": {
+            "type": "array",
+            "items": {},
+            "nullable": true,
+            "description": "Details indicating why a campaign registration failed. These errors can indicate one or more fields that were incorrect or did not meet review requirements."
+          },
+          "privacy_policy_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "description": "The URL of the privacy policy for the campaign."
+          },
+          "terms_and_conditions_url": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "description": "The URL of the terms and conditions for the campaign."
           }
         }
       },
@@ -1868,16 +2126,16 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "alpha_sender": "Twilio",
                       "capabilities": [
                         "SMS"
                       ],
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/AlphaSenders/AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/AlphaSenders/AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2057,24 +2315,24 @@
                       "meta": {
                         "page": 0,
                         "page_size": 20,
-                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/AlphaSenders?PageSize=20&Page=0",
+                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/AlphaSenders?PageSize=20&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
                         "key": "alpha_senders",
-                        "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/AlphaSenders?PageSize=20&Page=0"
+                        "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/AlphaSenders?PageSize=20&Page=0"
                       },
                       "alpha_senders": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T20:12:31Z",
                           "date_updated": "2015-07-30T20:12:33Z",
                           "alpha_sender": "Twilio",
                           "capabilities": [
                             "SMS"
                           ],
-                          "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/AlphaSenders/AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/AlphaSenders/AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -2183,16 +2441,16 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "alpha_sender": "Twilio",
                       "capabilities": [
                         "SMS"
                       ],
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/AlphaSenders/AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/AlphaSenders/AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2332,8 +2590,8 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "AC78e8e67fc0246521490fb9907fd0c165",
-                      "brand_registration_sid": "BN0044409f7e067e279523808d267e2d85"
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2444,17 +2702,17 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "BN0044409f7e067e279523808d267e2d85",
-                      "account_sid": "AC78e8e67fc0246521490fb9907fd0c165",
-                      "customer_profile_bundle_sid": "BU3344409f7e067e279523808d267e2d85",
-                      "a2p_profile_bundle_sid": "BU3344409f7e067e279523808d267e2d85",
+                      "sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "customer_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "a2p_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2021-01-27T14:18:35Z",
                       "date_updated": "2021-01-27T14:18:36Z",
                       "brand_type": "STANDARD",
                       "status": "PENDING",
                       "tcr_id": "BXXXXXX",
                       "failure_reason": "Registration error",
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85",
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "brand_score": 42,
                       "brand_feedback": [
                         "TAX_ID",
@@ -2468,17 +2726,17 @@
                       "mock": false,
                       "errors": [],
                       "links": {
-                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/Vettings",
-                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/SmsOtp"
+                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
+                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SmsOtp"
                       }
                     }
                   },
                   "fetchSoleProprietorPending": {
                     "value": {
-                      "sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "a2p_profile_bundle_sid": "BUbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-                      "customer_profile_bundle_sid": "BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "a2p_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "customer_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "PENDING",
                       "identity_status": null,
                       "brand_type": "SOLE_PROPRIETOR",
@@ -2494,19 +2752,19 @@
                       "errors": [],
                       "date_updated": "2023-03-15T14:21:42Z",
                       "date_created": "2023-03-15T14:21:42Z",
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Vettings",
-                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SmsOtp"
+                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
+                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SmsOtp"
                       }
                     }
                   },
                   "fetchSoleProprietorRegisteredUnverified": {
                     "value": {
-                      "sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "a2p_profile_bundle_sid": "BUbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-                      "customer_profile_bundle_sid": "BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "a2p_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "customer_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "APPROVED",
                       "identity_status": "UNVERIFIED",
                       "brand_type": "SOLE_PROPRIETOR",
@@ -2522,19 +2780,19 @@
                       "errors": [],
                       "date_updated": "2023-03-15T14:21:42Z",
                       "date_created": "2023-03-15T14:21:42Z",
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Vettings",
-                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SmsOtp"
+                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
+                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SmsOtp"
                       }
                     }
                   },
                   "fetchSoleProprietorRegisteredSelfDeclared": {
                     "value": {
-                      "sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "a2p_profile_bundle_sid": "BUbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-                      "customer_profile_bundle_sid": "BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "a2p_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "customer_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "APPROVED",
                       "identity_status": "SELF_DECLARED",
                       "brand_type": "SOLE_PROPRIETOR",
@@ -2550,19 +2808,19 @@
                       "errors": [],
                       "date_updated": "2023-03-15T14:21:42Z",
                       "date_created": "2023-03-15T14:21:42Z",
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Vettings",
-                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SmsOtp"
+                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
+                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SmsOtp"
                       }
                     }
                   },
                   "fetchSoleProprietorRegisteredVerified": {
                     "value": {
-                      "sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "a2p_profile_bundle_sid": "BUbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-                      "customer_profile_bundle_sid": "BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "a2p_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "customer_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "APPROVED",
                       "identity_status": "VERIFIED",
                       "brand_type": "SOLE_PROPRIETOR",
@@ -2578,10 +2836,10 @@
                       "errors": [],
                       "date_updated": "2023-03-15T14:21:42Z",
                       "date_created": "2023-03-15T14:21:42Z",
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Vettings",
-                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SmsOtp"
+                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
+                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SmsOtp"
                       }
                     }
                   }
@@ -2664,17 +2922,17 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "customer_profile_bundle_sid": "BU3344409f7e067e279523808d267e2d85",
-                      "a2p_profile_bundle_sid": "BU3344409f7e067e279523808d267e2d85",
+                      "sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "customer_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "a2p_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2021-01-27T14:18:35Z",
                       "date_updated": "2021-01-27T14:18:36Z",
                       "brand_type": "STANDARD",
                       "status": "PENDING",
                       "tcr_id": "BXXXXXX",
                       "failure_reason": "Registration error",
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "brand_score": 42,
                       "brand_feedback": [
                         "TAX_ID",
@@ -2688,17 +2946,17 @@
                       "errors": [],
                       "mock": false,
                       "links": {
-                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Vettings",
-                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SmsOtp"
+                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
+                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SmsOtp"
                       }
                     }
                   },
                   "updateSoleProprietorBrand": {
                     "value": {
-                      "sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "customer_profile_bundle_sid": "BU3344409f7e067e279523808d267e2d85",
-                      "a2p_profile_bundle_sid": "BU3344409f7e067e279523808d267e2d85",
+                      "sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "customer_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "a2p_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2021-01-27T14:18:35Z",
                       "date_updated": "2021-01-27T14:18:36Z",
                       "brand_type": "SOLE_PROPRIETOR",
@@ -2714,10 +2972,10 @@
                       "skip_automatic_sec_vet": false,
                       "errors": [],
                       "mock": false,
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Vettings",
-                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/SmsOtp"
+                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
+                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SmsOtp"
                       }
                     }
                   }
@@ -2897,17 +3155,17 @@
                       },
                       "data": [
                         {
-                          "sid": "BN0044409f7e067e279523808d267e2d85",
-                          "account_sid": "AC78e8e67fc0246521490fb9907fd0c165",
-                          "customer_profile_bundle_sid": "BU3344409f7e067e279523808d267e2d85",
-                          "a2p_profile_bundle_sid": "BU3344409f7e067e279523808d267e2d85",
+                          "sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "customer_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "a2p_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2021-01-27T14:18:35Z",
                           "date_updated": "2021-01-27T14:18:36Z",
                           "brand_type": "STANDARD",
                           "status": "APPROVED",
                           "tcr_id": "BXXXXXX",
                           "failure_reason": "Registration error",
-                          "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85",
+                          "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "brand_score": 42,
                           "brand_feedback": [
                             "TAX_ID",
@@ -2921,8 +3179,8 @@
                           "errors": [],
                           "mock": false,
                           "links": {
-                            "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/Vettings",
-                            "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/SmsOtp"
+                            "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
+                            "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SmsOtp"
                           }
                         }
                       ]
@@ -2941,17 +3199,17 @@
                       },
                       "data": [
                         {
-                          "sid": "BN0044409f7e067e279523808d267e2d85",
-                          "account_sid": "AC78e8e67fc0246521490fb9907fd0c165",
-                          "customer_profile_bundle_sid": "BU3344409f7e067e279523808d267e2d85",
-                          "a2p_profile_bundle_sid": "BU3344409f7e067e279523808d267e2d85",
+                          "sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "customer_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "a2p_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2021-01-27T14:18:35Z",
                           "date_updated": "2021-01-27T14:18:36Z",
                           "brand_type": "STANDARD",
                           "status": "APPROVED",
                           "tcr_id": "BXXXXXX",
                           "failure_reason": "Registration error",
-                          "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85",
+                          "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "brand_score": 42,
                           "brand_feedback": [
                             "TAX_ID",
@@ -2974,8 +3232,8 @@
                           ],
                           "mock": false,
                           "links": {
-                            "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/Vettings",
-                            "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/SmsOtp"
+                            "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
+                            "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SmsOtp"
                           }
                         }
                       ]
@@ -3046,17 +3304,17 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "BN0044409f7e067e279523808d267e2d85",
-                      "account_sid": "AC78e8e67fc0246521490fb9907fd0c165",
-                      "customer_profile_bundle_sid": "BU0000009f7e067e279523808d267e2d90",
-                      "a2p_profile_bundle_sid": "BU1111109f7e067e279523808d267e2d85",
+                      "sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "customer_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "a2p_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2021-01-28T10:45:51Z",
                       "date_updated": "2021-01-28T10:45:51Z",
                       "brand_type": "STANDARD",
                       "status": "PENDING",
                       "tcr_id": "BXXXXXX",
                       "failure_reason": "Registration error",
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85",
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "brand_score": 42,
                       "brand_feedback": [
                         "TAX_ID",
@@ -3070,17 +3328,17 @@
                       "errors": [],
                       "mock": false,
                       "links": {
-                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/Vettings",
-                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/SmsOtp"
+                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
+                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SmsOtp"
                       }
                     }
                   },
                   "createSoleProprietorBrand": {
                     "value": {
-                      "sid": "BN0044409f7e067e279523808d267e2d85",
-                      "account_sid": "AC78e8e67fc0246521490fb9907fd0c165",
-                      "customer_profile_bundle_sid": "BU0000009f7e067e279523808d267e2d90",
-                      "a2p_profile_bundle_sid": "BU1111109f7e067e279523808d267e2d85",
+                      "sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "customer_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "a2p_profile_bundle_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2021-01-28T10:45:51Z",
                       "date_updated": "2021-01-28T10:45:51Z",
                       "brand_type": "SOLE_PROPRIETOR",
@@ -3096,10 +3354,10 @@
                       "skip_automatic_sec_vet": false,
                       "errors": [],
                       "mock": false,
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85",
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/Vettings",
-                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/SmsOtp"
+                        "brand_vettings": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
+                        "brand_registration_otps": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/SmsOtp"
                       }
                     }
                   }
@@ -3193,8 +3451,8 @@
               "examples": {
                 "create": {
                   "value": {
-                    "CustomerProfileBundleSid": "BU0000009f7e067e279523808d267e2d90",
-                    "A2PProfileBundleSid": "BU1111109f7e067e279523808d267e2d85",
+                    "CustomerProfileBundleSid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "A2PProfileBundleSid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "BrandType": "STANDARD",
                     "SkipAutomaticSecVet": false,
                     "Mock": false
@@ -3202,8 +3460,8 @@
                 },
                 "createSoleProprietorBrand": {
                   "value": {
-                    "CustomerProfileBundleSid": "BU0000009f7e067e279523808d267e2d90",
-                    "A2PProfileBundleSid": "BU1111109f7e067e279523808d267e2d85",
+                    "CustomerProfileBundleSid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "A2PProfileBundleSid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "BrandType": "STANDARD",
                     "SkipAutomaticSecVet": false,
                     "Mock": false
@@ -3266,8 +3524,8 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "AC78e8e67fc0246521490fb9907fd0c165",
-                      "brand_sid": "BN0044409f7e067e279523808d267e2d85",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "brand_vetting_sid": "VT12445353",
                       "vetting_provider": "campaign-verify",
                       "vetting_id": "cv|1.0|tcr|10dlc|9975c339-d46f-49b7-a399-EXAMPLETOKEN|GQ3EXAMPLETOKENAXXBUNBT2AgL-LdQuPveFhEyY",
@@ -3275,7 +3533,7 @@
                       "vetting_status": "IN_PROGRESS",
                       "date_created": "2021-01-27T14:18:35Z",
                       "date_updated": "2021-01-27T14:18:35Z",
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/Vettings/VT12445353"
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings/VT12445353"
                     }
                   }
                 }
@@ -3328,8 +3586,8 @@
                 "examples": {
                   "create202Response": {
                     "value": {
-                      "account_sid": "AC78e8e67fc0246521490fb9907fd0c165",
-                      "brand_sid": "BN0044409f7e067e279523808d267e2d85",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "brand_vetting_sid": "VT12445353",
                       "vetting_provider": "campaign-verify",
                       "vetting_id": "cv|1.0|tcr|10dlc|9975c339-d46f-49b7-a399-EXAMPLETOKEN|GQ3EXAMPLETOKENAXXBUNBT2AgL-LdQuPveFhEyY",
@@ -3337,7 +3595,7 @@
                       "vetting_status": "IN_PROGRESS",
                       "date_created": "2021-01-27T14:18:35Z",
                       "date_updated": "2021-01-27T14:18:35Z",
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/Vettings/VT12445353"
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings/VT12445353"
                     }
                   }
                 }
@@ -3507,16 +3765,16 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/Vettings",
+                        "first_page_url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings",
                         "previous_page_url": null,
                         "next_page_url": null,
                         "key": "data",
-                        "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/Vettings"
+                        "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings"
                       },
                       "data": [
                         {
-                          "account_sid": "AC78e8e67fc0246521490fb9907fd0c165",
-                          "brand_sid": "BN0044409f7e067e279523808d267e2d85",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "brand_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "brand_vetting_sid": "VT12445353",
                           "vetting_provider": "campaign-verify",
                           "vetting_id": "cv|1.0|tcr|10dlc|9975c339-d46f-49b7-a399-EXAMPLETOKEN|GQ3EXAMPLETOKENAXXBUNBT2AgL-LdQuPveFhEyY",
@@ -3524,7 +3782,7 @@
                           "vetting_status": "IN_PROGRESS",
                           "date_created": "2021-01-27T14:18:35Z",
                           "date_updated": "2021-01-27T14:18:35Z",
-                          "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/Vettings/VT12445353"
+                          "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings/VT12445353"
                         }
                       ]
                     }
@@ -3642,8 +3900,8 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "AC78e8e67fc0246521490fb9907fd0c165",
-                      "brand_sid": "BN0044409f7e067e279523808d267e2d85",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "brand_vetting_sid": "VT12445353",
                       "vetting_provider": "campaign-verify",
                       "vetting_id": "cv|1.0|tcr|10dlc|9975c339-d46f-49b7-a399-EXAMPLETOKEN|GQ3EXAMPLETOKENAXXBUNBT2AgL-LdQuPveFhEyY",
@@ -3651,7 +3909,7 @@
                       "vetting_status": "IN_PROGRESS",
                       "date_created": "2021-01-27T14:18:35Z",
                       "date_updated": "2021-01-27T14:18:35Z",
-                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BN0044409f7e067e279523808d267e2d85/Vettings/VT12445353"
+                      "url": "https://messaging.twilio.com/v1/a2p/BrandRegistrations/BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Vettings/VT12445353"
                     }
                   }
                 }
@@ -3835,45 +4093,45 @@
                       "meta": {
                         "page": 0,
                         "page_size": 20,
-                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders?PageSize=20&Page=0",
+                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders?PageSize=20&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
                         "key": "senders",
-                        "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders?PageSize=20&Page=0"
+                        "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders?PageSize=20&Page=0"
                       },
                       "senders": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "sender": "whatsapp:+12487960483",
                           "sender_type": "WhatsApp",
                           "country_code": "US",
                           "date_created": "2023-07-30T20:12:31Z",
                           "date_updated": "2023-07-30T20:12:33Z",
-                          "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         },
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "sender": "messenger:104794531907950",
                           "sender_type": "Messenger",
                           "country_code": "US",
                           "date_created": "2023-07-30T20:12:31Z",
                           "date_updated": "2023-07-30T20:12:33Z",
-                          "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                          "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         },
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "sender": "rcs:ms_dev_ttatqler_agent",
                           "sender_type": "RCS",
                           "country_code": "US",
                           "date_created": "2023-07-30T20:12:31Z",
                           "date_updated": "2023-07-30T20:12:33Z",
-                          "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac"
+                          "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -3957,41 +4215,41 @@
                 "examples": {
                   "createwhatsappsender": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "sender": "whatsapp:+12487960483",
                       "sender_type": "WhatsApp",
                       "country_code": "US",
                       "date_created": "2023-07-30T20:12:31Z",
                       "date_updated": "2023-07-30T20:12:33Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "createfbsender": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "sender": "messenger:104794531907950",
                       "sender_type": "Messanger",
                       "country_code": "US",
                       "date_created": "2023-07-30T20:12:31Z",
                       "date_updated": "2023-07-30T20:12:33Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "creatercssender": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "sender": "rcs:ms_dev_test_agent",
                       "sender_type": "RCS",
                       "country_code": "US",
                       "date_created": "2023-07-30T20:12:31Z",
                       "date_updated": "2023-07-30T20:12:33Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4064,17 +4322,17 @@
               "examples": {
                 "createwhatsappsender": {
                   "value": {
-                    "Sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "Sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 },
                 "createfbsender": {
                   "value": {
-                    "Sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                    "Sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 },
                 "creatercssender": {
                   "value": {
-                    "Sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac"
+                    "Sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -4138,41 +4396,41 @@
                 "examples": {
                   "fetchwhatsappsender": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "sender": "whatsapp:+12487960483",
                       "sender_type": "WhatsApp",
                       "country_code": "US",
                       "date_created": "2023-07-30T20:12:31Z",
                       "date_updated": "2023-07-30T20:12:33Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "fetchfbsender": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "sender": "messenger:104794531907950",
                       "sender_type": "Messenger",
                       "country_code": "US",
                       "date_created": "2023-07-30T20:12:31Z",
                       "date_updated": "2023-07-30T20:12:33Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "fetchrcssender": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "sender": "rcs:ms_dev_test_agent",
                       "sender_type": "RCS",
                       "country_code": "US",
                       "date_created": "2023-07-30T20:12:31Z",
                       "date_updated": "2023-07-30T20:12:33Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders/XEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders/XExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4405,9 +4663,9 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "alpha_sender": "Twilio",
@@ -4415,7 +4673,7 @@
                         "SMS"
                       ],
                       "iso_country_code": "FR",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DestinationAlphaSenders/AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DestinationAlphaSenders/AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4608,17 +4866,17 @@
                       "meta": {
                         "page": 0,
                         "page_size": 20,
-                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DestinationAlphaSenders?PageSize=20&Page=0",
+                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DestinationAlphaSenders?PageSize=20&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
                         "key": "alpha_senders",
-                        "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DestinationAlphaSenders?PageSize=20&Page=0"
+                        "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DestinationAlphaSenders?PageSize=20&Page=0"
                       },
                       "alpha_senders": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T20:12:31Z",
                           "date_updated": "2015-07-30T20:12:33Z",
                           "alpha_sender": "Twilio",
@@ -4626,7 +4884,7 @@
                             "SMS"
                           ],
                           "iso_country_code": "FR",
-                          "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DestinationAlphaSenders/AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DestinationAlphaSenders/AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -4735,9 +4993,9 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "alpha_sender": "Twilio",
@@ -4745,7 +5003,7 @@
                         "SMS"
                       ],
                       "iso_country_code": "FR",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DestinationAlphaSenders/AIaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DestinationAlphaSenders/AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -4890,13 +5148,13 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "certificate_sid": "CWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "certificate_sid": "CWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "domain_name": "https://api.example.com",
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_expires": "2021-02-06T18:02:04Z",
                       "date_created": "2021-02-06T18:02:04Z",
                       "date_updated": "2021-02-06T18:02:04Z",
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Certificate",
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Certificate",
                       "cert_in_validation": {
                         "date_expires": "2021-02-06T18:02:04Z",
                         "status": "pending"
@@ -4953,13 +5211,13 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "certificate_sid": "CWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "certificate_sid": "CWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "domain_name": "https://api.example.com",
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_expires": null,
                       "date_created": "2021-02-06T18:02:04Z",
                       "date_updated": "2021-02-06T18:02:04Z",
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Certificate",
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Certificate",
                       "cert_in_validation": {
                         "date_expires": "2021-02-06T18:02:04Z",
                         "status": "pending"
@@ -5076,13 +5334,13 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "certificate_sid": "CWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "certificate_sid": "CWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "domain_name": "https://api.example.com",
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_expires": "2021-02-06T18:02:04Z",
                       "date_created": "2021-02-06T18:02:04Z",
                       "date_updated": "2021-02-06T18:02:04Z",
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Certificate",
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Certificate",
                       "cert_in_validation": {
                         "date_expires": "2021-02-06T18:02:04Z",
                         "status": "pending"
@@ -5222,14 +5480,14 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "config_sid": "ZKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "config_sid": "ZKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "fallback_url": "https://www.example.com",
                       "callback_url": "https://www.example.com",
                       "continue_on_failure": true,
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Config",
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Config",
                       "disable_https": false
                     }
                   }
@@ -5283,14 +5541,14 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "config_sid": "ZKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "config_sid": "ZKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "fallback_url": "https://www.example.com",
                       "callback_url": "https://www.example.com",
                       "continue_on_failure": true,
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Config",
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Config",
                       "disable_https": false
                     }
                   }
@@ -5421,14 +5679,14 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "config_sid": "ZKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "config_sid": "ZKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "fallback_url": "https://www.example.com",
                       "callback_url": "https://www.example.com",
                       "continue_on_failure": true,
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Config",
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Config",
                       "disable_https": false
                     }
                   }
@@ -5534,15 +5792,15 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "config_sid": "ZKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "config_sid": "ZKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "fallback_url": "https://www.example.com",
                       "callback_url": "https://www.example.com",
                       "continue_on_failure": true,
                       "date_created": "2015-07-30T20:00:00Z",
                       "date_updated": "2015-07-30T20:00:00Z",
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/MessagingService/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DomainConfig",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/MessagingService/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DomainConfig",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -5643,7 +5901,7 @@
                     "value": {
                       "is_valid": true,
                       "reason": "",
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ValidateDns"
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ValidateDns"
                     }
                   }
                 }
@@ -5727,10 +5985,10 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "QE2c6890da8086d771620e9b13fadeba0b",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "campaign_id": "CMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "campaign_id": "CMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2021-03-21T21:31:00Z"
                     }
                   }
@@ -5813,8 +6071,8 @@
               "examples": {
                 "create": {
                   "value": {
-                    "MessagingServiceSid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                    "CampaignId": "CMaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "MessagingServiceSid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "CampaignId": "CMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "CnpMigration": false
                   }
                 }
@@ -5882,9 +6140,9 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/MessagingServices/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/MessagingServices/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -6027,9 +6285,9 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/MessagingServices/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Domain"
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/MessagingServices/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Domain"
                     }
                   }
                 }
@@ -6128,22 +6386,22 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "phone_number": "+987654321",
                       "country_code": "US",
                       "capabilities": [],
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers/PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers/PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   },
                   "createWithCapabilities": {
                     "value": {
-                      "sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "phone_number": "+987654321",
@@ -6153,7 +6411,7 @@
                         "SMS",
                         "Voice"
                       ],
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers/PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers/PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -6206,9 +6464,9 @@
                 "examples": {
                   "createWithCapabilitiesWhenDownstreamResponse200": {
                     "value": {
-                      "sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "phone_number": "+987654321",
@@ -6218,7 +6476,7 @@
                         "SMS",
                         "Voice"
                       ],
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers/PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers/PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -6291,17 +6549,17 @@
               "examples": {
                 "create": {
                   "value": {
-                    "PhoneNumberSid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "PhoneNumberSid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 },
                 "createWithCapabilities": {
                   "value": {
-                    "PhoneNumberSid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "PhoneNumberSid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 },
                 "createWithCapabilitiesWhenDownstreamResponse200": {
                   "value": {
-                    "PhoneNumberSid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "PhoneNumberSid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -6411,23 +6669,23 @@
                       "meta": {
                         "page": 0,
                         "page_size": 20,
-                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers?PageSize=20&Page=0",
+                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers?PageSize=20&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
                         "key": "phone_numbers",
-                        "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers?PageSize=20&Page=0"
+                        "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers?PageSize=20&Page=0"
                       },
                       "phone_numbers": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T20:12:31Z",
                           "date_updated": "2015-07-30T20:12:33Z",
                           "phone_number": "+987654321",
                           "country_code": "US",
                           "capabilities": [],
-                          "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers/PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers/PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -6578,15 +6836,15 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "phone_number": "12345",
                       "country_code": "US",
                       "capabilities": [],
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers/PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers/PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -6689,13 +6947,13 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "certificate_sid": "CWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "certificate_sid": "CWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "domain_name": "https://api.example.com",
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2021-02-06T18:02:04Z",
                       "date_updated": "2021-02-06T18:02:04Z",
                       "date_expires": "2021-02-06T18:02:04Z",
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/RequestManagedCert",
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/RequestManagedCert",
                       "managed": true,
                       "requesting": true
                     }
@@ -6750,13 +7008,13 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "certificate_sid": "CWaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "certificate_sid": "CWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "domain_name": "https://api.example.com",
-                      "domain_sid": "DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "domain_sid": "DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2021-02-06T18:02:04Z",
                       "date_updated": "2021-02-06T18:02:04Z",
                       "date_expires": null,
-                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/RequestManagedCert",
+                      "url": "https://messaging.twilio.com/v1/LinkShortening/Domains/DNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/RequestManagedCert",
                       "managed": true,
                       "requesting": true
                     }
@@ -6892,8 +7150,8 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "friendly_name": "My Service!",
@@ -6914,16 +7172,16 @@
                       "us_app_to_person_registered": false,
                       "use_inbound_webhook_on_number": true,
                       "links": {
-                        "phone_numbers": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers",
-                        "short_codes": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ShortCodes",
-                        "alpha_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/AlphaSenders",
-                        "messages": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages",
-                        "us_app_to_person": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p",
-                        "us_app_to_person_usecases": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/Usecases",
-                        "channel_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders",
-                        "destination_alpha_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DestinationAlphaSenders"
+                        "phone_numbers": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers",
+                        "short_codes": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ShortCodes",
+                        "alpha_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/AlphaSenders",
+                        "messages": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages",
+                        "us_app_to_person": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p",
+                        "us_app_to_person_usecases": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/Usecases",
+                        "channel_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders",
+                        "destination_alpha_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DestinationAlphaSenders"
                       },
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -7186,9 +7444,9 @@
                       },
                       "services": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "friendly_name": "My Service!",
-                          "sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T20:12:31Z",
                           "date_updated": "2015-07-30T20:12:33Z",
                           "sticky_sender": true,
@@ -7208,16 +7466,16 @@
                           "us_app_to_person_registered": false,
                           "use_inbound_webhook_on_number": false,
                           "links": {
-                            "phone_numbers": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers",
-                            "short_codes": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ShortCodes",
-                            "alpha_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/AlphaSenders",
-                            "messages": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages",
-                            "us_app_to_person": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p",
-                            "us_app_to_person_usecases": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/Usecases",
-                            "channel_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders",
-                            "destination_alpha_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DestinationAlphaSenders"
+                            "phone_numbers": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers",
+                            "short_codes": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ShortCodes",
+                            "alpha_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/AlphaSenders",
+                            "messages": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages",
+                            "us_app_to_person": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p",
+                            "us_app_to_person_usecases": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/Usecases",
+                            "channel_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders",
+                            "destination_alpha_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DestinationAlphaSenders"
                           },
-                          "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -7367,9 +7625,9 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "friendly_name": "My Service!",
-                      "sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "sticky_sender": false,
@@ -7389,16 +7647,16 @@
                       "us_app_to_person_registered": false,
                       "use_inbound_webhook_on_number": true,
                       "links": {
-                        "phone_numbers": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers",
-                        "short_codes": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ShortCodes",
-                        "alpha_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/AlphaSenders",
-                        "messages": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages",
-                        "us_app_to_person": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p",
-                        "us_app_to_person_usecases": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/Usecases",
-                        "channel_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders",
-                        "destination_alpha_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DestinationAlphaSenders"
+                        "phone_numbers": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers",
+                        "short_codes": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ShortCodes",
+                        "alpha_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/AlphaSenders",
+                        "messages": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages",
+                        "us_app_to_person": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p",
+                        "us_app_to_person_usecases": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/Usecases",
+                        "channel_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders",
+                        "destination_alpha_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DestinationAlphaSenders"
                       },
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -7575,8 +7833,8 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "friendly_name": "My Service!",
@@ -7597,16 +7855,16 @@
                       "us_app_to_person_registered": false,
                       "use_inbound_webhook_on_number": true,
                       "links": {
-                        "phone_numbers": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers",
-                        "short_codes": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ShortCodes",
-                        "alpha_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/AlphaSenders",
-                        "messages": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Messages",
-                        "us_app_to_person": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p",
-                        "us_app_to_person_usecases": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/Usecases",
-                        "channel_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelSenders",
-                        "destination_alpha_senders": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/DestinationAlphaSenders"
+                        "phone_numbers": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers",
+                        "short_codes": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ShortCodes",
+                        "alpha_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/AlphaSenders",
+                        "messages": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Messages",
+                        "us_app_to_person": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p",
+                        "us_app_to_person_usecases": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/Usecases",
+                        "channel_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelSenders",
+                        "destination_alpha_senders": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/DestinationAlphaSenders"
                       },
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -7737,9 +7995,9 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "SCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "SCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "short_code": "12345",
@@ -7747,7 +8005,7 @@
                       "capabilities": [
                         "SMS"
                       ],
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ShortCodes/SCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ShortCodes/SCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -7800,9 +8058,9 @@
                 "examples": {
                   "createwith200Downstreamresponse": {
                     "value": {
-                      "sid": "SCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "SCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "short_code": "12345",
@@ -7810,7 +8068,7 @@
                       "capabilities": [
                         "SMS"
                       ],
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ShortCodes/SCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ShortCodes/SCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -7883,12 +8141,12 @@
               "examples": {
                 "create": {
                   "value": {
-                    "ShortCodeSid": "SCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "ShortCodeSid": "SCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 },
                 "createwith200Downstreamresponse": {
                   "value": {
-                    "ShortCodeSid": "SCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "ShortCodeSid": "SCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -7998,17 +8256,17 @@
                       "meta": {
                         "page": 0,
                         "page_size": 20,
-                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ShortCodes?PageSize=20&Page=0",
+                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ShortCodes?PageSize=20&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
                         "key": "short_codes",
-                        "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ShortCodes?PageSize=20&Page=0"
+                        "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ShortCodes?PageSize=20&Page=0"
                       },
                       "short_codes": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "SCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sid": "SCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2015-07-30T20:12:31Z",
                           "date_updated": "2015-07-30T20:12:33Z",
                           "short_code": "12345",
@@ -8016,7 +8274,7 @@
                           "capabilities": [
                             "SMS"
                           ],
-                          "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ShortCodes/SCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ShortCodes/SCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -8167,9 +8425,9 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "SCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "SCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2015-07-30T20:12:31Z",
                       "date_updated": "2015-07-30T20:12:33Z",
                       "short_code": "12345",
@@ -8177,7 +8435,7 @@
                       "capabilities": [
                         "SMS"
                       ],
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ShortCodes/SCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ShortCodes/SCxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -8275,11 +8533,11 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "HHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "customer_profile_sid": "BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "trust_product_sid": "BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "regulated_item_sid": "RAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "customer_profile_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "trust_product_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "regulated_item_sid": "RAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2021-01-27T14:18:35Z",
                       "date_updated": "2021-01-27T14:18:36Z",
                       "business_name": "Owl, Inc.",
@@ -8308,7 +8566,7 @@
                       "opt_in_type": "VERBAL",
                       "message_volume": "2000",
                       "additional_information": "see our privacy policy here www.johnscoffeeshop.com/privacypolicy",
-                      "tollfree_phone_number_sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "tollfree_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "status": "TWILIO_APPROVED",
                       "rejection_reason": null,
                       "error_code": null,
@@ -8316,11 +8574,11 @@
                       "edit_allowed": null,
                       "rejection_reasons": null,
                       "resource_links": {
-                        "customer_profile": "https://trusthub.twilio.com/v1/CustomerProfiles/BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "trust_product": "https://trusthub.twilio.com/v1/TrustProducts/BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "channel_endpoint_assignment": "https://trusthub.twilio.com/v1/TrustProducts/BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelEndpointAssignments/RAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "customer_profile": "https://trusthub.twilio.com/v1/CustomerProfiles/BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "trust_product": "https://trusthub.twilio.com/v1/TrustProducts/BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "channel_endpoint_assignment": "https://trusthub.twilio.com/v1/TrustProducts/BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelEndpointAssignments/RAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       },
-                      "url": "https://messaging.twilio.com/v1/Tollfree/Verifications/HHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://messaging.twilio.com/v1/Tollfree/Verifications/HHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "external_reference_id": "abc123xyz567",
                       "business_registration_number": "123456789",
                       "business_registration_authority": "EIN",
@@ -8421,10 +8679,10 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "HHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "regulated_item_sid": null,
-                      "customer_profile_sid": "BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "customer_profile_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "trust_product_sid": null,
                       "status": "PENDING_REVIEW",
                       "date_created": "2021-01-27T14:18:35Z",
@@ -8455,14 +8713,14 @@
                       "opt_in_type": "VERBAL",
                       "message_volume": "1,000",
                       "additional_information": "see our privacy policy here www.johnscoffeeshop.com/privacypolicy",
-                      "tollfree_phone_number_sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "tollfree_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "rejection_reason": null,
                       "error_code": null,
                       "edit_expiration": null,
                       "edit_allowed": null,
                       "rejection_reasons": null,
                       "resource_links": {},
-                      "url": "https://messaging.twilio.com/v1/Tollfree/Verifications/HHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://messaging.twilio.com/v1/Tollfree/Verifications/HHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "external_reference_id": null,
                       "business_registration_number": "123456789",
                       "business_registration_authority": "EIN",
@@ -8552,11 +8810,7 @@
                     "description": "The email address to receive the notification about the verification result. ."
                   },
                   "UseCaseCategories": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "description": "The category of the use case for the Tollfree Number. List as many are applicable.."
+                    "$ref": "#/components/schemas/tollfree_verification_enum_use_case_categories"
                   },
                   "UseCaseSummary": {
                     "type": "string",
@@ -8631,19 +8885,17 @@
                   },
                   "BusinessRegistrationNumber": {
                     "type": "string",
-                    "description": "A legaly recognized business registration number"
+                    "description": "A legally recognized business registration number"
                   },
                   "BusinessRegistrationAuthority": {
-                    "type": "string",
-                    "description": "The organizational authority for business registrations"
+                    "$ref": "#/components/schemas/tollfree_verification_enum_business_registration_authority"
                   },
                   "BusinessRegistrationCountry": {
                     "type": "string",
                     "description": "Country business is registered in"
                   },
                   "BusinessType": {
-                    "type": "string",
-                    "description": "The type of business, valid values are PRIVATE_PROFIT, PUBLIC_PROFIT, NON_PROFIT, SOLE_PROPRIETOR, GOVERNMENT"
+                    "$ref": "#/components/schemas/tollfree_verification_enum_business_type"
                   },
                   "BusinessRegistrationPhoneNumber": {
                     "type": "string",
@@ -8807,7 +9059,7 @@
             },
             "examples": {
               "read": {
-                "value": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -8944,19 +9196,19 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://messaging.twilio.com/v1/Tollfree/Verifications?Status=TWILIO_APPROVED&ExternalReferenceId=abc123xyz567&TollfreePhoneNumberSid=PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&IncludeSubAccounts=false&PageSize=50&Page=0",
+                        "first_page_url": "https://messaging.twilio.com/v1/Tollfree/Verifications?Status=TWILIO_APPROVED&ExternalReferenceId=abc123xyz567&TollfreePhoneNumberSid=PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&IncludeSubAccounts=false&PageSize=50&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
                         "key": "verifications",
-                        "url": "https://messaging.twilio.com/v1/Tollfree/Verifications?Status=TWILIO_APPROVED&ExternalReferenceId=abc123xyz567&TollfreePhoneNumberSid=PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&IncludeSubAccounts=false&PageSize=50&Page=0"
+                        "url": "https://messaging.twilio.com/v1/Tollfree/Verifications?Status=TWILIO_APPROVED&ExternalReferenceId=abc123xyz567&TollfreePhoneNumberSid=PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&IncludeSubAccounts=false&PageSize=50&Page=0"
                       },
                       "verifications": [
                         {
-                          "sid": "HHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "customer_profile_sid": "BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "trust_product_sid": "BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "regulated_item_sid": "RAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "HHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "customer_profile_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "trust_product_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "regulated_item_sid": "RAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2021-01-27T14:18:35Z",
                           "date_updated": "2021-01-27T14:18:36Z",
                           "business_name": "Owl, Inc.",
@@ -8985,18 +9237,18 @@
                           "opt_in_type": "VERBAL",
                           "message_volume": "1,000",
                           "additional_information": "see our privacy policy here www.johnscoffeeshop.com/privacypolicy",
-                          "tollfree_phone_number_sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "tollfree_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "status": "TWILIO_APPROVED",
-                          "url": "https://messaging.twilio.com/v1/Tollfree/Verifications/HHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://messaging.twilio.com/v1/Tollfree/Verifications/HHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "rejection_reason": null,
                           "error_code": null,
                           "edit_expiration": null,
                           "edit_allowed": null,
                           "rejection_reasons": null,
                           "resource_links": {
-                            "customer_profile": "https://trusthub.twilio.com/v1/CustomerProfiles/BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                            "trust_product": "https://trusthub.twilio.com/v1/TrustProducts/BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                            "channel_endpoint_assignment": "https://trusthub.twilio.com/v1/TrustProducts/BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/ChannelEndpointAssignments/RAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                            "customer_profile": "https://trusthub.twilio.com/v1/CustomerProfiles/BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                            "trust_product": "https://trusthub.twilio.com/v1/TrustProducts/BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                            "channel_endpoint_assignment": "https://trusthub.twilio.com/v1/TrustProducts/BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/ChannelEndpointAssignments/RAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                           },
                           "external_reference_id": "abc123xyz567",
                           "business_registration_number": "123456789",
@@ -9086,8 +9338,8 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "HHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "regulated_item_sid": null,
                       "customer_profile_sid": null,
                       "trust_product_sid": null,
@@ -9120,14 +9372,14 @@
                       "opt_in_type": "VERBAL",
                       "message_volume": "10",
                       "additional_information": "see our privacy policy here www.johnscoffeeshop.com/privacypolicy",
-                      "tollfree_phone_number_sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "tollfree_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "rejection_reason": null,
                       "error_code": null,
                       "edit_expiration": null,
                       "edit_allowed": null,
                       "rejection_reasons": null,
                       "resource_links": {},
-                      "url": "https://messaging.twilio.com/v1/Tollfree/Verifications/HHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://messaging.twilio.com/v1/Tollfree/Verifications/HHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "external_reference_id": "abc123xyz567",
                       "business_registration_number": "123456789",
                       "business_registration_authority": "EIN",
@@ -9151,9 +9403,9 @@
                   },
                   "create2": {
                     "value": {
-                      "sid": "HHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "customer_profile_sid": "BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "HHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "customer_profile_sid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "regulated_item_sid": null,
                       "trust_product_sid": null,
                       "business_name": "Owl, Inc.",
@@ -9185,14 +9437,14 @@
                       "opt_in_type": "VERBAL",
                       "message_volume": "10",
                       "additional_information": "see our privacy policy here www.johnscoffeeshop.com/privacypolicy",
-                      "tollfree_phone_number_sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "tollfree_phone_number_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "rejection_reason": null,
                       "error_code": null,
                       "edit_expiration": null,
                       "edit_allowed": null,
                       "rejection_reasons": null,
                       "resource_links": {},
-                      "url": "https://messaging.twilio.com/v1/Tollfree/Verifications/HHaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://messaging.twilio.com/v1/Tollfree/Verifications/HHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "external_reference_id": "abc123xyz567",
                       "business_registration_number": "123456789",
                       "business_registration_authority": "EIN",
@@ -9282,11 +9534,7 @@
                     "description": "The email address to receive the notification about the verification result. ."
                   },
                   "UseCaseCategories": {
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    },
-                    "description": "The category of the use case for the Tollfree Number. List as many are applicable.."
+                    "$ref": "#/components/schemas/tollfree_verification_enum_use_case_categories"
                   },
                   "UseCaseSummary": {
                     "type": "string",
@@ -9378,16 +9626,14 @@
                     "description": "A legally recognized business registration number. Required for all business types except SOLE_PROPRIETOR."
                   },
                   "BusinessRegistrationAuthority": {
-                    "type": "string",
-                    "description": "The organizational authority for business registrations. Required for all business types except SOLE_PROPRIETOR."
+                    "$ref": "#/components/schemas/tollfree_verification_enum_business_registration_authority"
                   },
                   "BusinessRegistrationCountry": {
                     "type": "string",
                     "description": "The country where the business is registered. Required for all business types except SOLE_PROPRIETOR."
                   },
                   "BusinessType": {
-                    "type": "string",
-                    "description": "The type of business, valid values are PRIVATE_PROFIT, PUBLIC_PROFIT, NON_PROFIT, SOLE_PROPRIETOR, GOVERNMENT. Required field."
+                    "$ref": "#/components/schemas/tollfree_verification_enum_business_type"
                   },
                   "BusinessRegistrationPhoneNumber": {
                     "type": "string",
@@ -9473,7 +9719,7 @@
                     "OptInType": "VERBAL",
                     "MessageVolume": "10",
                     "AdditionalInformation": "see our privacy policy here www.johnscoffeeshop.com/privacypolicy",
-                    "TollfreePhoneNumberSid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "TollfreePhoneNumberSid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "ExternalReferenceId": "abc123xyz567",
                     "BusinessRegistrationNumber": "123456789",
                     "BusinessRegistrationAuthority": "EIN",
@@ -9495,7 +9741,7 @@
                 },
                 "create2": {
                   "value": {
-                    "CustomerProfileSid": "BUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "CustomerProfileSid": "BUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "BusinessName": "Owl, Inc.",
                     "BusinessWebsite": "http://www.company.com",
                     "NotificationEmail": "support@company.com",
@@ -9512,7 +9758,7 @@
                     "OptInType": "VERBAL",
                     "MessageVolume": "10",
                     "AdditionalInformation": "see our privacy policy here www.johnscoffeeshop.com/privacypolicy",
-                    "TollfreePhoneNumberSid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "TollfreePhoneNumberSid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "ExternalReferenceId": "abc123xyz567",
                     "BusinessRegistrationNumber": "123456789",
                     "BusinessRegistrationAuthority": "EIN",
@@ -9571,6 +9817,9 @@
               "pattern": "^MG[0-9a-fA-F]{32}$"
             },
             "required": true
+          },
+          {
+            "$ref": "#/components/parameters/XTwilioApiVersion"
           }
         ],
         "responses": {
@@ -9578,15 +9827,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/messaging.v1.service.us_app_to_person"
+                  "$ref": "#/components/schemas/messaging.v1.service.us_app_to_person_response"
                 },
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "QE2c6890da8086d771620e9b13fadeba0b",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "brand_registration_sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "description": "Send marketing messages about sales to opted in customers.",
                       "message_samples": [
                         "EXPRESS: Denim Days Event is ON",
@@ -9625,17 +9874,17 @@
                       ],
                       "date_created": "2021-02-18T14:48:52Z",
                       "date_updated": "2021-02-18T14:48:52Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/QE2c6890da8086d771620e9b13fadeba0b",
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "mock": false,
                       "errors": []
                     }
                   },
                   "createWithDefaults": {
                     "value": {
-                      "sid": "QE2c6890da8086d771620e9b13fadeba0b",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "brand_registration_sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "description": "Send marketing messages about sales to opted in customers.",
                       "message_samples": [
                         "EXPRESS: Denim Days Event is ON",
@@ -9680,17 +9929,17 @@
                       ],
                       "date_created": "2021-02-18T14:48:52Z",
                       "date_updated": "2021-02-18T14:48:52Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/QE2c6890da8086d771620e9b13fadeba0b",
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "mock": false,
                       "errors": []
                     }
                   },
                   "createWithDefaultsSoleProprietor": {
                     "value": {
-                      "sid": "QE2c6890da8086d771620e9b13fadeba0b",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "brand_registration_sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "description": "Send marketing messages about sales to opted in customers.",
                       "message_samples": [
                         "EXPRESS: Denim Days Event is ON",
@@ -9735,7 +9984,58 @@
                       ],
                       "date_created": "2021-02-18T14:48:52Z",
                       "date_updated": "2021-02-18T14:48:52Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/QE2c6890da8086d771620e9b13fadeba0b",
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "mock": false,
+                      "errors": []
+                    }
+                  },
+                  "createWithExtendedFieldsAndHeader": {
+                    "value": {
+                      "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "description": "Send marketing messages about sales to opted in customers.",
+                      "message_samples": [
+                        "EXPRESS: Denim Days Event is ON",
+                        "LAST CHANCE: Book your next flight for just 1 (ONE) EUR"
+                      ],
+                      "us_app_to_person_usecase": "MARKETING",
+                      "has_embedded_links": true,
+                      "has_embedded_phone": false,
+                      "subscriber_opt_in": false,
+                      "age_gated": false,
+                      "direct_lending": false,
+                      "campaign_status": "PENDING",
+                      "campaign_id": "CFOOBAR",
+                      "is_externally_registered": false,
+                      "rate_limits": {
+                        "att": {
+                          "mps": 600,
+                          "msg_class": "A"
+                        },
+                        "tmobile": {
+                          "brand_tier": "TOP"
+                        }
+                      },
+                      "message_flow": "End users opt-in by visiting www.example.com and adding their phone number. They then check a box agreeing to receive text messages from Example Brand. Additionally, end users can also opt-in by texting START to (111) 222-3333 to opt in.",
+                      "opt_in_message": "Acme Corporation: You are now opted-in. For help, reply HELP. To opt-out, reply STOP",
+                      "opt_out_message": "You have successfully been unsubscribed from Acme Corporation. You will not receive any more messages from this number.",
+                      "help_message": "Acme Corporation: Please visit www.example.com to get support. To opt-out, reply STOP.",
+                      "opt_in_keywords": [
+                        "START"
+                      ],
+                      "opt_out_keywords": [
+                        "STOP"
+                      ],
+                      "help_keywords": [
+                        "HELP"
+                      ],
+                      "privacy_policy_url": "https://example.com/privacy",
+                      "terms_and_conditions_url": "https://example.com/terms",
+                      "date_created": "2021-02-18T14:48:52Z",
+                      "date_updated": "2021-02-18T14:48:52Z",
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "mock": false,
                       "errors": []
                     }
@@ -9873,6 +10173,16 @@
                   "DirectLending": {
                     "type": "boolean",
                     "description": "A boolean that specifies whether campaign allows direct lending or not."
+                  },
+                  "PrivacyPolicyUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "The URL of the privacy policy for the campaign."
+                  },
+                  "TermsAndConditionsUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "The URL of the terms and conditions for the campaign."
                   }
                 },
                 "required": [
@@ -9888,7 +10198,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "BrandRegistrationSid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "BrandRegistrationSid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Description": "Send marketing messages about sales to opted in customers.",
                     "MessageSamples": [
                       "EXPRESS: Denim Days Event is ON",
@@ -9917,7 +10227,7 @@
                 },
                 "createWithDefaults": {
                   "value": {
-                    "BrandRegistrationSid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "BrandRegistrationSid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Description": "Send marketing messages about sales to opted in customers.",
                     "MessageSamples": [
                       "EXPRESS: Denim Days Event is ON",
@@ -9937,7 +10247,7 @@
                 },
                 "createWithDefaultsSoleProprietor": {
                   "value": {
-                    "BrandRegistrationSid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "BrandRegistrationSid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                     "Description": "Send marketing messages about sales to opted in customers.",
                     "MessageSamples": [
                       "EXPRESS: Denim Days Event is ON",
@@ -9951,6 +10261,37 @@
                     ],
                     "HasEmbeddedLinks": true,
                     "HasEmbeddedPhone": false,
+                    "AgeGated": false,
+                    "DirectLending": false
+                  }
+                },
+                "createWithExtendedFieldsAndHeader": {
+                  "value": {
+                    "BrandRegistrationSid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    "Description": "Send marketing messages about sales to opted in customers.",
+                    "MessageSamples": [
+                      "EXPRESS: Denim Days Event is ON",
+                      "LAST CHANCE: Book your next flight for just 1 (ONE) EUR"
+                    ],
+                    "UsAppToPersonUsecase": "MARKETING",
+                    "MessageFlow": "End users opt-in by visiting www.example.com and adding their phone number. They then check a box agreeing to receive text messages from Example Brand. Additionally, end users can also opt-in by texting START to (111) 222-3333 to opt in.",
+                    "OptInMessage": "Acme Corporation: You are now opted-in. For help, reply HELP. To opt-out, reply STOP",
+                    "OptOutMessage": "You have successfully been unsubscribed from Acme Corporation. You will not receive any more messages from this number.",
+                    "HelpMessage": "Acme Corporation: Please visit www.example.com to get support. To opt-out, reply STOP.",
+                    "OptInKeywords": [
+                      "START"
+                    ],
+                    "OptOutKeywords": [
+                      "STOP"
+                    ],
+                    "HelpKeywords": [
+                      "HELP"
+                    ],
+                    "PrivacyPolicyUrl": "https://example.com/privacy",
+                    "TermsAndConditionsUrl": "https://example.com/terms",
+                    "HasEmbeddedLinks": true,
+                    "HasEmbeddedPhone": false,
+                    "SubscriberOptIn": false,
                     "AgeGated": false,
                     "DirectLending": false
                   }
@@ -10006,6 +10347,9 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "$ref": "#/components/parameters/XTwilioApiVersion"
           }
         ],
         "responses": {
@@ -10018,7 +10362,7 @@
                     "compliance": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/messaging.v1.service.us_app_to_person"
+                        "$ref": "#/components/schemas/messaging.v1.service.us_app_to_person_response"
                       }
                     },
                     "meta": {
@@ -10061,10 +10405,10 @@
                     "value": {
                       "compliance": [
                         {
-                          "sid": "QE2c6890da8086d771620e9b13fadeba0b",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "brand_registration_sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "description": "Send marketing messages about sales to opted in customers.",
                           "message_samples": [
                             "EXPRESS: Denim Days Event is ON",
@@ -10103,7 +10447,7 @@
                           ],
                           "date_created": "2021-02-18T14:48:52Z",
                           "date_updated": "2021-02-18T14:48:52Z",
-                          "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/QE2c6890da8086d771620e9b13fadeba0b",
+                          "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "mock": false,
                           "errors": []
                         }
@@ -10111,10 +10455,10 @@
                       "meta": {
                         "page": 0,
                         "page_size": 20,
-                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p?PageSize=20&Page=0",
+                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p?PageSize=20&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
-                        "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p?PageSize=20&Page=0",
+                        "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p?PageSize=20&Page=0",
                         "key": "compliance"
                       }
                     }
@@ -10123,10 +10467,10 @@
                     "value": {
                       "compliance": [
                         {
-                          "sid": "QE2c6890da8086d771620e9b13fadeba0b",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "brand_registration_sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "description": "Send marketing messages about sales to opted in customers.",
                           "message_samples": [
                             "EXPRESS: Denim Days Event is ON",
@@ -10165,7 +10509,7 @@
                           ],
                           "date_created": "2021-02-18T14:48:52Z",
                           "date_updated": "2021-02-18T14:48:52Z",
-                          "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/QE2c6890da8086d771620e9b13fadeba0b",
+                          "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "mock": false,
                           "errors": [
                             {
@@ -10182,10 +10526,74 @@
                       "meta": {
                         "page": 0,
                         "page_size": 20,
-                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p?PageSize=20&Page=0",
+                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p?PageSize=20&Page=0",
                         "previous_page_url": null,
                         "next_page_url": null,
-                        "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p?PageSize=20&Page=0",
+                        "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p?PageSize=20&Page=0",
+                        "key": "compliance"
+                      }
+                    }
+                  },
+                  "readFullWithExtendedFieldsAndHeader": {
+                    "value": {
+                      "compliance": [
+                        {
+                          "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "description": "Send marketing messages about sales to opted in customers.",
+                          "message_samples": [
+                            "EXPRESS: Denim Days Event is ON",
+                            "LAST CHANCE: Book your next flight for just 1 (ONE) EUR"
+                          ],
+                          "us_app_to_person_usecase": "MARKETING",
+                          "has_embedded_links": true,
+                          "has_embedded_phone": false,
+                          "subscriber_opt_in": true,
+                          "age_gated": false,
+                          "direct_lending": false,
+                          "campaign_status": "PENDING",
+                          "campaign_id": "CFOOBAR",
+                          "is_externally_registered": false,
+                          "rate_limits": {
+                            "att": {
+                              "mps": 600,
+                              "msg_class": "A"
+                            },
+                            "tmobile": {
+                              "brand_tier": "TOP"
+                            }
+                          },
+                          "message_flow": "End users opt-in by visiting www.example.com and adding their phone number. They then check a box agreeing to receive text messages from Example Brand. Additionally, end users can also opt-in by texting START to (111) 222-3333 to opt in.",
+                          "opt_in_message": "Acme Corporation: You are now opted-in. For help, reply HELP. To opt-out, reply STOP",
+                          "opt_out_message": "You have successfully been unsubscribed from Acme Corporation. You will not receive any more messages from this number.",
+                          "help_message": "Acme Corporation: Please visit www.example.com to get support. To opt-out, reply STOP.",
+                          "opt_in_keywords": [
+                            "START"
+                          ],
+                          "opt_out_keywords": [
+                            "STOP"
+                          ],
+                          "help_keywords": [
+                            "HELP"
+                          ],
+                          "privacy_policy_url": "https://example.com/privacy",
+                          "terms_and_conditions_url": "https://example.com/terms",
+                          "date_created": "2021-02-18T14:48:52Z",
+                          "date_updated": "2021-02-18T14:48:52Z",
+                          "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "mock": false,
+                          "errors": []
+                        }
+                      ],
+                      "meta": {
+                        "page": 0,
+                        "page_size": 20,
+                        "first_page_url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p?PageSize=20&Page=0",
+                        "previous_page_url": null,
+                        "next_page_url": null,
+                        "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p?PageSize=20&Page=0",
                         "key": "compliance"
                       }
                     }
@@ -10279,7 +10687,7 @@
           {
             "name": "Sid",
             "in": "path",
-            "description": "The SID of the US A2P Compliance resource to delete `QE2c6890da8086d771620e9b13fadeba0b`.",
+            "description": "The SID of the US A2P Compliance resource to delete `QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.",
             "schema": {
               "type": "string",
               "minLength": 34,
@@ -10323,7 +10731,7 @@
           {
             "name": "Sid",
             "in": "path",
-            "description": "The SID of the US A2P Compliance resource to fetch `QE2c6890da8086d771620e9b13fadeba0b`.",
+            "description": "The SID of the US A2P Compliance resource to fetch `QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.",
             "schema": {
               "type": "string",
               "minLength": 34,
@@ -10331,6 +10739,9 @@
               "pattern": "^QE[0-9a-fA-F]{32}$"
             },
             "required": true
+          },
+          {
+            "$ref": "#/components/parameters/XTwilioApiVersion"
           }
         ],
         "responses": {
@@ -10338,15 +10749,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/messaging.v1.service.us_app_to_person"
+                  "$ref": "#/components/schemas/messaging.v1.service.us_app_to_person_response"
                 },
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "QE2c6890da8086d771620e9b13fadeba0b",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "brand_registration_sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "description": "Send marketing messages about sales to opted in customers.",
                       "message_samples": [
                         "EXPRESS: Denim Days Event is ON",
@@ -10385,17 +10796,17 @@
                       ],
                       "date_created": "2021-02-18T14:48:52Z",
                       "date_updated": "2021-02-18T14:48:52Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/QE2c6890da8086d771620e9b13fadeba0b",
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "mock": false,
                       "errors": []
                     }
                   },
                   "fetchSoleProprietorCampaign": {
                     "value": {
-                      "sid": "QE2c6890da8086d771620e9b13fadeba0b",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "brand_registration_sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "description": "Send confirmation messages about scheduled home repair services",
                       "message_samples": [
                         "EXPRESS: Denim Days Event is ON",
@@ -10434,17 +10845,17 @@
                       ],
                       "date_created": "2021-02-18T14:48:52Z",
                       "date_updated": "2021-02-18T14:48:52Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/QE2c6890da8086d771620e9b13fadeba0b",
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "mock": false,
                       "errors": []
                     }
                   },
                   "fetchFailedWithErrors": {
                     "value": {
-                      "sid": "QE2c6890da8086d771620e9b13fadeba0b",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "brand_registration_sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "description": "Send confirmation messages about scheduled home repair services",
                       "message_samples": [
                         "EXPRESS: Denim Days Event is ON",
@@ -10483,7 +10894,7 @@
                       ],
                       "date_created": "2021-02-18T14:48:52Z",
                       "date_updated": "2021-02-18T14:48:52Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/QE2c6890da8086d771620e9b13fadeba0b",
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "mock": false,
                       "errors": [
                         {
@@ -10495,6 +10906,57 @@
                           "description": "The campaign submission has been reviewed and it was rejected due to Disallowed Content."
                         }
                       ]
+                    }
+                  },
+                  "fetchWithExtendedFields": {
+                    "value": {
+                      "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "description": "Send marketing messages about sales to opted in customers.",
+                      "message_samples": [
+                        "EXPRESS: Denim Days Event is ON",
+                        "LAST CHANCE: Book your next flight for just 1 (ONE) EUR"
+                      ],
+                      "us_app_to_person_usecase": "MARKETING",
+                      "has_embedded_links": true,
+                      "has_embedded_phone": false,
+                      "subscriber_opt_in": true,
+                      "age_gated": false,
+                      "direct_lending": false,
+                      "campaign_status": "PENDING",
+                      "campaign_id": "CFOOBAR",
+                      "is_externally_registered": false,
+                      "rate_limits": {
+                        "att": {
+                          "mps": 600,
+                          "msg_class": "A"
+                        },
+                        "tmobile": {
+                          "brand_tier": "TOP"
+                        }
+                      },
+                      "message_flow": "End users opt-in by visiting www.example.com and adding their phone number. They then check a box agreeing to receive text messages from Example Brand. Additionally, end users can also opt-in by texting START to (111) 222-3333 to opt in.",
+                      "opt_in_message": "Acme Corporation: You are now opted-in. For help, reply HELP. To opt-out, reply STOP",
+                      "opt_out_message": "You have successfully been unsubscribed from Acme Corporation. You will not receive any more messages from this number.",
+                      "help_message": "Acme Corporation: Please visit www.example.com to get support. To opt-out, reply STOP.",
+                      "opt_in_keywords": [
+                        "START"
+                      ],
+                      "opt_out_keywords": [
+                        "STOP"
+                      ],
+                      "help_keywords": [
+                        "HELP"
+                      ],
+                      "privacy_policy_url": "https://example.com/privacy",
+                      "terms_and_conditions_url": "https://example.com/terms",
+                      "date_created": "2021-02-18T14:48:52Z",
+                      "date_updated": "2021-02-18T14:48:52Z",
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "mock": false,
+                      "errors": []
                     }
                   }
                 }
@@ -10568,7 +11030,7 @@
           {
             "name": "Sid",
             "in": "path",
-            "description": "The SID of the US A2P Compliance resource to update `QE2c6890da8086d771620e9b13fadeba0b`.",
+            "description": "The SID of the US A2P Compliance resource to update `QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.",
             "schema": {
               "type": "string",
               "minLength": 34,
@@ -10576,6 +11038,9 @@
               "pattern": "^QE[0-9a-fA-F]{32}$"
             },
             "required": true
+          },
+          {
+            "$ref": "#/components/parameters/XTwilioApiVersion"
           }
         ],
         "responses": {
@@ -10583,15 +11048,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/messaging.v1.service.us_app_to_person"
+                  "$ref": "#/components/schemas/messaging.v1.service.us_app_to_person_response"
                 },
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "QE2c6890da8086d771620e9b13fadeba0b",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "brand_registration_sid": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "messaging_service_sid": "MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "brand_registration_sid": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "messaging_service_sid": "MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "description": "Send marketing messages about sales to opted in customers.",
                       "message_samples": [
                         "EXPRESS: Denim Days Event is ON",
@@ -10617,7 +11082,7 @@
                       "direct_lending": false,
                       "date_created": "2021-02-18T14:48:52Z",
                       "date_updated": "2021-02-18T14:48:52Z",
-                      "url": "https://messaging.twilio.com/v1/Services/MGaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Compliance/Usa2p/QE2c6890da8086d771620e9b13fadeba0b",
+                      "url": "https://messaging.twilio.com/v1/Services/MGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Compliance/Usa2p/QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "message_flow": "End users opt-in by visiting www.example.com and adding their phone number. They then check a box agreeing to receive text messages from Example Brand. Additionally, end users can also opt-in by texting START to (111) 222-3333 to opt in.",
                       "opt_in_message": "Acme Corporation: You are now opted-in. For help, reply HELP. To opt-out, reply STOP",
                       "opt_out_message": "You have successfully been unsubscribed from Acme Corporation. You will not receive any more messages from this number.",
@@ -10630,6 +11095,8 @@
                       "help_keywords": [
                         "HELP"
                       ],
+                      "privacy_policy_url": "https://example.com/privacy",
+                      "terms_and_conditions_url": "https://example.com/terms",
                       "help_message": "Acme Corporation: Please visit www.example.com to get support. To opt-out, reply STOP.",
                       "mock": false,
                       "errors": []
@@ -10720,6 +11187,16 @@
                   "DirectLending": {
                     "type": "boolean",
                     "description": "A boolean that specifies whether campaign allows direct lending or not."
+                  },
+                  "PrivacyPolicyUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "The URL of the privacy policy for the campaign."
+                  },
+                  "TermsAndConditionsUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "The URL of the terms and conditions for the campaign."
                   }
                 },
                 "required": [
@@ -10799,7 +11276,7 @@
             },
             "examples": {
               "fetchWithBrandRegistrationSid": {
-                "value": "BNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "BNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           }

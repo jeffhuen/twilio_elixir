@@ -386,7 +386,7 @@
                         "results": {
                           "whitepages_pro_caller_id": {
                             "status": "successful",
-                            "request_sid": "XR28b8f152ae12345605b0b3cc34123456",
+                            "request_sid": "XRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                             "message": null,
                             "code": null,
                             "result": {
@@ -452,7 +452,7 @@
                         "results": {
                           "nomorobo_spamscore": {
                             "status": "successful",
-                            "request_sid": "XR763c8acc4c56d5e3e18d2f0f12345bc1",
+                            "request_sid": "XRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                             "message": null,
                             "code": null,
                             "result": {
@@ -486,7 +486,7 @@
                         "results": {
                           "payfone_tcpa_compliance": {
                             "status": "successful",
-                            "request_sid": "XRd3a2991c9108bde3ca9589ed84d31463",
+                            "request_sid": "XRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                             "message": null,
                             "code": null,
                             "result": {
@@ -496,7 +496,7 @@
                                 "NumberMatch": "I",
                                 "VerifyNumberTransactionId": "2019459819"
                               },
-                              "RequestId": "XRd3a2991c9108bde3ca9589ed84d31463",
+                              "RequestId": "XRxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                               "Description": "Success."
                             }
                           }

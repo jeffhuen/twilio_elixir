@@ -13,6 +13,12 @@ defmodule Twilio.Intelligence.V2.OperatorTypeService do
   Retrieves a list of all Operator Types for an Account.
 
   Operation: `ListOperatorType` | Tags: IntelligenceV2OperatorType
+
+  ## Query Parameters
+
+  | Parameter | Type | Description |
+  |-----------|------|-------------|
+  | `LanguageCode` | string | Returns Operator Types that support the provided language code. |
   """
   @spec list(Client.t(), map(), keyword()) ::
           {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}

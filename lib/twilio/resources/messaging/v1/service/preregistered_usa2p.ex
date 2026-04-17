@@ -16,7 +16,7 @@ defmodule Twilio.Resources.Messaging.V1.Service.PreregisteredUsa2p do
   | `date_created` | The date and time in GMT when the resource was created specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.. Format: date-time |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `messaging_service_sid` | The SID of the [Messaging Service](https://www.twilio.com/docs/messaging/api/service-resource) that the resource is associated with. |
-  | `sid` | The unique string that identifies a US A2P Compliance resource `QE2c6890da8086d771620e9b13fadeba0b`. |
+  | `sid` | The unique string that identifies a US A2P Compliance resource `QExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`. |
   """
 
   @type t :: %__MODULE__{

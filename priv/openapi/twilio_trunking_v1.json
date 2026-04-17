@@ -649,13 +649,13 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2018-04-28T00:10:23Z",
                       "date_updated": "2018-04-28T00:10:23Z",
                       "friendly_name": "friendly_name",
-                      "sid": "CLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/CredentialLists/CLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "sid": "CLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/CredentialLists/CLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -800,13 +800,13 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2018-05-02T17:29:30Z",
                       "date_updated": "2018-05-02T17:29:30Z",
                       "friendly_name": "friendly_name",
-                      "sid": "CLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/CredentialLists/CLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "sid": "CLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/CredentialLists/CLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -879,7 +879,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "CredentialListSid": "CLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "CredentialListSid": "CLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -988,21 +988,21 @@
                     "value": {
                       "credential_lists": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2018-04-27T22:02:11Z",
                           "date_updated": "2018-04-27T22:02:11Z",
                           "friendly_name": "friendly_name",
-                          "sid": "CLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/CredentialLists/CLaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "sid": "CLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/CredentialLists/CLxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/CredentialLists?PageSize=50&Page=0",
+                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/CredentialLists?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/CredentialLists?PageSize=50&Page=0",
+                        "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/CredentialLists?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "credential_lists"
                       }
@@ -1014,9 +1014,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/CredentialLists?PageSize=50&Page=0",
+                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/CredentialLists?PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/CredentialLists?PageSize=50&Page=0",
+                        "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/CredentialLists?PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "credential_lists"
                       }
@@ -1130,13 +1130,13 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2018-05-02T17:29:34Z",
                       "date_updated": "2018-05-02T17:29:34Z",
                       "friendly_name": "friendly_name",
-                      "sid": "ALaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAccessControlLists/ALaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "sid": "ALxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAccessControlLists/ALxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1279,13 +1279,13 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2018-04-30T20:59:06Z",
                       "date_updated": "2018-04-30T20:59:06Z",
                       "friendly_name": "friendly_name",
-                      "sid": "ALaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAccessControlLists/ALaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "sid": "ALxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAccessControlLists/ALxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1358,7 +1358,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "IpAccessControlListSid": "ALaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "IpAccessControlListSid": "ALxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -1467,13 +1467,13 @@
                     "value": {
                       "ip_access_control_lists": [],
                       "meta": {
-                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAccessControlLists?PageSize=50&Page=0",
+                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAccessControlLists?PageSize=50&Page=0",
                         "key": "ip_access_control_lists",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAccessControlLists?PageSize=50&Page=0"
+                        "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAccessControlLists?PageSize=50&Page=0"
                       }
                     }
                   },
@@ -1481,23 +1481,23 @@
                     "value": {
                       "ip_access_control_lists": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2018-05-02T17:29:34Z",
                           "date_updated": "2018-05-02T17:29:34Z",
                           "friendly_name": "friendly_name",
-                          "sid": "ALaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAccessControlLists/ALaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "sid": "ALxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAccessControlLists/ALxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
-                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAccessControlLists?PageSize=50&Page=0",
+                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAccessControlLists?PageSize=50&Page=0",
                         "key": "ip_access_control_lists",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAccessControlLists?PageSize=50&Page=0"
+                        "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAccessControlLists?PageSize=50&Page=0"
                       }
                     }
                   }
@@ -1615,13 +1615,13 @@
                       "date_updated": "2018-05-07T20:20:46Z",
                       "enabled": false,
                       "friendly_name": "friendly_name",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "priority": 1,
                       "sip_url": "sip://sip-box.com:1234",
-                      "sid": "OUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "OUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2018-05-07T20:20:46Z",
-                      "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls/OUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls/OUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1763,13 +1763,13 @@
                       "date_updated": "2018-05-07T20:50:58Z",
                       "enabled": false,
                       "friendly_name": "updated_name",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "priority": 2,
                       "sip_url": "sip://sip-updated.com:4321",
-                      "sid": "OUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "OUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2018-05-07T20:50:58Z",
-                      "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls/OUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls/OUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -1918,13 +1918,13 @@
                       "date_updated": "2018-05-07T20:50:58Z",
                       "enabled": true,
                       "friendly_name": "friendly_name",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "priority": 1,
                       "sip_url": "sip://sip-box.com:1234",
-                      "sid": "OUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "OUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2018-05-07T20:50:58Z",
-                      "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls/OUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls/OUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -2127,13 +2127,13 @@
                   "readFull": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls?PageSize=50&Page=0",
+                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls?PageSize=50&Page=0",
                         "key": "origination_urls",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls?PageSize=50&Page=0"
+                        "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls?PageSize=50&Page=0"
                       },
                       "origination_urls": [
                         {
@@ -2141,13 +2141,13 @@
                           "date_updated": "2018-05-09T20:47:35Z",
                           "enabled": true,
                           "friendly_name": "friendly_name",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "priority": 1,
                           "sip_url": "sip://sip-box.com:1234",
-                          "sid": "OUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "OUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2018-05-09T20:47:35Z",
-                          "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls/OUaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                          "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls/OUxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ]
                     }
@@ -2155,13 +2155,13 @@
                   "readEmpty": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls?PageSize=50&Page=0",
+                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls?PageSize=50&Page=0",
                         "key": "origination_urls",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls?PageSize=50&Page=0"
+                        "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls?PageSize=50&Page=0"
                       },
                       "origination_urls": []
                     }
@@ -2274,37 +2274,37 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2010-12-10T17:27:34Z",
                       "date_updated": "2015-10-09T11:36:32Z",
                       "friendly_name": "(415) 867-5309",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "phone_number": "+14158675309",
                       "api_version": "2010-04-01",
                       "voice_caller_id_lookup": null,
-                      "voice_url": "https://webhooks.twilio.com/v1/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Proxy/KSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/Call",
+                      "voice_url": "https://webhooks.twilio.com/v1/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Proxy/KSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/Call",
                       "voice_method": "POST",
                       "voice_fallback_url": null,
                       "voice_fallback_method": null,
                       "status_callback": "",
                       "status_callback_method": "POST",
                       "voice_application_sid": "",
-                      "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sms_url": "https://webhooks.twilio.com/v1/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Proxy/KSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/Message",
+                      "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sms_url": "https://webhooks.twilio.com/v1/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Proxy/KSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/Message",
                       "sms_method": "POST",
                       "sms_fallback_url": "",
                       "sms_fallback_method": "POST",
-                      "sms_application_sid": "APaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sms_application_sid": "APxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "address_requirements": "none",
                       "beta": false,
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers/PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers/PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "capabilities": {
                         "voice": true,
                         "sms": true,
                         "mms": true
                       },
                       "links": {
-                        "phone_number": "https://api.twilio.com/2010-04-01/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IncomingPhoneNumbers/PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "phone_number": "https://api.twilio.com/2010-04-01/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IncomingPhoneNumbers/PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       }
                     }
                   }
@@ -2448,37 +2448,37 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "date_created": "2010-12-10T17:27:34Z",
                       "date_updated": "2015-10-09T11:36:32Z",
                       "friendly_name": "(415) 867-5309",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "phone_number": "+14158675309",
                       "api_version": "2010-04-01",
                       "voice_caller_id_lookup": null,
-                      "voice_url": "https://webhooks.twilio.com/v1/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Proxy/KSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/Call",
+                      "voice_url": "https://webhooks.twilio.com/v1/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Proxy/KSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/Call",
                       "voice_method": "POST",
                       "voice_fallback_url": null,
                       "voice_fallback_method": null,
                       "status_callback": "",
                       "status_callback_method": "POST",
                       "voice_application_sid": "",
-                      "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "sms_url": "https://webhooks.twilio.com/v1/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Proxy/KSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/Message",
+                      "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "sms_url": "https://webhooks.twilio.com/v1/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Proxy/KSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/Message",
                       "sms_method": "POST",
                       "sms_fallback_url": "",
                       "sms_fallback_method": "POST",
-                      "sms_application_sid": "APaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sms_application_sid": "APxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "address_requirements": "none",
                       "beta": false,
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers/PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers/PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "capabilities": {
                         "voice": true,
                         "sms": true,
                         "mms": true
                       },
                       "links": {
-                        "phone_number": "https://api.twilio.com/2010-04-01/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IncomingPhoneNumbers/PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "phone_number": "https://api.twilio.com/2010-04-01/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IncomingPhoneNumbers/PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       }
                     }
                   }
@@ -2552,7 +2552,7 @@
               "examples": {
                 "create": {
                   "value": {
-                    "PhoneNumberSid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                    "PhoneNumberSid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                   }
                 }
               }
@@ -2660,47 +2660,47 @@
                   "readFull": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers?PageSize=50&Page=0",
+                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers?PageSize=50&Page=0",
                         "key": "phone_numbers",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers?PageSize=50&Page=0"
+                        "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers?PageSize=50&Page=0"
                       },
                       "phone_numbers": [
                         {
-                          "sid": "PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "date_created": "2010-12-10T17:27:34Z",
                           "date_updated": "2015-10-09T11:36:32Z",
                           "friendly_name": "(415) 867-5309",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "phone_number": "+14158675309",
                           "api_version": "2010-04-01",
                           "voice_caller_id_lookup": null,
-                          "voice_url": "https://webhooks.twilio.com/v1/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Proxy/KSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/Call",
+                          "voice_url": "https://webhooks.twilio.com/v1/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Proxy/KSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/Call",
                           "voice_method": "POST",
                           "voice_fallback_url": null,
                           "voice_fallback_method": null,
                           "status_callback": "",
                           "status_callback_method": "POST",
                           "voice_application_sid": "",
-                          "trunk_sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sms_url": "https://webhooks.twilio.com/v1/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Proxy/KSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/Webhooks/Message",
+                          "trunk_sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "sms_url": "https://webhooks.twilio.com/v1/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Proxy/KSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/Webhooks/Message",
                           "sms_method": "POST",
                           "sms_fallback_url": "",
                           "sms_fallback_method": "POST",
-                          "sms_application_sid": "APaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sms_application_sid": "APxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "address_requirements": "none",
                           "beta": false,
-                          "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers/PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers/PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "capabilities": {
                             "voice": true,
                             "sms": true,
                             "mms": true
                           },
                           "links": {
-                            "phone_number": "https://api.twilio.com/2010-04-01/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IncomingPhoneNumbers/PNaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                            "phone_number": "https://api.twilio.com/2010-04-01/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IncomingPhoneNumbers/PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                           }
                         }
                       ]
@@ -2709,13 +2709,13 @@
                   "readEmpty": {
                     "value": {
                       "meta": {
-                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers?PageSize=50&Page=0",
+                        "first_page_url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers?PageSize=50&Page=0",
                         "key": "phone_numbers",
                         "next_page_url": null,
                         "page": 0,
                         "page_size": 50,
                         "previous_page_url": null,
-                        "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers?PageSize=50&Page=0"
+                        "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers?PageSize=50&Page=0"
                       },
                       "phone_numbers": []
                     }
@@ -3056,8 +3056,8 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "domain_name": "test.pstn.twilio.com",
                       "disaster_recovery_method": "POST",
                       "disaster_recovery_url": "http://disaster-recovery.com",
@@ -3075,12 +3075,12 @@
                       "auth_type_set": [],
                       "date_created": "2015-01-02T11:23:45Z",
                       "date_updated": "2015-01-02T11:23:45Z",
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "origination_urls": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls",
-                        "credential_lists": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/CredentialLists",
-                        "ip_access_control_lists": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAccessControlLists",
-                        "phone_numbers": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers"
+                        "origination_urls": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls",
+                        "credential_lists": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/CredentialLists",
+                        "ip_access_control_lists": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAccessControlLists",
+                        "phone_numbers": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers"
                       }
                     }
                   }
@@ -3195,8 +3195,8 @@
                 "examples": {
                   "update": {
                     "value": {
-                      "sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "domain_name": "test.pstn.twilio.com",
                       "disaster_recovery_method": "GET",
                       "disaster_recovery_url": "http://updated-recovery.com",
@@ -3214,12 +3214,12 @@
                       "auth_type_set": [],
                       "date_created": "2015-01-02T11:23:45Z",
                       "date_updated": "2015-01-02T11:23:45Z",
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "origination_urls": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls",
-                        "credential_lists": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/CredentialLists",
-                        "ip_access_control_lists": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAccessControlLists",
-                        "phone_numbers": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers"
+                        "origination_urls": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls",
+                        "credential_lists": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/CredentialLists",
+                        "ip_access_control_lists": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAccessControlLists",
+                        "phone_numbers": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers"
                       }
                     }
                   }
@@ -3397,8 +3397,8 @@
                 "examples": {
                   "create": {
                     "value": {
-                      "sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "domain_name": "test.pstn.twilio.com",
                       "disaster_recovery_method": "POST",
                       "disaster_recovery_url": "http://disaster-recovery.com",
@@ -3416,12 +3416,12 @@
                       "auth_type_set": [],
                       "date_created": "2015-01-02T11:23:45Z",
                       "date_updated": "2015-01-02T11:23:45Z",
-                      "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "links": {
-                        "origination_urls": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls",
-                        "credential_lists": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/CredentialLists",
-                        "ip_access_control_lists": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAccessControlLists",
-                        "phone_numbers": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers"
+                        "origination_urls": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls",
+                        "credential_lists": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/CredentialLists",
+                        "ip_access_control_lists": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAccessControlLists",
+                        "phone_numbers": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers"
                       }
                     }
                   }
@@ -3634,8 +3634,8 @@
                       },
                       "trunks": [
                         {
-                          "sid": "TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "domain_name": "test.pstn.twilio.com",
                           "disaster_recovery_method": "POST",
                           "disaster_recovery_url": "http://disaster-recovery.com",
@@ -3653,12 +3653,12 @@
                           "auth_type_set": [],
                           "date_created": "2015-01-02T11:23:45Z",
                           "date_updated": "2015-01-02T11:23:45Z",
-                          "url": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "origination_urls": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/OriginationUrls",
-                            "credential_lists": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/CredentialLists",
-                            "ip_access_control_lists": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/IpAccessControlLists",
-                            "phone_numbers": "https://trunking.twilio.com/v1/Trunks/TKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/PhoneNumbers"
+                            "origination_urls": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/OriginationUrls",
+                            "credential_lists": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/CredentialLists",
+                            "ip_access_control_lists": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/IpAccessControlLists",
+                            "phone_numbers": "https://trunking.twilio.com/v1/Trunks/TKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/PhoneNumbers"
                           }
                         }
                       ]

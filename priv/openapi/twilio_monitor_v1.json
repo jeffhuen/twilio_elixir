@@ -386,7 +386,7 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "alert_text": "alert_text",
                       "api_version": "2010-04-01",
                       "date_created": "2015-07-30T20:00:00Z",
@@ -402,9 +402,9 @@
                       "response_body": "response_body",
                       "response_headers": "response_headers",
                       "request_headers": "request_headers",
-                      "sid": "NOaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "url": "https://monitor.twilio.com/v1/Alerts/NOaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "service_sid": "PNe2cd757cd5257b0217a447933a0290d2"
+                      "sid": "NOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "url": "https://monitor.twilio.com/v1/Alerts/NOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "service_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -626,7 +626,7 @@
                     "value": {
                       "alerts": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "alert_text": "alert_text",
                           "api_version": "2010-04-01",
                           "date_created": "2015-07-30T20:00:00Z",
@@ -638,9 +638,9 @@
                           "request_method": "GET",
                           "request_url": "http://www.example.com",
                           "resource_sid": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "sid": "NOaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "url": "https://monitor.twilio.com/v1/Alerts/NOaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "service_sid": "PNe2cd757cd5257b0217a447933a0290d2"
+                          "sid": "NOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "url": "https://monitor.twilio.com/v1/Alerts/NOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "service_sid": "PNxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                         }
                       ],
                       "meta": {
@@ -750,8 +750,8 @@
                 "examples": {
                   "fetch": {
                     "value": {
-                      "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                      "actor_sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                      "actor_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "actor_type": "account",
                       "description": null,
                       "event_data": {
@@ -763,15 +763,15 @@
                       "event_date": "2014-10-03T16:48:25Z",
                       "event_type": "account.updated",
                       "links": {
-                        "actor": "https://api.twilio.com/2010-04-01/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                        "resource": "https://api.twilio.com/2010-04-01/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                        "actor": "https://api.twilio.com/2010-04-01/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                        "resource": "https://api.twilio.com/2010-04-01/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                       },
-                      "resource_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "resource_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "resource_type": "account",
-                      "sid": "AEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                      "sid": "AExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                       "source": "api",
                       "source_ip_address": "10.86.6.250",
-                      "url": "https://monitor.twilio.com/v1/Events/AEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                      "url": "https://monitor.twilio.com/v1/Events/AExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                     }
                   }
                 }
@@ -859,10 +859,10 @@
             },
             "examples": {
               "readFull": {
-                "value": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               },
               "readEmpty": {
-                "value": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -894,10 +894,10 @@
             },
             "examples": {
               "readFull": {
-                "value": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               },
               "readEmpty": {
-                "value": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                "value": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
               }
             }
           },
@@ -1033,8 +1033,8 @@
                     "value": {
                       "events": [
                         {
-                          "account_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                          "actor_sid": "USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "account_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                          "actor_sid": "USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "actor_type": "account",
                           "description": null,
                           "event_data": {
@@ -1045,24 +1045,24 @@
                           },
                           "event_date": "2014-10-03T16:48:25Z",
                           "event_type": "account.updated",
-                          "resource_sid": "ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "resource_sid": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "resource_type": "account",
-                          "sid": "AEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "sid": "AExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "source": "source",
                           "source_ip_address": "source_ip_address",
-                          "url": "https://monitor.twilio.com/v1/Events/AEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                          "url": "https://monitor.twilio.com/v1/Events/AExxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                           "links": {
-                            "actor": "https://api.twilio.com/2010-04-01/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-                            "resource": "https://api.twilio.com/2010-04-01/Accounts/ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                            "actor": "https://api.twilio.com/2010-04-01/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                            "resource": "https://api.twilio.com/2010-04-01/Accounts/ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                           }
                         }
                       ],
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://monitor.twilio.com/v1/Events?StartDate=2015-07-30T20%3A00%3A00Z&SourceIpAddress=source_ip_address&EndDate=2015-07-30T20%3A00%3A00Z&ActorSid=USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&EventType=event_type&ResourceSid=ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://monitor.twilio.com/v1/Events?StartDate=2015-07-30T20%3A00%3A00Z&SourceIpAddress=source_ip_address&EndDate=2015-07-30T20%3A00%3A00Z&ActorSid=USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&EventType=event_type&ResourceSid=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://monitor.twilio.com/v1/Events?StartDate=2015-07-30T20%3A00%3A00Z&SourceIpAddress=source_ip_address&EndDate=2015-07-30T20%3A00%3A00Z&ActorSid=USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&EventType=event_type&ResourceSid=ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "url": "https://monitor.twilio.com/v1/Events?StartDate=2015-07-30T20%3A00%3A00Z&SourceIpAddress=source_ip_address&EndDate=2015-07-30T20%3A00%3A00Z&ActorSid=USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&EventType=event_type&ResourceSid=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "events"
                       }
@@ -1074,9 +1074,9 @@
                       "meta": {
                         "page": 0,
                         "page_size": 50,
-                        "first_page_url": "https://monitor.twilio.com/v1/Events?StartDate=2015-07-30T20%3A00%3A00Z&SourceIpAddress=source_ip_address&EndDate=2015-07-30T20%3A00%3A00Z&ActorSid=USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&EventType=event_type&ResourceSid=ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "first_page_url": "https://monitor.twilio.com/v1/Events?StartDate=2015-07-30T20%3A00%3A00Z&SourceIpAddress=source_ip_address&EndDate=2015-07-30T20%3A00%3A00Z&ActorSid=USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&EventType=event_type&ResourceSid=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "previous_page_url": null,
-                        "url": "https://monitor.twilio.com/v1/Events?StartDate=2015-07-30T20%3A00%3A00Z&SourceIpAddress=source_ip_address&EndDate=2015-07-30T20%3A00%3A00Z&ActorSid=USaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&EventType=event_type&ResourceSid=ACaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&PageSize=50&Page=0",
+                        "url": "https://monitor.twilio.com/v1/Events?StartDate=2015-07-30T20%3A00%3A00Z&SourceIpAddress=source_ip_address&EndDate=2015-07-30T20%3A00%3A00Z&ActorSid=USxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&EventType=event_type&ResourceSid=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&PageSize=50&Page=0",
                         "next_page_url": null,
                         "key": "events"
                       }
