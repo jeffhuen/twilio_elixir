@@ -338,17 +338,17 @@
           }
         },
         "required": [
-          "knowledge",
+          "account_sid",
+          "customer_ai",
           "owner",
           "name",
-          "id",
-          "account_sid",
-          "model",
-          "date_updated",
           "personality_prompt",
           "tools",
+          "model",
           "date_created",
-          "customer_ai"
+          "knowledge",
+          "date_updated",
+          "id"
         ]
       },
       "assistants.v1.service.knowledge_status": {
@@ -441,15 +441,15 @@
           }
         },
         "required": [
-          "name",
-          "id",
-          "meta",
-          "enabled",
-          "type",
-          "date_updated",
-          "description",
           "requires_auth",
-          "date_created"
+          "name",
+          "description",
+          "date_created",
+          "meta",
+          "date_updated",
+          "type",
+          "enabled",
+          "id"
         ]
       },
       "assistants.v1.service.create_assistant_request": {

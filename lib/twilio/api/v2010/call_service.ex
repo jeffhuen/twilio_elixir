@@ -124,6 +124,8 @@ defmodule Twilio.Api.V2010.CallService do
   | `Record` | boolean | Whether to record the call. Can be `true` to record the phone call, or `false` to not. The default is `false`. The `recording_url` is sent to the `status_callback` URL. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RecordingChannels` | string | The number of channels in the final recording. Can be: `mono` or `dual`. The default is `mono`. `mono` records both legs of the call in a single channel of the recording file. `dual` records each leg to a separate channel of the recording file. The first channel of a dual-channel recording contains the parent call and the second channel contains the child call. |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `RecordingConfigurationId` | string | The identifier of the configuration to be used when creating and processing the recording |
   | `RecordingStatusCallback` | string | The URL that we call when the recording is available to be accessed. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RecordingStatusCallbackEvent` | array | The recording status events that will trigger calls to the URL specified in `recording_status_callback`. Can be: `in-progress`, `completed` and `absent`. Defaults to `completed`. Separate  multiple values with a space. |

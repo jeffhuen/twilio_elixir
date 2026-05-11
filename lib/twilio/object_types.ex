@@ -5,7 +5,29 @@ defmodule Twilio.ObjectTypes do
 
   def schema_to_module do
     %{
+      "Channel" => Twilio.Resources.Intelligence.V3.Conversation,
+      "ColumnMappingItem" => Twilio.Resources.Memory.V1.Store.Profile.Import,
+      "DataMapping" => Twilio.Resources.Memory.V1.ControlPlane.Store.DataMapping,
+      "FullTrait" => Twilio.Resources.Memory.V1.Store.Profile.Trait,
+      "IdentifierSet" => Twilio.Resources.Memory.V1.Store.Profile.Identifier,
+      "IdentityProfileID" => Twilio.Resources.Memory.V1.Store.Profile.Lookup,
+      "IdentityResolutionSettings" =>
+        Twilio.Resources.Memory.V1.ControlPlane.Store.IdentityResolutionSetting,
+      "Knowledge" => Twilio.Resources.Knowledge.V2.KnowledgeBase.Knowledge,
+      "KnowledgeBase" => Twilio.Resources.Knowledge.V2.ControlPlane.KnowledgeBase,
+      "KnowledgeChunk" => Twilio.Resources.Knowledge.V2.KnowledgeBase.Knowledge.Chunk,
+      "KnowledgeChunkResult" => Twilio.Resources.Knowledge.V2.KnowledgeBase.Search,
       "LookupResponse" => Twilio.Resources.Lookups.V2.PhoneNumber,
+      "MemoryRetrievalResponse" => Twilio.Resources.Memory.V1.Store.Profile.Recall,
+      "ObservationInfo" => Twilio.Resources.Memory.V1.Store.Profile.Observation.Revision,
+      "OperationStatus" => Twilio.Resources.Memory.V1.ControlPlane.Operation,
+      "OperatorResultsResponseV1" => Twilio.Resources.Intelligence.V3.OperatorResult,
+      "OperatorTrainingExample" => Twilio.Resources.Intelligence.V3.ControlPlane.Operator.Version,
+      "ProfileID" => Twilio.Resources.Memory.V1.Store.Profile,
+      "Rule" => Twilio.Resources.Intelligence.V3.ControlPlane.Configuration,
+      "Store" => Twilio.Resources.Memory.V1.ControlPlane.Store,
+      "SummaryInfo" => Twilio.Resources.Memory.V1.Store.Profile.ConversationSummary,
+      "TraitGroup" => Twilio.Resources.Memory.V1.ControlPlane.Store.TraitGroup,
       "V2Oauth2TokenResponse" => Twilio.Resources.Oauth.V2.Token,
       "accounts.v1.auth_token_promotion" => Twilio.Resources.Accounts.V1.AuthToken.Promote,
       "accounts.v1.bulk_consents" => Twilio.Resources.Accounts.V1.Consent.BulkConsents,
@@ -226,6 +248,10 @@ defmodule Twilio.ObjectTypes do
       "conversations.v1.user" => Twilio.Resources.Conversations.V1.User,
       "conversations.v1.user.user_conversation" =>
         Twilio.Resources.Conversations.V1.User.Conversation,
+      "conversations.v2.address" => Twilio.Resources.Conversations.V2.Conversation.Participant,
+      "conversations.v2.participant" => Twilio.Resources.Conversations.V2.Conversation,
+      "conversations.v2.status_callback_config" =>
+        Twilio.Resources.Conversations.V2.ControlPlane.Configuration,
       "events.v1.event_type" => Twilio.Resources.Events.V1.Type,
       "events.v1.schema" => Twilio.Resources.Events.V1.Schema,
       "events.v1.schema.schema_version" => Twilio.Resources.Events.V1.Schema.SchemaVersion,
@@ -687,6 +713,8 @@ defmodule Twilio.ObjectTypes do
         Twilio.Resources.Voice.V1.Settings,
       "voice.v1.ip_record" => Twilio.Resources.Voice.V1.IpRecord,
       "voice.v1.source_ip_mapping" => Twilio.Resources.Voice.V1.SourceIpMapping,
+      "voice.v3.transcription.LongRunningOperationResponse" =>
+        Twilio.Resources.Voice.V3.Transcription,
       "wireless.v1.account_usage_record" => Twilio.Resources.Wireless.V1.UsageRecord,
       "wireless.v1.command" => Twilio.Resources.Wireless.V1.Command,
       "wireless.v1.rate_plan" => Twilio.Resources.Wireless.V1.RatePlan,

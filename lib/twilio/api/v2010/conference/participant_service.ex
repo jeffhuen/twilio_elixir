@@ -145,6 +145,8 @@ defmodule Twilio.Api.V2010.Conference.ParticipantService do
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RecordingChannels` | string | The recording channels for the final recording. Can be: `mono` or `dual` and the default is `mono`. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `RecordingConfigurationId` | string | The identifier of the configuration to be used when creating and processing the recording |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RecordingStatusCallback` | string (uri) | The URL that we should call using the `recording_status_callback_method` when the recording status changes. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RecordingStatusCallbackEvent` | array | The recording state changes that should generate a call to `recording_status_callback`. Can be: `started`, `in-progress`, `paused`, `resumed`, `stopped`, `completed`, `failed`, and `absent`. Separate multiple values with a space, ex: `'in-progress completed failed'`. |

@@ -12,9 +12,9 @@ defmodule Twilio.Resources.Insights.V1.Voice.Event do
   | `account_sid` | The unique SID identifier of the Account. |
   | `call_sid` | The unique SID identifier of the Call. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `carrier_edge` | Represents the connection between Twilio and our immediate carrier partners. The events here describe the call lifecycle as reported by Twilio's carrier media gateways. |
+  | `carrier_edge` | `object` Represents the connection between Twilio and our immediate carrier partners. The events here describe the call lifecycle as reported by Twilio's carrier media gateways. See [Details: Call Summary](https://www.twilio.com/docs/voice/voice-insights/api/call/details-call-summary#edges-and-their-properties) for the object properties. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `client_edge` | Represents the Twilio media gateway for Client calls. The events here describe the call lifecycle as reported by Twilio's Voice SDK media gateways. |
+  | `client_edge` | `object` Represents the Twilio media gateway for Client calls. The events here describe the call lifecycle as reported by Twilio's Voice SDK media gateways. See [Details: Call Summary](https://www.twilio.com/docs/voice/voice-insights/api/call/details-call-summary#edges-and-their-properties) for the object properties. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `edge` | The Edge of this Event. One of `unknown_edge`, `carrier_edge`, `sip_edge`, `sdk_edge` or `client_edge`.. Values: `unknown_edge`, `carrier_edge`, `sip_edge`, `sdk_edge`, `client_edge` |
   | `group` | Event group. |
@@ -22,9 +22,9 @@ defmodule Twilio.Resources.Insights.V1.Voice.Event do
   | `level` | The Level of this Event. One of `UNKNOWN`, `DEBUG`, `INFO`, `WARNING` or `ERROR`.. Values: `UNKNOWN`, `DEBUG`, `INFO`, `WARNING`, `ERROR` |
   | `name` | Event name. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `sdk_edge` | Represents the Voice SDK running locally in the browser or in the Android/iOS application. The events here are emitted by the Voice SDK in response to certain call progress events, network changes, or call quality conditions. |
+  | `sdk_edge` | `object` Represents the Voice SDK running locally in the browser or in the Android/iOS application. The events here are emitted by the Voice SDK in response to certain call progress events, network changes, or call quality conditions. See [Details: Call Summary](https://www.twilio.com/docs/voice/voice-insights/api/call/details-call-summary#edges-and-their-properties) for the object properties. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `sip_edge` | Represents the Twilio media gateway for SIP interface and SIP trunking calls. The events here describe the call lifecycle as reported by Twilio's public media gateways. |
+  | `sip_edge` | `object` Represents the Twilio media gateway for SIP interface and SIP trunking calls. The events here describe the call lifecycle as reported by Twilio's public media gateways. See [Details: Call Summary](https://www.twilio.com/docs/voice/voice-insights/api/call/details-call-summary#edges-and-their-properties) for the object properties. |
   | `timestamp` | Event time. |
   """
 

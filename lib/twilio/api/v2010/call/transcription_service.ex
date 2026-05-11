@@ -19,8 +19,6 @@ defmodule Twilio.Api.V2010.Call.TranscriptionService do
   | Parameter | Type | Description |
   |-----------|------|-------------|
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
-  | `ConfigurationId` | string | The ID of the RealTimeTranscription Configuration for configuring all the non-default behaviors in one go. |
-  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ConversationConfiguration` | string | The ID of the Conversations Configuration for customizing conversation behavior in Intelligence Service |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `ConversationId` | string | The ID of the Conversation for associating this Transcription with an existing Conversation in Intelligence Service |
@@ -44,6 +42,8 @@ defmodule Twilio.Api.V2010.Call.TranscriptionService do
   | `StatusCallbackMethod` | string (http-method) | The http method for the status_callback (one of GET, POST). Values: `GET`, `POST` |
   | `StatusCallbackUrl` | string (uri) | Absolute URL of the status callback. |
   | `Track` | string |  Values: `inbound_track`, `outbound_track`, `both_tracks` |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `TranscriptionConfigurationId` | string | The ID of the RealTimeTranscription Configuration for configuring all the non-default behaviors in one go. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `TranscriptionEngine` | string | Definition of the transcription engine to be used, among those supported by Twilio |
   """
