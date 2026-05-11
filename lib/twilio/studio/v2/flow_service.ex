@@ -63,6 +63,7 @@ defmodule Twilio.Studio.V2.FlowService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  | `AuthorSid` | string | The SID of the User that created the Flow. |
   | `CommitMessage` | string | Description of change made in the revision. |
   """
   @spec create(Client.t(), map(), keyword()) ::
@@ -116,6 +117,7 @@ defmodule Twilio.Studio.V2.FlowService do
 
   | Parameter | Type | Description |
   |-----------|------|-------------|
+  | `AuthorSid` | string | The SID of the User that created or last updated the Flow. |
   | `CommitMessage` | string | Description of change made in the revision. |
   | `Definition` | string | JSON representation of flow definition. |
   | `FriendlyName` | string | The string that you assigned to describe the Flow. |

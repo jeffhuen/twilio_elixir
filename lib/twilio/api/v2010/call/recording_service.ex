@@ -77,6 +77,8 @@ defmodule Twilio.Api.V2010.Call.RecordingService do
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RecordingChannels` | string | The number of channels used in the recording. Can be: `mono` or `dual` and the default is `mono`. `mono` records all parties of the call into one channel. `dual` records each party of a 2-party call into separate channels. |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
+  | `RecordingConfigurationId` | string | The identifier of the configuration to be used when creating and processing the recording |
+  # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RecordingStatusCallback` | string (uri) | The URL we should call using the `recording_status_callback_method` on each recording event specified in  `recording_status_callback_event`. For more information, see [RecordingStatusCallback parameters](https://www.twilio.com/docs/voice/api/recording#recordingstatuscallback). |
   # credo:disable-for-next-line Credo.Check.Readability.MaxLineLength
   | `RecordingStatusCallbackEvent` | array | The recording status events on which we should call the `recording_status_callback` URL. Can be: `in-progress`, `completed` and `absent` and the default is `completed`. Separate multiple event values with a space. |
