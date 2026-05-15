@@ -82,17 +82,16 @@ defmodule Twilio.Generator.ServiceGenerator do
   defp generate_operation(%{name: :create} = op, resource, base_url, sid_param, resource_mod) do
     parent_params = build_parent_params(resource.path_params)
     path_expr = build_path_expr(op.path, sid_param)
-    content_type = op.content_type
     return_type = return_type(resource_mod)
     doc = generate_operation_doc(op, resource.name)
+
+    opts_expr =
+      build_opts_expr(base_url, has_params: true, content_type: op.content_type)
 
     body =
       request_with_deserialize(
         "Client.request(client, :post, #{path_expr},
-          params: params,
-          opts: opts,
-          base_url: \"#{base_url}\",
-          content_type: #{inspect(content_type)}
+          #{opts_expr}
         )",
         resource_mod
       )
@@ -139,15 +138,15 @@ defmodule Twilio.Generator.ServiceGenerator do
         "      {:ok, data} -> {:ok, Twilio.Page.from_response(data, \"#{page_key}\")}"
       end
 
+    opts_expr = build_opts_expr(base_url, has_params: true)
+
     """
     #{doc}
       @spec list(Client.t(), #{parent_spec(resource.path_params)}map(), keyword()) ::
               {:ok, Twilio.Page.t()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
       def list(client#{parent_params}, params \\\\ %{}, opts \\\\ []) do
         case Client.request(client, :get, #{path_expr},
-               params: params,
-               opts: opts,
-               base_url: "#{base_url}"
+               #{opts_expr}
              ) do
     #{page_ok}
           error -> error
@@ -164,9 +163,10 @@ defmodule Twilio.Generator.ServiceGenerator do
     return_type = return_type(resource_mod)
     doc = generate_operation_doc(op, resource.name)
 
+    opts_expr = build_opts_expr(base_url, [])
+
     request = "Client.request(client, :get, #{path_expr},
-          opts: opts,
-          base_url: \"#{base_url}\"
+          #{opts_expr}
         )"
 
     body = request_with_deserialize(request, resource_mod)
@@ -195,15 +195,14 @@ defmodule Twilio.Generator.ServiceGenerator do
   defp generate_operation(%{name: :update} = op, resource, base_url, sid_param, resource_mod) do
     parent_params = build_parent_params(resource.path_params)
     path_expr = build_path_expr(op.path, sid_param)
-    content_type = op.content_type
     return_type = return_type(resource_mod)
     doc = generate_operation_doc(op, resource.name)
 
+    opts_expr =
+      build_opts_expr(base_url, has_params: true, content_type: op.content_type)
+
     request = "Client.request(client, :post, #{path_expr},
-          params: params,
-          opts: opts,
-          base_url: \"#{base_url}\",
-          content_type: #{inspect(content_type)}
+          #{opts_expr}
         )"
 
     body = request_with_deserialize(request, resource_mod)
@@ -233,6 +232,7 @@ defmodule Twilio.Generator.ServiceGenerator do
     parent_params = build_parent_params(resource.path_params)
     path_expr = build_path_expr(op.path, sid_param)
     doc = generate_operation_doc(op, resource.name)
+    opts_expr = build_opts_expr(base_url, [])
 
     if sid_param do
       """
@@ -241,8 +241,7 @@ defmodule Twilio.Generator.ServiceGenerator do
                 {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
         def delete(client#{parent_params}, sid, opts \\\\ []) do
           Client.request(client, :delete, #{path_expr},
-            opts: opts,
-            base_url: "#{base_url}"
+            #{opts_expr}
           )
         end
       """
@@ -253,8 +252,7 @@ defmodule Twilio.Generator.ServiceGenerator do
                 {:ok, map()} | {:ok, map(), map()} | :ok | {:error, Twilio.Error.t()}
         def delete(client#{parent_params}, opts \\\\ []) do
           Client.request(client, :delete, #{path_expr},
-            opts: opts,
-            base_url: "#{base_url}"
+            #{opts_expr}
           )
         end
       """
@@ -400,6 +398,22 @@ defmodule Twilio.Generator.ServiceGenerator do
     mod_str = inspect(resource_mod)
 
     "with {:ok, data} <- #{request} do\n      {:ok, Deserializer.deserialize(data, #{mod_str})}\n    end"
+  end
+
+  defp build_opts_expr(base_url, options) do
+    has_params = Keyword.get(options, :has_params, false)
+    content_type = Keyword.get(options, :content_type)
+
+    parts = ["opts", "Keyword.put_new(:base_url, \"#{base_url}\")"]
+
+    parts =
+      if content_type,
+        do: parts ++ ["Keyword.put_new(:content_type, #{inspect(content_type)})"],
+        else: parts
+
+    parts = if has_params, do: parts ++ ["Keyword.put(:params, params)"], else: parts
+
+    Enum.join(parts, " |> ")
   end
 
   defp return_type(nil), do: "map()"
