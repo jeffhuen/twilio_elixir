@@ -119,6 +119,51 @@ defmodule Twilio.ClientTest do
                )
     end
 
+    test "repeats the key for each element of a list value", %{client: client} do
+      Twilio.Test.stub(fn _method, _url, _headers, body ->
+        assert body ==
+                 "StatusCallbackEvent=initiated&StatusCallbackEvent=ringing&StatusCallbackEvent=completed"
+
+        refute body =~ "%5B%5D"
+        {201, [], ~s({"sid": "CA123"})}
+      end)
+
+      assert {:ok, _} =
+               Client.request(client, :post, "/test.json",
+                 params: %{"StatusCallbackEvent" => ["initiated", "ringing", "completed"]},
+                 base_url: "https://api.twilio.com"
+               )
+    end
+
+    test "drops a nil element of a list value", %{client: client} do
+      Twilio.Test.stub(fn _method, _url, _headers, body ->
+        assert body == "MediaUrl=https%3A%2F%2Fexample.com%2Fa.png"
+        {201, [], ~s({"sid": "MM123"})}
+      end)
+
+      assert {:ok, _} =
+               Client.request(client, :post, "/test.json",
+                 params: %{"MediaUrl" => ["https://example.com/a.png", nil]},
+                 base_url: "https://api.twilio.com"
+               )
+    end
+
+    test "repeats the key for each element of a list value in GET query params", %{
+      client: client
+    } do
+      Twilio.Test.stub(fn _method, url, _headers, _body ->
+        assert url =~ "?Sid=A&Sid=B"
+        refute url =~ "%5B%5D"
+        {200, [], ~s({"messages": []})}
+      end)
+
+      assert {:ok, _} =
+               Client.request(client, :get, "/test.json",
+                 params: %{"Sid" => ["A", "B"]},
+                 base_url: "https://api.twilio.com"
+               )
+    end
+
     test "encodes JSON when content_type is :json", %{client: client} do
       Twilio.Test.stub(fn _method, _url, headers, body ->
         {_, ct} = List.keyfind(headers, "content-type", 0)

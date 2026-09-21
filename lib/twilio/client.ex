@@ -103,7 +103,9 @@ defmodule Twilio.Client do
 
   ## Options
 
-    * `:params` - Request parameters (map)
+    * `:params` - Request parameters (map). A list value repeats its key once
+      per element, as Twilio expects for array parameters such as
+      `StatusCallbackEvent` and `MediaUrl`
     * `:base_url` - Base URL for the request
     * `:page_key` - Key for pagination results
     * `:content_type` - Request content type (`:form` or `:json`, default `:form`)
@@ -403,10 +405,14 @@ defmodule Twilio.Client do
     end)
   end
 
+  # Twilio reads an array parameter from a repeated plain key, for example
+  # `StatusCallbackEvent=initiated&StatusCallbackEvent=ringing`, which is how
+  # the official SDKs encode a list. A `nil` element is dropped rather than
+  # sent as an empty value.
   defp flatten_params(values, prefix) when is_list(values) do
-    Enum.flat_map(values, fn value ->
-      flatten_params(value, "#{prefix}[]")
-    end)
+    values
+    |> Enum.reject(&is_nil/1)
+    |> Enum.flat_map(fn value -> flatten_params(value, prefix) end)
   end
 
   defp flatten_params(value, prefix), do: [{prefix, to_string(value)}]
